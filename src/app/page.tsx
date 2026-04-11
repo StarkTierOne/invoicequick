@@ -50,7 +50,8 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-4">
             <a href="#pricing" className="text-gray-600 hover:text-gray-900 hidden sm:block">Pricing</a>
-            <Link href="/create" className="btn-primary text-sm !py-2 !px-4">Create Invoice</Link>
+            <Link href="/login" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Sign In</Link>
+            <Link href="/signup" className="btn-primary text-sm !py-2 !px-4">Sign Up Free</Link>
           </div>
         </div>
       </nav>
