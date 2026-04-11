@@ -33,8 +33,7 @@ export default function SignupPage() {
 
     if (data.user) {
       await supabase.from("profiles").update({ business_name: businessName }).eq("id", data.user.id);
-      router.push("/dashboard");
-      router.refresh();
+      window.location.href = "/dashboard";
     }
   };
 
