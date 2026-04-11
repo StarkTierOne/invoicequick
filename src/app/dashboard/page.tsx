@@ -3,6 +3,7 @@ export const dynamic = "force-dynamic";
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { useAuth } from "@/lib/useAuth";
 import AppShell from "@/components/AppShell";
 import Link from "next/link";
 
@@ -38,26 +39,22 @@ const CURRENCY_SYMBOLS: Record<string, string> = {
 };
 
 export default function DashboardPage() {
+  const { user, loading: authLoading } = useAuth(true);
   const [invoices, setInvoices] = useState<Invoice[]>([]);
   const [stats, setStats] = useState<Stats>({ totalInvoices: 0, totalRevenue: 0, paidCount: 0, pendingCount: 0, overdueCount: 0 });
-  const [user, setUser] = useState<{ email: string; isAdmin: boolean } | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    loadData();
-  }, []);
+    if (user) loadData();
+  }, [user]);
 
   async function loadData() {
-    const { data: { user: authUser } } = await supabase.auth.getUser();
-    if (!authUser) return;
-
-    const { data: profile } = await supabase.from("profiles").select("is_admin").eq("id", authUser.id).single();
-    setUser({ email: authUser.email!, isAdmin: profile?.is_admin || false });
+    if (!user) return;
 
     const { data: invs } = await supabase
       .from("invoices")
       .select("id, invoice_number, to_name, total, currency, status, invoice_date, due_date")
-      .eq("user_id", authUser.id)
+      .eq("user_id", user.id)
       .order("created_at", { ascending: false })
       .limit(20);
 
@@ -77,7 +74,7 @@ export default function DashboardPage() {
 
   const fc = (amount: number, currency: string = "USD") => `${CURRENCY_SYMBOLS[currency] || "$"}${amount.toFixed(2)}`;
 
-  if (loading) {
+  if (authLoading || loading) {
     return (
       <AppShell user={user || undefined}>
         <div className="flex items-center justify-center h-64">
