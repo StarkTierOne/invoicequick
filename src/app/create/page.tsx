@@ -1,7 +1,11 @@
 "use client";
+export const dynamic = "force-dynamic";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabase";
+import AppShell from "@/components/AppShell";
 import {
   InvoiceData, InvoiceItem, CURRENCIES,
   defaultInvoice, createEmptyItem,
@@ -215,77 +219,184 @@ function InvoicePreview({ data }: { data: InvoiceData }) {
 export default function CreateInvoice() {
   const [data, setData] = useState<InvoiceData>(defaultInvoice());
   const [view, setView] = useState<"edit" | "preview">("edit");
+  const [saving, setSaving] = useState(false);
+  const [user, setUser] = useState<{ email: string; isAdmin: boolean; id: string } | null>(null);
+  const [clients, setClients] = useState<{ id: string; name: string; email: string; address: string }[]>([]);
   const printRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
-  const handlePrint = () => {
-    window.print();
+  useEffect(() => {
+    loadUserData();
+  }, []);
+
+  async function loadUserData() {
+    const { data: { user: authUser } } = await supabase.auth.getUser();
+    if (!authUser) return;
+    const { data: profile } = await supabase.from("profiles").select("*").eq("id", authUser.id).single();
+    if (profile) {
+      setUser({ email: authUser.email!, isAdmin: profile.is_admin || false, id: authUser.id });
+      // Auto-fill from profile
+      if (profile.business_name || profile.business_email) {
+        setData(prev => ({
+          ...prev,
+          fromName: profile.business_name || prev.fromName,
+          fromEmail: profile.business_email || authUser.email || prev.fromEmail,
+          fromPhone: profile.business_phone || prev.fromPhone,
+          fromAddress: profile.business_address || prev.fromAddress,
+          currency: profile.default_currency || prev.currency,
+          taxRate: profile.default_tax_rate || prev.taxRate,
+          notes: profile.default_notes || prev.notes,
+        }));
+      }
+    }
+    // Load clients for quick-fill
+    const { data: clientList } = await supabase.from("clients").select("id, name, email, address").eq("user_id", authUser.id).order("name");
+    setClients(clientList || []);
+  }
+
+  async function handleSave() {
+    if (!user) return;
+    setSaving(true);
+    const sub = calcSubtotal(data.items);
+    const tax = calcTax(sub, data.taxRate);
+    const discount = calcDiscount(sub, data.discountRate);
+    const total = calcTotal(data.items, data.taxRate, data.discountRate);
+
+    const { data: invoice, error } = await supabase.from("invoices").insert({
+      user_id: user.id,
+      invoice_number: data.invoiceNumber,
+      from_name: data.fromName,
+      from_email: data.fromEmail,
+      from_phone: data.fromPhone,
+      from_address: data.fromAddress,
+      to_name: data.toName,
+      to_email: data.toEmail,
+      to_address: data.toAddress,
+      invoice_date: data.invoiceDate,
+      due_date: data.dueDate,
+      currency: data.currency,
+      subtotal: sub,
+      tax_rate: data.taxRate,
+      tax_amount: tax,
+      discount_rate: data.discountRate,
+      discount_amount: discount,
+      total: total,
+      notes: data.notes,
+      status: "draft",
+    }).select().single();
+
+    if (invoice) {
+      const items = data.items.filter(i => i.description || i.rate > 0).map((item, idx) => ({
+        invoice_id: invoice.id,
+        description: item.description,
+        quantity: item.quantity,
+        rate: item.rate,
+        amount: item.quantity * item.rate,
+        sort_order: idx,
+      }));
+      if (items.length > 0) {
+        await supabase.from("invoice_items").insert(items);
+      }
+      router.push(`/invoices/${invoice.id}`);
+    } else {
+      alert(error?.message || "Failed to save invoice");
+    }
+    setSaving(false);
+  }
+
+  const handlePrint = () => { window.print(); };
+
+  const fillClient = (clientId: string) => {
+    const client = clients.find(c => c.id === clientId);
+    if (client) {
+      setData(prev => ({ ...prev, toName: client.name, toEmail: client.email, toAddress: client.address }));
+    }
   };
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Top Bar */}
-      <div className="no-print sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">IQ</div>
-            <span className="font-bold text-lg">InvoiceQuick</span>
-          </Link>
-          <div className="flex items-center gap-3">
-            <div className="bg-gray-100 rounded-lg p-0.5 flex">
-              <button onClick={() => setView("edit")} className={`px-4 py-1.5 rounded-md text-sm font-medium transition ${view === "edit" ? "bg-white shadow-sm text-gray-900" : "text-gray-500"}`}>Edit</button>
-              <button onClick={() => setView("preview")} className={`px-4 py-1.5 rounded-md text-sm font-medium transition ${view === "preview" ? "bg-white shadow-sm text-gray-900" : "text-gray-500"}`}>Preview</button>
+  const content = (
+    <>
+      {/* Top actions */}
+      <div className="no-print flex items-center justify-between mb-6">
+        <div>
+          <h1 className="text-2xl font-bold">Create Invoice</h1>
+          {clients.length > 0 && (
+            <div className="flex items-center gap-2 mt-2">
+              <span className="text-xs text-gray-500">Quick fill client:</span>
+              <select onChange={(e) => fillClient(e.target.value)} className="text-sm border border-gray-300 rounded-lg px-2 py-1" defaultValue="">
+                <option value="">Select a saved client...</option>
+                {clients.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+              </select>
             </div>
-            <button onClick={handlePrint} className="btn-primary text-sm !py-2 !px-4">
-              Download PDF
-            </button>
+          )}
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="bg-gray-100 rounded-lg p-0.5 flex">
+            <button onClick={() => setView("edit")} className={`px-4 py-1.5 rounded-md text-sm font-medium transition ${view === "edit" ? "bg-white shadow-sm text-gray-900" : "text-gray-500"}`}>Edit</button>
+            <button onClick={() => setView("preview")} className={`px-4 py-1.5 rounded-md text-sm font-medium transition ${view === "preview" ? "bg-white shadow-sm text-gray-900" : "text-gray-500"}`}>Preview</button>
           </div>
+          <button onClick={handleSave} disabled={saving} className="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-lg disabled:opacity-50">
+            {saving ? "Saving..." : "Save Invoice"}
+          </button>
+          <button onClick={handlePrint} className="btn-secondary text-sm !py-2 !px-4">
+            PDF
+          </button>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        {view === "edit" ? (
-          <InvoiceForm data={data} onChange={setData} />
-        ) : (
-          <div ref={printRef}>
-            <InvoicePreview data={data} />
-          </div>
-        )}
-      </div>
+      {view === "edit" ? (
+        <InvoiceForm data={data} onChange={setData} />
+      ) : (
+        <div ref={printRef}>
+          <InvoicePreview data={data} />
+        </div>
+      )}
 
-      {/* Print-only view */}
       <div className="hidden print:block">
         <InvoicePreview data={data} />
       </div>
 
-      {/* Custom input styles */}
       <style jsx global>{`
         .input {
-          display: block;
-          width: 100%;
-          padding: 0.5rem 0.75rem;
-          border: 1px solid #e5e7eb;
-          border-radius: 0.5rem;
-          font-size: 0.875rem;
-          outline: none;
-          transition: border-color 0.15s;
+          display: block; width: 100%; padding: 0.5rem 0.75rem;
+          border: 1px solid #e5e7eb; border-radius: 0.5rem;
+          font-size: 0.875rem; outline: none; transition: border-color 0.15s;
         }
         .input:focus {
           border-color: #6366f1;
           box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
         .label {
-          display: block;
-          font-size: 0.75rem;
-          font-weight: 500;
-          color: #6b7280;
-          margin-bottom: 0.25rem;
+          display: block; font-size: 0.75rem; font-weight: 500;
+          color: #6b7280; margin-bottom: 0.25rem;
         }
         @media print {
           .no-print { display: none !important; }
           body { background: white; }
         }
       `}</style>
+    </>
+  );
+
+  // If logged in, wrap in AppShell. If not, show standalone.
+  if (user) {
+    return <AppShell user={user}>{content}</AppShell>;
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="no-print sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-7 h-7 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">IQ</div>
+            <span className="font-bold text-lg">InvoiceQuick</span>
+          </Link>
+          <div className="flex gap-2">
+            <Link href="/login" className="btn-secondary text-sm !py-2">Sign In</Link>
+            <Link href="/signup" className="btn-primary text-sm !py-2">Sign Up Free</Link>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-6xl mx-auto px-4 py-8">{content}</div>
     </div>
   );
 }
