@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://invoicequick.com/sitemap.xml
+
+# Block internal app routes from indexing
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /settings/
+Disallow: /invoices/
+Disallow: /clients/
