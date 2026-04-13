@@ -2,6 +2,33 @@
 
 import Link from "next/link";
 
+const faqs = [
+  {
+    question: "Is InvoiceQuick really free?",
+    answer: "Yes. InvoiceQuick's free tier is genuinely free — no credit card required, no watermarks, no invoice limits. You can create and download unlimited professional PDF invoices at no cost, forever. We also offer Pro ($9/mo) and Business ($29/mo) plans with advanced features like recurring invoices, client database, and custom branding.",
+  },
+  {
+    question: "Do I need to sign up or create an account?",
+    answer: "No. You can create and download invoices without signing up or providing any personal information. Just go to the invoice creator and start filling in your details. Creating a free account unlocks invoice history and saved templates, but it is entirely optional.",
+  },
+  {
+    question: "What format does InvoiceQuick export to?",
+    answer: "InvoiceQuick exports your invoice as a clean, professional PDF — the standard format accepted by clients and accountants worldwide. PDFs preserve formatting across all devices, cannot be accidentally edited by your client, and are easy to attach to an email.",
+  },
+  {
+    question: "What currencies does InvoiceQuick support?",
+    answer: "InvoiceQuick supports 50+ currencies including USD, EUR, GBP, CAD, AUD, JPY, CHF, and many more. You can select your preferred currency from the invoice creator and it will appear correctly on your PDF.",
+  },
+  {
+    question: "What payment terms should I put on my invoice?",
+    answer: "The most common payment terms for freelancers are Net 15 (payment due within 15 days) and Net 30 (payment due within 30 days). For new clients or large projects, consider requiring 50% upfront. You can also add a late fee policy, such as 1.5% per month on overdue balances. InvoiceQuick lets you add custom payment terms to every invoice.",
+  },
+  {
+    question: "Can I add my logo and customize the invoice design?",
+    answer: "Yes. Free users can add business name and contact details. Pro users can upload a custom logo, choose accent colors, and apply custom branding to match their business identity. All plans produce clean, professional invoices that make a strong impression on clients.",
+  },
+];
+
 const features = [
   { icon: "\u26A1", title: "Instant Creation", desc: "Fill in your details and generate a professional invoice in under 60 seconds." },
   { icon: "\uD83D\uDCC4", title: "PDF Download", desc: "Download your invoice as a clean, print-ready PDF. No watermarks on free tier." },
@@ -128,6 +155,15 @@ export default function Home() {
             <div className="text-3xl font-extrabold text-gray-900">30 sec</div>
             <div className="text-sm text-gray-500">Avg. Time to Invoice</div>
           </div>
+          <div>
+            <div className="text-3xl font-extrabold text-indigo-600">9/10</div>
+            <div className="text-sm text-gray-500">
+              Rated by{" "}
+              <a href="https://toolsrated.vercel.app" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">
+                ToolsRated
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -232,6 +268,39 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* FAQ */}
+      <section id="faq" className="max-w-4xl mx-auto px-4 py-20">
+        <h2 className="text-3xl font-bold text-center mb-4">Frequently Asked Questions</h2>
+        <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">Everything you need to know about InvoiceQuick.</p>
+        <div className="space-y-6">
+          {faqs.map((faq) => (
+            <div key={faq.question} className="card">
+              <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
 
       {/* CTA */}
       <section className="bg-indigo-600 py-16">

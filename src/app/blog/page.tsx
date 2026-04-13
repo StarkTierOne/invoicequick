@@ -102,10 +102,14 @@ export default function BlogPage() {
         <div className="space-y-8">
           {articles.map((article) => (
             <article key={article.slug} className="card hover:shadow-md transition-shadow">
-              <h2 className="text-xl font-bold text-gray-900 mb-3">{article.title}</h2>
+              <h2 className="text-xl font-bold text-gray-900 mb-3">
+                <Link href={`/blog/${article.slug}`} className="hover:text-indigo-600 transition-colors">
+                  {article.title}
+                </Link>
+              </h2>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">{article.excerpt}</p>
-              <Link href="/create" className="text-indigo-600 font-semibold text-sm hover:text-indigo-700 transition-colors">
-                Create Your Free Invoice &rarr;
+              <Link href={`/blog/${article.slug}`} className="text-indigo-600 font-semibold text-sm hover:text-indigo-700 transition-colors">
+                Read Article &rarr;
               </Link>
             </article>
           ))}
