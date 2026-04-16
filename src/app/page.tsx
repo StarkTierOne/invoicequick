@@ -204,6 +204,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Comparison Table */}
+      <section className="max-w-6xl mx-auto px-4 py-20">
+        <h2 className="text-3xl font-bold text-center mb-4">How InvoiceQuick Compares</h2>
+        <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">See why thousands of freelancers choose InvoiceQuick over paid alternatives.</p>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="bg-gray-900 text-white">
+                <th className="text-left px-5 py-4 font-semibold rounded-tl-xl">Feature</th>
+                <th className="px-5 py-4 font-semibold text-indigo-300">InvoiceQuick</th>
+                <th className="px-5 py-4 font-semibold text-gray-300">FreshBooks</th>
+                <th className="px-5 py-4 font-semibold text-gray-300">Wave</th>
+                <th className="px-5 py-4 font-semibold text-gray-300 rounded-tr-xl">PayPal Invoicing</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Price", "Free forever", "$17–$55/mo", "Free (fees on payments)", "Free + 2.99%/invoice"],
+                ["Sign-up required", "No", "Yes", "Yes", "Yes"],
+                ["Unlimited invoices", "✓", "✓", "✓", "✓"],
+                ["No watermarks", "✓", "✓", "✓", "✓"],
+                ["PDF download", "✓", "✓", "✓", "—"],
+                ["Multi-currency", "✓ (50+)", "✓", "✓", "Limited"],
+                ["Custom branding / logo", "Pro only", "✓", "✓", "—"],
+                ["Recurring invoices", "Pro only", "✓", "✓", "—"],
+                ["Time tracking", "—", "✓", "—", "—"],
+                ["Time to first invoice", "< 60 seconds", "~10 minutes", "~10 minutes", "~5 minutes"],
+              ].map(([feature, iq, fb, wave, pp], i) => (
+                <tr key={feature} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <td className="px-5 py-3 font-medium text-gray-800 border-b border-gray-100">{feature}</td>
+                  <td className="px-5 py-3 text-center border-b border-gray-100">
+                    <span className={`font-semibold ${iq === "✓" ? "text-green-600" : iq === "—" ? "text-gray-400" : "text-indigo-700"}`}>{iq}</span>
+                  </td>
+                  <td className="px-5 py-3 text-center text-gray-500 border-b border-gray-100">{fb}</td>
+                  <td className="px-5 py-3 text-center text-gray-500 border-b border-gray-100">{wave}</td>
+                  <td className="px-5 py-3 text-center text-gray-500 border-b border-gray-100">{pp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-center text-sm text-gray-500 mt-4">Pricing as of April 2026. Free features verified by ToolsRated.</p>
+      </section>
+
       {/* Testimonials */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-4">

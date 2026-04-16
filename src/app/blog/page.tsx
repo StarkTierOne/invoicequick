@@ -63,6 +63,12 @@ const articles = [
       "Email is the most common way freelancers and small businesses send invoices, but there is a right way and a wrong way to do it. A poorly written invoice email can get buried in a client's inbox, flagged as spam, or simply ignored. To send an invoice professionally, follow these steps: First, create your invoice with all required details including your business information, the client's details, line items, totals, and payment terms. Second, export or download the invoice as a PDF, which is the standard format because it preserves formatting and cannot be easily edited. Third, compose a short, professional email with a clear subject line like \"Invoice #1042 from [Your Business Name] — Due March 15.\" In the body, briefly reference the project or service, state the total amount and due date, and mention your preferred payment method. Fourth, attach the PDF to the email and double-check that the attachment actually loaded before hitting send. Fifth, follow up if you have not received payment within a few days of the due date with a polite reminder. Pro tips: always CC yourself so you have a sent record, use a professional email address rather than a personal Gmail, and consider using read-receipt tracking so you know when the client opened your invoice. InvoiceQuick makes this entire process faster: create your invoice, download the PDF, and send it, all in under two minutes.",
   },
   {
+    slug: "how-to-invoice-clients",
+    title: "How to Invoice Clients: The Complete Guide for Freelancers (2026)",
+    excerpt:
+      "Invoicing clients is one of the most important — and most often mishandled — parts of running a freelance business. This guide covers everything: what to put on a client invoice, when to send it, how to follow up on late payments, and how to get paid faster. From writing clear line item descriptions to setting a late fee policy that clients actually respect, these are the steps that separate freelancers who chase payments from those who get paid on time, every time.",
+  },
+  {
     slug: "self-employed-invoice-example",
     title: "Self-Employed Invoice Example: What to Include and Why",
     excerpt:

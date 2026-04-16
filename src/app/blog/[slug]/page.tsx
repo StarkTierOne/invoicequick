@@ -225,6 +225,39 @@ const articles: Record<
       "As your freelance business grows, look for tools that save your client database, auto-number invoices, and support recurring billing. InvoiceQuick Pro ($9/month) covers all of these without the complexity of full accounting software.",
     ],
   },
+  "how-to-invoice-clients": {
+    title: "How to Invoice Clients: The Complete Guide for Freelancers (2026)",
+    description:
+      "Learn exactly how to invoice clients as a freelancer — what to include, when to send, how to follow up on late payments, and how to get paid faster.",
+    keywords:
+      "how to invoice clients, freelance invoicing guide, how to send invoice to client, invoice clients freelancer, getting paid freelancing",
+    body: [
+      "Invoicing clients is one of the most important — and most often mishandled — parts of running a freelance business. Done right, it communicates professionalism, sets clear expectations, and gets you paid on time. Done wrong, it creates confusion, delays, and awkward follow-up conversations you never wanted to have.",
+      "This guide covers everything: what to put on a client invoice, when to send it, how to handle late payments, and the tools that make the entire process take less than two minutes.",
+      "## Step 1: Know What Every Client Invoice Must Include",
+      "A complete invoice has these core elements: your full legal name or business name and contact information; the client's name and billing address; a unique invoice number; the invoice date; the payment due date; an itemized list of services or products with descriptions, quantities, and rates; subtotals, applicable tax, and the total amount due; and your payment instructions. Missing any of these can slow down payment — clients who need to request corrections before processing have a built-in excuse to delay.",
+      "## Step 2: Write Clear Line Item Descriptions",
+      "The single biggest source of invoice disputes is vague line items. 'Design work — $2,500' invites questions. 'Brand identity design: logo (3 concepts + 2 revision rounds), color palette, and typography guide — $2,500' leaves nothing to interpret. Be specific enough that your client can match each line item to the work you delivered. This is also your legal record if a dispute ever escalates.",
+      "## Step 3: Set Payment Terms Before You Start the Project",
+      "The best time to discuss payment terms is during the project proposal stage, not after you deliver the work. Common terms for freelancers include Net 15 (payment within 15 days), Net 30 (within 30 days), and 50% upfront with 50% on delivery for larger projects. Whatever you agree on, put it in writing — ideally in a contract or project brief — and repeat it clearly on every invoice you send.",
+      "## Step 4: Send the Invoice Immediately After Delivery",
+      "Research consistently shows that invoices sent within 24 hours of project completion are paid faster than those sent days or weeks later. The client's enthusiasm about your work is highest at the moment of delivery — send the invoice while the relationship is warm. Waiting gives clients time to deprioritize payment and gives you time to second-guess your rate.",
+      "## Step 5: Use PDF Format",
+      "Always send invoices as PDFs, not Word documents or spreadsheet files. PDFs look professional across every device, cannot be accidentally edited by the client, and are the format accountants and bookkeeping software expect. InvoiceQuick generates a polished, print-ready PDF with one click — no formatting or design skills required.",
+      "## Step 6: Write a Professional Invoice Email",
+      "Your invoice PDF goes nowhere without a clear email. Keep it short: reference the project, state the total and due date, and mention your preferred payment method. A strong subject line like 'Invoice #1042 — Website Redesign — Due May 15, 2026' makes it easy for the client's accounts payable team to process. Attach the PDF, CC yourself for your records, and hit send.",
+      "## Step 7: Follow Up on Late Invoices Without Awkwardness",
+      "Late payments are one of the most common frustrations in freelancing — and they are almost always the result of the invoice being buried, forgotten, or deprioritized. Your first follow-up should be polite and assume the best: 'Just checking in on Invoice #1042, which was due on May 15. Please let me know if you need anything from my end.' Send this 3–5 days after the due date. If there is still no response after another week, be more direct and reference your late fee policy. For clients who habitually pay late, require 50% upfront on future projects.",
+      "## Step 8: Add a Late Fee Policy to Every Invoice",
+      "A clear late fee policy — for example, '1.5% per month on balances overdue by more than 7 days' — does two things: it incentivizes on-time payment and gives you legal standing if you ever need to pursue a claim. State your late fee terms directly on the invoice, not just in a separate contract that clients may not have read recently. InvoiceQuick lets you add custom payment terms and notes to every invoice.",
+      "## Tools That Make Invoicing Clients Effortless",
+      "The fastest way to invoice clients professionally is to use a dedicated invoicing tool. InvoiceQuick is completely free, requires no account, and generates a professional PDF invoice in under 60 seconds. For freelancers who need recurring billing and client databases, InvoiceQuick Pro ($9/month) handles all of that. The goal is to remove every possible barrier between completing your work and getting paid for it.",
+      "## Common Invoicing Mistakes That Delay Payment",
+      "Sending the invoice to the wrong email address or person. Using a personal email instead of a business address, which can trigger spam filters. Not specifying an exact due date. Sending without a follow-up system. Accepting a client's vague 'I'll pay soon' without setting a new specific date. Each of these adds days or weeks to your average payment cycle.",
+      "## How to Get Paid Faster",
+      "Beyond invoicing correctly, there are a few strategies that consistently shorten payment cycles: Accept online payments so clients can pay with a credit card in one click. Set shorter payment terms (Net 15 instead of Net 30 for smaller amounts). Offer a small early-payment discount (2% off if paid within 5 days). Include a direct payment link in your invoice email. The easier you make it for clients to pay, the faster money arrives in your account.",
+    ],
+  },
 };
 
 type Props = {
