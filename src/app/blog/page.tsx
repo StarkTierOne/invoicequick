@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Invoice Tips & Guides | InvoiceQuick Blog",
   description: "Learn how to create professional invoices, get paid faster, and manage your freelance finances. Free guides, templates, and best practices.",
-  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example",
+  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency",
 };
 
 const articles = [
@@ -67,6 +67,12 @@ const articles = [
     title: "How to Invoice Clients: The Complete Guide for Freelancers (2026)",
     excerpt:
       "Invoicing clients is one of the most important — and most often mishandled — parts of running a freelance business. This guide covers everything: what to put on a client invoice, when to send it, how to follow up on late payments, and how to get paid faster. From writing clear line item descriptions to setting a late fee policy that clients actually respect, these are the steps that separate freelancers who chase payments from those who get paid on time, every time.",
+  },
+  {
+    slug: "how-to-invoice-international-clients",
+    title: "How to Invoice International Clients: Currency, Tax & Payment Tips",
+    excerpt:
+      "Invoicing international clients opens your business to global opportunities — but it also introduces complexity around currency selection, VAT and GST rules, payment methods, and exchange rate risk. This guide covers every aspect of cross-border invoicing: which currency to use, how to handle EU VAT and reverse-charge rules, what extra fields your invoice needs (SWIFT, IBAN, VAT number), which payment methods minimize fees, and how to protect yourself when exchange rates move. Whether you're invoicing a client in London, Berlin, or Sydney, these steps will help you get paid correctly and on time.",
   },
   {
     slug: "self-employed-invoice-example",

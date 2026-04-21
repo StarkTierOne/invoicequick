@@ -225,6 +225,34 @@ const articles: Record<
       "As your freelance business grows, look for tools that save your client database, auto-number invoices, and support recurring billing. InvoiceQuick Pro ($9/month) covers all of these without the complexity of full accounting software.",
     ],
   },
+  "how-to-invoice-international-clients": {
+    title: "How to Invoice International Clients: Currency, Tax & Payment Tips",
+    description:
+      "Learn how to invoice international clients correctly. Covers currency selection, VAT/GST, exchange rates, payment methods, and legal requirements.",
+    keywords:
+      "how to invoice international clients, international invoice, foreign currency invoice, VAT invoice international, cross-border invoicing",
+    body: [
+      "Invoicing international clients is more complex than invoicing domestic ones — but it's also a major opportunity. With the right setup, you can work with clients anywhere in the world and get paid reliably. This guide covers every aspect of cross-border invoicing: currency, tax, payment methods, and legal requirements.",
+      "## Choose the Right Currency",
+      "The first decision is which currency to use. You have three options: your own currency, your client's currency, or a neutral currency like USD. Invoicing in your own currency is simplest — you know exactly what you'll receive. Invoicing in your client's currency is more professional and removes the exchange rate burden from them, but exposes you to currency fluctuation. USD is often preferred as a neutral option for international work because it's stable and widely accepted. InvoiceQuick supports 50+ currencies, so you can invoice in whichever currency the project calls for.",
+      "## Include Exchange Rate Terms",
+      "If you invoice in a foreign currency, specify what happens if the exchange rate moves before payment is received. A common approach: state that payment must be received within 14 days of the invoice date to lock in the quoted rate, and that late payments may be recalculated at the rate on the date of receipt. This protects you from currency drops that could erode your earnings.",
+      "## Understand VAT and GST Requirements",
+      "Tax rules for international invoicing vary significantly by country. In the European Union, you generally do not charge VAT to business clients in other EU countries if they provide a valid VAT number (this is called the 'reverse charge' mechanism). However, if you invoice EU consumers (not businesses), you may need to collect VAT at the buyer's local rate. In the UK, similar rules apply post-Brexit. In Australia and New Zealand, GST typically does not apply to exported services. Always consult a local tax advisor for your specific situation — the rules change frequently and the penalties for non-compliance can be significant.",
+      "## What to Include on an International Invoice",
+      "An international invoice needs all the standard fields plus a few extras: your tax identification number (VAT number, EIN, or local equivalent), your client's tax ID if applicable, the currency specified explicitly (e.g., 'USD' not just '$'), the VAT/GST rate applied (or a note that it is zero-rated for export), your bank's SWIFT/BIC code and IBAN for wire transfers, and any reference numbers required by the client (purchase order number, project code).",
+      "## Payment Methods for International Clients",
+      "Wire transfers (SWIFT) are reliable but expensive — fees of $15–$40 per transfer are common on both ends. Wise (formerly TransferWise) dramatically reduces these fees and often offers better exchange rates than traditional banks. PayPal works but charges significant currency conversion fees (2.5–4%). Stripe and other payment processors handle multi-currency payments well and deposit in your local currency. For large projects, consider requiring payment via wire transfer directly, then routing it through Wise to reduce fees. Specify your preferred method clearly on the invoice and provide all necessary details (account number, routing number, IBAN, SWIFT code) to avoid delays.",
+      "## Set Longer Payment Terms for International Clients",
+      "Wire transfers take 3–5 business days. International invoices often go through additional approval layers. Consider using Net 30 or Net 45 terms for international clients instead of Net 15. Factor processing time into your due dates, and send invoices earlier than you would for domestic clients. If a client is in a significantly different time zone, that can add another day or two to the payment cycle.",
+      "## Language and Date Format Considerations",
+      "Different countries use different date formats. The US uses MM/DD/YYYY, while most of Europe uses DD/MM/YYYY. To avoid confusion, always write dates in full: 'April 21, 2026' instead of '04/21/26.' If your client's primary language is not English, consider whether a bilingual invoice would be helpful — though most international business clients are comfortable with English invoices.",
+      "## Keep Records for Tax Compliance",
+      "International transactions require extra documentation. Keep records of: the invoice, the payment confirmation, the exchange rate on the date of payment, and any tax exemption certificates or VAT numbers provided by the client. If your country taxes foreign income, you'll need these records for your annual return. Some countries have specific rules about documenting zero-rated exports — check with your accountant.",
+      "## Create International Invoices with InvoiceQuick",
+      "InvoiceQuick makes international invoicing straightforward. Select your currency from 50+ options, add your SWIFT and IBAN details in the payment instructions field, specify VAT or GST treatment in your line items, and download a clean PDF that meets professional standards across every market. No sign-up required.",
+    ],
+  },
   "how-to-invoice-clients": {
     title: "How to Invoice Clients: The Complete Guide for Freelancers (2026)",
     description:

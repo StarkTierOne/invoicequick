@@ -1,10 +1,25 @@
 import { MetadataRoute } from "next";
 
+const blogSlugs = [
+  "how-to-create-professional-invoice",
+  "free-invoice-template-freelancers",
+  "when-to-send-invoice",
+  "how-to-calculate-late-fees",
+  "invoice-vs-receipt",
+  "how-to-write-payment-terms-on-invoice",
+  "invoice-number-format-best-practices",
+  "how-to-send-invoice-via-email",
+  "self-employed-invoice-example",
+  "free-invoice-template-for-freelancers",
+  "how-to-invoice-clients",
+  "how-to-invoice-international-clients",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://invoicequick.com";
   const now = new Date().toISOString();
 
-  return [
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: now,
@@ -54,4 +69,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
   ];
+
+  const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...blogPages];
 }

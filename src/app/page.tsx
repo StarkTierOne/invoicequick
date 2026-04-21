@@ -159,7 +159,7 @@ export default function Home() {
             <div className="text-3xl font-extrabold text-indigo-600">9/10</div>
             <div className="text-sm text-gray-500">
               Rated by{" "}
-              <a href="https://toolsrated.vercel.app" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">
+              <a href="https://toolsrated.vercel.app/reviews/best-invoicing-software" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">
                 ToolsRated
               </a>
             </div>
