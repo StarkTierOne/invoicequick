@@ -44,18 +44,21 @@ const testimonials = [
     role: "Freelance Designer",
     quote: "InvoiceQuick cut my invoicing time from 30 minutes to under 2. I send more invoices now and get paid faster.",
     avatar: "SK",
+    stars: 5,
   },
   {
     name: "Marcus T.",
     role: "Web Developer",
     quote: "I used to dread invoicing at the end of each project. Now I generate a professional PDF in seconds and move on to the next gig.",
     avatar: "MT",
+    stars: 5,
   },
   {
     name: "Lisa R.",
     role: "Consultant",
     quote: "The free tier is genuinely generous. I upgraded to Pro for recurring invoices and it paid for itself on day one.",
     avatar: "LR",
+    stars: 5,
   },
 ];
 
@@ -265,6 +268,11 @@ export default function Home() {
                     <div className="text-xs text-gray-500">{t.role}</div>
                   </div>
                 </div>
+                <div className="flex gap-0.5 mb-3">
+                  {Array.from({ length: t.stars }).map((_, i) => (
+                    <span key={i} className="text-amber-400 text-base leading-none">★</span>
+                  ))}
+                </div>
                 <p className="text-gray-700 text-sm leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
               </div>
             ))}
@@ -342,6 +350,53 @@ export default function Home() {
                 text: faq.answer,
               },
             })),
+          }),
+        }}
+      />
+
+      {/* Organization Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "InvoiceQuick",
+            url: "https://invoicequick.vercel.app",
+            description: "Free invoice generator for freelancers and small businesses. Create professional PDF invoices in seconds. No sign-up required.",
+            foundingDate: "2024",
+            slogan: "Create Professional Invoices In Seconds",
+            sameAs: [
+              "https://toolsrated.vercel.app/reviews/best-invoicing-software"
+            ],
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+              description: "Free invoice generator — unlimited invoices, PDF download, no watermarks, no sign-up required."
+            }
+          }),
+        }}
+      />
+
+      {/* WebSite Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "InvoiceQuick",
+            url: "https://invoicequick.vercel.app",
+            description: "Free invoice generator for freelancers and small businesses.",
+            potentialAction: {
+              "@type": "SearchAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: "https://invoicequick.vercel.app/blog?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
           }),
         }}
       />

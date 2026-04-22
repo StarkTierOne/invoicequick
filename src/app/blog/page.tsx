@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Invoice Tips & Guides | InvoiceQuick Blog",
   description: "Learn how to create professional invoices, get paid faster, and manage your freelance finances. Free guides, templates, and best practices.",
-  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency",
+  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing",
 };
 
 const articles = [
@@ -40,7 +40,7 @@ const articles = [
   },
   {
     slug: "free-invoice-template-for-freelancers",
-    title: "Free Invoice Template for Freelancers (2025)",
+    title: "Free Invoice Template for Freelancers (2026)",
     excerpt:
       "Finding the right invoice template can feel overwhelming when you are just starting out as a freelancer. You need something that looks professional, includes all the legally required fields, and does not take twenty minutes to fill out every time a project wraps up. A good freelance invoice template should include your business name and contact details, the client's information, a unique invoice number, an itemized list of services with rates and quantities, applicable taxes, the total amount due, and clear payment terms including due date and accepted payment methods. Many freelancers start with a Word or Excel template, but those come with drawbacks: manual math errors, inconsistent formatting across invoices, and the hassle of saving and organizing each file. A better approach is to use InvoiceQuick, which gives you a professional template you can fill out in under a minute, automatically calculates totals and taxes, and lets you download a clean PDF instantly. Whether you are a graphic designer, writer, developer, or consultant, having a polished invoice template builds client trust and helps you get paid on time. Stop using generic spreadsheets and start sending invoices that reflect the quality of your work.",
   },
@@ -73,6 +73,18 @@ const articles = [
     title: "How to Invoice International Clients: Currency, Tax & Payment Tips",
     excerpt:
       "Invoicing international clients opens your business to global opportunities — but it also introduces complexity around currency selection, VAT and GST rules, payment methods, and exchange rate risk. This guide covers every aspect of cross-border invoicing: which currency to use, how to handle EU VAT and reverse-charge rules, what extra fields your invoice needs (SWIFT, IBAN, VAT number), which payment methods minimize fees, and how to protect yourself when exchange rates move. Whether you're invoicing a client in London, Berlin, or Sydney, these steps will help you get paid correctly and on time.",
+  },
+  {
+    slug: "invoice-for-services-rendered",
+    title: "Invoice for Services Rendered: What to Include and How to Word It",
+    excerpt:
+      "An invoice for services rendered is the document you send to a client after completing work — requesting payment for the professional services you delivered. Whether you are a freelance designer, consultant, contractor, or any other service provider, you need a clear, professional invoice that describes what you did and what you are owed. This guide covers every required field, how to write compelling service descriptions that speed up payment, example line items for common service types, and how to word your payment terms so clients pay on time.",
+  },
+  {
+    slug: "freelance-invoice-tips",
+    title: "10 Freelance Invoice Tips to Get Paid Faster in 2026",
+    excerpt:
+      "Late payments are the #1 cash-flow killer for freelancers — and most of them are preventable. These 10 freelance invoice tips cover the specific, actionable habits that separate freelancers who get paid on time from those who spend weeks chasing overdue payments. From the optimal moment to send your invoice (hint: same day as delivery) to how to write line items that eliminate disputes, set late fee policies that actually work, and build a follow-up system that feels professional rather than awkward. Whether you have been freelancing for years or just sent your first invoice, at least a few of these tips will immediately improve your payment speed.",
   },
   {
     slug: "self-employed-invoice-example",
