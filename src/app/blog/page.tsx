@@ -92,6 +92,12 @@ const articles = [
     excerpt:
       "When you are self-employed, every invoice you send is a reflection of your business. A sloppy or incomplete invoice can delay payment, confuse your client, and create problems at tax time. A proper self-employed invoice should include your full legal name or business name, your address and contact information, the client's name and address, a unique invoice number, the invoice date and due date, a detailed description of each service provided along with the rate and quantity, subtotal, any applicable taxes, the total amount due, and your payment instructions. For example, a freelance web developer might list line items like \"Homepage Design — 8 hours at $95/hour\" and \"Responsive Testing — 3 hours at $95/hour\" with a subtotal of $1,045, sales tax where applicable, and a grand total. Unlike employees, self-employed workers are responsible for tracking and reporting all income, so every invoice becomes a financial record. Keep copies of every invoice you send, organized by year and client, for at least seven years. If you are VAT-registered or operate in a jurisdiction that requires tax IDs on invoices, make sure to include those as well. InvoiceQuick is built specifically for self-employed professionals: fill in your details once, create invoices in seconds, and download polished PDFs that include every field you need for clean recordkeeping.",
   },
+  {
+    slug: "invoice-without-a-business",
+    title: "Can I Send an Invoice Without a Business? (Yes — Here's How)",
+    excerpt:
+      "Yes — you can send an invoice without a registered business, LLC, or company. Millions of freelancers, sole traders, and self-employed individuals invoice clients every day as private individuals. You do not need a business license or business bank account to get paid professionally. This guide covers exactly what to put on your invoice as an individual, whether you need a tax ID, when it makes sense to register a business, and how to create a polished invoice in under a minute — no sign-up required.",
+  },
 ];
 
 export default function BlogPage() {

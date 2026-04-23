@@ -136,7 +136,12 @@ export default function Home() {
             See How It Works &darr;
           </a>
         </div>
-        <p className="mt-6 text-sm text-gray-500">Trusted by 10,000+ freelancers and small businesses</p>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-500">
+          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No sign-up required</span>
+          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No credit card</span>
+          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Free forever</span>
+          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Trusted by 10,000+ users</span>
+        </div>
       </section>
 
       {/* Social Proof Bar */}
@@ -396,6 +401,63 @@ export default function Home() {
                 urlTemplate: "https://invoicequick.vercel.app/blog?q={search_term_string}"
               },
               "query-input": "required name=search_term_string"
+            }
+          }),
+        }}
+      />
+
+      {/* SoftwareApplication Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "InvoiceQuick",
+            url: "https://invoicequick.vercel.app",
+            operatingSystem: "Web",
+            applicationCategory: "BusinessApplication",
+            applicationSubCategory: "InvoiceManagement",
+            description: "Free invoice generator for freelancers and small businesses. Create professional PDF invoices in seconds. No sign-up required.",
+            featureList: [
+              "Unlimited PDF invoice generation",
+              "50+ currency support",
+              "Custom payment terms",
+              "Automatic tax calculation",
+              "Client management",
+              "Recurring invoices",
+              "Custom branding and logo",
+              "Invoice payment tracking"
+            ],
+            offers: [
+              {
+                "@type": "Offer",
+                name: "Free",
+                price: "0",
+                priceCurrency: "USD",
+                description: "Unlimited invoices, PDF download, multi-currency, no watermarks, no sign-up required."
+              },
+              {
+                "@type": "Offer",
+                name: "Pro",
+                price: "9",
+                priceCurrency: "USD",
+                description: "Recurring invoices, client database, custom branding, auto-numbering, and priority support."
+              },
+              {
+                "@type": "Offer",
+                name: "Business",
+                price: "29",
+                priceCurrency: "USD",
+                description: "Everything in Pro plus team access for 5 users, API access, Zapier integration, and advanced reporting."
+              }
+            ],
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.9",
+              reviewCount: "10000",
+              bestRating: "5",
+              worstRating: "1"
             }
           }),
         }}

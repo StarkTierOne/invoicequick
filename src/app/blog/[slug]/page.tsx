@@ -344,6 +344,30 @@ const articles: Record<
       "Instead of formatting a Word document from scratch, use InvoiceQuick to generate a professional PDF invoice for services rendered in under a minute. Fill in your business details, add your service line items with descriptions and rates, set your payment terms, and download a clean PDF — free, with no sign-up required. Your invoice will look polished and professional, giving clients every reason to pay on time.",
     ],
   },
+  "invoice-without-a-business": {
+    title: "Can I Send an Invoice Without a Business? (Yes — Here's How)",
+    description:
+      "Yes, you can send an invoice without a registered business. Learn how to invoice clients as an individual, sole trader, or freelancer — and what to put on your invoice.",
+    keywords:
+      "invoice without a business, can I invoice without a business, freelancer invoice no business, sole trader invoice, self-employed invoice, invoice as individual, send invoice without company",
+    body: [
+      "Yes — you can absolutely send an invoice without a registered business. Millions of freelancers, sole traders, and self-employed individuals invoice clients every day without forming an LLC, corporation, or any other business entity. You do not need a business license, a business bank account, or even a business name to get paid professionally. Here is exactly how to do it.",
+      "## Is It Legal to Invoice Without a Business?",
+      "In the United States and most other countries, there is no legal requirement to have a registered business in order to invoice for services. If you are self-employed, a freelancer, a contractor, or simply doing paid work as an individual, you are legally allowed to request payment via invoice. The income is still taxable as self-employment income, but the invoicing itself requires no special legal structure.",
+      "## What to Put on an Invoice as an Individual",
+      "When invoicing without a business, use your personal name where a business name would go. Your invoice should include: your full legal name and personal address, your phone number and email, the client's name and billing address, a unique invoice number (you can start at INV-001), the invoice date and payment due date, an itemized list of services with descriptions, rates, and totals, any applicable taxes, the total amount due, and your preferred payment method.",
+      "## Do You Need a Business Name?",
+      "You do not need a business name, but you can use one even if your business is not formally registered. Many freelancers operate under a trade name or 'doing business as' (DBA) name without incorporating. For example, you could invoice as 'Alex Rivera Creative' without that being a registered LLC. This looks more professional and gives you flexibility without legal complexity.",
+      "## What About Taxes When Invoicing as an Individual?",
+      "Any income you receive via invoice is self-employment income and must be reported on your tax return. In the US, you will owe both income tax and self-employment tax (approximately 15.3%) on net earnings. Keep records of every invoice you send and every payment you receive. If you earn more than $600 from a single client in a year, they are required to send you a Form 1099-NEC. Consider setting aside 25–30% of invoice income for taxes.",
+      "## Should You Include a Tax ID on Your Invoice?",
+      "As an individual without a business, you do not have an Employer Identification Number (EIN). Your Social Security Number (SSN) is your tax ID. You do not need to put your SSN on every invoice — in fact, for privacy and security reasons, you should not. Your client will use your SSN for their 1099 records, which they collect via a W-9 form (not your invoice). Leave the tax ID field blank unless the client specifically requests it.",
+      "## When Should You Actually Register a Business?",
+      "Invoicing as an individual works well when you are just starting out or doing occasional freelance work. Consider registering an LLC or sole proprietorship when: you are earning enough that liability protection matters, clients require a W-9 with an EIN instead of your SSN, you want to open a dedicated business bank account, or you want your business name on contracts and invoices rather than your personal name. An LLC typically costs $50–$500 to form and provides legal separation between your personal and business finances.",
+      "## How to Create an Invoice Without a Business",
+      "InvoiceQuick makes it easy to create a professional invoice as an individual. Simply enter your full name in the 'Business Name' field, add your personal contact details, fill in the client information and your service line items, and download a polished PDF in under a minute — completely free, with no sign-up required. Your invoice will look just as professional as one from a registered company.",
+    ],
+  },
 };
 
 type Props = {
