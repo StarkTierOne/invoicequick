@@ -368,6 +368,32 @@ const articles: Record<
       "InvoiceQuick makes it easy to create a professional invoice as an individual. Simply enter your full name in the 'Business Name' field, add your personal contact details, fill in the client information and your service line items, and download a polished PDF in under a minute — completely free, with no sign-up required. Your invoice will look just as professional as one from a registered company.",
     ],
   },
+  "invoice-for-side-hustle": {
+    title: "How to Invoice as a Side Hustle: A Beginner's Guide (2026)",
+    description:
+      "Running a side hustle? Learn how to create professional invoices, handle taxes, and get paid on time — even without a registered business or accounting software.",
+    keywords:
+      "invoice side hustle, how to invoice side hustle, side hustle invoice template, gig economy invoicing, freelance side hustle invoice, invoice part time work, self-employed side income invoice",
+    body: [
+      "Running a side hustle — whether that is freelance design, tutoring, photography, handyman work, or any other paid service — means you will eventually need to send invoices. Invoicing as a side hustler is simpler than it sounds, and doing it right from the start sets you up to get paid faster, stay organized at tax time, and look professional even before your side hustle grows into a full business.",
+      "## Do You Need a Business to Invoice for Side Hustle Work?",
+      "No. You do not need an LLC, a registered business name, or any special legal structure to send invoices for side hustle income. Millions of people invoice clients every week as private individuals — using their personal name where a company name would normally go. As long as you accurately report the income on your taxes, you are operating completely within the law.",
+      "## What to Include on a Side Hustle Invoice",
+      "A professional side hustle invoice should include: your full name (or a DBA trade name if you have one), your address, phone number, and email address; your client's name and contact information; a unique invoice number starting at INV-001; the invoice date and a clear payment due date (Net 14 or Net 30 are common); an itemized list of services with descriptions, quantities, rates, and totals; any applicable taxes; the total amount due; and your preferred payment method, whether that is PayPal, Venmo Business, bank transfer, or check.",
+      "## Choosing a Payment Due Date for Side Hustle Invoices",
+      "Side hustlers often work with individuals rather than large companies, so shorter payment terms make sense. Net 14 (payment due within 14 days) is common for small projects. For one-time gigs like event photography or yard work, you can even use Due on Receipt, which means payment is expected immediately. For longer projects or retainer clients, Net 30 is the professional standard.",
+      "## How Side Hustle Income Is Taxed",
+      "This is the part most first-time side hustlers miss: all invoice income is taxable, even if your client does not send you a 1099. In the US, you owe income tax plus self-employment tax (15.3%) on net side hustle earnings. A practical rule of thumb: set aside 25–30% of every payment you receive in a separate account for taxes. If your total side hustle income will exceed $1,000 for the year, you should also pay quarterly estimated taxes to avoid an underpayment penalty.",
+      "## Tracking Your Side Hustle Invoices",
+      "Even if you only send a handful of invoices per year, keep a record of every one. At minimum, save a PDF copy of each invoice and note the date it was paid. This makes tax prep straightforward and protects you if a client ever disputes what they owe. If you use InvoiceQuick and create a free account, your invoice history is automatically saved and you can filter by client or status.",
+      "## When to Start Using a Business Name",
+      "Many side hustlers eventually create a DBA (Doing Business As) name — for example, 'Rivera Photography' — without formally incorporating. This costs little to nothing in most states, makes your invoices look more professional, and lets you open a business bank account to separate your side hustle income from personal funds. You do not need to do this right away, but once your side hustle is generating consistent income, it is worth considering.",
+      "## Do I Need a Contract for Side Hustle Work?",
+      "A written agreement protects both you and your client. For small one-time jobs, a simple email confirmation of the scope, rate, and payment terms is usually enough. For larger or ongoing projects, a basic freelance contract — even a one-page document — spells out deliverables, timelines, and what happens if the client wants changes or cancels. Once a contract is in place, your invoice is simply the payment request that references that agreement.",
+      "## The Fastest Way to Create Side Hustle Invoices",
+      "You do not need accounting software or a monthly subscription to create professional invoices for your side hustle. InvoiceQuick lets you build a polished PDF invoice in under 60 seconds — no sign-up required, no credit card, no watermarks. Whether you are billing for one project a month or ten, InvoiceQuick keeps your side hustle looking professional without adding overhead.",
+    ],
+  },
 };
 
 type Props = {

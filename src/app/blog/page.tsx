@@ -98,6 +98,12 @@ const articles = [
     excerpt:
       "Yes — you can send an invoice without a registered business, LLC, or company. Millions of freelancers, sole traders, and self-employed individuals invoice clients every day as private individuals. You do not need a business license or business bank account to get paid professionally. This guide covers exactly what to put on your invoice as an individual, whether you need a tax ID, when it makes sense to register a business, and how to create a polished invoice in under a minute — no sign-up required.",
   },
+  {
+    slug: "invoice-for-side-hustle",
+    title: "How to Invoice as a Side Hustle: A Beginner's Guide (2026)",
+    excerpt:
+      "Running a side hustle — freelance design, tutoring, photography, handyman work — means you will eventually need to send invoices. This guide covers everything a side hustler needs to know: what to include on your invoice, which payment terms to use, how side hustle income is taxed, and how to stay organized without expensive accounting software. You do not need an LLC or a business registration to start billing clients professionally today.",
+  },
 ];
 
 export default function BlogPage() {

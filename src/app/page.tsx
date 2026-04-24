@@ -212,6 +212,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Who It's For */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">Built for People Who Work for Themselves</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">No matter what you do, InvoiceQuick makes billing simple. No accountant required.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: "🎨", title: "Freelance Designers", desc: "Bill for logo design, branding, UI work, and revisions with clean itemized PDFs your clients will trust." },
+              { icon: "💻", title: "Web Developers", desc: "Invoice per project, per milestone, or hourly. Track which builds are paid and which need a follow-up." },
+              { icon: "📸", title: "Photographers & Videographers", desc: "Send a polished invoice after every shoot, event, or edit — in under a minute, from any device." },
+              { icon: "📝", title: "Writers & Editors", desc: "Bill per article, per word, or per hour. Add your byline, link to the published work, and get paid." },
+              { icon: "🔧", title: "Contractors & Tradespeople", desc: "Create itemized invoices for labor and materials. Add your license number and payment terms in seconds." },
+              { icon: "💼", title: "Consultants & Coaches", desc: "Invoice for sessions, retainers, or project-based work. Look professional from day one, no bookkeeper needed." },
+            ].map((item) => (
+              <div key={item.title} className="card bg-white hover:shadow-md transition-shadow">
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/create" className="btn-primary text-base !px-6 !py-3">
+              Create Your Free Invoice &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Comparison Table */}
       <section className="max-w-6xl mx-auto px-4 py-20">
         <h2 className="text-3xl font-bold text-center mb-4">How InvoiceQuick Compares</h2>
