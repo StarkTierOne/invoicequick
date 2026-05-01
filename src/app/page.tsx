@@ -27,6 +27,14 @@ const faqs = [
     question: "Can I add my logo and customize the invoice design?",
     answer: "Yes. Free users can add business name and contact details. Pro users can upload a custom logo, choose accent colors, and apply custom branding to match their business identity. All plans produce clean, professional invoices that make a strong impression on clients.",
   },
+  {
+    question: "What should I do if a client doesn't pay my invoice?",
+    answer: "Start with a polite follow-up email referencing the invoice number and due date — most late payments are oversights, not intentional. If there is no response after 3–5 days, send a firmer reminder that mentions your late fee policy. After two weeks, consider a phone call or direct message. For invoices over $5,000 or those ignored for 30+ days, a formal demand letter is appropriate. If a client refuses to pay, small claims court (typically for amounts under $10,000–$20,000 depending on your state) is a viable option that does not require a lawyer. Always keep all communication in writing.",
+  },
+  {
+    question: "Is an invoice a legally binding document?",
+    answer: "An invoice alone is not a contract — it is a payment request. The legally binding part is your underlying agreement with the client, whether that is a signed contract, a written proposal they accepted, or an email confirming the scope and price. However, a detailed invoice is strong evidence of the agreed-upon work and amount owed, and courts routinely accept invoices as proof of debt in small claims cases. For any project over $1,000, always have a signed contract in addition to your invoice.",
+  },
 ];
 
 const features = [

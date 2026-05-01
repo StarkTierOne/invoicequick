@@ -368,6 +368,30 @@ const articles: Record<
       "InvoiceQuick makes it easy to create a professional invoice as an individual. Simply enter your full name in the 'Business Name' field, add your personal contact details, fill in the client information and your service line items, and download a polished PDF in under a minute — completely free, with no sign-up required. Your invoice will look just as professional as one from a registered company.",
     ],
   },
+  "client-wont-pay-invoice": {
+    title: "What to Do When a Client Won't Pay Your Invoice (Step-by-Step)",
+    description:
+      "Client not paying your invoice? Here's exactly what to do — from polite follow-ups to formal demand letters and small claims court. A step-by-step action plan for freelancers.",
+    keywords:
+      "client won't pay invoice, unpaid invoice what to do, client not paying invoice, overdue invoice collection, how to collect unpaid invoice, invoice not paid, freelancer unpaid invoice",
+    body: [
+      "You delivered the work. You sent the invoice. And now — silence. A client who won't pay is one of the most frustrating situations in freelancing, and it happens more often than it should. About 29% of freelance invoices go overdue at some point. The good news: most unpaid invoices get resolved when you follow a clear, escalating process. Here is exactly what to do, step by step.",
+      "## Step 1: Send a Polite Follow-Up Email (Days 1–5 Overdue)",
+      "Most late payments are not intentional — the invoice got buried in email, forwarded to the wrong person, or deprioritized during a busy week. Your first follow-up should assume the best and make it easy for the client to act. Email them with a subject line like: 'Quick follow-up: Invoice #1042 (due [date]).' In the body, briefly reference the project, state the amount, and ask if they need anything from you to process payment. Keep it short and friendly. Attach the original invoice PDF again — sometimes the first one was lost.",
+      "## Step 2: Reference Your Late Fee Policy (Days 6–14 Overdue)",
+      "If the first follow-up goes unanswered, send a second email that is still professional but more direct. Reference your late fee policy explicitly: 'Invoice #1042 for $2,500 is now 10 days overdue. As noted in the invoice, a 1.5% monthly late fee applies to balances overdue by more than 7 days. The current total is now $2,537.50.' This communicates that you are tracking the invoice closely and that delays have financial consequences. Many clients pay at this stage when they realize the invoice is not going away.",
+      "## Step 3: Follow Up by Phone or Direct Message (Days 14–21 Overdue)",
+      "Email is easy to ignore. A phone call or direct Slack/LinkedIn message is harder to avoid. Call the person you have a direct relationship with — not a generic billing email. Keep the conversation professional: 'I wanted to follow up on Invoice #1042. Is there anything on your end I can help resolve to get this processed?' Sometimes a payment is stuck in their accounts payable queue and a personal touch breaks it loose. This is also a good moment to offer a payment plan if the client is facing cash flow issues — getting paid in installments is better than not getting paid at all.",
+      "## Step 4: Send a Formal Demand Letter (Days 21–30 Overdue)",
+      "A formal demand letter is a significant escalation — it signals that you are prepared to pursue the debt legally. Write a clear, factual letter (email is fine) stating: the original invoice amount and date, any late fees accrued, the total now owed, a specific deadline for payment (7–10 business days from the letter), and a statement that failure to pay by that date will result in legal action. Keep the tone professional rather than threatening. Many clients who ignored follow-up emails respond immediately to a formal demand because it signals you are serious.",
+      "## Step 5: Consider Hiring a Collections Agency or Attorney",
+      "For invoices over $5,000, a collections agency or an attorney's demand letter can be effective. Collections agencies typically take 25–50% of the recovered amount, so weigh that against the alternative of receiving nothing. An attorney's letter costs $100–$300 and often resolves the dispute without going to court, because clients take a legal letterhead seriously. For international clients or clients with complex contracts, consulting an attorney first is worth the cost.",
+      "## Step 6: File in Small Claims Court",
+      "Small claims court is designed for exactly this situation — it is inexpensive, fast (typically resolved in 30–90 days), and does not require a lawyer. Most US states have small claims limits of $5,000–$20,000. You will need: a copy of your invoice, any written agreement or email chain confirming the project scope and rate, proof of delivery (email confirmation, signed approval, etc.), and documentation of your follow-up attempts. Filing fees are typically $30–$100. Winning a judgment does not guarantee payment, but it gives you legal tools to garnish wages or bank accounts in most states.",
+      "## How to Prevent Non-Payment in the Future",
+      "The best cure for unpaid invoices is prevention. Require 50% upfront for new clients or large projects — this weeds out clients who were never serious about paying. Use a written contract that specifies deliverables, payment terms, and consequences for non-payment. Send invoices immediately upon project completion, not days or weeks later. Keep your payment process frictionless — a client who can pay with one click is more likely to pay on time than one who has to navigate bank wires. InvoiceQuick makes invoicing fast and professional, so you spend less time chasing payments and more time doing work you love.",
+    ],
+  },
   "invoice-for-side-hustle": {
     title: "How to Invoice as a Side Hustle: A Beginner's Guide (2026)",
     description:

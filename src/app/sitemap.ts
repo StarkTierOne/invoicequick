@@ -13,6 +13,11 @@ const blogSlugs = [
   "free-invoice-template-for-freelancers",
   "how-to-invoice-clients",
   "how-to-invoice-international-clients",
+  "freelance-invoice-tips",
+  "invoice-for-services-rendered",
+  "invoice-without-a-business",
+  "invoice-for-side-hustle",
+  "client-wont-pay-invoice",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

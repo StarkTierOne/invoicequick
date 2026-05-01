@@ -104,6 +104,12 @@ const articles = [
     excerpt:
       "Running a side hustle — freelance design, tutoring, photography, handyman work — means you will eventually need to send invoices. This guide covers everything a side hustler needs to know: what to include on your invoice, which payment terms to use, how side hustle income is taxed, and how to stay organized without expensive accounting software. You do not need an LLC or a business registration to start billing clients professionally today.",
   },
+  {
+    slug: "client-wont-pay-invoice",
+    title: "What to Do When a Client Won't Pay Your Invoice (Step-by-Step)",
+    excerpt:
+      "About 29% of freelance invoices go overdue at some point. When a client stops responding or refuses to pay, most freelancers don't know what to do next — and end up either letting it go or damaging the relationship trying to collect. This step-by-step guide covers the full escalation process: from a polite follow-up email (days 1–5 overdue) to a formal demand letter, small claims court, and how to prevent non-payment on future projects. Most unpaid invoices resolve at step one or two when you follow a clear, professional process.",
+  },
 ];
 
 export default function BlogPage() {
