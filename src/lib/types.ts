@@ -26,6 +26,7 @@ export interface InvoiceData {
   notes: string;
   taxRate: number;
   discountRate: number;
+  paymentTerms: string;
 }
 
 export const CURRENCIES: Record<string, { symbol: string; name: string }> = {
@@ -95,5 +96,22 @@ export function defaultInvoice(): InvoiceData {
     notes: "",
     taxRate: 0,
     discountRate: 0,
+    paymentTerms: "Net 30",
   };
+}
+
+export const PAYMENT_TERMS = [
+  { label: "Due on Receipt", days: 0 },
+  { label: "Net 7", days: 7 },
+  { label: "Net 15", days: 15 },
+  { label: "Net 30", days: 30 },
+  { label: "Net 45", days: 45 },
+  { label: "Net 60", days: 60 },
+  { label: "Custom", days: null },
+] as const;
+
+export function calcDueDate(invoiceDate: string, termDays: number): string {
+  const d = new Date(invoiceDate);
+  d.setDate(d.getDate() + termDays);
+  return d.toISOString().split("T")[0];
 }

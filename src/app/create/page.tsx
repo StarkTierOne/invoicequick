@@ -7,9 +7,9 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import AppShell from "@/components/AppShell";
 import {
-  InvoiceData, InvoiceItem, CURRENCIES,
+  InvoiceData, InvoiceItem, CURRENCIES, PAYMENT_TERMS,
   defaultInvoice, createEmptyItem,
-  calcSubtotal, calcTax, calcDiscount, calcTotal, formatCurrency,
+  calcSubtotal, calcTax, calcDiscount, calcTotal, formatCurrency, calcDueDate,
 } from "@/lib/types";
 
 // ── Invoice Form ──
@@ -49,18 +49,20 @@ function InvoiceForm({ data, onChange }: { data: InvoiceData; onChange: (d: Invo
 
       {/* Invoice Meta */}
       <div className="card">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           <div>
             <label className="label">Invoice #</label>
             <input className="input" value={data.invoiceNumber} onChange={(e) => set({ invoiceNumber: e.target.value })} />
           </div>
           <div>
-            <label className="label">Date</label>
-            <input className="input" type="date" value={data.invoiceDate} onChange={(e) => set({ invoiceDate: e.target.value })} />
-          </div>
-          <div>
-            <label className="label">Due Date</label>
-            <input className="input" type="date" value={data.dueDate} onChange={(e) => set({ dueDate: e.target.value })} />
+            <label className="label">Invoice Date</label>
+            <input className="input" type="date" value={data.invoiceDate} onChange={(e) => {
+              const newDate = e.target.value;
+              const term = PAYMENT_TERMS.find(t => t.label === data.paymentTerms);
+              const patch: Partial<InvoiceData> = { invoiceDate: newDate };
+              if (term && term.days !== null) patch.dueDate = calcDueDate(newDate, term.days);
+              set(patch);
+            }} />
           </div>
           <div>
             <label className="label">Currency</label>
@@ -69,6 +71,22 @@ function InvoiceForm({ data, onChange }: { data: InvoiceData; onChange: (d: Invo
                 <option key={code} value={code}>{code} — {c.name}</option>
               ))}
             </select>
+          </div>
+          <div>
+            <label className="label">Payment Terms</label>
+            <select className="input" value={data.paymentTerms} onChange={(e) => {
+              const label = e.target.value;
+              const term = PAYMENT_TERMS.find(t => t.label === label);
+              const patch: Partial<InvoiceData> = { paymentTerms: label };
+              if (term && term.days !== null) patch.dueDate = calcDueDate(data.invoiceDate, term.days);
+              set(patch);
+            }}>
+              {PAYMENT_TERMS.map(t => <option key={t.label} value={t.label}>{t.label}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="label">Due Date</label>
+            <input className="input" type="date" value={data.dueDate} onChange={(e) => set({ dueDate: e.target.value, paymentTerms: "Custom" })} />
           </div>
         </div>
       </div>
@@ -148,6 +166,9 @@ function InvoicePreview({ data }: { data: InvoiceData }) {
         <div className="text-right space-y-1">
           <p className="text-sm"><span className="text-gray-400">Date:</span> {data.invoiceDate}</p>
           <p className="text-sm"><span className="text-gray-400">Due:</span> {data.dueDate}</p>
+          {data.paymentTerms && (
+            <p className="text-sm"><span className="text-gray-400">Terms:</span> {data.paymentTerms}</p>
+          )}
         </div>
       </div>
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Invoice Tips & Guides | InvoiceQuick Blog",
   description: "Learn how to create professional invoices, get paid faster, and manage your freelance finances. Free guides, templates, and best practices.",
-  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing",
+  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide",
 };
 
 const articles = [
@@ -103,6 +103,12 @@ const articles = [
     title: "How to Invoice as a Side Hustle: A Beginner's Guide (2026)",
     excerpt:
       "Running a side hustle — freelance design, tutoring, photography, handyman work — means you will eventually need to send invoices. This guide covers everything a side hustler needs to know: what to include on your invoice, which payment terms to use, how side hustle income is taxed, and how to stay organized without expensive accounting software. You do not need an LLC or a business registration to start billing clients professionally today.",
+  },
+  {
+    slug: "small-business-invoicing",
+    title: "Small Business Invoicing 101: The Complete Guide (2026)",
+    excerpt:
+      "Invoicing is one of the most important operational habits a small business can build — yet most owners either cobble it together with Word templates or overpay for accounting software they barely use. This guide covers everything a small business owner needs to know: what goes on a professional invoice, which payment terms to use, how to handle late payments without damaging client relationships, when to upgrade to invoicing software, and how to build a billing process that scales as your business grows.",
   },
   {
     slug: "client-wont-pay-invoice",
