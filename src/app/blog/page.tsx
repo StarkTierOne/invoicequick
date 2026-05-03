@@ -116,6 +116,12 @@ const articles = [
     excerpt:
       "About 29% of freelance invoices go overdue at some point. When a client stops responding or refuses to pay, most freelancers don't know what to do next — and end up either letting it go or damaging the relationship trying to collect. This step-by-step guide covers the full escalation process: from a polite follow-up email (days 1–5 overdue) to a formal demand letter, small claims court, and how to prevent non-payment on future projects. Most unpaid invoices resolve at step one or two when you follow a clear, professional process.",
   },
+  {
+    slug: "invoice-template-graphic-designers",
+    title: "Invoice Template for Graphic Designers: Free & Professional (2026)",
+    excerpt:
+      "A graphic designer invoice is different from a generic freelance invoice — and using a template that doesn't account for design-specific line items like concept rounds, revision fees, and usage licensing can create billing confusion and slow down payment. This guide covers exactly what to include on your graphic designer invoice, how to price and itemize design work clearly, how to handle revisions without scope creep, and the fastest way to create a professional invoice your clients will approve the first time.",
+  },
 ];
 
 export default function BlogPage() {
