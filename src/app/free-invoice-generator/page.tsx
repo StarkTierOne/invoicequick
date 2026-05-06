@@ -5,7 +5,33 @@ export const metadata: Metadata = {
   title: "Free Invoice Generator | Create Professional Invoices Online — InvoiceQuick",
   description: "Generate professional invoices for free in under 60 seconds. No signup required. Add your business details, line items, and download a polished PDF instantly.",
   keywords: "free invoice generator, create invoice online, invoice maker, free invoice creator, online invoice generator, make invoice free",
+  alternates: {
+    canonical: "https://invoicequick.vercel.app/free-invoice-generator",
+  },
 };
+
+const pageFaqs = [
+  {
+    question: "Is InvoiceQuick really free?",
+    answer: "Yes. You can create and download unlimited invoices without paying anything. There are no watermarks, no trial periods, and no hidden fees. We offer optional paid features for businesses that need client portals and payment tracking.",
+  },
+  {
+    question: "Do I need to create an account?",
+    answer: "No. You can create and download an invoice immediately without signing up. If you want to save your invoices and access them later, you can optionally create a free account.",
+  },
+  {
+    question: "What format are the invoices?",
+    answer: "Invoices are generated as PDF files, which is the industry standard. PDFs preserve formatting across all devices and can be easily emailed or printed.",
+  },
+  {
+    question: "Can I add my logo to the invoice?",
+    answer: "Yes. InvoiceQuick lets you upload your business logo, which appears on your invoice for a branded, professional look.",
+  },
+  {
+    question: "Does InvoiceQuick calculate taxes automatically?",
+    answer: "Yes. You can set a tax rate and InvoiceQuick will automatically calculate the tax amount and add it to your invoice total.",
+  },
+];
 
 export default function FreeInvoiceGeneratorPage() {
   return (
@@ -35,6 +61,12 @@ export default function FreeInvoiceGeneratorPage() {
         <Link href="/create" className="btn-primary text-base !py-3 !px-8 inline-block">
           Create Your Free Invoice &rarr;
         </Link>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-500">
+          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No sign-up required</span>
+          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No credit card</span>
+          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> PDF ready in 60 seconds</span>
+          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Free forever</span>
+        </div>
       </section>
 
       {/* Content */}
@@ -90,29 +122,34 @@ export default function FreeInvoiceGeneratorPage() {
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
-            <div className="card">
-              <h3 className="font-bold text-gray-900 mb-2">Is InvoiceQuick really free?</h3>
-              <p className="text-gray-600 text-sm">Yes. You can create and download unlimited invoices without paying anything. There are no watermarks, no trial periods, and no hidden fees. We offer optional paid features for businesses that need client portals and payment tracking.</p>
-            </div>
-            <div className="card">
-              <h3 className="font-bold text-gray-900 mb-2">Do I need to create an account?</h3>
-              <p className="text-gray-600 text-sm">No. You can create and download an invoice immediately without signing up. If you want to save your invoices and access them later, you can optionally create a free account.</p>
-            </div>
-            <div className="card">
-              <h3 className="font-bold text-gray-900 mb-2">What format are the invoices?</h3>
-              <p className="text-gray-600 text-sm">Invoices are generated as PDF files, which is the industry standard. PDFs preserve formatting across all devices and can be easily emailed or printed.</p>
-            </div>
-            <div className="card">
-              <h3 className="font-bold text-gray-900 mb-2">Can I add my logo to the invoice?</h3>
-              <p className="text-gray-600 text-sm">Yes. InvoiceQuick lets you upload your business logo, which appears on your invoice for a branded, professional look.</p>
-            </div>
-            <div className="card">
-              <h3 className="font-bold text-gray-900 mb-2">Does InvoiceQuick calculate taxes automatically?</h3>
-              <p className="text-gray-600 text-sm">Yes. You can set a tax rate and InvoiceQuick will automatically calculate the tax amount and add it to your invoice total.</p>
-            </div>
+            {pageFaqs.map((faq) => (
+              <div key={faq.question} className="card">
+                <h3 className="font-bold text-gray-900 mb-2">{faq.question}</h3>
+                <p className="text-gray-600 text-sm">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* FAQ JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: pageFaqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
 
       {/* CTA */}
       <section className="bg-indigo-600 py-14">

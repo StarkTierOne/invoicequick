@@ -554,8 +554,8 @@ export default function Home() {
             <div>
               <h4 className="text-white font-semibold text-sm mb-3">Resources</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="https://toolsrated.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Read Our Blog</a></li>
-                <li><a href="https://gumroad.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Get Our Templates</a></li>
+                <li><a href="https://toolsrated.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Tool Reviews &amp; Comparisons</a></li>
+                <li><Link href="/invoice-template" className="hover:text-white transition-colors">Free Invoice Templates</Link></li>
               </ul>
             </div>
           </div>
