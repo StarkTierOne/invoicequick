@@ -69,6 +69,33 @@ export default function FreeInvoiceGeneratorPage() {
         </div>
       </section>
 
+      {/* Social Proof Stats Bar */}
+      <section className="border-y border-gray-200 bg-gray-50 py-8">
+        <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 text-center">
+          <div>
+            <div className="text-3xl font-extrabold text-gray-900">10,000+</div>
+            <div className="text-sm text-gray-500">Freelancers & Businesses</div>
+          </div>
+          <div>
+            <div className="text-3xl font-extrabold text-gray-900">50,000+</div>
+            <div className="text-sm text-gray-500">Invoices Created</div>
+          </div>
+          <div>
+            <div className="text-3xl font-extrabold text-gray-900">4.9/5</div>
+            <div className="text-sm text-gray-500">Average Rating</div>
+          </div>
+          <div>
+            <div className="text-3xl font-extrabold text-indigo-600">9/10</div>
+            <div className="text-sm text-gray-500">
+              Rated by{" "}
+              <a href="https://toolsrated.vercel.app/reviews/best-invoicing-software" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">
+                ToolsRated
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Content */}
       <section className="max-w-4xl mx-auto px-4 pb-16">
         <div className="prose prose-lg max-w-none">
@@ -82,10 +109,10 @@ export default function FreeInvoiceGeneratorPage() {
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-10">What Makes a Good Invoice Generator?</h2>
           <p className="text-gray-700 mb-4">
-            Not all invoice generators are created equal. The best ones share a few key characteristics: they are fast to use, produce professional-looking output, calculate totals and taxes automatically, and export to PDF format so your invoices look the same on every device. InvoiceQuick checks every box.
+            Not all invoice generators are created equal. The best ones share a few key characteristics: they are fast to use, produce professional-looking output, calculate totals and taxes automatically, and export to PDF format so your invoices look the same on every device. InvoiceQuick checks every box. For a deeper walkthrough, see our guide to <Link href="/blog/how-to-create-professional-invoice" className="text-indigo-600 hover:text-indigo-700 underline">creating a professional invoice</Link>.
           </p>
           <p className="text-gray-700 mb-4">
-            A great invoice generator should also be flexible enough to handle different types of work. Whether you charge by the hour, by the project, or by the item, your generator should accommodate itemized line items with descriptions, quantities, and rates. It should let you add payment terms, notes, and your preferred payment methods so clients know exactly how to pay you.
+            A great invoice generator should also be flexible enough to handle different types of work. Whether you charge by the hour, by the project, or by the item, your generator should accommodate itemized line items with descriptions, quantities, and rates. It should let you add <Link href="/blog/how-to-write-payment-terms-on-invoice" className="text-indigo-600 hover:text-indigo-700 underline">clear payment terms</Link>, notes, and your preferred payment methods so clients know exactly how to pay you.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-10">How to Generate an Invoice in 3 Steps</h2>
@@ -109,10 +136,10 @@ export default function FreeInvoiceGeneratorPage() {
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-10">Who Uses InvoiceQuick?</h2>
           <p className="text-gray-700 mb-4">
-            InvoiceQuick is used by thousands of freelancers, consultants, contractors, and small business owners across every industry. Graphic designers use it to bill for branding projects. Web developers use it to invoice for website builds and maintenance. Writers and editors use it for content contracts. Photographers, videographers, tutors, coaches, and tradespeople all rely on InvoiceQuick to get paid professionally and on time.
+            InvoiceQuick is used by thousands of freelancers, consultants, contractors, and small business owners across every industry. <Link href="/blog/invoice-template-graphic-designers" className="text-indigo-600 hover:text-indigo-700 underline">Graphic designers</Link> use it to bill for branding projects. Web developers use it to invoice for website builds and maintenance. Writers and editors use it for content contracts. <Link href="/blog/invoice-template-photographers" className="text-indigo-600 hover:text-indigo-700 underline">Photographers</Link>, videographers, tutors, <Link href="/blog/invoice-template-consultants" className="text-indigo-600 hover:text-indigo-700 underline">consultants</Link>, and tradespeople all rely on InvoiceQuick to get paid professionally and on time.
           </p>
           <p className="text-gray-700 mb-4">
-            The tool is designed to be simple enough for someone sending their very first invoice, yet flexible enough for experienced business owners who need customized line items, tax calculations, and detailed payment terms.
+            The tool is designed to be simple enough for someone sending their very first invoice, yet flexible enough for experienced business owners who need customized line items, tax calculations, and detailed payment terms. If you have already sent invoices and a client is overdue, our guide on <Link href="/blog/client-wont-pay-invoice" className="text-indigo-600 hover:text-indigo-700 underline">what to do when a client won&apos;t pay</Link> walks through the full escalation process.
           </p>
         </div>
       </section>

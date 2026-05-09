@@ -18,10 +18,15 @@ const blogSlugs = [
   "invoice-without-a-business",
   "invoice-for-side-hustle",
   "client-wont-pay-invoice",
+  "small-business-invoicing",
+  "invoice-template-consultants",
+  "invoice-template-graphic-designers",
+  "invoice-template-photographers",
+  "how-to-invoice-as-a-freelancer",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://invoicequick.com";
+  const baseUrl = "https://invoicequick.vercel.app";
   const now = new Date().toISOString();
 
   const staticPages: MetadataRoute.Sitemap = [

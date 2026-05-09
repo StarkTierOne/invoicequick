@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Invoice Tips & Guides | InvoiceQuick Blog",
   description: "Learn how to create professional invoices, get paid faster, and manage your freelance finances. Free guides, templates, and best practices.",
-  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide",
+  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services",
 };
 
 const articles = [
@@ -117,10 +117,22 @@ const articles = [
       "About 29% of freelance invoices go overdue at some point. When a client stops responding or refuses to pay, most freelancers don't know what to do next — and end up either letting it go or damaging the relationship trying to collect. This step-by-step guide covers the full escalation process: from a polite follow-up email (days 1–5 overdue) to a formal demand letter, small claims court, and how to prevent non-payment on future projects. Most unpaid invoices resolve at step one or two when you follow a clear, professional process.",
   },
   {
+    slug: "invoice-template-consultants",
+    title: "Invoice Template for Consultants: Free & Professional (2026)",
+    excerpt:
+      "Consulting invoices have unique requirements that generic templates miss: retainer billing, day rates, expense reimbursements, and milestone-based project fees. A poorly itemized consulting invoice can delay payment, trigger disputes over scope, or create confusion for clients running corporate accounts payable processes. This guide covers every field a professional consultant invoice needs, how to structure your line items whether you bill hourly, by the day, or per project, and how to handle expense reimbursements cleanly. Whether you are an independent management consultant, IT consultant, HR advisor, or business coach, these best practices will help you get paid faster.",
+  },
+  {
     slug: "invoice-template-graphic-designers",
     title: "Invoice Template for Graphic Designers: Free & Professional (2026)",
     excerpt:
       "A graphic designer invoice is different from a generic freelance invoice — and using a template that doesn't account for design-specific line items like concept rounds, revision fees, and usage licensing can create billing confusion and slow down payment. This guide covers exactly what to include on your graphic designer invoice, how to price and itemize design work clearly, how to handle revisions without scope creep, and the fastest way to create a professional invoice your clients will approve the first time.",
+  },
+  {
+    slug: "invoice-template-photographers",
+    title: "Invoice Template for Photographers: Free & Professional (2026)",
+    excerpt:
+      "A photography invoice is not a generic freelance invoice — photographers bill across creative fees, usage licensing, retainers, deliverables, and travel, and a generic template that doesn't surface those line items separately is the single biggest cause of payment disputes and slow client approvals. This guide covers exactly what to include on your photography invoice, how to itemize creative work and licensing cleanly for weddings, portraits, and commercial shoots, and the fastest way to send a professional PDF your clients will pay without a follow-up email.",
   },
 ];
 
