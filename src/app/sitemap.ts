@@ -23,6 +23,7 @@ const blogSlugs = [
   "invoice-template-graphic-designers",
   "invoice-template-photographers",
   "how-to-invoice-as-a-freelancer",
+  "how-to-reference-contract-on-invoice",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

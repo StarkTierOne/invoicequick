@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Invoice Tips & Guides | InvoiceQuick Blog",
   description: "Learn how to create professional invoices, get paid faster, and manage your freelance finances. Free guides, templates, and best practices.",
-  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services",
+  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services, how to invoice as a freelancer, how to reference a contract on a freelance invoice, contract reference on invoice, statement of work invoice, change order invoice",
 };
 
 const articles = [
@@ -133,6 +133,18 @@ const articles = [
     title: "Invoice Template for Photographers: Free & Professional (2026)",
     excerpt:
       "A photography invoice is not a generic freelance invoice — photographers bill across creative fees, usage licensing, retainers, deliverables, and travel, and a generic template that doesn't surface those line items separately is the single biggest cause of payment disputes and slow client approvals. This guide covers exactly what to include on your photography invoice, how to itemize creative work and licensing cleanly for weddings, portraits, and commercial shoots, and the fastest way to send a professional PDF your clients will pay without a follow-up email.",
+  },
+  {
+    slug: "how-to-invoice-as-a-freelancer",
+    title: "How to Invoice as a Freelancer (Complete 2026 Guide)",
+    excerpt:
+      "Complete 2026 guide to freelance invoicing. Covers when to send the invoice, every field that has to appear, how to choose payment terms (Due on Receipt vs Net 14 vs Net 30 vs 50/50 milestone), how to handle late payments through a clear day-1 / day-7 / day-14 / day-30 escalation, how to calculate and enforce 1.5%/month late fees, how to split larger projects into multiple invoices, and how to keep your books clean enough that taxes are not a nightmare in April. Everything you need to invoice clients and get paid on time, with practical wording and copy-paste templates.",
+  },
+  {
+    slug: "how-to-reference-contract-on-invoice",
+    title: "How to Reference a Contract on a Freelance Invoice (and Why It Matters)",
+    excerpt:
+      "Most late freelance payments are not bad faith — they are AP departments unable to match a vague invoice against an approved scope of work. This guide covers the exact wording (\"Per agreement dated…\", \"Per Statement of Work…\", \"Per Change Order #…\", \"Per PO #…\"), where to place the reference on the invoice, when it is especially important (change orders, retainers, milestone billing, corporate AP), what to do when you do not have a formal contract, and a copy-paste line-item block. A 10-second addition that removes the most common source of payment delays and gives you legal standing if you ever need it.",
   },
 ];
 
