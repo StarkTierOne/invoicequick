@@ -31,6 +31,14 @@ const pageFaqs = [
     question: "Does InvoiceQuick calculate taxes automatically?",
     answer: "Yes. You can set a tax rate and InvoiceQuick will automatically calculate the tax amount and add it to your invoice total.",
   },
+  {
+    question: "How do I reference my contract or agreement on the invoice?",
+    answer: "Add a short reference line in the notes field or directly under each line item. Common wordings include \"Per agreement dated [DATE]\", \"Per Contract #[NUMBER], Section [X.Y]\", \"Per Statement of Work signed [DATE]\", \"Per Change Order #[NUMBER]\", and \"Per PO #[NUMBER]\". This 10-second addition gives a client's AP team the paper trail they need to approve payment without follow-up questions.",
+    link: {
+      href: "/blog/how-to-reference-contract-on-invoice",
+      text: "Read the full guide on referencing contracts on invoices →",
+    },
+  },
 ];
 
 export default function FreeInvoiceGeneratorPage() {
@@ -153,6 +161,11 @@ export default function FreeInvoiceGeneratorPage() {
               <div key={faq.question} className="card">
                 <h3 className="font-bold text-gray-900 mb-2">{faq.question}</h3>
                 <p className="text-gray-600 text-sm">{faq.answer}</p>
+                {faq.link && (
+                  <Link href={faq.link.href} className="text-indigo-600 hover:text-indigo-700 underline text-sm mt-2 inline-block">
+                    {faq.link.text}
+                  </Link>
+                )}
               </div>
             ))}
           </div>

@@ -116,6 +116,9 @@ function InvoiceForm({ data, onChange }: { data: InvoiceData; onChange: (d: Invo
         <div className="card">
           <h3 className="font-semibold text-sm text-gray-500 uppercase tracking-wide mb-3">Notes</h3>
           <textarea className="input" rows={3} placeholder="Payment terms, thank you note, etc." value={data.notes} onChange={(e) => set({ notes: e.target.value })} />
+          <p className="text-xs text-gray-500 mt-2">
+            Tip: reference your contract so AP can approve faster — e.g. <button type="button" onClick={() => set({ notes: data.notes ? `${data.notes}\nPer agreement dated [DATE].` : "Per agreement dated [DATE]." })} className="text-indigo-600 hover:text-indigo-700 underline">&ldquo;Per agreement dated [DATE]&rdquo;</button> or <button type="button" onClick={() => set({ notes: data.notes ? `${data.notes}\nPer Statement of Work signed [DATE].` : "Per Statement of Work signed [DATE]." })} className="text-indigo-600 hover:text-indigo-700 underline">&ldquo;Per Statement of Work signed [DATE]&rdquo;</button>.
+          </p>
         </div>
         <div className="card space-y-3">
           <div className="flex items-center gap-3">
