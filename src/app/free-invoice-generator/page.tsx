@@ -39,6 +39,14 @@ const pageFaqs = [
       text: "Read the full guide on referencing contracts on invoices →",
     },
   },
+  {
+    question: "How do I bill a recurring or retainer client?",
+    answer: "Use a fixed cadence — the 1st of the month, billed in advance, is the standard. Name the month explicitly on the invoice (\"Monthly retainer — May 2026\"), spell out the reserved hours or deliverables, and put the overage rate on the invoice itself (not buried in the contract) so there is no surprise the first time the client exceeds the reserved scope. Bill overages on a separate invoice at month-end, every cycle. On the free tier, duplicate last month's retainer invoice and update the month name — about 20 seconds per client per month. InvoiceQuick Pro automates the cadence entirely.",
+    link: {
+      href: "/blog/recurring-invoices-for-freelancers",
+      text: "Read the full guide to recurring & retainer invoicing →",
+    },
+  },
 ];
 
 export default function FreeInvoiceGeneratorPage() {

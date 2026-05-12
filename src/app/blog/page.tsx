@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Invoice Tips & Guides | InvoiceQuick Blog",
   description: "Learn how to create professional invoices, get paid faster, and manage your freelance finances. Free guides, templates, and best practices.",
-  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services, how to invoice as a freelancer, how to reference a contract on a freelance invoice, contract reference on invoice, statement of work invoice, change order invoice",
+  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services, how to invoice as a freelancer, how to reference a contract on a freelance invoice, contract reference on invoice, statement of work invoice, change order invoice, recurring invoices for freelancers, retainer billing, monthly retainer invoice, hours-bank retainer, milestone retainer, retainer invoice template, freelance retainer model",
 };
 
 const articles = [
@@ -145,6 +145,12 @@ const articles = [
     title: "How to Reference a Contract on a Freelance Invoice (and Why It Matters)",
     excerpt:
       "Most late freelance payments are not bad faith — they are AP departments unable to match a vague invoice against an approved scope of work. This guide covers the exact wording (\"Per agreement dated…\", \"Per Statement of Work…\", \"Per Change Order #…\", \"Per PO #…\"), where to place the reference on the invoice, when it is especially important (change orders, retainers, milestone billing, corporate AP), what to do when you do not have a formal contract, and a copy-paste line-item block. A 10-second addition that removes the most common source of payment delays and gives you legal standing if you ever need it.",
+  },
+  {
+    slug: "recurring-invoices-for-freelancers",
+    title: "Recurring Invoices for Freelancers: The Complete Guide to Retainer Billing (2026)",
+    excerpt:
+      "Recurring revenue is the single biggest cash-flow upgrade most freelancers ever make — but the invoicing pattern that worked for one-off projects actively breaks under retainer billing. This guide covers the optimal billing cadence (and why the 1st of the month wins), three retainer models with copy-paste line-item templates (fixed-hours, hours-bank, milestone), how to handle overages without killing the relationship, automatic-renewal mechanics, the retainer-specific failure mode of payment drift, and the right way to price a retainer (hint: not your hourly rate × reserved hours). Everything you need to run a retainer book that bills itself.",
   },
 ];
 
