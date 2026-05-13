@@ -25,6 +25,7 @@ const blogSlugs = [
   "how-to-invoice-as-a-freelancer",
   "how-to-reference-contract-on-invoice",
   "recurring-invoices-for-freelancers",
+  "best-free-invoicing-software-small-business",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

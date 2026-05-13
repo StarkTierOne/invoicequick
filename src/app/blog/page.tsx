@@ -152,6 +152,12 @@ const articles = [
     excerpt:
       "Recurring revenue is the single biggest cash-flow upgrade most freelancers ever make — but the invoicing pattern that worked for one-off projects actively breaks under retainer billing. This guide covers the optimal billing cadence (and why the 1st of the month wins), three retainer models with copy-paste line-item templates (fixed-hours, hours-bank, milestone), how to handle overages without killing the relationship, automatic-renewal mechanics, the retainer-specific failure mode of payment drift, and the right way to price a retainer (hint: not your hourly rate × reserved hours). Everything you need to run a retainer book that bills itself.",
   },
+  {
+    slug: "best-free-invoicing-software-small-business",
+    title: "Best Free Invoicing Software for Small Business (2026 Comparison)",
+    excerpt:
+      "\"Free\" invoicing software is one of the most over-promised categories in small business tools. This 2026 comparison breaks down the three kinds of \"free\" (genuinely free, payment-fee-funded, and trial-disguised), then ranks InvoiceQuick, Wave, Zoho Invoice, PayPal, Square, FreshBooks, and QuickBooks on what each one actually gives away — sign-up friction, hidden costs (watermarks, export limits, data lock-in), and which size of business each one fits. Plus the three questions that decide it without reading 18 more reviews.",
+  },
 ];
 
 export default function BlogPage() {

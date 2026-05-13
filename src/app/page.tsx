@@ -1,6 +1,104 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
+
+function SavingsCalculator() {
+  const [invoicesPerMonth, setInvoicesPerMonth] = useState(15);
+  const [avgInvoiceValue, setAvgInvoiceValue] = useState(750);
+
+  const freshBooksAnnual = 17 * 12;
+  const paypalAnnualFee = invoicesPerMonth * 12 * avgInvoiceValue * 0.0299;
+  const invoiceQuickAnnual = 0;
+  const annualSavingsVsFreshBooks = freshBooksAnnual - invoiceQuickAnnual;
+  const annualSavingsVsPaypal = paypalAnnualFee - invoiceQuickAnnual;
+  const totalSavings = annualSavingsVsFreshBooks + annualSavingsVsPaypal;
+
+  const fmt = (n: number) =>
+    n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+
+  return (
+    <div className="bg-gradient-to-br from-indigo-50 via-white to-amber-50 border border-indigo-100 rounded-2xl p-6 sm:p-10 max-w-4xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <div className="inline-block bg-indigo-600 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">
+            Live Calculator
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">How much could you save?</h3>
+          <p className="text-gray-600 text-sm mb-6">
+            See your annual savings vs the most popular paid invoicing tools.
+          </p>
+          <div className="space-y-5">
+            <div>
+              <label className="flex justify-between text-sm font-medium text-gray-700 mb-2">
+                <span>Invoices per month</span>
+                <span className="font-bold text-indigo-700">{invoicesPerMonth}</span>
+              </label>
+              <input
+                type="range"
+                min={1}
+                max={100}
+                value={invoicesPerMonth}
+                onChange={(e) => setInvoicesPerMonth(Number(e.target.value))}
+                className="w-full accent-indigo-600"
+              />
+            </div>
+            <div>
+              <label className="flex justify-between text-sm font-medium text-gray-700 mb-2">
+                <span>Average invoice value</span>
+                <span className="font-bold text-indigo-700">{fmt(avgInvoiceValue)}</span>
+              </label>
+              <input
+                type="range"
+                min={100}
+                max={10000}
+                step={50}
+                value={avgInvoiceValue}
+                onChange={(e) => setAvgInvoiceValue(Number(e.target.value))}
+                className="w-full accent-indigo-600"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div className="text-center pb-5 border-b border-gray-100">
+            <div className="text-xs uppercase tracking-wide text-gray-500 font-semibold mb-1">
+              Your Annual Savings
+            </div>
+            <div className="text-4xl sm:text-5xl font-extrabold text-emerald-600">
+              {fmt(totalSavings)}
+            </div>
+            <div className="text-xs text-gray-500 mt-1">vs combined FreshBooks + PayPal fees</div>
+          </div>
+          <div className="space-y-3 pt-5 text-sm">
+            <div className="flex justify-between items-baseline">
+              <span className="text-gray-600">FreshBooks subscription</span>
+              <span className="font-semibold text-gray-900">{fmt(freshBooksAnnual)}/yr</span>
+            </div>
+            <div className="flex justify-between items-baseline">
+              <span className="text-gray-600">PayPal invoice fees (2.99%)</span>
+              <span className="font-semibold text-gray-900">{fmt(paypalAnnualFee)}/yr</span>
+            </div>
+            <div className="flex justify-between items-baseline pt-3 border-t border-gray-100">
+              <span className="font-semibold text-gray-900">InvoiceQuick (Free tier)</span>
+              <span className="font-bold text-indigo-700">$0/yr</span>
+            </div>
+          </div>
+          <Link
+            href="/create"
+            className="btn-primary mt-6 w-full text-center block !py-3"
+          >
+            Start Saving — Free &rarr;
+          </Link>
+          <p className="text-center text-xs text-gray-400 mt-3">
+            No credit card · No sign-up · Free forever
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const faqs = [
   {
@@ -309,6 +407,11 @@ export default function Home() {
           </table>
         </div>
         <p className="text-center text-sm text-gray-500 mt-4">Pricing as of April 2026. Free features verified by ToolsRated.</p>
+      </section>
+
+      {/* Savings Calculator */}
+      <section className="max-w-6xl mx-auto px-4 pb-20">
+        <SavingsCalculator />
       </section>
 
       {/* Testimonials */}
