@@ -212,6 +212,128 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Free invoice software comparison */}
+      <section className="mt-16 max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-gray-900 mb-3">Free invoice software: InvoiceQuick vs Wave vs Zoho Invoice vs Bonsai</h2>
+        <p className="text-gray-700 leading-relaxed mb-6">
+          The free-tier invoicing market in 2026 is bigger than people think. Here&apos;s the honest side-by-side of
+          the four free or near-free options most freelancers compare before choosing — what each one actually gives
+          you on the free or entry tier, where the cliffs are, and which one fits which freelancer.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-50 border-b border-gray-200">
+                <th className="text-left p-3 font-semibold text-gray-900">Feature</th>
+                <th className="text-left p-3 font-semibold text-indigo-600">InvoiceQuick Free</th>
+                <th className="text-left p-3 font-semibold text-gray-700">Wave Starter</th>
+                <th className="text-left p-3 font-semibold text-gray-700">Zoho Invoice</th>
+                <th className="text-left p-3 font-semibold text-gray-700">Bonsai</th>
+              </tr>
+            </thead>
+            <tbody className="text-gray-700">
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-medium">Price (entry tier)</td>
+                <td className="p-3">$0 forever</td>
+                <td className="p-3">$0 (Starter)</td>
+                <td className="p-3">$0 forever</td>
+                <td className="p-3">No free tier; $19+/mo</td>
+              </tr>
+              <tr className="border-b border-gray-100 bg-gray-50/50">
+                <td className="p-3 font-medium">Invoice cap on free tier</td>
+                <td className="p-3">Unlimited</td>
+                <td className="p-3">Unlimited</td>
+                <td className="p-3">500/year</td>
+                <td className="p-3">—</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-medium">Credit card required to start</td>
+                <td className="p-3">No</td>
+                <td className="p-3">No</td>
+                <td className="p-3">No</td>
+                <td className="p-3">7-day trial → CC required</td>
+              </tr>
+              <tr className="border-b border-gray-100 bg-gray-50/50">
+                <td className="p-3 font-medium">Watermarks on PDF</td>
+                <td className="p-3">None</td>
+                <td className="p-3">None</td>
+                <td className="p-3">None</td>
+                <td className="p-3">—</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-medium">Logo / custom branding</td>
+                <td className="p-3">Pro ($9/mo)</td>
+                <td className="p-3">Free</td>
+                <td className="p-3">Free</td>
+                <td className="p-3">Included on paid</td>
+              </tr>
+              <tr className="border-b border-gray-100 bg-gray-50/50">
+                <td className="p-3 font-medium">Recurring / retainer invoices</td>
+                <td className="p-3">Pro ($9/mo)</td>
+                <td className="p-3">Pro ($16/mo)</td>
+                <td className="p-3">Free</td>
+                <td className="p-3">Included on paid</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-medium">Multi-currency invoices</td>
+                <td className="p-3">Free (50+ currencies)</td>
+                <td className="p-3">Limited</td>
+                <td className="p-3">Free</td>
+                <td className="p-3">Included on paid</td>
+              </tr>
+              <tr className="border-b border-gray-100 bg-gray-50/50">
+                <td className="p-3 font-medium">Client database</td>
+                <td className="p-3">Pro ($9/mo)</td>
+                <td className="p-3">Free</td>
+                <td className="p-3">Free (1,000 clients)</td>
+                <td className="p-3">Included on paid</td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="p-3 font-medium">Per-user pricing penalty</td>
+                <td className="p-3">No (flat tiers)</td>
+                <td className="p-3">No</td>
+                <td className="p-3">2 users on free</td>
+                <td className="p-3">Yes (cost scales w/ team)</td>
+              </tr>
+              <tr className="border-b border-gray-100 bg-gray-50/50">
+                <td className="p-3 font-medium">Sign-up friction</td>
+                <td className="p-3">Email only</td>
+                <td className="p-3">Email + business setup</td>
+                <td className="p-3">Zoho account</td>
+                <td className="p-3">CC + trial gate</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>
+            <strong>Pick InvoiceQuick Free</strong> if you want a clean, fast invoice generator with no friction —
+            unlimited invoices, no watermarks, no credit card, no setup wizard, and a clear $9/mo upgrade only when
+            you actually need recurring billing, branding, or a client database.
+          </p>
+          <p>
+            <strong>Pick Wave Starter</strong> if you want bookkeeping bundled in and you&apos;re fine with the
+            broader accounting-software setup. Logo and client database are free on Starter, but recurring invoices
+            and ACH/auto-reminders move to Wave Pro at $16/mo — almost 2× InvoiceQuick&apos;s equivalent tier.
+          </p>
+          <p>
+            <strong>Pick Zoho Invoice</strong> if you&apos;re already inside the Zoho ecosystem (Books, CRM, Mail).
+            The 500 invoices/year cap is a real ceiling once you cross ~40 invoices/month, and you&apos;ll graduate
+            to Zoho Books ($15+/mo) — not Zoho Invoice paid — when you outgrow free.
+          </p>
+          <p>
+            <strong>Skip Bonsai for invoicing alone.</strong> Bonsai is a full freelance OS (CRM, contracts,
+            proposals, tasks, banking) priced like one — $19–$79/mo per user with no free tier. If you only need
+            invoicing, you&apos;re paying for nine features you don&apos;t use. Bonsai is the right pick if you&apos;re
+            consolidating five tools into one, not if you&apos;re replacing one.
+          </p>
+        </div>
+        <p className="mt-4 text-xs text-gray-500">
+          Pricing and feature data verified May 2026 against each vendor&apos;s public pricing page. Vendors change
+          pricing — check the source before committing.
+        </p>
+      </section>
+
       {/* Retainer billing — the specific Free vs Pro threshold */}
       <section className="mt-16 max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Retainer billing on each tier</h2>
