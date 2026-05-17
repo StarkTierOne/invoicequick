@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Invoice Tips & Guides | InvoiceQuick Blog",
   description: "Learn how to create professional invoices, get paid faster, and manage your freelance finances. Free guides, templates, and best practices.",
-  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services, how to invoice as a freelancer, how to reference a contract on a freelance invoice, contract reference on invoice, statement of work invoice, change order invoice, recurring invoices for freelancers, retainer billing, monthly retainer invoice, hours-bank retainer, milestone retainer, retainer invoice template, freelance retainer model",
+  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services, how to invoice as a freelancer, how to reference a contract on a freelance invoice, contract reference on invoice, statement of work invoice, change order invoice, recurring invoices for freelancers, retainer billing, monthly retainer invoice, hours-bank retainer, milestone retainer, retainer invoice template, freelance retainer model, convert project client to retainer, retainer pitch email, project to retainer pitch, freelance retainer conversion, trial retainer freelancer",
 };
 
 const articles = [
@@ -151,6 +151,12 @@ const articles = [
     title: "Recurring Invoices for Freelancers: The Complete Guide to Retainer Billing (2026)",
     excerpt:
       "Recurring revenue is the single biggest cash-flow upgrade most freelancers ever make — but the invoicing pattern that worked for one-off projects actively breaks under retainer billing. This guide covers the optimal billing cadence (and why the 1st of the month wins), three retainer models with copy-paste line-item templates (fixed-hours, hours-bank, milestone), how to handle overages without killing the relationship, automatic-renewal mechanics, the retainer-specific failure mode of payment drift, and the right way to price a retainer (hint: not your hourly rate × reserved hours). Everything you need to run a retainer book that bills itself.",
+  },
+  {
+    slug: "convert-project-client-to-retainer",
+    title: "How to Convert a Project Client into a Retainer Client (2026 Playbook)",
+    excerpt:
+      "The single highest-leverage move in a freelance business is converting a project client you have already delivered for into a monthly retainer — the trust is built, the scope is calibrated, the invoice address is on file. But most freelancers never make the pitch because they miss the one moment when it lands or default to a vague \"let me know if you need anything\" sign-off. This guide covers exactly when to pitch (the offboarding email — not a week later), three copy-paste pitch-email templates matched to project shape (maintenance, content, advisory), the trial-retainer pattern for hesitant clients, how to handle the \"let me think about it\" reply at 7/30/60 days, and the first-invoice mechanics that lock the conversion in. The conversion sequence that makes 3 retainer clients at $2,500/mo realistic from your existing project book.",
   },
   {
     slug: "best-free-invoicing-software-small-business",

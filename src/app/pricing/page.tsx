@@ -365,6 +365,15 @@ export default function PricingPage() {
             Read the retainer billing guide &rarr;
           </Link>
         </p>
+        <p className="mt-2 text-sm text-gray-600">
+          Not at 5 retainers yet? Most freelancers fill their retainer book from their existing project clients, not from
+          cold pitches. Our companion guide on{" "}
+          <Link href="/blog/convert-project-client-to-retainer" className="text-indigo-600 hover:text-indigo-700 underline">
+            converting project clients into retainer clients
+          </Link>{" "}
+          covers the exact offboarding-email pitch templates (maintenance, content, trial) and the followup cadence that
+          gets you to the upgrade threshold.
+        </p>
       </section>
 
       {/* FAQ */}
