@@ -150,7 +150,7 @@ const articles = [
     slug: "recurring-invoices-for-freelancers",
     title: "Recurring Invoices for Freelancers: The Complete Guide to Retainer Billing (2026)",
     excerpt:
-      "Recurring revenue is the single biggest cash-flow upgrade most freelancers ever make — but the invoicing pattern that worked for one-off projects actively breaks under retainer billing. This guide covers the optimal billing cadence (and why the 1st of the month wins), three retainer models with copy-paste line-item templates (fixed-hours, hours-bank, milestone), how to handle overages without killing the relationship, automatic-renewal mechanics, the retainer-specific failure mode of payment drift, and the right way to price a retainer (hint: not your hourly rate × reserved hours). Everything you need to run a retainer book that bills itself.",
+      "Recurring revenue is the single biggest cash-flow upgrade most freelancers ever make — but the invoicing pattern that worked for one-off projects actively breaks under retainer billing. This guide covers the optimal billing cadence (and why the 1st of the month wins), three retainer models with copy-paste line-item templates (fixed-hours, hours-bank, milestone), how to handle overages without killing the relationship, automatic-renewal mechanics, the retainer-specific failure mode of payment drift, the rate-raise email template that lands a 10–20% raise without a renegotiation (anniversary timing, 60-day notice, value-delivered framing), and the right way to price a retainer (hint: not your hourly rate × reserved hours). Everything you need to run a retainer book that bills itself.",
   },
   {
     slug: "convert-project-client-to-retainer",

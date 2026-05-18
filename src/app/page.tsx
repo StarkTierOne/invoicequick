@@ -257,6 +257,7 @@ export default function Home() {
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No sign-up required</span>
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No credit card</span>
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Free forever</span>
+          <span className="flex items-center gap-1" title="InvoiceQuick generates the PDF — clients pay you directly however you arrange. No 2.9–3.5% processing cut like PayPal, Square, or Wave."><span className="text-green-500 font-bold">&#10003;</span> 0% payment fees</span>
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Trusted by 10,000+ users</span>
         </div>
         <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">

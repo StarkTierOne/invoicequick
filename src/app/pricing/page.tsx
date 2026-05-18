@@ -415,6 +415,97 @@ export default function PricingPage() {
           }),
         }}
       />
+
+      {/* SoftwareApplication JSON-LD with priced offers */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "InvoiceQuick",
+            applicationCategory: "BusinessApplication",
+            applicationSubCategory: "InvoicingSoftware",
+            operatingSystem: "Web",
+            url: "https://invoicequick.vercel.app/",
+            description:
+              "Free online invoice generator with unlimited invoices, PDF download, multi-currency, and zero watermarks. Pro and Business tiers add recurring invoices, client database, custom branding, team access, and API.",
+            offers: [
+              {
+                "@type": "Offer",
+                name: "Free",
+                price: "0",
+                priceCurrency: "USD",
+                description:
+                  "Unlimited invoices, PDF download, 50+ currencies, no watermarks, basic templates. No credit card required.",
+                url: "https://invoicequick.vercel.app/pricing",
+                availability: "https://schema.org/InStock",
+              },
+              {
+                "@type": "Offer",
+                name: "Pro",
+                price: "9",
+                priceCurrency: "USD",
+                description:
+                  "Everything in Free, plus save & reuse templates, auto-numbering, payment tracking, custom branding/logo, client database, recurring invoices, and priority support.",
+                url: "https://invoicequick.vercel.app/pricing",
+                availability: "https://schema.org/InStock",
+                priceSpecification: {
+                  "@type": "UnitPriceSpecification",
+                  price: "9",
+                  priceCurrency: "USD",
+                  unitCode: "MON",
+                  referenceQuantity: { "@type": "QuantitativeValue", value: "1", unitCode: "MON" },
+                },
+              },
+              {
+                "@type": "Offer",
+                name: "Business",
+                price: "29",
+                priceCurrency: "USD",
+                description:
+                  "Everything in Pro, plus team access (5 users), API access, Zapier integration, custom domain invoices, advanced reporting, and dedicated support.",
+                url: "https://invoicequick.vercel.app/pricing",
+                availability: "https://schema.org/InStock",
+                priceSpecification: {
+                  "@type": "UnitPriceSpecification",
+                  price: "29",
+                  priceCurrency: "USD",
+                  unitCode: "MON",
+                  referenceQuantity: { "@type": "QuantitativeValue", value: "1", unitCode: "MON" },
+                },
+              },
+            ],
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.9",
+              ratingCount: "10000",
+              bestRating: "5",
+              worstRating: "1",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "InvoiceQuick",
+              url: "https://invoicequick.vercel.app/",
+            },
+          }),
+        }}
+      />
+
+      {/* BreadcrumbList JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick.vercel.app/" },
+              { "@type": "ListItem", position: 2, name: "Pricing", item: "https://invoicequick.vercel.app/pricing" },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 

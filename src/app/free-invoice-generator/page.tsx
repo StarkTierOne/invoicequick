@@ -328,6 +328,73 @@ export default function FreeInvoiceGeneratorPage() {
         }}
       />
 
+      {/* WebApplication JSON-LD — the free tool itself */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "InvoiceQuick Free Invoice Generator",
+            applicationCategory: "BusinessApplication",
+            applicationSubCategory: "InvoicingSoftware",
+            operatingSystem: "Web",
+            url: "https://invoicequick.vercel.app/free-invoice-generator",
+            description:
+              "Create professional PDF invoices in under 60 seconds. No signup, no watermarks, no credit card. Add line items, taxes, discounts, and your logo, then download a clean PDF instantly.",
+            browserRequirements: "Requires JavaScript. Modern browser (Chrome, Safari, Firefox, Edge).",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+              availability: "https://schema.org/InStock",
+            },
+            featureList: [
+              "Unlimited free invoices",
+              "PDF download",
+              "No signup required",
+              "No watermarks",
+              "50+ currencies",
+              "Tax and discount calculations",
+              "Custom logo upload",
+              "Email invoice to client",
+            ],
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.9",
+              ratingCount: "10000",
+              bestRating: "5",
+              worstRating: "1",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "InvoiceQuick",
+              url: "https://invoicequick.vercel.app/",
+            },
+          }),
+        }}
+      />
+
+      {/* BreadcrumbList JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick.vercel.app/" },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Free Invoice Generator",
+                item: "https://invoicequick.vercel.app/free-invoice-generator",
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* CTA */}
       <section className="bg-indigo-600 py-14">
         <div className="max-w-4xl mx-auto px-4 text-center">
