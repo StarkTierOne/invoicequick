@@ -101,6 +101,12 @@ export default function PricingPage() {
       <div className="text-center mb-12">
         <h1 className="text-3xl font-extrabold mb-2">Simple, Transparent Pricing</h1>
         <p className="text-gray-600">Start free. Upgrade when you need more power.</p>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-500">
+          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No credit card</span>
+          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Free forever</span>
+          <span className="flex items-center gap-1" title="InvoiceQuick generates the PDF — clients pay you directly however you arrange. No 2.9–3.5% processing cut like PayPal, Square, or Wave."><span className="text-green-500 font-bold">&#10003;</span> 0% payment fees</span>
+          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Cancel anytime</span>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
