@@ -82,6 +82,7 @@ export default function FreeInvoiceGeneratorPage() {
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No credit card</span>
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> PDF ready in 60 seconds</span>
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Free forever</span>
+          <span className="flex items-center gap-1" title="InvoiceQuick generates the PDF — clients pay you directly however you arrange. No 2.9–3.5% processing cut like PayPal, Square, or Wave."><span className="text-green-500 font-bold">&#10003;</span> 0% payment fees</span>
         </div>
       </section>
 
