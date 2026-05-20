@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 
 const blogSlugs = [
+  "invoice-payment-reminder-email-templates",
   "how-to-create-professional-invoice",
   "free-invoice-template-freelancers",
   "when-to-send-invoice",

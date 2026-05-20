@@ -11,6 +11,39 @@ const articles: Record<
     body: string[];
   }
 > = {
+  "invoice-payment-reminder-email-templates": {
+    title: "Invoice Payment Reminder Email Templates (Polite to Firm)",
+    description:
+      "Five copy-paste invoice payment reminder email templates — from a polite nudge to a firm final notice — plus the ideal sending cadence and subject lines that get you paid.",
+    keywords:
+      "invoice payment reminder email, payment reminder template, overdue invoice email, how to ask for payment politely, late payment follow up email",
+    body: [
+      "A late invoice is rarely a sign that a client refuses to pay. Most of the time the invoice is simply buried under a hundred other emails, the approver was on vacation, or it slipped past the accounts-payable cycle. That is good news: it means a calm, well-timed reminder usually gets you paid without any conflict. The key is having templates ready so you are not rewriting an awkward email from scratch every time.",
+      "## When to Send Each Reminder",
+      "A predictable cadence does the heavy lifting. Send a short pre-due-date confirmation about three days before the due date, a gentle reminder the day after it becomes overdue, a firmer follow-up at one to two weeks late, and a final notice at three to four weeks that references your late-fee policy. Spacing reminders this way keeps you top-of-mind without looking impatient.",
+      "## Subject Lines That Get Opened",
+      "Your subject line decides whether the email gets read today or ignored. Always include the invoice number and a concrete detail: 'Invoice #1042 — due Friday, March 14', 'Reminder: Invoice #1042 is now past due', or 'Invoice #1042 — final notice before late fee'. Vague subjects like 'Following up' get skimmed past; specific ones get acted on.",
+      "## Template 1: Friendly Pre-Due-Date Nudge",
+      "Subject line: Invoice #1042 — due Friday, March 14",
+      "Hi [Name], just a quick heads-up that Invoice #1042 for [project] is due this Friday, March 14. The total is [amount], and you can pay by [payment methods]. The invoice is attached again for convenience. Thanks so much — happy to answer any questions!",
+      "## Template 2: Gentle Day-One Reminder",
+      "Subject line: Reminder — Invoice #1042 is now due",
+      "Hi [Name], I hope you're doing well. This is a friendly reminder that Invoice #1042 for [amount] was due yesterday, [date]. If it's already on its way, please ignore this note. If not, you can pay via [payment methods] — I've attached the invoice again here. Thank you!",
+      "## Template 3: Firmer Two-Week Follow-Up",
+      "Subject line: Past due — Invoice #1042 (now 14 days overdue)",
+      "Hi [Name], I wanted to follow up on Invoice #1042 for [amount], which is now 14 days past due. Could you let me know the expected payment date, or flag anything holding it up on your end? I'm glad to help resolve any issues. The invoice and payment details are attached. Thanks for taking care of this.",
+      "## Template 4: Final Notice With Late-Fee Reference",
+      "Subject line: Final notice — Invoice #1042 overdue",
+      "Hi [Name], Invoice #1042 for [amount] is now [X] days overdue. As noted in the original payment terms, a late fee of [1.5% per month or a flat amount] will be applied to balances overdue by more than [30] days. To avoid the fee, please arrange payment by [date] via [payment methods]. If there's a problem I'm not aware of, please reach out so we can sort it out. Thank you.",
+      "## Template 5: Short and Direct (for Clients You Know Well)",
+      "Subject line: Invoice #1042 — quick nudge",
+      "Hey [Name], just bumping Invoice #1042 ([amount]) — it slipped past the due date. Mind sending it through when you get a sec? Link and details attached. Thanks!",
+      "## Keep Your Tone Calm and Your Records Clean",
+      "Stay polite even in the final notice — most overdue invoices are honest oversights, and a respectful tone protects the relationship and your reputation. Always attach the invoice again so the client never has to dig for it, CC yourself to keep a paper trail, and reference the exact invoice number and amount every time. If you find yourself sending these reminders constantly, tighten your terms upfront: shorter payment windows, a stated late-fee policy, and a deposit on larger projects.",
+      "## Send Reminders Faster With InvoiceQuick",
+      "InvoiceQuick keeps every invoice number, amount, and due date organized in one place, so writing a reminder is as simple as dropping the details into one of the templates above. Create your invoice, set clear payment terms, and download a clean PDF to attach — all in under a minute, for free.",
+    ],
+  },
   "how-to-create-professional-invoice": {
     title: "How to Create a Professional Invoice (Step-by-Step Guide)",
     description:

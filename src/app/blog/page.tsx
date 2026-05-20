@@ -9,6 +9,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "invoice-payment-reminder-email-templates",
+    title: "Invoice Payment Reminder Email Templates (Polite to Firm)",
+    excerpt:
+      "A late invoice is rarely a sign that a client refuses to pay — most of the time it is simply buried in a busy inbox. The fix is a calm, well-timed reminder sequence that escalates politely without burning the relationship. This guide gives you five copy-paste payment reminder email templates: a friendly pre-due-date nudge, a gentle day-one reminder, a firmer two-week follow-up, a final notice referencing your late-fee policy, and a short-and-direct version for clients you know well. You will also learn the ideal cadence for sending them, the subject lines that actually get opened, and the small wording changes that get you paid without awkwardness.",
+  },
+  {
     slug: "how-to-create-professional-invoice",
     title: "How to Create a Professional Invoice (Step-by-Step Guide)",
     excerpt:

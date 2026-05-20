@@ -1,7 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+function MobileStickyCTA() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 600);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <div
+      className={`sm:hidden fixed inset-x-0 bottom-0 z-50 transition-transform duration-300 ${
+        visible ? "translate-y-0" : "translate-y-full"
+      }`}
+    >
+      <div className="bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-3 shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
+        <Link href="/create" className="btn-primary w-full text-center text-base !py-3 block">
+          Create Your Invoice Free &rarr;
+        </Link>
+        <p className="text-center text-xs text-gray-500 mt-1.5">No sign-up &middot; No credit card &middot; Free forever</p>
+      </div>
+    </div>
+  );
+}
 
 function SavingsCalculator() {
   const [invoicesPerMonth, setInvoicesPerMonth] = useState(15);
@@ -668,6 +692,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      <MobileStickyCTA />
     </div>
   );
 }
