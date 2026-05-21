@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 
+// Keep in sync with the article keys in src/app/blog/[slug]/page.tsx
 const blogSlugs = [
   "invoice-payment-reminder-email-templates",
   "how-to-create-professional-invoice",
@@ -27,6 +28,8 @@ const blogSlugs = [
   "how-to-reference-contract-on-invoice",
   "recurring-invoices-for-freelancers",
   "best-free-invoicing-software-small-business",
+  "convert-project-client-to-retainer",
+  "deposit-invoice-upfront-payment",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

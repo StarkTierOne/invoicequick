@@ -829,6 +829,40 @@ const articles: Record<
       "Three retainer clients at $2,500/month is $90,000/year in revenue you do not have to re-sell. Start with the next project you deliver — add the pitch paragraph to the offboarding email before you hit send. The retainer-billing setup from our recurring invoices for freelancers guide handles the rest of the workflow once a client converts. The pitch is the one missing piece between the two.",
     ],
   },
+  "deposit-invoice-upfront-payment": {
+    title: "How to Invoice for a Deposit or Upfront Payment (2026 Guide)",
+    description:
+      "How to invoice for a deposit or upfront payment: how much to ask for, how to word the request, how to structure the deposit and balance invoices, refundable vs non-refundable terms, and the mistakes that scare clients off.",
+    keywords:
+      "deposit invoice, how to invoice for a deposit, upfront payment invoice, advance payment invoice, how to ask for a deposit freelance, deposit invoice template, 50 percent upfront invoice, how to invoice a down payment, retainer vs deposit",
+    body: [
+      "Asking for money before you start the work is the single most effective protection a freelancer has against non-payment — and the one most beginners are too nervous to use. A deposit does three things at once: it filters out clients who were never going to pay, it covers your time and materials if a project stalls, and it psychologically commits the client to the engagement. Clients who have paid a deposit show up to calls, send assets on time, and approve faster, because they have skin in the game. This guide covers exactly how to invoice for a deposit — how much to ask for, how to word the request without sounding distrustful, how to structure the deposit and balance invoices, and how to handle the refund question that scares most freelancers into skipping deposits entirely.",
+      "## What a Deposit Invoice Actually Is",
+      "A deposit invoice (also called an advance payment invoice, down payment invoice, or upfront invoice) is a request for partial payment issued before the work is delivered. It is distinct from a regular invoice, which bills for work already completed, and from a retainer, which is a recurring fee for ongoing availability. A deposit is a one-time, project-specific upfront payment that is later credited against the project total. The key mechanical point: the deposit is not extra money on top of your fee — it is the first slice of your fee, collected early. Your final invoice subtracts the deposit so the client pays the same total, just split across two payments.",
+      "## How Much Deposit Should You Ask For?",
+      "The standard freelance deposit is 50% upfront, 50% on delivery. This is the default for most project work — design, development, writing, consulting — and clients in those industries expect it. It splits the risk evenly: you are never working on more than half the project unpaid, and the client is never paying for more than half before they see the result.",
+      "Adjust from there based on three factors. For larger projects (anything over roughly a month of work), break payment into thirds or milestone-based chunks — 33% upfront, 33% at the midpoint, 34% on delivery — so neither side carries a month of exposure. For first-time clients with no track record, lean toward a higher deposit (50% or more) until trust is established. For long-standing clients who always pay on time, a smaller deposit (25%) or none at all is a reasonable relationship perk. And for projects with hard costs — print runs, stock licenses, subcontractors, travel — your deposit should at minimum cover those out-of-pocket expenses so you are never personally financing the client's project.",
+      "## How to Word the Deposit Request (Without Sounding Distrustful)",
+      "The fear that kills deposits is sounding like you do not trust the client. The fix is to frame the deposit as standard process, not as a response to anything about this specific client. Put it in your proposal or contract before the project starts, state it as a flat policy, and never apologize for it. Language that works: \"To book your spot in my calendar, I require a 50% deposit, with the balance due on delivery. Once the deposit is received I'll schedule your project and we'll get started.\" The phrase \"to book your spot\" reframes the deposit as the thing that secures their place rather than a trust test — it is the same logic as a contractor, a wedding photographer, or a venue, all of whom take deposits as a matter of course and none of whom feel awkward about it.",
+      "Two rules make this painless. First, always state the deposit policy upfront, in writing, before any work begins — surprising a client with a deposit request after you have already agreed to start feels like a renegotiation and erodes trust. Second, tie the deposit to a concrete trigger: work begins when the deposit clears, not before. This is not a threat; it is just a clear, fair sequence that protects both sides.",
+      "## How to Structure the Deposit Invoice",
+      "Your deposit invoice should look like a normal professional invoice with a few specific adjustments. Title it clearly — use \"Deposit Invoice\" or \"Invoice (Deposit — 1 of 2)\" in the header so the client's accounts-payable team files it correctly. The line item should name what the deposit is for and the percentage: \"Deposit — 50% of [project name] (total project fee $4,000)\" with an amount of $2,000. Spelling out the total project fee on the deposit invoice prevents confusion when the balance invoice arrives later. Set payment terms to Due on Receipt for deposits — there is no reason to give a 30-day window on a payment that is supposed to happen before work starts. And add a one-line note stating the deposit is credited against the project total: \"This deposit will be applied to the final invoice. Balance of $2,000 due on project completion.\"",
+      "## How to Invoice the Remaining Balance",
+      "When the project is done, your final invoice bills the full project amount and then subtracts the deposit already paid. Show it explicitly so the math is transparent: list the project total ($4,000) as the subtotal, then a credit line (\"Less deposit paid on [date]: −$2,000\"), then the balance due ($2,000). Never just send a second invoice for $2,000 with no reference to the deposit — that invites the client to ask \"wait, didn't I already pay part of this?\" and stalls payment while they dig through records. Referencing the deposit invoice number and payment date on the final invoice keeps everything reconcilable and gets you paid faster. For milestone projects, repeat this pattern at each stage: bill the milestone amount, credit prior payments, show the running balance.",
+      "## Refundable vs Non-Refundable Deposits",
+      "The most common deposit question is what happens if the project falls through. The cleanest and most defensible position for freelancers is a non-refundable deposit that compensates you for reserved time and work already performed. State it plainly in your terms: \"The deposit is non-refundable and covers the calendar time reserved for your project and any work completed prior to cancellation.\" This is standard and enforceable as long as it is agreed in writing upfront and the amount is a reasonable estimate of your costs — courts dislike deposits that look like punitive penalties but accept deposits that reasonably reflect lost time and committed resources.",
+      "A middle-ground option that clients find fairer: a partially refundable deposit, where you keep an amount proportional to work done and refund the rest. For example, if a client cancels after you have completed 30% of the project, you keep enough of the deposit to cover that work and refund the difference. Whichever model you choose, the rule is the same — put it in writing before the project starts. A deposit policy that exists only in your head is unenforceable and invites disputes.",
+      "## A Note on Taxes",
+      "In most cash-basis accounting setups — which is how the majority of freelancers and sole proprietors file — a deposit counts as income in the period you receive it, not the period you deliver the work. That means a deposit received in December is part of that year's taxable income even if the project finishes in January. This is rarely a problem, but it matters for year-end planning: a large deposit collected in late December can push income into the current tax year. If you use accrual accounting or operate as a registered business, the treatment can differ, and sales tax or VAT on deposits has its own country-specific rules. When in doubt, confirm with your accountant — but for most freelancers, the simple rule is: the money is income when it lands in your account.",
+      "## Common Deposit Mistakes",
+      "**Asking for the deposit after starting work.** The deposit only protects you if it arrives before you invest time. Collect it as the gate to starting, not as an afterthought once you are already three drafts in.",
+      "**Not putting the policy in writing.** A verbal \"I usually take a deposit\" is worthless in a dispute and easy for a client to conveniently forget. The deposit terms — amount, trigger, refundability — belong in the proposal or contract the client agrees to before work begins.",
+      "**Forgetting to credit the deposit on the final invoice.** Billing the full project amount again without subtracting the deposit either double-charges the client (a trust-destroying error) or, more often, just confuses them into delaying payment while they reconcile. Always show the deposit credit explicitly.",
+      "**Setting the deposit too low to matter.** A 10% deposit on a small project does not meaningfully filter unserious clients or cover your exposure. If you are going to take a deposit, make it large enough to do its job — 50% is standard for a reason.",
+      "## Create Your Deposit Invoice in Under a Minute",
+      "InvoiceQuick makes deposit invoicing straightforward: create the deposit invoice with a clear line item and Due-on-Receipt terms, download a clean PDF, and send it before you start. When the project wraps, create the final invoice, add the deposit as a credit line, and the balance is calculated for you. No sign-up required, free forever, and the whole deposit-and-balance flow takes under two minutes total. Set a clear deposit policy, collect upfront, and watch how much faster — and more reliably — you get paid.",
+    ],
+  },
 };
 
 type Props = {
@@ -858,8 +892,50 @@ export default async function BlogPostPage({ params }: Props) {
   const article = articles[slug];
   if (!article) notFound();
 
+  const canonical = `https://invoicequick.vercel.app/blog/${slug}`;
+
   return (
     <div className="min-h-screen">
+      {/* BlogPosting Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: article.title,
+            description: article.description,
+            keywords: article.keywords,
+            mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+            url: canonical,
+            inLanguage: "en-US",
+            isAccessibleForFree: true,
+            author: { "@type": "Organization", name: "InvoiceQuick", url: "https://invoicequick.vercel.app" },
+            publisher: {
+              "@type": "Organization",
+              name: "InvoiceQuick",
+              url: "https://invoicequick.vercel.app",
+            },
+          }),
+        }}
+      />
+
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick.vercel.app" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "https://invoicequick.vercel.app/blog" },
+              { "@type": "ListItem", position: 3, name: article.title, item: canonical },
+            ],
+          }),
+        }}
+      />
+
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">

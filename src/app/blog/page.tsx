@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Invoice Tips & Guides | InvoiceQuick Blog",
   description: "Learn how to create professional invoices, get paid faster, and manage your freelance finances. Free guides, templates, and best practices.",
-  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services, how to invoice as a freelancer, how to reference a contract on a freelance invoice, contract reference on invoice, statement of work invoice, change order invoice, recurring invoices for freelancers, retainer billing, monthly retainer invoice, hours-bank retainer, milestone retainer, retainer invoice template, freelance retainer model, convert project client to retainer, retainer pitch email, project to retainer pitch, freelance retainer conversion, trial retainer freelancer",
+  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services, how to invoice as a freelancer, how to reference a contract on a freelance invoice, contract reference on invoice, statement of work invoice, change order invoice, recurring invoices for freelancers, retainer billing, monthly retainer invoice, hours-bank retainer, milestone retainer, retainer invoice template, freelance retainer model, convert project client to retainer, retainer pitch email, project to retainer pitch, freelance retainer conversion, trial retainer freelancer, deposit invoice, how to invoice for a deposit, upfront payment invoice, advance payment invoice, how to ask for a deposit freelance, 50 percent upfront invoice",
 };
 
 const articles = [
@@ -169,6 +169,12 @@ const articles = [
     title: "Best Free Invoicing Software for Small Business (2026 Comparison)",
     excerpt:
       "\"Free\" invoicing software is one of the most over-promised categories in small business tools. This 2026 comparison breaks down the three kinds of \"free\" (genuinely free, payment-fee-funded, and trial-disguised), then ranks InvoiceQuick, Wave, Zoho Invoice, PayPal, Square, FreshBooks, and QuickBooks on what each one actually gives away — sign-up friction, hidden costs (watermarks, export limits, data lock-in), and which size of business each one fits. Plus the three questions that decide it without reading 18 more reviews.",
+  },
+  {
+    slug: "deposit-invoice-upfront-payment",
+    title: "How to Invoice for a Deposit or Upfront Payment (2026 Guide)",
+    excerpt:
+      "Asking for money before you start the work is the single most effective protection a freelancer has against non-payment — and the one most beginners are too nervous to use. This guide covers exactly how to invoice for a deposit: how much to ask for (and when 50% is the wrong number), how to word the request without sounding distrustful, how to structure the deposit and balance invoices so the math is transparent, refundable vs non-refundable terms that hold up in a dispute, the tax timing most freelancers miss, and the four deposit mistakes that scare clients off or leave you exposed.",
   },
 ];
 

@@ -657,6 +657,13 @@ export default function Home() {
           <Link href="/create" className="bg-white text-indigo-600 font-semibold px-8 py-4 rounded-lg text-lg hover:bg-indigo-50 transition-colors inline-block">
             Create Your First Invoice Free &rarr;
           </Link>
+          <p className="mt-5 text-indigo-100 text-sm flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            <span>No sign-up required</span>
+            <span aria-hidden="true">&middot;</span>
+            <span>No credit card</span>
+            <span aria-hidden="true">&middot;</span>
+            <span>Free forever</span>
+          </p>
         </div>
       </section>
 
