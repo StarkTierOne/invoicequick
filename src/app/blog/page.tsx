@@ -4,7 +4,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Invoice Tips & Guides | InvoiceQuick Blog",
   description: "Learn how to create professional invoices, get paid faster, and manage your freelance finances. Free guides, templates, and best practices.",
-  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services, how to invoice as a freelancer, how to reference a contract on a freelance invoice, contract reference on invoice, statement of work invoice, change order invoice, recurring invoices for freelancers, retainer billing, monthly retainer invoice, hours-bank retainer, milestone retainer, retainer invoice template, freelance retainer model, convert project client to retainer, retainer pitch email, project to retainer pitch, freelance retainer conversion, trial retainer freelancer, deposit invoice, how to invoice for a deposit, upfront payment invoice, advance payment invoice, how to ask for a deposit freelance, 50 percent upfront invoice",
+  alternates: { canonical: "https://invoicequick.vercel.app/blog" },
+  keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services, how to invoice as a freelancer, how to reference a contract on a freelance invoice, contract reference on invoice, statement of work invoice, change order invoice, recurring invoices for freelancers, retainer billing, monthly retainer invoice, hours-bank retainer, milestone retainer, retainer invoice template, freelance retainer model, convert project client to retainer, retainer pitch email, project to retainer pitch, freelance retainer conversion, trial retainer freelancer, deposit invoice, how to invoice for a deposit, upfront payment invoice, advance payment invoice, how to ask for a deposit freelance, 50 percent upfront invoice, purchase order vs invoice, po vs invoice, po number on invoice, three way match, corporate AP invoice, purchase order process",
 };
 
 const articles = [
@@ -176,11 +177,83 @@ const articles = [
     excerpt:
       "Asking for money before you start the work is the single most effective protection a freelancer has against non-payment — and the one most beginners are too nervous to use. This guide covers exactly how to invoice for a deposit: how much to ask for (and when 50% is the wrong number), how to word the request without sounding distrustful, how to structure the deposit and balance invoices so the math is transparent, refundable vs non-refundable terms that hold up in a dispute, the tax timing most freelancers miss, and the four deposit mistakes that scare clients off or leave you exposed.",
   },
+  {
+    slug: "purchase-order-vs-invoice",
+    title: "Purchase Order vs Invoice: Differences and How They Work Together (2026)",
+    excerpt:
+      "If you have ever sent a clean invoice to a corporate client and watched it sit unpaid for six weeks, the cause is almost always the same: there was a purchase order on their end and your invoice did not reference it. This guide breaks down what a PO actually is, how it differs from an invoice, who issues which, the three-way-match flow corporate AP teams use to gate every payment, the one field that gets corporate invoices paid on time, when to ask for a PO upfront, and what to do when there is not one.",
+  },
 ];
 
 export default function BlogPage() {
+  const blogUrl = "https://invoicequick.vercel.app/blog";
   return (
     <div className="min-h-screen">
+      {/* Blog Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            name: "InvoiceQuick Blog — Invoice Tips & Guides",
+            description:
+              "Practical guides for freelancers and small business owners on creating professional invoices and getting paid faster.",
+            url: blogUrl,
+            inLanguage: "en-US",
+            publisher: {
+              "@type": "Organization",
+              name: "InvoiceQuick",
+              url: "https://invoicequick.vercel.app",
+            },
+            blogPost: articles.map((a) => ({
+              "@type": "BlogPosting",
+              headline: a.title,
+              url: `https://invoicequick.vercel.app/blog/${a.slug}`,
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": `https://invoicequick.vercel.app/blog/${a.slug}`,
+              },
+            })),
+          }),
+        }}
+      />
+
+      {/* ItemList Schema (helps surface the post list in SERPs) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "InvoiceQuick Blog Posts",
+            itemListOrder: "https://schema.org/ItemListOrderDescending",
+            numberOfItems: articles.length,
+            itemListElement: articles.map((a, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              url: `https://invoicequick.vercel.app/blog/${a.slug}`,
+              name: a.title,
+            })),
+          }),
+        }}
+      />
+
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick.vercel.app" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: blogUrl },
+            ],
+          }),
+        }}
+      />
+
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">

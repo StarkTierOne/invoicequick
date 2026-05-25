@@ -863,6 +863,47 @@ const articles: Record<
       "InvoiceQuick makes deposit invoicing straightforward: create the deposit invoice with a clear line item and Due-on-Receipt terms, download a clean PDF, and send it before you start. When the project wraps, create the final invoice, add the deposit as a credit line, and the balance is calculated for you. No sign-up required, free forever, and the whole deposit-and-balance flow takes under two minutes total. Set a clear deposit policy, collect upfront, and watch how much faster — and more reliably — you get paid.",
     ],
   },
+  "purchase-order-vs-invoice": {
+    title: "Purchase Order vs Invoice: Differences and How They Work Together (2026)",
+    description:
+      "Purchase order vs invoice — what's the difference, who issues which, how the PO-to-invoice flow works, and the one field that gets corporate invoices paid on time.",
+    keywords:
+      "purchase order vs invoice, po vs invoice, what is a purchase order, purchase order definition, invoice with po number, po number on invoice, how to reference po on invoice, purchase order process, 3 way match, po number freelance, corporate AP invoice, accounts payable invoice",
+    body: [
+      "If you have ever sent a clean, correct invoice to a corporate client and watched it sit unpaid for six weeks, the cause is almost always the same: there was a purchase order somewhere on their end and your invoice did not reference it. Purchase orders (POs) and invoices are two halves of the same transaction, and once you understand how they work together, you can stop guessing why corporate AP departments stall on your bills and start getting paid on the same cycle as their full-time vendors. This guide breaks down what a purchase order is, exactly how it differs from an invoice, who issues which, the PO-to-invoice flow corporate finance teams actually follow, and the one line you should add to every invoice you send to a company with an AP department.",
+      "## The Short Answer",
+      "A purchase order is a document the buyer sends to the seller authorizing a purchase before the work happens. An invoice is a document the seller sends to the buyer requesting payment after the work is delivered. The PO commits the buyer; the invoice collects from the buyer. They reference each other so the company's finance team can confirm that what was billed matches what was ordered — which is the gate every payment passes through.",
+      "## What a Purchase Order Actually Is",
+      "A purchase order is an internal procurement document that a company issues to lock in a purchase: a unique PO number, the vendor's name, an itemized list of what is being bought, agreed unit prices and quantities, the total, and the agreed delivery and payment terms. Once signed off internally, the PO becomes a binding commitment — the company has formally agreed to pay you that amount for that work. From your side as the seller, receiving a PO is good news: it means a real person with budget authority has approved the work, accounting has a slot reserved to pay it, and you are no longer relying on a casual email saying \"go ahead.\"",
+      "Not every transaction needs a PO. Small businesses, individuals, and most freelance-to-freelance work skip them entirely — the contract or accepted proposal is the agreement, and the invoice is the payment request. Companies with formal procurement processes (typically anywhere with a dedicated accounts payable team or more than a few dozen employees) use POs for any purchase above a threshold, often a few hundred to a few thousand dollars depending on the company.",
+      "## What an Invoice Actually Is",
+      "An invoice is the document you send after delivering the work, requesting payment. It has your business details, the client's details, a unique invoice number, the date and due date, itemized line items with quantities and rates, applicable taxes, the total amount due, and your payment instructions and terms. The invoice is the trigger that starts the buyer's payment clock — most corporate \"Net 30\" terms count from the invoice date or the date the invoice is received and approved, not from when the work was completed.",
+      "## Side-by-Side: Purchase Order vs Invoice",
+      "**Who creates it.** The buyer creates the purchase order. The seller creates the invoice.",
+      "**When it is sent.** The PO is sent before work begins (it authorizes the purchase). The invoice is sent after work is delivered (it requests payment for the purchase).",
+      "**What it commits.** The PO commits the buyer to pay for the goods or services they have ordered. The invoice formally bills the buyer for the goods or services already delivered.",
+      "**The reference number.** The PO has a PO number assigned by the buyer's procurement system. The invoice has an invoice number you assign yourself, and a great corporate-facing invoice also includes the PO number it bills against.",
+      "**The direction of obligation.** The PO is the buyer saying \"I will pay you for this.\" The invoice is the seller saying \"You owe me for this — please pay.\"",
+      "## The PO-to-Invoice Flow",
+      "Here is what the full cycle looks like inside a company that uses POs. The buyer's team identifies a need and requests a purchase. Procurement issues a PO with a unique number and sends it to you, the vendor. You receive the PO, fulfill the order (deliver the work or ship the goods), and send an invoice that references the original PO number. Accounts payable receives your invoice and performs what is called a \"three-way match\" — they verify that the PO (what was authorized), the goods receipt or delivery confirmation (what was actually delivered), and the invoice (what is being billed) all line up. If they match, your invoice is approved and queued for payment per the agreed terms. If anything is off — wrong PO number, line items that do not match, an amount over the authorized total — the invoice gets bounced back and your payment clock effectively restarts.",
+      "This is why so many freelance invoices to corporate clients get \"stuck\" mysteriously: AP could not match the invoice to a PO, so it sits in a queue waiting for someone to manually reconcile it. A single missing PO number can add weeks to your payment.",
+      "## The One Field That Gets Corporate Invoices Paid On Time",
+      "If you take one thing from this guide, take this: whenever a corporate client gives you a PO number, put it on every invoice in a place AP will see it immediately. The cleanest spot is just below the invoice number, on its own line: \"PO Number: 4500127893.\" Some companies also want their requisition number or a department reference — if they give it to you, include it. This single addition is the difference between a 14-day pay cycle and a 60-day pay cycle on the same invoice.",
+      "If the client gave you the PO number verbally or buried it in an email, confirm it in writing before sending the invoice. Wrong PO numbers are a top reason for AP rejections, and a quick \"Just confirming the PO number for the engagement is 4500127893 — please reply if that's wrong\" email is much faster than discovering the error after submission.",
+      "## What If There Is No Purchase Order?",
+      "Plenty of freelance and small-business work happens without a PO, and that is fine. When there is no PO, your contract, signed proposal, or accepted statement of work serves the same authorizing function — it is what your invoice is billing against. In that case, reference the agreement on your invoice: \"Per agreement dated March 14, 2026\" or \"Per Statement of Work #SOW-2026-04\" makes the AP team's life easy and prevents the same matching-stall problem. If you are working with a corporate client who has not given you a PO and seems to have an AP department, ask politely: \"Will this engagement have a PO? If so, can you share the number so I can include it on invoices?\" The answer is either yes (great, get the number) or no (great, reference the contract instead).",
+      "## When You Should Ask For a PO",
+      "Three signals tell you to ask for a PO before starting work. First, the company is large enough to have an accounts payable function (you can usually tell from the website, LinkedIn, or the fact that your client is talking about \"submitting it to finance\"). Second, your contact is not the person who controls the budget — they are a manager who needs internal sign-off to spend money. Third, the engagement is above a couple of thousand dollars. In any of those situations, a PO is how the spend gets pre-authorized inside the buyer's system, and asking for one upfront saves you from doing the work and then waiting weeks for the company to retroactively process the spend.",
+      "The ask is simple and professional: \"Before I get started, do you need to issue a PO for this engagement? I want to make sure my invoice will match cleanly to whatever your AP team uses.\" Most corporate buyers appreciate the question — it signals you have worked with companies their size before and saves them a downstream cleanup.",
+      "## Common Mistakes",
+      "**Treating a PO as optional once issued.** If the client sent you a PO, your invoice must reference that exact PO number and stay within the authorized scope and amount. Billing $5,500 against a $5,000 PO will bounce. If scope expands, ask for a PO amendment or a new PO before invoicing the overage.",
+      "**Confusing the PO number with the invoice number.** They are two separate fields. The PO number is theirs; the invoice number is yours. Show both on the invoice.",
+      "**Sending the invoice before the work is verifiably delivered.** Corporate AP processes need confirmation that what was ordered was actually received. Invoicing too early — before the goods receipt or delivery confirmation lands in their system — stalls the three-way match.",
+      "**Ignoring the PO number on multi-invoice engagements.** If you are billing in milestones against a single PO, reference the same PO number on every milestone invoice. Each invoice should also note the milestone (\"Milestone 2 of 3 against PO 4500127893\") so AP can track running totals against the authorized amount.",
+      "## Create a PO-Ready Invoice in Under a Minute",
+      "InvoiceQuick lets you add a PO number, contract reference, or any other custom field your client's AP team needs directly in the invoice notes — exactly where corporate accounts payable will look for it. Fill in your details, drop the PO number on its own line, and download a clean PDF that will sail through a three-way match. Free forever, no sign-up required.",
+    ],
+  },
 };
 
 type Props = {
@@ -982,6 +1023,7 @@ export default async function BlogPostPage({ params }: Props) {
           <Link href="/create" className="btn-primary inline-block">
             Create Free Invoice &rarr;
           </Link>
+          <p className="mt-4 text-xs text-gray-500">No sign-up &middot; No credit card &middot; Free forever</p>
         </div>
       </article>
 

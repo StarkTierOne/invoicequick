@@ -30,6 +30,7 @@ const blogSlugs = [
   "best-free-invoicing-software-small-business",
   "convert-project-client-to-retainer",
   "deposit-invoice-upfront-payment",
+  "purchase-order-vs-invoice",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
