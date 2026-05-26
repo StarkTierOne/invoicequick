@@ -31,6 +31,7 @@ const blogSlugs = [
   "convert-project-client-to-retainer",
   "deposit-invoice-upfront-payment",
   "purchase-order-vs-invoice",
+  "credit-note-vs-invoice",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

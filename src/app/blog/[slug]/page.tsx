@@ -1,6 +1,36 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { ReactNode } from "react";
+
+const INLINE_LINK_RE = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+
+function renderInline(text: string): ReactNode {
+  const nodes: ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  INLINE_LINK_RE.lastIndex = 0;
+  while ((match = INLINE_LINK_RE.exec(text)) !== null) {
+    const [full, label, href] = match;
+    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
+    if (href.startsWith("/")) {
+      nodes.push(
+        <Link key={`${match.index}-${href}`} href={href} className="text-indigo-600 hover:text-indigo-700 underline">
+          {label}
+        </Link>,
+      );
+    } else {
+      nodes.push(
+        <a key={`${match.index}-${href}`} href={href} className="text-indigo-600 hover:text-indigo-700 underline" target="_blank" rel="noopener noreferrer">
+          {label}
+        </a>,
+      );
+    }
+    lastIndex = match.index + full.length;
+  }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes.length ? nodes : text;
+}
 
 const articles: Record<
   string,
@@ -300,7 +330,7 @@ const articles: Record<
       "## Step 2: Write Clear Line Item Descriptions",
       "The single biggest source of invoice disputes is vague line items. 'Design work — $2,500' invites questions. 'Brand identity design: logo (3 concepts + 2 revision rounds), color palette, and typography guide — $2,500' leaves nothing to interpret. Be specific enough that your client can match each line item to the work you delivered. This is also your legal record if a dispute ever escalates.",
       "## Step 3: Set Payment Terms Before You Start the Project",
-      "The best time to discuss payment terms is during the project proposal stage, not after you deliver the work. Common terms for freelancers include Net 15 (payment within 15 days), Net 30 (within 30 days), and 50% upfront with 50% on delivery for larger projects. Whatever you agree on, put it in writing — ideally in a contract or project brief — and repeat it clearly on every invoice you send.",
+      "The best time to discuss payment terms is during the project proposal stage, not after you deliver the work. Common terms for freelancers include Net 15 (payment within 15 days), Net 30 (within 30 days), and 50% upfront with 50% on delivery for larger projects. Whatever you agree on, put it in writing — ideally in a contract or project brief — and repeat it clearly on every invoice you send. If your client is a larger company with a formal accounts payable team, the payment cycle will also hinge on a purchase order — see [purchase order vs invoice](/blog/purchase-order-vs-invoice) for the full PO-to-invoice flow and the one field that gets corporate invoices paid on time.",
       "## Step 4: Send the Invoice Immediately After Delivery",
       "Research consistently shows that invoices sent within 24 hours of project completion are paid faster than those sent days or weeks later. The client's enthusiasm about your work is highest at the moment of delivery — send the invoice while the relationship is warm. Waiting gives clients time to deprioritize payment and gives you time to second-guess your rate.",
       "## Step 5: Use PDF Format",
@@ -628,7 +658,7 @@ const articles: Record<
       "- **\"Per Contract #2026-014, Section 3.2 (Phase 1 Deliverables).\"** Best for formal contracts that have a contract number and numbered sections. This is the gold standard — your client can route the invoice straight to the right approver in seconds.",
       "- **\"Per Statement of Work signed February 12, 2026.\"** Best when the master agreement is already in place and individual projects are scoped by SOW.",
       "- **\"Per Change Order #5, approved by [Approver Name] on April 4, 2026.\"** Mandatory when invoicing for work that is outside the original scope. This is the line that prevents the most common late-payment dispute: \"We never agreed to that scope.\"",
-      "- **\"Per Purchase Order #PO-77821.\"** Used with corporate clients whose AP systems require a PO number to release payment. If your client gave you a PO, the PO number must appear on the invoice — typically on its own line at the top.",
+      "- **\"Per Purchase Order #PO-77821.\"** Used with corporate clients whose AP systems require a PO number to release payment. If your client gave you a PO, the PO number must appear on the invoice — typically on its own line at the top. For the full PO-to-invoice flow and three-way match, see [purchase order vs invoice](/blog/purchase-order-vs-invoice).",
       "## Why It Matters: Three Concrete Benefits",
       "**1. It speeds up internal approval at your client.** When AP can see the contract reference on the invoice, they can match the invoice against the approved agreement in their system without circling back to your day-to-day contact. The fewer humans the invoice has to pass through, the faster it gets paid. For mid-size and enterprise clients, this single change frequently moves an invoice from a 30+ day approval cycle to same-week payment.",
       "**2. It removes ambiguity about what the invoice covers.** A vague invoice for \"Consulting services — $4,500\" gives the client a legitimate reason to ask questions. An invoice that reads \"Per Statement of Work signed February 12, 2026 — Phase 1 deliverables (Homepage redesign, navigation rebuild, mobile optimization)\" gives them no reason to delay. The work has already been agreed to in writing; the invoice is just the request for the agreed payment.",
@@ -904,6 +934,60 @@ const articles: Record<
       "InvoiceQuick lets you add a PO number, contract reference, or any other custom field your client's AP team needs directly in the invoice notes — exactly where corporate accounts payable will look for it. Fill in your details, drop the PO number on its own line, and download a clean PDF that will sail through a three-way match. Free forever, no sign-up required.",
     ],
   },
+  "credit-note-vs-invoice": {
+    title: "Credit Note vs Invoice: When to Issue One and How to Write It (2026)",
+    description:
+      "What a credit note is, when to issue one instead of deleting or re-invoicing, exactly what to put on it, how to number credit notes, and the tax-cycle pitfall freelancers miss.",
+    keywords:
+      "credit note vs invoice, what is a credit note, how to issue a credit note, credit note template, credit memo, credit note example, credit note vs refund, cancel invoice freelance, refund invoice, correct invoice after sending",
+    body: [
+      "You sent an invoice. The client paid it. Then you realized you overbilled by $400, or the wrong line item was in there, or the scope changed and the agreed amount dropped. Now what? The instinct most freelancers reach for is the worst possible move — \"I'll just delete the old invoice and send a new one.\" Do not do that. The correct, accountant-approved, audit-safe answer is to issue a credit note. This guide covers exactly what a credit note is, when to use one, what to put on it, how to number it, and the one tax-cycle detail most freelancers get wrong.",
+      "## The Short Answer",
+      "An invoice requests payment. A credit note reverses or reduces a previously issued invoice. The original invoice stays in your records exactly as you sent it; the credit note documents the correction. Together they form a complete, auditable paper trail of what was billed, what was reversed, and why — which is what tax authorities, accountants, and any future dispute resolution actually need.",
+      "## What a Credit Note Actually Is",
+      "A credit note (sometimes called a credit memo) is a document the seller issues to the buyer that reduces the amount owed on a prior invoice. It looks a lot like an invoice — same business details, same client details, similar line items — but the amounts are negative (or expressed as a reduction), and it explicitly references the original invoice it is correcting. If the client has not yet paid, the credit note lowers the balance due. If the client has already paid, the credit note creates a credit on their account that you either refund in cash or apply to a future invoice.",
+      "Crucially, a credit note does not erase the original invoice. The invoice still exists, still has its number, and still appears in your accounting records. The credit note sits next to it, documenting the adjustment. That preserved paper trail is the entire point — it is what distinguishes a legitimate correction from someone quietly editing history.",
+      "## Credit Note vs Invoice — Side by Side",
+      "**Who issues it.** Both are issued by the seller (you).",
+      "**What it does.** The invoice requests payment. The credit note cancels or reduces a previously issued invoice.",
+      "**The direction of money.** The invoice moves money toward you. The credit note moves money (or a credit balance) toward the client.",
+      "**The reference number.** Each gets a unique sequential number. Most accountants prefer a separate prefix for credit notes (e.g., CN-2026-001) so they are never confused with invoice numbers (INV-2026-001).",
+      "**The link.** A well-formed credit note always references the original invoice number it is correcting — that linkage is what makes the pair auditable.",
+      "## When to Issue a Credit Note",
+      "Five common scenarios where a credit note is the right tool — not a re-issued invoice and definitely not a deleted invoice.",
+      "**1. You billed the wrong amount.** Overbilled, wrong rate applied, math error, missed a discount. Issue a credit note for the difference referencing the original invoice. Do not delete the original and send a corrected one — that breaks your invoice number sequence and looks suspicious in an audit.",
+      "**2. The scope changed after invoicing.** The project shrank, a deliverable was removed, or the client returned goods. Issue a credit note for the reduction. Keep the original invoice and the credit note both in your records.",
+      "**3. The client is disputing a portion of the bill and you agree.** Rather than negotiate the original invoice down (which leaves the dispute unresolved on paper), issue a credit note for the agreed reduction. The original invoice is fully accounted for; the credit note shows the agreed concession.",
+      "**4. You are issuing a refund.** If the client already paid and you owe them money back, a credit note documents the refund. The actual cash refund happens via your payment processor or bank transfer, but the credit note is the accounting record of why.",
+      "**5. You are cancelling an invoice entirely.** Sent an invoice to the wrong client, or the engagement fell through after you billed it? Issue a credit note for the full amount of the original invoice. Do not delete the original — your invoice numbers must remain sequential and gap-free.",
+      "## What to Put on a Credit Note",
+      "A complete credit note includes: your business name and contact details; the client's name and billing address; a unique credit note number (using your CN-prefix sequence); the credit note date; the original invoice number being corrected (the most important field); a clear statement of what is being credited and why (e.g., \"Credit for over-billed hours on Phase 2\" or \"Refund for cancelled engagement per email April 2, 2026\"); itemized lines showing the negative amounts or reductions, with descriptions, quantities, and rates matching the original invoice's structure; subtotal, applicable tax adjustment, and the total credit amount; and notes on how the credit is being applied — refund to original payment method, credited to next invoice, or applied to outstanding balance.",
+      "The original-invoice reference and the reason are the two non-negotiable fields. Without them, a credit note is just a confusing negative-amount document. With them, it is a clean piece of paper your client's bookkeeper, your accountant, and a tax auditor can all parse in under a minute.",
+      "## How to Number Credit Notes",
+      "Use a separate sequence with a clear prefix. The most common pattern is CN-YYYY-NNN (e.g., CN-2026-001, CN-2026-002), parallel to your invoice prefix (INV-2026-001, INV-2026-002). Keeping the sequences separate prevents two things: accidentally reusing a number across documents, and bookkeeping confusion when invoices and credit notes interleave in the same period. Like invoice numbers, credit note numbers should be sequential and gap-free — auditors notice gaps.",
+      "## The Tax-Cycle Pitfall Most Freelancers Miss",
+      "Here is the detail that catches people out. The credit note must be issued in the same tax period as the original invoice if at all possible, or it creates a reporting mismatch. If you invoiced $5,000 in Q1 and issued a $400 credit note in Q2, your Q1 revenue is overstated by $400 and your Q2 revenue is understated by $400. For cash-basis taxpayers this usually self-corrects (you only recognize what you actually received), but for accrual-basis filers and for sales-tax reporting it is a real reconciliation problem.",
+      "Practical rule: when you discover an invoicing error, issue the credit note immediately, dated within the same month if possible. If the correction spans tax periods, give your accountant a heads-up — they will want to know about credit notes that cross a quarter or year boundary so they can adjust the books cleanly.",
+      "For VAT/GST jurisdictions the stakes are higher. The credit note must reverse the VAT that was charged on the original invoice, and the timing rules around when that reversal hits each side's VAT return are specific to each jurisdiction. If you are invoicing in a VAT system, confirm the correction with your accountant before issuing.",
+      "## A Practical Credit Note Example",
+      "Original invoice (already sent): INV-2026-042 to Acme Co., issued April 10, 2026, total $4,800 for \"Phase 2 design — 32 hrs @ $150/hr.\" After review, you discover you billed for 32 hours but the actual logged time was 28 hours. The correct billing is $4,200, so you owe Acme a $600 credit. The credit note looks like this:",
+      "```\nCredit Note CN-2026-007\nIssued: April 14, 2026\nRe: Invoice INV-2026-042 (April 10, 2026)\n\nReason: Adjustment for over-billed hours on Phase 2 design (logged 28 hrs, billed 32 hrs).\n\nLine Items:\n  Phase 2 design — billing correction      -4 hrs @ $150/hr    -$600.00\n\n  Subtotal                                                     -$600.00\n  Total Credit                                                 -$600.00\n\nApplied: Credit to be applied against Invoice INV-2026-045 (next invoice).\n```",
+      "Send the credit note as a PDF, just like an invoice, with a short email referencing the correction. The original invoice INV-2026-042 stays in your records exactly as sent; the credit note CN-2026-007 sits alongside it. Net billing on the engagement is $4,200, and your books are clean.",
+      "## Common Mistakes",
+      "**Deleting the original invoice.** This breaks your invoice number sequence and erases the paper trail. Never delete a sent invoice — always correct with a credit note.",
+      "**Re-issuing a \"corrected\" invoice with the same number.** Some freelancers update the original PDF and re-send it as a \"v2.\" That looks fine in the moment but is a mess in an audit and is straight-up disallowed under most VAT/GST rules. Use a credit note plus a new invoice if a re-bill is needed.",
+      "**Using positive amounts on a credit note.** A credit note's totals must be negative (or clearly marked as reductions). Positive amounts make it ambiguous whether you are billing more or refunding — bookkeepers should never have to guess.",
+      "**Forgetting to reference the original invoice number.** A credit note without the linked invoice number is unreconcilable. The reference is what makes the pair auditable.",
+      "**Treating a credit note as the refund itself.** A credit note is the accounting record of the refund or credit. The actual cash movement (or applied credit on a future invoice) is a separate action. Issuing the credit note does not by itself move money — you still need to refund via your payment processor or apply the credit to a future bill.",
+      "## When to Use a Credit Note vs Just Re-Invoice",
+      "If the original invoice has not yet been sent — it is still a draft in your tool — just edit it. The credit-note rule kicks in once the invoice has gone out the door. If the invoice has been sent but the client has not yet processed it, you can usually send a quick \"please disregard, replacement coming\" email and issue a new invoice with a new number — but for clean books, the credit-note-plus-new-invoice pattern is still safer. Once the client has received and processed the invoice (especially if they have paid it), the credit note is the only correct path.",
+      "For corporate clients with PO-driven AP processes, the credit-note discipline is non-optional — their accounts payable system has the original invoice locked into a three-way match against the PO, and a credit note is the only document that can reverse part of that match cleanly. See [purchase order vs invoice](/blog/purchase-order-vs-invoice) for the full corporate AP flow.",
+      "## How InvoiceQuick Handles Corrections",
+      "InvoiceQuick generates clean, professional PDFs for both invoices and corrections. To create a credit note in the free tier, generate a new invoice, prefix the number with \"CN-\" instead of \"INV-,\" enter the original invoice number and reason in the notes field, and use negative line-item amounts for the credit. The PDF will render exactly like a credit note your accountant expects. (A dedicated credit-note template is on the roadmap — until then, the negative-amount pattern works cleanly for every freelancer use case.) Free, no sign-up required.",
+      "## The Bottom Line",
+      "Credit notes are the boring, professional way to fix an invoicing mistake without breaking your books. Issue one whenever a sent invoice needs to be reduced, reversed, or refunded — never delete and re-send. Keep them in a separate CN-prefix sequence, always reference the original invoice number, write a clear reason, and date them in the same tax period when possible. Two minutes of credit-note discipline saves hours of accountant cleanup at year-end and keeps you on the right side of every audit.",
+    ],
+  },
 };
 
 type Props = {
@@ -1010,7 +1094,7 @@ export default async function BlogPostPage({ params }: Props) {
             }
             return (
               <p key={i} className="text-gray-700 leading-relaxed mb-4">
-                {paragraph}
+                {renderInline(paragraph)}
               </p>
             );
           })}

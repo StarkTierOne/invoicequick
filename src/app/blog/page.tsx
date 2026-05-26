@@ -183,6 +183,12 @@ const articles = [
     excerpt:
       "If you have ever sent a clean invoice to a corporate client and watched it sit unpaid for six weeks, the cause is almost always the same: there was a purchase order on their end and your invoice did not reference it. This guide breaks down what a PO actually is, how it differs from an invoice, who issues which, the three-way-match flow corporate AP teams use to gate every payment, the one field that gets corporate invoices paid on time, when to ask for a PO upfront, and what to do when there is not one.",
   },
+  {
+    slug: "credit-note-vs-invoice",
+    title: "Credit Note vs Invoice: When to Issue One and How to Write It (2026)",
+    excerpt:
+      "You sent an invoice — and then realized the amount was wrong, or the scope changed, or the client is owed a refund. The instinct most freelancers reach for (delete the invoice and re-send a corrected one) is the worst possible move. The correct answer is to issue a credit note. This guide covers what a credit note is, the five scenarios where you must use one instead of editing the original, exactly what fields to include, how to number them with a separate CN-prefix sequence, the tax-cycle pitfall most freelancers miss, and a practical credit-note example you can copy.",
+  },
 ];
 
 export default function BlogPage() {
@@ -305,6 +311,7 @@ export default function BlogPage() {
           <Link href="/create" className="bg-white text-indigo-600 font-semibold px-8 py-3 rounded-lg text-base hover:bg-indigo-50 transition-colors inline-block">
             Create Free Invoice &rarr;
           </Link>
+          <p className="mt-4 text-xs text-indigo-200">No sign-up &middot; No credit card &middot; Free forever</p>
         </div>
       </section>
 
