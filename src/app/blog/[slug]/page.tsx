@@ -990,6 +990,39 @@ const articles: Record<
   },
 };
 
+const publishedAt: Record<string, string> = {
+  "invoice-payment-reminder-email-templates": "2026-05-20",
+  "how-to-create-professional-invoice": "2026-04-13",
+  "free-invoice-template-freelancers": "2026-04-13",
+  "when-to-send-invoice": "2026-04-13",
+  "how-to-calculate-late-fees": "2026-04-13",
+  "invoice-vs-receipt": "2026-04-13",
+  "how-to-write-payment-terms-on-invoice": "2026-04-13",
+  "invoice-number-format-best-practices": "2026-04-13",
+  "how-to-send-invoice-via-email": "2026-04-13",
+  "self-employed-invoice-example": "2026-04-13",
+  "free-invoice-template-for-freelancers": "2026-04-13",
+  "how-to-invoice-international-clients": "2026-04-21",
+  "how-to-invoice-clients": "2026-04-15",
+  "freelance-invoice-tips": "2026-04-22",
+  "invoice-for-services-rendered": "2026-04-22",
+  "invoice-without-a-business": "2026-04-23",
+  "client-wont-pay-invoice": "2026-05-01",
+  "small-business-invoicing": "2026-05-01",
+  "invoice-template-consultants": "2026-05-09",
+  "invoice-template-graphic-designers": "2026-05-03",
+  "invoice-template-photographers": "2026-05-09",
+  "invoice-for-side-hustle": "2026-04-24",
+  "how-to-invoice-as-a-freelancer": "2026-05-09",
+  "how-to-reference-contract-on-invoice": "2026-05-10",
+  "recurring-invoices-for-freelancers": "2026-05-12",
+  "best-free-invoicing-software-small-business": "2026-05-13",
+  "convert-project-client-to-retainer": "2026-05-17",
+  "deposit-invoice-upfront-payment": "2026-05-21",
+  "purchase-order-vs-invoice": "2026-05-25",
+  "credit-note-vs-invoice": "2026-05-26",
+};
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -1018,6 +1051,7 @@ export default async function BlogPostPage({ params }: Props) {
   if (!article) notFound();
 
   const canonical = `https://invoicequick.vercel.app/blog/${slug}`;
+  const published = publishedAt[slug];
 
   return (
     <div className="min-h-screen">
@@ -1035,6 +1069,8 @@ export default async function BlogPostPage({ params }: Props) {
             url: canonical,
             inLanguage: "en-US",
             isAccessibleForFree: true,
+            datePublished: published,
+            dateModified: published,
             author: { "@type": "Organization", name: "InvoiceQuick", url: "https://invoicequick.vercel.app" },
             publisher: {
               "@type": "Organization",
