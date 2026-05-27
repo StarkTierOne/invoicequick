@@ -27,6 +27,159 @@ function MobileStickyCTA() {
   );
 }
 
+function InvoicePreview() {
+  return (
+    <div className="max-w-5xl mx-auto">
+      <div className="text-center mb-10">
+        <div className="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">
+          What You&rsquo;ll Send
+        </div>
+        <h2 className="text-3xl font-bold text-gray-900 mb-3">This is What Your Invoice Will Look Like</h2>
+        <p className="text-gray-600 max-w-xl mx-auto">
+          Clean, professional, print-ready PDF. Your client opens the email and sees this.
+          No spreadsheet stitching. No Word templates. No watermarks.
+        </p>
+      </div>
+
+      <div className="relative">
+        <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 bg-amber-400 text-gray-900 text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-md shadow-md z-10">
+          Sample
+        </div>
+        <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-emerald-500 text-white text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-md shadow-md z-10">
+          Built in 47 seconds
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden ring-1 ring-gray-100">
+          <div className="px-6 sm:px-10 py-6 sm:py-8 border-b border-gray-100 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                  AC
+                </div>
+                <span className="font-bold text-gray-900 text-lg">Atlas Creative</span>
+              </div>
+              <div className="text-xs text-gray-500 leading-relaxed">
+                123 Studio Lane &middot; Brooklyn, NY 11201<br />
+                hello@atlascreative.co &middot; (917) 555-0142
+              </div>
+            </div>
+            <div className="text-right">
+              <div className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">INVOICE</div>
+              <div className="text-xs text-gray-500 mt-1">
+                <span className="font-semibold text-gray-700">#INV-2026-0142</span>
+              </div>
+              <div className="text-xs text-gray-500">Issued May 27, 2026</div>
+              <div className="text-xs text-amber-600 font-semibold mt-1">Due June 26, 2026 (Net 30)</div>
+            </div>
+          </div>
+
+          <div className="px-6 sm:px-10 py-5 grid sm:grid-cols-2 gap-6 border-b border-gray-100 bg-gray-50/50">
+            <div>
+              <div className="text-xs uppercase tracking-wide text-gray-500 font-semibold mb-1">Billed To</div>
+              <div className="text-sm font-semibold text-gray-900">Northwind Coffee Co.</div>
+              <div className="text-xs text-gray-500 leading-relaxed">
+                ATTN: Priya Mehta &middot; Marketing Lead<br />
+                88 Hudson Ave, Suite 4B &middot; Hoboken, NJ 07030
+              </div>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-wide text-gray-500 font-semibold mb-1">Project</div>
+              <div className="text-sm font-semibold text-gray-900">Spring Campaign — Brand Refresh</div>
+              <div className="text-xs text-gray-500">PO #NW-2026-Q2-008 &middot; Phase 2 of 3</div>
+            </div>
+          </div>
+
+          <div className="px-6 sm:px-10 py-2 overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-xs uppercase tracking-wide text-gray-500">
+                  <th className="text-left font-semibold py-3">Description</th>
+                  <th className="text-right font-semibold py-3 w-16">Qty</th>
+                  <th className="text-right font-semibold py-3 w-24">Rate</th>
+                  <th className="text-right font-semibold py-3 w-24">Amount</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                <tr>
+                  <td className="py-3 text-gray-800">
+                    <div className="font-medium">Logo system redesign</div>
+                    <div className="text-xs text-gray-500">Primary mark, monogram, 3 lockups, brand color palette</div>
+                  </td>
+                  <td className="py-3 text-right text-gray-600">1</td>
+                  <td className="py-3 text-right text-gray-600">$2,400.00</td>
+                  <td className="py-3 text-right font-medium text-gray-900">$2,400.00</td>
+                </tr>
+                <tr>
+                  <td className="py-3 text-gray-800">
+                    <div className="font-medium">Brand guidelines document</div>
+                    <div className="text-xs text-gray-500">28-page PDF with usage rules, typography, voice</div>
+                  </td>
+                  <td className="py-3 text-right text-gray-600">1</td>
+                  <td className="py-3 text-right text-gray-600">$950.00</td>
+                  <td className="py-3 text-right font-medium text-gray-900">$950.00</td>
+                </tr>
+                <tr>
+                  <td className="py-3 text-gray-800">
+                    <div className="font-medium">Packaging concepts</div>
+                    <div className="text-xs text-gray-500">3 SKU directions, mockups, dieline templates</div>
+                  </td>
+                  <td className="py-3 text-right text-gray-600">3</td>
+                  <td className="py-3 text-right text-gray-600">$425.00</td>
+                  <td className="py-3 text-right font-medium text-gray-900">$1,275.00</td>
+                </tr>
+                <tr>
+                  <td className="py-3 text-gray-800">
+                    <div className="font-medium">Revision rounds &amp; client review</div>
+                    <div className="text-xs text-gray-500">Hourly &middot; 4.5 hrs logged across May 18–24</div>
+                  </td>
+                  <td className="py-3 text-right text-gray-600">4.5</td>
+                  <td className="py-3 text-right text-gray-600">$95.00</td>
+                  <td className="py-3 text-right font-medium text-gray-900">$427.50</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="px-6 sm:px-10 py-5 border-t border-gray-100 grid sm:grid-cols-2 gap-6">
+            <div className="text-xs text-gray-500 leading-relaxed">
+              <div className="font-semibold text-gray-700 mb-1">Payment terms</div>
+              Net 30 &middot; 1.5% monthly late fee on overdue balances<br />
+              <span className="text-gray-400">Pay by ACH, wire, Stripe link, or check made out to Atlas Creative LLC.</span>
+            </div>
+            <div className="space-y-1.5 text-sm">
+              <div className="flex justify-between text-gray-600">
+                <span>Subtotal</span>
+                <span>$5,052.50</span>
+              </div>
+              <div className="flex justify-between text-gray-600">
+                <span>Discount (returning client &minus;5%)</span>
+                <span>&minus;$252.63</span>
+              </div>
+              <div className="flex justify-between text-gray-600">
+                <span>Sales tax (NY, 8.875%)</span>
+                <span>$425.96</span>
+              </div>
+              <div className="flex justify-between pt-2 mt-2 border-t border-gray-200 text-base font-bold text-gray-900">
+                <span>Total due</span>
+                <span className="text-indigo-700">$5,225.83</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="text-center mt-10">
+        <Link href="/create" className="btn-primary text-base !px-6 !py-3 inline-block">
+          Build Yours Free &rarr;
+        </Link>
+        <p className="text-xs text-gray-400 mt-3">
+          Edit any field, swap currency, add your logo, export as PDF &middot; under 60 seconds.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function SavingsCalculator() {
   const [invoicesPerMonth, setInvoicesPerMonth] = useState(15);
   const [avgInvoiceValue, setAvgInvoiceValue] = useState(750);
@@ -432,6 +585,11 @@ export default function Home() {
           </table>
         </div>
         <p className="text-center text-sm text-gray-500 mt-4">Pricing as of April 2026. Free features verified by ToolsRated.</p>
+      </section>
+
+      {/* Invoice Preview — concrete proof of the deliverable */}
+      <section className="max-w-6xl mx-auto px-4 pb-20">
+        <InvoicePreview />
       </section>
 
       {/* Savings Calculator */}

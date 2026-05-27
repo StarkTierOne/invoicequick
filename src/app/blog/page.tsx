@@ -189,6 +189,12 @@ const articles = [
     excerpt:
       "You sent an invoice — and then realized the amount was wrong, or the scope changed, or the client is owed a refund. The instinct most freelancers reach for (delete the invoice and re-send a corrected one) is the worst possible move. The correct answer is to issue a credit note. This guide covers what a credit note is, the five scenarios where you must use one instead of editing the original, exactly what fields to include, how to number them with a separate CN-prefix sequence, the tax-cycle pitfall most freelancers miss, and a practical credit-note example you can copy.",
   },
+  {
+    slug: "invoice-template-download",
+    title: "Invoice Template Download: Free PDF, Word, Excel & Google Docs (2026)",
+    excerpt:
+      "Searching for an \"invoice template download\" is the first move most freelancers make — and most options on the web produce invoices that look like 2008. This guide compares the four template formats (PDF, Word, Excel, Google Docs), shows which one wins for which use case, lists the fields a usable invoice template must include, and breaks down the five hidden costs of the template path (the 10-minute-a-month tax, number collisions, math errors, the look-cheap tax, format mismatches). Then it shows when a generator is the better answer.",
+  },
 ];
 
 export default function BlogPage() {
