@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
+import { publishedAt } from "@/lib/blog-published-at";
 
 const INLINE_LINK_RE = /\[([^\]]+)\]\(([^)\s]+)\)/g;
 
@@ -1047,40 +1048,6 @@ const articles: Record<
       "Credit notes are the boring, professional way to fix an invoicing mistake without breaking your books. Issue one whenever a sent invoice needs to be reduced, reversed, or refunded — never delete and re-send. Keep them in a separate CN-prefix sequence, always reference the original invoice number, write a clear reason, and date them in the same tax period when possible. Two minutes of credit-note discipline saves hours of accountant cleanup at year-end and keeps you on the right side of every audit.",
     ],
   },
-};
-
-const publishedAt: Record<string, string> = {
-  "invoice-payment-reminder-email-templates": "2026-05-20",
-  "how-to-create-professional-invoice": "2026-04-13",
-  "free-invoice-template-freelancers": "2026-04-13",
-  "when-to-send-invoice": "2026-04-13",
-  "how-to-calculate-late-fees": "2026-04-13",
-  "invoice-vs-receipt": "2026-04-13",
-  "how-to-write-payment-terms-on-invoice": "2026-04-13",
-  "invoice-number-format-best-practices": "2026-04-13",
-  "how-to-send-invoice-via-email": "2026-04-13",
-  "self-employed-invoice-example": "2026-04-13",
-  "free-invoice-template-for-freelancers": "2026-04-13",
-  "how-to-invoice-international-clients": "2026-04-21",
-  "how-to-invoice-clients": "2026-04-15",
-  "freelance-invoice-tips": "2026-04-22",
-  "invoice-for-services-rendered": "2026-04-22",
-  "invoice-without-a-business": "2026-04-23",
-  "client-wont-pay-invoice": "2026-05-01",
-  "small-business-invoicing": "2026-05-01",
-  "invoice-template-consultants": "2026-05-09",
-  "invoice-template-graphic-designers": "2026-05-03",
-  "invoice-template-photographers": "2026-05-09",
-  "invoice-for-side-hustle": "2026-04-24",
-  "how-to-invoice-as-a-freelancer": "2026-05-09",
-  "how-to-reference-contract-on-invoice": "2026-05-10",
-  "recurring-invoices-for-freelancers": "2026-05-12",
-  "best-free-invoicing-software-small-business": "2026-05-13",
-  "convert-project-client-to-retainer": "2026-05-17",
-  "deposit-invoice-upfront-payment": "2026-05-21",
-  "purchase-order-vs-invoice": "2026-05-25",
-  "credit-note-vs-invoice": "2026-05-26",
-  "invoice-template-download": "2026-05-27",
 };
 
 type Props = {

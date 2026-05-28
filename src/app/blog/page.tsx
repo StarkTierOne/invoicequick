@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { publishedAt } from "@/lib/blog-published-at";
 
 export const metadata: Metadata = {
   title: "Invoice Tips & Guides | InvoiceQuick Blog",
@@ -226,6 +227,8 @@ export default function BlogPage() {
                 "@type": "WebPage",
                 "@id": `https://invoicequick.vercel.app/blog/${a.slug}`,
               },
+              datePublished: publishedAt[a.slug],
+              dateModified: publishedAt[a.slug],
             })),
           }),
         }}
@@ -246,6 +249,7 @@ export default function BlogPage() {
               position: i + 1,
               url: `https://invoicequick.vercel.app/blog/${a.slug}`,
               name: a.title,
+              datePublished: publishedAt[a.slug],
             })),
           }),
         }}
