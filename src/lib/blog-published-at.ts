@@ -34,4 +34,5 @@ export const publishedAt: Record<string, string> = {
   "purchase-order-vs-invoice": "2026-05-25",
   "credit-note-vs-invoice": "2026-05-26",
   "invoice-template-download": "2026-05-27",
+  "tax-invoice-vs-commercial-invoice": "2026-05-28",
 };
