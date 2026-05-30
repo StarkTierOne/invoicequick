@@ -287,6 +287,10 @@ const faqs = [
     answer: "No. You can create and download invoices without signing up or providing any personal information. Just go to the invoice creator and start filling in your details. Creating a free account unlocks invoice history and saved templates, but it is entirely optional.",
   },
   {
+    question: "If I don't create an account, can I edit or resend my invoice later?",
+    answer: "You keep the PDF you download — it is yours to save, re-attach to an email, and re-send any time, no account needed. If you need to change an invoice (fix a line item, update the amount, bump the invoice number), just reopen the invoice creator, re-enter the details, and download a fresh PDF — it takes about 30 seconds. The one thing you do not get without an account is automatic invoice history: the creator does not store your past invoices for you. If you invoice regularly and want every invoice saved, your numbering tracked automatically, and templates you can reuse in one click, create a free account — it is optional and takes a moment. For one-off invoices, the no-account flow is all you need.",
+  },
+  {
     question: "What format does InvoiceQuick export to?",
     answer: "InvoiceQuick exports your invoice as a clean, professional PDF — the standard format accepted by clients and accountants worldwide. PDFs preserve formatting across all devices, cannot be accidentally edited by your client, and are easy to attach to an email.",
   },
