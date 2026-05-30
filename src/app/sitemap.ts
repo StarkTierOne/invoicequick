@@ -34,6 +34,7 @@ const blogSlugs = [
   "credit-note-vs-invoice",
   "invoice-template-download",
   "tax-invoice-vs-commercial-invoice",
+  "quote-vs-invoice",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
