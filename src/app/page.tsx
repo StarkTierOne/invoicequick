@@ -525,17 +525,20 @@ export default function Home() {
           <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">No matter what you do, InvoiceQuick makes billing simple. No accountant required.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "🎨", title: "Freelance Designers", desc: "Bill for logo design, branding, UI work, and revisions with clean itemized PDFs your clients will trust." },
-              { icon: "💻", title: "Web Developers", desc: "Invoice per project, per milestone, or hourly. Track which builds are paid and which need a follow-up." },
-              { icon: "📸", title: "Photographers & Videographers", desc: "Send a polished invoice after every shoot, event, or edit — in under a minute, from any device." },
-              { icon: "📝", title: "Writers & Editors", desc: "Bill per article, per word, or per hour. Add your byline, link to the published work, and get paid." },
-              { icon: "🔧", title: "Contractors & Tradespeople", desc: "Create itemized invoices for labor and materials. Add your license number and payment terms in seconds." },
-              { icon: "💼", title: "Consultants & Coaches", desc: "Invoice for sessions, retainers, or project-based work. Look professional from day one, no bookkeeper needed." },
+              { icon: "🎨", title: "Freelance Designers", desc: "Bill for logo design, branding, UI work, and revisions with clean itemized PDFs your clients will trust.", href: "/blog/invoice-template-graphic-designers", guide: "Designer invoicing guide" },
+              { icon: "💻", title: "Web Developers", desc: "Invoice per project, per milestone, or hourly. Track which builds are paid and which need a follow-up.", href: "/blog/how-to-invoice-for-hourly-work", guide: "How to invoice hourly work" },
+              { icon: "📸", title: "Photographers & Videographers", desc: "Send a polished invoice after every shoot, event, or edit — in under a minute, from any device.", href: "/blog/invoice-template-photographers", guide: "Photographer invoicing guide" },
+              { icon: "📝", title: "Writers & Editors", desc: "Bill per article, per word, or per hour. Add your byline, link to the published work, and get paid.", href: "/blog/how-to-invoice-as-a-freelancer", guide: "Freelancer invoicing guide" },
+              { icon: "🔧", title: "Contractors & Tradespeople", desc: "Create itemized invoices for labor and materials. Add your license number and payment terms in seconds.", href: "/blog/invoice-for-services-rendered", guide: "Invoicing for services rendered" },
+              { icon: "💼", title: "Consultants & Coaches", desc: "Invoice for sessions, retainers, or project-based work. Look professional from day one, no bookkeeper needed.", href: "/blog/invoice-template-consultants", guide: "Consultant invoicing guide" },
             ].map((item) => (
-              <div key={item.title} className="card bg-white hover:shadow-md transition-shadow">
+              <div key={item.title} className="card bg-white hover:shadow-md transition-shadow flex flex-col">
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                <Link href={item.href} className="mt-3 text-sm font-medium text-indigo-600 hover:text-indigo-700">
+                  {item.guide} &rarr;
+                </Link>
               </div>
             ))}
           </div>
