@@ -35,6 +35,7 @@ const blogSlugs = [
   "invoice-template-download",
   "tax-invoice-vs-commercial-invoice",
   "quote-vs-invoice",
+  "how-to-invoice-for-hourly-work",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
