@@ -592,6 +592,12 @@ export default function Home() {
           </table>
         </div>
         <p className="text-center text-sm text-gray-500 mt-4">Pricing as of April 2026. Free features verified by ToolsRated.</p>
+        <div className="text-center mt-10">
+          <Link href="/create" className="btn-primary text-lg !px-8 !py-4">
+            Start Free — No Sign-Up &rarr;
+          </Link>
+          <p className="text-sm text-gray-500 mt-3">Your first invoice in under 60 seconds. No credit card, no watermark.</p>
+        </div>
       </section>
 
       {/* Invoice Preview — concrete proof of the deliverable */}
