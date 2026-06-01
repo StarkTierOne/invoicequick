@@ -27,6 +27,7 @@ export interface InvoiceData {
   taxRate: number;
   discountRate: number;
   paymentTerms: string;
+  amountPaid: number;
 }
 
 export const CURRENCIES: Record<string, { symbol: string; name: string }> = {
@@ -67,6 +68,11 @@ export function calcTotal(items: InvoiceItem[], taxRate: number, discountRate: n
   return sub + calcTax(sub, taxRate) - calcDiscount(sub, discountRate);
 }
 
+// Remaining balance after any deposit / amount already paid is subtracted from the total.
+export function calcBalanceDue(total: number, amountPaid: number): number {
+  return Math.max(0, total - (amountPaid || 0));
+}
+
 export function formatCurrency(amount: number, currency: string): string {
   const c = CURRENCIES[currency] || CURRENCIES.USD;
   return `${c.symbol}${amount.toFixed(2)}`;
@@ -97,6 +103,7 @@ export function defaultInvoice(): InvoiceData {
     taxRate: 0,
     discountRate: 0,
     paymentTerms: "Net 30",
+    amountPaid: 0,
   };
 }
 

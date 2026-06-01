@@ -9,7 +9,7 @@ import AppShell from "@/components/AppShell";
 import {
   InvoiceData, InvoiceItem, CURRENCIES, PAYMENT_TERMS,
   defaultInvoice, createEmptyItem,
-  calcSubtotal, calcTax, calcDiscount, calcTotal, formatCurrency, calcDueDate,
+  calcSubtotal, calcTax, calcDiscount, calcTotal, calcBalanceDue, formatCurrency, calcDueDate,
 } from "@/lib/types";
 
 // ── Invoice Form ──
@@ -129,6 +129,11 @@ function InvoiceForm({ data, onChange }: { data: InvoiceData; onChange: (d: Invo
             <label className="label w-24">Discount %</label>
             <input className="input w-24" type="number" min="0" step="0.5" value={data.discountRate || ""} onChange={(e) => set({ discountRate: Number(e.target.value) || 0 })} />
           </div>
+          <div className="flex items-center gap-3">
+            <label className="label w-24">Amount Paid</label>
+            <input className="input w-32" type="number" min="0" step="0.01" placeholder="0.00" value={data.amountPaid || ""} onChange={(e) => set({ amountPaid: Number(e.target.value) || 0 })} />
+          </div>
+          <p className="text-xs text-gray-500">Recording a deposit or partial payment? Enter it here and the invoice shows the remaining <strong>Balance Due</strong>.</p>
         </div>
       </div>
     </div>
@@ -141,6 +146,7 @@ function InvoicePreview({ data }: { data: InvoiceData }) {
   const tax = calcTax(sub, data.taxRate);
   const discount = calcDiscount(sub, data.discountRate);
   const total = calcTotal(data.items, data.taxRate, data.discountRate);
+  const balanceDue = calcBalanceDue(total, data.amountPaid);
   const fc = (n: number) => formatCurrency(n, data.currency);
 
   return (
@@ -216,10 +222,22 @@ function InvoicePreview({ data }: { data: InvoiceData }) {
               <span className="text-red-500">-{fc(discount)}</span>
             </div>
           )}
-          <div className="flex justify-between text-lg font-bold border-t-2 border-gray-900 pt-2 mt-2">
+          <div className={`flex justify-between text-lg font-bold border-t-2 border-gray-900 pt-2 mt-2 ${data.amountPaid > 0 ? "text-gray-900" : ""}`}>
             <span>Total</span>
             <span>{fc(total)}</span>
           </div>
+          {data.amountPaid > 0 && (
+            <>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500">Amount Paid</span>
+                <span className="text-green-600">-{fc(data.amountPaid)}</span>
+              </div>
+              <div className="flex justify-between text-lg font-bold border-t-2 border-indigo-600 pt-2 mt-1 text-indigo-700">
+                <span>Balance Due</span>
+                <span>{fc(balanceDue)}</span>
+              </div>
+            </>
+          )}
         </div>
       </div>
 
