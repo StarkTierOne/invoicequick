@@ -5,6 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://invoicequick-phi.vercel.app"),
   title: "InvoiceQuick — Free Invoice Generator | Create Professional Invoices in Seconds",
   description: "Create beautiful, professional invoices in seconds. Free invoice generator for freelancers, small businesses, and contractors. No sign-up required. Download as PDF instantly. Supports multi-currency, custom branding, and recurring invoices.",
   keywords: "invoice generator, free invoice, invoice maker, invoice template, create invoice, professional invoice, PDF invoice, freelance invoice, online invoice generator, small business invoice, invoice creator, billing software, receipt maker, estimate generator, freelancer tools, contractor invoice, self-employed invoice, invoice app, send invoice online, free invoice template",
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     description: "Create professional invoices in seconds. Free forever. No sign-up required. Trusted by 10,000+ freelancers.",
     type: "website",
     siteName: "InvoiceQuick",
+    url: "https://invoicequick-phi.vercel.app",
   },
   twitter: {
     card: "summary_large_image",
