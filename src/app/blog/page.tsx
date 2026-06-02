@@ -5,7 +5,7 @@ import { publishedAt } from "@/lib/blog-published-at";
 export const metadata: Metadata = {
   title: "Invoice Tips & Guides | InvoiceQuick Blog",
   description: "Learn how to create professional invoices, get paid faster, and manage your freelance finances. Free guides, templates, and best practices.",
-  alternates: { canonical: "https://invoicequick.vercel.app/blog" },
+  alternates: { canonical: "https://invoicequick-phi.vercel.app/blog" },
   keywords: "invoice tips, how to create invoice, invoice template, freelance invoicing, invoice best practices, late fees, invoice vs receipt, free invoice template freelancers, payment terms on invoice, invoice number format, send invoice via email, self employed invoice example, how to invoice international clients, international invoice currency, freelance invoice tips, get paid faster freelancing, small business invoicing, small business invoice guide, invoice template for consultants, consulting invoice template, how to invoice consulting services, how to invoice as a freelancer, how to reference a contract on a freelance invoice, contract reference on invoice, statement of work invoice, change order invoice, recurring invoices for freelancers, retainer billing, monthly retainer invoice, hours-bank retainer, milestone retainer, retainer invoice template, freelance retainer model, convert project client to retainer, retainer pitch email, project to retainer pitch, freelance retainer conversion, trial retainer freelancer, deposit invoice, how to invoice for a deposit, upfront payment invoice, advance payment invoice, how to ask for a deposit freelance, 50 percent upfront invoice, purchase order vs invoice, po vs invoice, po number on invoice, three way match, corporate AP invoice, purchase order process, credit note vs invoice, credit memo, credit note example, refund invoice, cancel invoice freelance, correct invoice after sending, invoice template download, tax invoice vs commercial invoice, what is a tax invoice, what is a commercial invoice, GST tax invoice, VAT tax invoice, commercial invoice for customs, reverse charge VAT, cross border invoice, quote vs invoice, estimate vs invoice, quote vs estimate, is a quote legally binding, when to send a quote, freelance quote template, quote to invoice workflow, how to invoice for hourly work, hourly invoice, invoice for hours worked, time tracking for invoicing, hourly rate invoice, rounding time on invoices, blended hourly rate, not to exceed invoice, proforma invoice vs invoice, pro forma invoice, what is a proforma invoice, when to use a proforma invoice, can you pay a proforma invoice, proforma vs commercial invoice, is a proforma invoice legally binding",
 };
 
@@ -223,7 +223,7 @@ const articles = [
 ];
 
 export default function BlogPage() {
-  const blogUrl = "https://invoicequick.vercel.app/blog";
+  const blogUrl = "https://invoicequick-phi.vercel.app/blog";
   return (
     <div className="min-h-screen">
       {/* Blog Schema */}
@@ -241,15 +241,15 @@ export default function BlogPage() {
             publisher: {
               "@type": "Organization",
               name: "InvoiceQuick",
-              url: "https://invoicequick.vercel.app",
+              url: "https://invoicequick-phi.vercel.app",
             },
             blogPost: articles.map((a) => ({
               "@type": "BlogPosting",
               headline: a.title,
-              url: `https://invoicequick.vercel.app/blog/${a.slug}`,
+              url: `https://invoicequick-phi.vercel.app/blog/${a.slug}`,
               mainEntityOfPage: {
                 "@type": "WebPage",
-                "@id": `https://invoicequick.vercel.app/blog/${a.slug}`,
+                "@id": `https://invoicequick-phi.vercel.app/blog/${a.slug}`,
               },
               datePublished: publishedAt[a.slug],
               dateModified: publishedAt[a.slug],
@@ -271,7 +271,7 @@ export default function BlogPage() {
             itemListElement: articles.map((a, i) => ({
               "@type": "ListItem",
               position: i + 1,
-              url: `https://invoicequick.vercel.app/blog/${a.slug}`,
+              url: `https://invoicequick-phi.vercel.app/blog/${a.slug}`,
               name: a.title,
               datePublished: publishedAt[a.slug],
             })),
@@ -287,7 +287,7 @@ export default function BlogPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick.vercel.app" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick-phi.vercel.app" },
               { "@type": "ListItem", position: 2, name: "Blog", item: blogUrl },
             ],
           }),

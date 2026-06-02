@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://invoicequick.vercel.app",
+    canonical: "https://invoicequick-phi.vercel.app",
   },
 };
 

@@ -40,7 +40,7 @@ const blogSlugs = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://invoicequick.vercel.app";
+  const baseUrl = "https://invoicequick-phi.vercel.app";
   const now = new Date().toISOString();
 
   const staticPages: MetadataRoute.Sitemap = [

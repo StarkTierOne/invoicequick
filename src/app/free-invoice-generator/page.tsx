@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Generate professional invoices for free in under 60 seconds. No signup required. Add your business details, line items, and download a polished PDF instantly.",
   keywords: "free invoice generator, create invoice online, invoice maker, free invoice creator, online invoice generator, make invoice free",
   alternates: {
-    canonical: "https://invoicequick.vercel.app/free-invoice-generator",
+    canonical: "https://invoicequick-phi.vercel.app/free-invoice-generator",
   },
 };
 
@@ -340,7 +340,7 @@ export default function FreeInvoiceGeneratorPage() {
             applicationCategory: "BusinessApplication",
             applicationSubCategory: "InvoicingSoftware",
             operatingSystem: "Web",
-            url: "https://invoicequick.vercel.app/free-invoice-generator",
+            url: "https://invoicequick-phi.vercel.app/free-invoice-generator",
             description:
               "Create professional PDF invoices in under 60 seconds. No signup, no watermarks, no credit card. Add line items, taxes, discounts, and your logo, then download a clean PDF instantly.",
             browserRequirements: "Requires JavaScript. Modern browser (Chrome, Safari, Firefox, Edge).",
@@ -370,7 +370,7 @@ export default function FreeInvoiceGeneratorPage() {
             publisher: {
               "@type": "Organization",
               name: "InvoiceQuick",
-              url: "https://invoicequick.vercel.app/",
+              url: "https://invoicequick-phi.vercel.app/",
             },
           }),
         }}
@@ -384,12 +384,12 @@ export default function FreeInvoiceGeneratorPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick.vercel.app/" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick-phi.vercel.app/" },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Free Invoice Generator",
-                item: "https://invoicequick.vercel.app/free-invoice-generator",
+                item: "https://invoicequick-phi.vercel.app/free-invoice-generator",
               },
             ],
           }),

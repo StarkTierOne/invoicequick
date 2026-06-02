@@ -724,7 +724,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "InvoiceQuick",
-            url: "https://invoicequick.vercel.app",
+            url: "https://invoicequick-phi.vercel.app",
             description: "Free invoice generator for freelancers and small businesses. Create professional PDF invoices in seconds. No sign-up required.",
             foundingDate: "2024",
             slogan: "Create Professional Invoices In Seconds",
@@ -749,13 +749,13 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "InvoiceQuick",
-            url: "https://invoicequick.vercel.app",
+            url: "https://invoicequick-phi.vercel.app",
             description: "Free invoice generator for freelancers and small businesses.",
             potentialAction: {
               "@type": "SearchAction",
               target: {
                 "@type": "EntryPoint",
-                urlTemplate: "https://invoicequick.vercel.app/blog?q={search_term_string}"
+                urlTemplate: "https://invoicequick-phi.vercel.app/blog?q={search_term_string}"
               },
               "query-input": "required name=search_term_string"
             }
@@ -771,7 +771,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             name: "InvoiceQuick",
-            url: "https://invoicequick.vercel.app",
+            url: "https://invoicequick-phi.vercel.app",
             operatingSystem: "Web",
             applicationCategory: "BusinessApplication",
             applicationSubCategory: "InvoiceManagement",

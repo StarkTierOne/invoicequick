@@ -1253,7 +1253,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: article.description,
     keywords: article.keywords,
     alternates: {
-      canonical: `https://invoicequick.vercel.app/blog/${slug}`,
+      canonical: `https://invoicequick-phi.vercel.app/blog/${slug}`,
     },
   };
 }
@@ -1267,7 +1267,7 @@ export default async function BlogPostPage({ params }: Props) {
   const article = articles[slug];
   if (!article) notFound();
 
-  const canonical = `https://invoicequick.vercel.app/blog/${slug}`;
+  const canonical = `https://invoicequick-phi.vercel.app/blog/${slug}`;
   const published = publishedAt[slug];
 
   return (
@@ -1288,11 +1288,11 @@ export default async function BlogPostPage({ params }: Props) {
             isAccessibleForFree: true,
             datePublished: published,
             dateModified: published,
-            author: { "@type": "Organization", name: "InvoiceQuick", url: "https://invoicequick.vercel.app" },
+            author: { "@type": "Organization", name: "InvoiceQuick", url: "https://invoicequick-phi.vercel.app" },
             publisher: {
               "@type": "Organization",
               name: "InvoiceQuick",
-              url: "https://invoicequick.vercel.app",
+              url: "https://invoicequick-phi.vercel.app",
             },
           }),
         }}
@@ -1306,8 +1306,8 @@ export default async function BlogPostPage({ params }: Props) {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick.vercel.app" },
-              { "@type": "ListItem", position: 2, name: "Blog", item: "https://invoicequick.vercel.app/blog" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick-phi.vercel.app" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "https://invoicequick-phi.vercel.app/blog" },
               { "@type": "ListItem", position: 3, name: article.title, item: canonical },
             ],
           }),

@@ -433,7 +433,7 @@ export default function PricingPage() {
             applicationCategory: "BusinessApplication",
             applicationSubCategory: "InvoicingSoftware",
             operatingSystem: "Web",
-            url: "https://invoicequick.vercel.app/",
+            url: "https://invoicequick-phi.vercel.app/",
             description:
               "Free online invoice generator with unlimited invoices, PDF download, multi-currency, and zero watermarks. Pro and Business tiers add recurring invoices, client database, custom branding, team access, and API.",
             offers: [
@@ -444,7 +444,7 @@ export default function PricingPage() {
                 priceCurrency: "USD",
                 description:
                   "Unlimited invoices, PDF download, 50+ currencies, no watermarks, basic templates. No credit card required.",
-                url: "https://invoicequick.vercel.app/pricing",
+                url: "https://invoicequick-phi.vercel.app/pricing",
                 availability: "https://schema.org/InStock",
               },
               {
@@ -454,7 +454,7 @@ export default function PricingPage() {
                 priceCurrency: "USD",
                 description:
                   "Everything in Free, plus save & reuse templates, auto-numbering, payment tracking, custom branding/logo, client database, recurring invoices, and priority support.",
-                url: "https://invoicequick.vercel.app/pricing",
+                url: "https://invoicequick-phi.vercel.app/pricing",
                 availability: "https://schema.org/InStock",
                 priceSpecification: {
                   "@type": "UnitPriceSpecification",
@@ -471,7 +471,7 @@ export default function PricingPage() {
                 priceCurrency: "USD",
                 description:
                   "Everything in Pro, plus team access (5 users), API access, Zapier integration, custom domain invoices, advanced reporting, and dedicated support.",
-                url: "https://invoicequick.vercel.app/pricing",
+                url: "https://invoicequick-phi.vercel.app/pricing",
                 availability: "https://schema.org/InStock",
                 priceSpecification: {
                   "@type": "UnitPriceSpecification",
@@ -492,7 +492,7 @@ export default function PricingPage() {
             publisher: {
               "@type": "Organization",
               name: "InvoiceQuick",
-              url: "https://invoicequick.vercel.app/",
+              url: "https://invoicequick-phi.vercel.app/",
             },
           }),
         }}
@@ -506,8 +506,8 @@ export default function PricingPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick.vercel.app/" },
-              { "@type": "ListItem", position: 2, name: "Pricing", item: "https://invoicequick.vercel.app/pricing" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick-phi.vercel.app/" },
+              { "@type": "ListItem", position: 2, name: "Pricing", item: "https://invoicequick-phi.vercel.app/pricing" },
             ],
           }),
         }}
