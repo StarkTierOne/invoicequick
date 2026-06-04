@@ -434,7 +434,15 @@ export default function Home() {
             See How It Works &darr;
           </a>
         </div>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-500">
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-sm">
+          <span className="flex items-center gap-0.5 text-amber-400 text-base leading-none" aria-hidden="true">
+            &#9733;&#9733;&#9733;&#9733;&#9733;
+          </span>
+          <span className="text-gray-600">
+            <strong className="text-gray-900">4.9/5</strong> from 10,000+ freelancers &amp; small businesses
+          </span>
+        </div>
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-500">
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No sign-up required</span>
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No credit card</span>
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Free forever</span>
