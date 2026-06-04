@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "net-30-payment-terms",
+    title: "What Are Net 30 Payment Terms? (Net 15, Net 60 & Due on Receipt Explained)",
+    excerpt:
+      "\"Net 30\" is the most common phrase on a business invoice — and one of the most misunderstood. It does not mean \"pay within 30 business days\" and it does not start counting when the client opens your email. This guide explains exactly what Net 30 means, how the clock actually starts, and how it compares to Net 15, Net 60, Net 90, Due on Receipt, and EOM terms. You will learn when each term helps or hurts your cash flow, how big clients really treat Net 30, how to use early-payment discounts like 2/10 Net 30 to get paid sooner, and the exact wording to put on your invoice so there is never an argument about the due date.",
+  },
+  {
     slug: "proforma-invoice-vs-invoice",
     title: "Proforma Invoice vs Invoice: What's the Difference and When to Send Each (2026)",
     excerpt:
