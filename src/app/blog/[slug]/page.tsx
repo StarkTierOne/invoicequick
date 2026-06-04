@@ -40,6 +40,7 @@ const articles: Record<
     description: string;
     keywords: string;
     body: string[];
+    faqs?: { q: string; a: string }[];
   }
 > = {
   "net-30-payment-terms": {
@@ -68,6 +69,28 @@ const articles: Record<
       "Clarity beats convention. Rather than relying on the client to interpret \"Net 30,\" spell it out: \"Payment terms: Net 30 — full amount due within 30 days of the invoice date (by July 1, 2026).\" Putting the literal due date in parentheses removes every possible argument. Include your accepted payment methods on the same line or just below, and if you offer an early-payment discount, state it explicitly: \"Pay by June 11 to take a 2% early-payment discount ($X).\" The goal is that a busy accounts-payable clerk can read one line and know exactly what to pay, by when, and how.",
       "## Set Clear Payment Terms in Seconds With InvoiceQuick",
       "You should never have to retype your payment terms — or do the date math — on every invoice. InvoiceQuick lets you set Net 15, Net 30, Due on Receipt, or fully custom terms, calculates the exact due date for you, and prints it cleanly on a professional PDF your clients can pay against. Create your invoice in under a minute, free, with no sign-up required.",
+    ],
+    faqs: [
+      {
+        q: "Does Net 30 mean 30 business days?",
+        a: "No. Net 30 means 30 calendar days, including weekends and holidays. An invoice dated June 1 with Net 30 terms is due July 1.",
+      },
+      {
+        q: "Does the Net 30 clock start from the invoice date or the delivery date?",
+        a: "By default it starts from the invoice date printed on the invoice — not the delivery date, and not when the client opens your email. Variations like \"Net 30 from receipt\" or \"Net 30 EOM\" (end of month) change the start point, so state which one you mean on the invoice.",
+      },
+      {
+        q: "What does 2/10 Net 30 mean?",
+        a: "The full amount is due in 30 days, but the client may take a 2% discount if they pay within 10 days. It is an incentive to get paid faster, and getting paid 20 days early is often worth more than the 2% you give up.",
+      },
+      {
+        q: "What is the difference between Net 30 and Due on Receipt?",
+        a: "Net 30 gives the client 30 days to pay. Due on Receipt means payment is expected immediately when the invoice arrives, which is better for one-off jobs or new clients you have not built trust with yet.",
+      },
+      {
+        q: "Is Net 30 good for cash flow?",
+        a: "It is a trade-off. Net 30 makes you easier to work with for corporate clients whose approval cycles cannot move faster, but every day of terms is a day you finance the client for free. Freelancers and small businesses with tight cash flow should default to Net 15 and reserve Net 30 for clients who require it.",
+      },
     ],
   },
   "invoice-payment-reminder-email-templates": {
@@ -1342,6 +1365,24 @@ export default async function BlogPostPage({ params }: Props) {
         }}
       />
 
+      {/* FAQ Schema */}
+      {article.faqs && article.faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: article.faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.q,
+                acceptedAnswer: { "@type": "Answer", text: faq.a },
+              })),
+            }),
+          }}
+        />
+      )}
+
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -1380,6 +1421,21 @@ export default async function BlogPostPage({ params }: Props) {
             );
           })}
         </div>
+
+        {/* FAQ */}
+        {article.faqs && article.faqs.length > 0 && (
+          <section className="mt-16">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <div className="divide-y divide-gray-200 border-t border-gray-200">
+              {article.faqs.map((faq, i) => (
+                <div key={i} className="py-5">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.q}</h3>
+                  <p className="text-gray-700 leading-relaxed">{renderInline(faq.a)}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Article CTA */}
         <div className="mt-12 bg-indigo-50 border border-indigo-100 rounded-xl p-8 text-center">
