@@ -47,6 +47,14 @@ const pageFaqs = [
       text: "Read the full guide to recurring & retainer invoicing →",
     },
   },
+  {
+    question: "What if my client only pays part of the invoice?",
+    answer: "Keep the original invoice as the single record — do not raise a second invoice for the balance. Record the amount received against it, add an \"Amount Paid\" line and a clearly dated \"Balance Due\" line beneath the total (the total itself stays at the full amount), keep the same invoice number, and email the updated copy with a one-line note confirming what you received and when the rest is due. The invoice stays open until the balance reaches zero.",
+    link: {
+      href: "/blog/partial-payment-invoice",
+      text: "Read the full guide to handling a partial payment on an invoice →",
+    },
+  },
 ];
 
 export default function FreeInvoiceGeneratorPage() {
