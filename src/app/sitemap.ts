@@ -38,6 +38,7 @@ const blogSlugs = [
   "quote-vs-invoice",
   "how-to-invoice-for-hourly-work",
   "proforma-invoice-vs-invoice",
+  "partial-payment-invoice",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
