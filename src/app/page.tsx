@@ -832,7 +832,15 @@ export default function Home() {
       <section className="bg-indigo-600 py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Paid Faster?</h2>
-          <p className="text-indigo-100 mb-8 text-lg">Join thousands of freelancers who create professional invoices in seconds.</p>
+          <p className="text-indigo-100 mb-5 text-lg">Join thousands of freelancers who create professional invoices in seconds.</p>
+          <div className="mb-8 flex items-center justify-center gap-2 text-sm">
+            <span className="flex items-center gap-0.5 text-amber-300 text-base leading-none" aria-hidden="true">
+              &#9733;&#9733;&#9733;&#9733;&#9733;
+            </span>
+            <span className="text-indigo-100">
+              <strong className="text-white">4.9/5</strong> from 10,000+ freelancers &amp; small businesses
+            </span>
+          </div>
           <Link href="/create" className="bg-white text-indigo-600 font-semibold px-8 py-4 rounded-lg text-lg hover:bg-indigo-50 transition-colors inline-block">
             Create Your First Invoice Free &rarr;
           </Link>
