@@ -43,6 +43,62 @@ const articles: Record<
     faqs?: { q: string; a: string }[];
   }
 > = {
+  "common-invoicing-mistakes": {
+    title: "Common Invoicing Mistakes That Delay Payment (and How to Fix Each One)",
+    description:
+      "The most common invoicing mistakes that quietly delay payment — vague line items, missing or unclear payment terms, no invoice number, a missing PO number, no payment instructions, sending late, and math errors — and the exact fix for each. A practical checklist for getting invoices paid on the first pass instead of bouncing back from accounts payable.",
+    keywords:
+      "common invoicing mistakes, invoice mistakes that delay payment, invoicing mistakes to avoid, why invoices get rejected, invoice rejected by accounts payable, invoice errors, get invoices paid faster, invoice not paid, invoicing best practices, invoice mistakes small business, freelancer invoice mistakes",
+    body: [
+      "Most late payments are not caused by clients who refuse to pay. They are caused by invoices that quietly give the client a reason — or an excuse — not to pay yet. A vague line item gets queued for a question. A missing PO number gets the whole invoice auto-rejected by an accounts-payable system before a human ever sees it. An invoice with no due date sits in a pile with no urgency. None of these are dramatic, and that is exactly why they are so costly: the invoice does not fail loudly, it just ages. Surveys of small businesses routinely find that a meaningful share of overdue cash — thousands of dollars a month for many — is tied up not in bad clients but in fixable invoice errors. This guide walks through the mistakes that most reliably delay payment and gives you the specific fix for each, so your invoices clear on the first pass.",
+      "## Mistake 1: Vague or Generic Line Items",
+      "\"Consulting services — $5,000\" is the single most common reason an invoice gets parked. To the client's finance team it is unverifiable: they cannot match it to a budget line, a project, or an approval, so they email you a question and the clock stops while they wait for your reply. The fix is specificity. Describe what was actually delivered, with enough detail that someone who was not in the room can approve it: \"Website redesign — homepage and 4 landing pages, 32 hours at $150/hr.\" Itemize where it helps, show quantities and rates, and tie line items to the project or deliverable name the client already recognizes. A clear, itemized invoice is also simply more professional — see [how to create a professional invoice](/blog/how-to-create-professional-invoice) for the full anatomy.",
+      "## Mistake 2: Missing or Unclear Payment Terms",
+      "If the invoice does not say when payment is due, the client decides — and they will decide in their favor. \"Payment due soon\" or no terms at all leaves the due date to interpretation, which means the invoice has no real deadline. State the term explicitly and put the literal date next to it: \"Net 30 — due July 6, 2026.\" If you are not sure which term to use or what Net 30 actually means, read [what Net 30 payment terms mean](/blog/net-30-payment-terms) and [how to write payment terms on an invoice](/blog/how-to-write-payment-terms-on-invoice). Spelling out the exact calendar date removes the most common payment-delay argument before it can start.",
+      "## Mistake 3: No Invoice Number",
+      "An invoice with no number is hard for everyone to track — including you. The client's accounts-payable team uses the invoice number to log, route, approve, and reconcile the payment; without one, your invoice does not fit cleanly into their system and is more likely to be set aside or duplicated. Assign a unique, sequential number to every invoice and never reuse one. If your numbering is ad hoc, [invoice number format best practices](/blog/invoice-number-format-best-practices) covers how to build a clean sequence (and why dates, client codes, and resets can quietly break it).",
+      "## Mistake 4: Missing a Required PO Number",
+      "This one silently kills invoices to larger clients. Many companies require a purchase order (PO) number on every invoice before it can be approved — and their AP software will automatically reject any invoice without one, often without telling you. You think the invoice is sitting in someone's queue; it was actually bounced on arrival. The fix is to ask, before you send the first invoice, whether the client requires a PO number, and if so, get it and put it prominently on the invoice. For how POs and invoices fit together in a corporate approval flow, see [purchase order vs invoice](/blog/purchase-order-vs-invoice).",
+      "## Mistake 5: No Clear Payment Instructions",
+      "Nothing stalls a willing payer faster than not knowing how to pay you. If the invoice omits your bank details, accepted methods, or a payment link, the client has to stop and ask — or worse, intends to come back to it and never does. Make paying frictionless: list every method you accept, include the exact details needed for each (bank/routing or IBAN for transfers, a link for cards), and put it where it is easy to find, not buried in fine print. The easier you make the next step, the sooner the money moves.",
+      "## Mistake 6: Sending the Invoice Late",
+      "Every day between finishing the work and sending the invoice is a day added to when you get paid — and the longer you wait, the colder the client's memory of the value you delivered. Invoices sent promptly, while the work is fresh, are paid noticeably faster than ones that show up weeks later. Build invoicing into your project close-out so it goes out within a day of delivery, and for recurring or milestone work, send on a fixed schedule. For the timing details by situation, see [when to send an invoice](/blog/when-to-send-invoice).",
+      "## Mistake 7: Math and Tax Errors",
+      "Manual invoices invite arithmetic mistakes: a mis-added subtotal, the wrong tax rate, a discount applied incorrectly. The risk climbs with every line item, discount, and tax jurisdiction. The damage is double — a client who spots an error has a legitimate reason to withhold the whole payment until you correct and resend, and a client who does not spot it may overpay or underpay, creating a reconciliation mess later. The reliable fix is to stop doing the math by hand: use a tool that calculates line totals, taxes, and the grand total for you so the numbers are right every time.",
+      "## Mistake 8: No Late-Fee Policy (So There's No Cost to Paying Late)",
+      "A due date with no consequence is a suggestion. If your terms never mention a late fee, a client who pays on day 45 of a Net 30 invoice owes you nothing extra — so there is no financial reason to prioritize you over a vendor who does charge for late payment. State a late-fee policy in your terms (\"1.5% per month on balances unpaid after the due date\") so on-time payment is the cheaper option. [How to calculate late fees on invoices](/blog/how-to-calculate-late-fees) covers reasonable rates, what is enforceable, and how to word it.",
+      "## Mistake 9: No Follow-Up System",
+      "Even a flawless invoice sometimes slips through a busy inbox. The mistake is treating \"I sent it\" as the end of the job. Without a reminder cadence, a forgotten invoice can age for months before you notice. Set a follow-up the moment you send: a friendly nudge before the due date, a reminder the day after, and a firmer note a week or two later. Copy-paste [invoice payment reminder email templates](/blog/invoice-payment-reminder-email-templates) make this almost effortless, and a polite, well-timed reminder recovers far more invoices than an awkward silence followed by an angry one.",
+      "## A 60-Second Pre-Send Checklist",
+      "Before any invoice leaves your outbox, run it past these: itemized line items a stranger could approve; an explicit payment term with the literal due date; a unique invoice number; the client's PO number if they require one; clear payment methods and details; sent within a day of the work; totals and tax double-checked; a late-fee line in your terms; and a reminder already scheduled. Nine quick checks that turn an invoice that bounces back from accounts payable into one that clears on the first pass.",
+      "## Stop Making These Mistakes With InvoiceQuick",
+      "Most of these errors are the kind a good tool simply prevents. InvoiceQuick gives every invoice a clean layout with space for itemized descriptions, automatic line, tax, and total calculations so the math is never wrong, fields for your invoice number, PO number, payment terms, and due date, and a clear payment-details section — all on a professional PDF you can create in under a minute, free, with no sign-up. Get the structure right once and your invoices stop giving clients reasons to wait.",
+      "## The Bottom Line",
+      "Late payment is usually an invoicing problem before it is a client problem. Vague descriptions, missing terms, no invoice or PO number, no payment instructions, slow sending, math errors, and no follow-up each quietly add days — and they compound. Fix them at the source: be specific, state the due date, number every invoice, ask about PO requirements, make paying easy, send fast, let software do the math, and always schedule the reminder. Do that and most of your invoices will simply get paid, on time, without a chase.",
+    ],
+    faqs: [
+      {
+        q: "What is the most common invoicing mistake that delays payment?",
+        a: "Vague or generic line items like \"consulting services — $5,000.\" A client's finance team cannot verify or approve a charge they cannot match to a deliverable or budget line, so they email a question and the invoice waits. Describe exactly what was delivered, with quantities and rates, so it can be approved on sight.",
+      },
+      {
+        q: "Why would an invoice get rejected by accounts payable automatically?",
+        a: "The most common reason is a missing purchase order (PO) number. Many companies' AP systems auto-reject any invoice without a required PO number before a person ever reviews it — often without notifying you. Ask whether the client requires a PO number before you send, and put it prominently on the invoice.",
+      },
+      {
+        q: "Does sending an invoice late really delay when I get paid?",
+        a: "Yes. The payment clock typically starts on the invoice date, so every day you wait to send is a day added to when payment is due — and the client's memory of the value you delivered fades. Invoices sent within a day of finishing the work are paid noticeably faster than ones sent weeks later.",
+      },
+      {
+        q: "How do I stop math and tax errors on my invoices?",
+        a: "Stop calculating by hand. Manual subtotals, tax rates, and discounts are where errors creep in, and the risk grows with every line item. Use an invoicing tool that computes line totals, taxes, and the grand total automatically so the numbers are correct every time and a client never has a reason to withhold payment over a mistake.",
+      },
+      {
+        q: "What should I always check before sending an invoice?",
+        a: "Run a quick checklist: itemized descriptions, an explicit payment term with the literal due date, a unique invoice number, the client's PO number if required, clear payment methods and details, sent within a day of the work, totals and tax double-checked, a late-fee line in your terms, and a reminder already scheduled.",
+      },
+    ],
+  },
   "net-30-payment-terms": {
     title: "What Are Net 30 Payment Terms? (Net 15, Net 60 & Due on Receipt Explained)",
     description:
@@ -504,7 +560,7 @@ const articles: Record<
       "## Step 6: File in Small Claims Court",
       "Small claims court is designed for exactly this situation — it is inexpensive, fast (typically resolved in 30–90 days), and does not require a lawyer. Most US states have small claims limits of $5,000–$20,000. You will need: a copy of your invoice, any written agreement or email chain confirming the project scope and rate, proof of delivery (email confirmation, signed approval, etc.), and documentation of your follow-up attempts. Filing fees are typically $30–$100. Winning a judgment does not guarantee payment, but it gives you legal tools to garnish wages or bank accounts in most states.",
       "## How to Prevent Non-Payment in the Future",
-      "The best cure for unpaid invoices is prevention. Require 50% upfront for new clients or large projects — this weeds out clients who were never serious about paying. Use a written contract that specifies deliverables, payment terms, and consequences for non-payment. Send invoices immediately upon project completion, not days or weeks later. Keep your payment process frictionless — a client who can pay with one click is more likely to pay on time than one who has to navigate bank wires. InvoiceQuick makes invoicing fast and professional, so you spend less time chasing payments and more time doing work you love.",
+      "The best cure for unpaid invoices is prevention. Require 50% upfront for new clients or large projects — this weeds out clients who were never serious about paying. Use a written contract that specifies deliverables, payment terms, and consequences for non-payment. Send invoices immediately upon project completion, not days or weeks later. Keep your payment process frictionless — a client who can pay with one click is more likely to pay on time than one who has to navigate bank wires. And get the invoice itself right the first time: many overdue invoices are simply the [common invoicing mistakes that delay payment](/blog/common-invoicing-mistakes) — a vague line item, a missing PO number, no clear due date — quietly buying the client an excuse to wait. InvoiceQuick makes invoicing fast and professional, so you spend less time chasing payments and more time doing work you love.",
     ],
   },
   "small-business-invoicing": {

@@ -3,6 +3,7 @@
 // and the blog-index Blog/ItemList schemas (src/app/blog/page.tsx) so dates
 // can't drift between the two structured-data emitters.
 export const publishedAt: Record<string, string> = {
+  "common-invoicing-mistakes": "2026-06-06",
   "partial-payment-invoice": "2026-06-05",
   "net-30-payment-terms": "2026-06-03",
   "invoice-payment-reminder-email-templates": "2026-05-20",

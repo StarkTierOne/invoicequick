@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 
 // Keep in sync with the article keys in src/app/blog/[slug]/page.tsx
 const blogSlugs = [
+  "common-invoicing-mistakes",
   "net-30-payment-terms",
   "invoice-payment-reminder-email-templates",
   "how-to-create-professional-invoice",
