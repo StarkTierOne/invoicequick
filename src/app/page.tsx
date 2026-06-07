@@ -423,8 +423,9 @@ export default function Home() {
           <span className="text-indigo-600">In Seconds</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-          The fastest way to create, download, and send beautiful invoices.
-          No sign-up. No credit card. Just invoices that get you paid.
+          The fastest way to create, download, and send beautiful invoices &mdash; and
+          keep <strong className="text-gray-900">100% of what you bill</strong>, with zero
+          payment-processing fees. Just professional invoices that get you paid.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/create" className="btn-primary text-lg !px-8 !py-4">
