@@ -251,7 +251,7 @@ function InvoicePreview({ data }: { data: InvoiceData }) {
 
       {/* Footer */}
       <div className="mt-10 pt-4 border-t border-gray-100 text-center">
-        <p className="text-xs text-gray-400">Generated with InvoiceQuick — invoicequick.com</p>
+        <p className="text-xs text-gray-400">Generated with InvoiceQuick — invoicequick-phi.vercel.app</p>
       </div>
     </div>
   );

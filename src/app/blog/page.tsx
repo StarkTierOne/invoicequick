@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "what-to-include-on-invoice",
+    title: "What to Include on an Invoice to Get Paid Faster (2026 Checklist)",
+    excerpt:
+      "Flip the usual invoicing advice around: instead of everything that goes wrong, here's exactly what to put on an invoice so it gets paid faster. The required fields every invoice needs (the word \"Invoice,\" matching party details, a unique number, an issue date and a literal due date, itemized line items, a clear total in a stated currency, payment instructions) and the payment-speeding extras most people leave off — a stated late-fee or interest line (invoices carrying one are paid at a far higher rate), and the two polite words that measurably raise the share of invoices paid within a week. Ends with a copy-and-keep checklist.",
+  },
+  {
     slug: "get-invoice-approved-by-accounts-payable",
     title: "How to Get an Invoice Approved by Accounts Payable the First Time",
     excerpt:
