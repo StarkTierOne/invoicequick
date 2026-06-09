@@ -435,6 +435,9 @@ export default function Home() {
             See How It Works &darr;
           </a>
         </div>
+        <p className="mt-4 text-sm text-gray-500">
+          Fill in your details, add line items, download the PDF &mdash; <strong className="text-gray-700">about 60 seconds</strong>, nothing to install.
+        </p>
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-sm">
           <span className="flex items-center gap-0.5 text-amber-400 text-base leading-none" aria-hidden="true">
             &#9733;&#9733;&#9733;&#9733;&#9733;
