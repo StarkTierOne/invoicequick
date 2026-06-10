@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 
 // Keep in sync with the article keys in src/app/blog/[slug]/page.tsx
 const blogSlugs = [
+  "progress-invoicing-milestone-billing",
   "ssn-or-ein-on-invoice",
   "what-to-include-on-invoice",
   "get-invoice-approved-by-accounts-payable",

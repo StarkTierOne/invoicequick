@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import ExitIntentModal from "@/components/ExitIntentModal";
 
 function MobileStickyCTA() {
   const [visible, setVisible] = useState(false);
@@ -892,6 +893,7 @@ export default function Home() {
       </footer>
 
       <MobileStickyCTA />
+      <ExitIntentModal />
     </div>
   );
 }

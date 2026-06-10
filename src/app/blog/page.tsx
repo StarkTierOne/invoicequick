@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "progress-invoicing-milestone-billing",
+    title: "Progress Invoicing & Milestone Billing for Freelancers (2026 Guide)",
+    excerpt:
+      "Billing a long, expensive project in one lump sum at the end means financing the client's project out of your own pocket — and being exposed for the full amount if it goes sideways. Progress invoicing fixes that by splitting one engagement into staged invoices that flow in as the work gets done. This guide covers when to stage payments, how to build a milestone schedule (trigger, amount, date), the deposit → milestone → final pattern, how to itemize a progress invoice so the numbers reconcile instead of appearing to double-count the total, fixed-milestone vs percent-complete billing, and the work-stops contract clause that keeps staged projects on track.",
+  },
+  {
     slug: "ssn-or-ein-on-invoice",
     title: "Do You Put Your SSN or EIN on an Invoice? (What Tax ID Freelancers Should Use)",
     excerpt:
