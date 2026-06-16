@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 
 // Keep in sync with the article keys in src/app/blog/[slug]/page.tsx
 const blogSlugs = [
+  "quarterly-estimated-taxes-freelancers",
   "do-you-need-an-llc-to-freelance",
   "sales-tax-on-invoices",
   "progress-invoicing-milestone-billing",
