@@ -319,6 +319,10 @@ const faqs = [
     question: "Do I need to include my tax ID or EIN on my invoice?",
     answer: "For most US-based freelancers, no — you are not legally required to put your Social Security Number or EIN on every invoice. Clients collect your SSN or EIN via a W-9 form for their 1099 records, not through your invoice. Including your SSN on invoices is actually a security risk and best avoided. If you have an EIN (free to obtain from the IRS), you can include it to look more professional and make corporate clients' bookkeeping easier. Outside the US, rules differ: EU freelancers who are VAT-registered must include their VAT number on every invoice, and UK and Canadian invoices have similar requirements. If you invoice international clients, check the requirements for their country.",
   },
+  {
+    question: "Do I get a 1099 for my freelance income?",
+    answer: "It depends on who paid you and how — and both thresholds changed for 2026. A 1099-NEC comes from a client who paid you directly for work; that threshold rises from $600 to $2,000 for payments made in 2026. A 1099-K comes from a payment platform like PayPal, Venmo, or Stripe, and after the One Big Beautiful Bill the threshold reverted to over $20,000 and 200 transactions for 2025 and beyond — so most freelancers won't receive one. A lot of freelance income now generates no 1099 at all, but it's all still taxable and must be reported, which is exactly why keeping a clean record of every invoice you send matters. The safest approach is to track your own income and treat any 1099s that arrive as a cross-check, not the count of what you made.",
+  },
 ];
 
 const features = [
