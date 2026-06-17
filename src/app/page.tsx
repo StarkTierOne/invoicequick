@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import ExitIntentModal from "@/components/ExitIntentModal";
 
-function MobileStickyCTA() {
+function StickyCTA() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 600);
@@ -13,18 +13,38 @@ function MobileStickyCTA() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <div
-      className={`sm:hidden fixed inset-x-0 bottom-0 z-50 transition-transform duration-300 ${
-        visible ? "translate-y-0" : "translate-y-full"
-      }`}
-    >
-      <div className="bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-3 shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
-        <Link href="/create" className="btn-primary w-full text-center text-base !py-3 block">
-          Create Your Invoice Free &rarr;
-        </Link>
-        <p className="text-center text-xs text-gray-500 mt-1.5">No sign-up &middot; No credit card &middot; Free forever</p>
+    <>
+      {/* Mobile: full-width bottom bar */}
+      <div
+        className={`sm:hidden fixed inset-x-0 bottom-0 z-50 transition-transform duration-300 ${
+          visible ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
+        <div className="bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-3 shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
+          <Link href="/create" className="btn-primary w-full text-center text-base !py-3 block">
+            Create Your Invoice Free &rarr;
+          </Link>
+          <p className="text-center text-xs text-gray-500 mt-1.5">No sign-up &middot; No credit card &middot; Free forever</p>
+        </div>
       </div>
-    </div>
+
+      {/* Desktop: floating pill (low-friction /create path stays in reach after the hero scrolls away) */}
+      <div
+        className={`hidden sm:block fixed bottom-6 right-6 z-50 transition-all duration-300 ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+        }`}
+      >
+        <div className="bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] px-4 py-3 flex items-center gap-4">
+          <div className="leading-tight">
+            <div className="text-sm font-semibold text-gray-900">Make your invoice now</div>
+            <div className="text-xs text-gray-500">Free &middot; no sign-up &middot; ~60 seconds</div>
+          </div>
+          <Link href="/create" className="btn-primary text-sm !py-2.5 !px-5 whitespace-nowrap">
+            Create Free &rarr;
+          </Link>
+        </div>
+      </div>
+    </>
   );
 }
 
@@ -896,7 +916,7 @@ export default function Home() {
         </div>
       </footer>
 
-      <MobileStickyCTA />
+      <StickyCTA />
       <ExitIntentModal />
     </div>
   );
