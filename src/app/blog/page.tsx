@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "business-bank-account-for-freelancers",
+    title: "Do Freelancers Need a Business Bank Account? (Sole Proprietor vs LLC, 2026)",
+    excerpt:
+      "Whether you legally need a separate business bank account depends on how you're set up — but running everything through one personal account is the quiet mistake that costs freelancers the most. Sole proprietors aren't required to have one; LLC owners essentially are, because commingling funds can pierce the corporate veil and strip the liability protection they formed the LLC to get. Either way, mixing business and personal money makes taxes slower, raises audit risk, and silently loses deductions. This guide covers who actually needs a business account, what commingling really costs, the free options that make it a non-decision, how it ties into clean invoicing and your 1099s, and a setup you can finish this week.",
+  },
+  {
     slug: "how-to-accept-payment-as-a-freelancer",
     title: "How to Accept Payments as a Freelancer: ACH, PayPal, Card, Zelle & Wire Compared (2026)",
     excerpt:
