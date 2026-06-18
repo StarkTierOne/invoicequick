@@ -343,6 +343,10 @@ const faqs = [
     question: "Do I get a 1099 for my freelance income?",
     answer: "It depends on who paid you and how — and both thresholds changed for 2026. A 1099-NEC comes from a client who paid you directly for work; that threshold rises from $600 to $2,000 for payments made in 2026. A 1099-K comes from a payment platform like PayPal, Venmo, or Stripe, and after the One Big Beautiful Bill the threshold reverted to over $20,000 and 200 transactions for 2025 and beyond — so most freelancers won't receive one. A lot of freelance income now generates no 1099 at all, but it's all still taxable and must be reported, which is exactly why keeping a clean record of every invoice you send matters. The safest approach is to track your own income and treat any 1099s that arrive as a cross-check, not the count of what you made.",
   },
+  {
+    question: "Do I need a business bank account to freelance?",
+    answer: "Legally, it depends on your structure. As a sole proprietor you are not required to have a separate business bank account — running freelance income through a personal account is allowed. If you have an LLC, keeping the LLC's money separate is effectively mandatory, because mixing business and personal funds can let a court pierce the corporate veil and strip away the liability protection you formed the LLC to get. Even when it is optional, a dedicated business account is worth it: it makes tax time faster, lowers your audit risk, and stops you from missing deductions — and many online business checking accounts are now free with no minimum balance. Whether or not you open one, the income side of clean books is sending a professional, numbered invoice for every payment, which is exactly what InvoiceQuick is for.",
+  },
 ];
 
 const features = [
