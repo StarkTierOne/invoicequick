@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "freelance-tax-deductions-youre-missing",
+    title: "Freelancer Tax Deductions You're Probably Missing (2026 Checklist)",
+    excerpt:
+      "Self-employed workers overpay the IRS every year not because they're careless, but because no one ever handed them the list of what they're allowed to subtract — an estimated $3,000–$5,000 in missed deductions a year. This checklist covers the four big structural deductions almost everyone overlooks (half your self-employment tax, the 23% QBI deduction, self-employed health insurance, and SEP-IRA / Solo 401(k) contributions), the everyday write-offs that quietly add up (home office, payment processor fees, software, phone, internet, mileage), the only test the IRS actually applies — ordinary and necessary — and the records system that turns every deduction from a nervous guess into a number you can defend.",
+  },
+  {
     slug: "business-bank-account-for-freelancers",
     title: "Do Freelancers Need a Business Bank Account? (Sole Proprietor vs LLC, 2026)",
     excerpt:

@@ -347,6 +347,10 @@ const faqs = [
     question: "Do I need a business bank account to freelance?",
     answer: "Legally, it depends on your structure. As a sole proprietor you are not required to have a separate business bank account — running freelance income through a personal account is allowed. If you have an LLC, keeping the LLC's money separate is effectively mandatory, because mixing business and personal funds can let a court pierce the corporate veil and strip away the liability protection you formed the LLC to get. Even when it is optional, a dedicated business account is worth it: it makes tax time faster, lowers your audit risk, and stops you from missing deductions — and many online business checking accounts are now free with no minimum balance. Whether or not you open one, the income side of clean books is sending a professional, numbered invoice for every payment, which is exactly what InvoiceQuick is for.",
   },
+  {
+    question: "What can I write off as a freelancer?",
+    answer: "Any expense that's ordinary and necessary for your work is deductible, but the biggest savings are structural deductions most freelancers never claim: half of your self-employment tax, the Qualified Business Income (QBI) deduction (up to 23% of net business income for 2026), 100% of self-employed health insurance premiums, and retirement contributions through a SEP-IRA or Solo 401(k). On top of those, watch for the home office deduction, payment processor fees, software and subscriptions, the business share of your phone and internet, and mileage. The catch is proof — a deduction you can't document can be disallowed in an audit, so keep clean records: run business money through a dedicated account and send a numbered invoice for every payment so your income side is airtight. See our full freelancer tax-deductions checklist for the details.",
+  },
 ];
 
 const features = [
