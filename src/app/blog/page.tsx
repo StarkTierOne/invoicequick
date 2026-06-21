@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-track-freelance-income-and-expenses",
+    title: "How to Track Freelance Income and Expenses: A Simple Bookkeeping System (2026)",
+    excerpt:
+      "Freelance bookkeeping has a reputation for being complicated, but the version that keeps you out of trouble is almost embarrassingly simple: one separate account, every dollar of income recorded the moment it lands, every business expense categorized, receipts kept, and a short reconcile once a week. You don't need accounting software to start — you need a system you'll actually follow. This guide builds that system from scratch: why mixing business and personal money is the root mistake, the categories every freelancer should track, the spreadsheet-vs-software decision, the 25–30% tax set-aside that turns quarterly taxes into a non-event, the fifteen-minute weekly routine that replaces the April scramble, and the one habit — invoicing every dollar you earn — that makes the income side of your books airtight before anything else.",
+  },
+  {
     slug: "freelance-tax-deductions-youre-missing",
     title: "Freelancer Tax Deductions You're Probably Missing (2026 Checklist)",
     excerpt:
