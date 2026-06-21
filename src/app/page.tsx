@@ -351,6 +351,10 @@ const faqs = [
     question: "What can I write off as a freelancer?",
     answer: "Any expense that's ordinary and necessary for your work is deductible, but the biggest savings are structural deductions most freelancers never claim: half of your self-employment tax, the Qualified Business Income (QBI) deduction (up to 23% of net business income for 2026), 100% of self-employed health insurance premiums, and retirement contributions through a SEP-IRA or Solo 401(k). On top of those, watch for the home office deduction, payment processor fees, software and subscriptions, the business share of your phone and internet, and mileage. The catch is proof — a deduction you can't document can be disallowed in an audit, so keep clean records: run business money through a dedicated account and send a numbered invoice for every payment so your income side is airtight. See our full freelancer tax-deductions checklist for the details.",
   },
+  {
+    question: "How do I track my freelance income and expenses?",
+    answer: "You don't need accounting software to start — you need a simple system you'll actually follow: open a separate business bank account so business and personal money never mix, record every dollar of income (easiest if you send a numbered invoice for every payment, so it ties out against your 1099s), categorize expenses from your business-account statement, keep receipts in one folder, and set aside 25–30% of each payment for taxes. The whole routine takes about fifteen minutes a week and replaces the year-end scramble. A spreadsheet is fine until your volume grows. The hardest part to get right is the income side, which is exactly what InvoiceQuick handles — a complete, ordered record of what every client paid, free with no sign-up. See our full guide on how to track freelance income and expenses.",
+  },
 ];
 
 const features = [
