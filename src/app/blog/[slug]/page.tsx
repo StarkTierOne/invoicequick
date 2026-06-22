@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { publishedAt } from "@/lib/blog-published-at";
 
 const INLINE_LINK_RE = /\[([^\]]+)\]\(([^)\s]+)\)/g;
@@ -2114,6 +2114,20 @@ export default async function BlogPostPage({ params }: Props) {
   const canonical = `https://invoicequick-phi.vercel.app/blog/${slug}`;
   const published = publishedAt[slug];
 
+  // Place the mid-article CTA before the section heading nearest the body's
+  // midpoint, excluding the opening heading. Skipped on short posts (<2 content
+  // headings), where the end-of-post CTA already sits within easy scroll reach.
+  const headingPositions = article.body
+    .map((p, idx) => (p.startsWith("## ") ? idx : -1))
+    .filter((idx) => idx > 0);
+  const midpoint = article.body.length / 2;
+  const inlineCtaIndex =
+    headingPositions.length >= 2
+      ? headingPositions.reduce((best, idx) =>
+          Math.abs(idx - midpoint) < Math.abs(best - midpoint) ? idx : best,
+        )
+      : -1;
+
   return (
     <div className="min-h-screen">
       {/* BlogPosting Schema */}
@@ -2200,18 +2214,38 @@ export default async function BlogPostPage({ params }: Props) {
         <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 mb-8">{article.title}</h1>
         <div className="prose prose-lg max-w-none">
           {article.body.map((paragraph, i) => {
-            if (paragraph.startsWith("## ")) {
-              return (
-                <h2 key={i} className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-                  {paragraph.replace("## ", "")}
-                </h2>
-              );
-            }
-            return (
+            const node = paragraph.startsWith("## ") ? (
+              <h2 key={i} className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+                {paragraph.replace("## ", "")}
+              </h2>
+            ) : (
               <p key={i} className="text-gray-700 leading-relaxed mb-4">
                 {renderInline(paragraph)}
               </p>
             );
+            // Mid-article inline CTA: catch readers who get value but never reach
+            // the end-of-post CTA. Rendered once, just before a section break near
+            // the middle of long posts (the flagged blog→/create conversion gap).
+            if (i === inlineCtaIndex) {
+              return (
+                <Fragment key={`cta-${i}`}>
+                  <div className="not-prose my-10 flex flex-col gap-4 rounded-xl border border-indigo-100 bg-indigo-50/60 px-5 py-4 sm:flex-row sm:items-center">
+                    <p className="flex-1 text-sm text-gray-700">
+                      <strong className="text-gray-900">Stop reading, start billing.</strong>{" "}
+                      Create a clean, professional invoice in about 60 seconds &mdash; free, no sign-up.
+                    </p>
+                    <Link
+                      href="/create"
+                      className="btn-primary self-start whitespace-nowrap text-sm !px-5 !py-2.5 sm:self-auto"
+                    >
+                      Create Free Invoice &rarr;
+                    </Link>
+                  </div>
+                  {node}
+                </Fragment>
+              );
+            }
+            return node;
           })}
         </div>
 
