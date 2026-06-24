@@ -530,6 +530,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* No-Catch Trust Band — risk reversal at the decision point */}
+      <section className="max-w-5xl mx-auto px-4 py-16">
+        <div className="text-center mb-10">
+          <div className="inline-block bg-green-50 text-green-700 text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">
+            No Catch
+          </div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">&ldquo;Free&rdquo; — Here&rsquo;s Exactly Why</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            A free invoice tool sounds too good to be true, so here&rsquo;s the honest version: no watermark on your PDF, no card to start, and we never sell your data. This is how it actually works.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="card bg-white">
+            <div className="text-3xl mb-3" aria-hidden="true">💸</div>
+            <h3 className="font-semibold text-lg mb-2">We earn when you upgrade</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              The free tier is genuinely free, forever. We make money only when power users choose <Link href="/pricing" className="text-indigo-600 hover:text-indigo-700 underline">Pro or Business</Link> for recurring invoices, branding, and a saved client database. Your free invoices stay free either way.
+            </p>
+          </div>
+          <div className="card bg-white">
+            <div className="text-3xl mb-3" aria-hidden="true">🔒</div>
+            <h3 className="font-semibold text-lg mb-2">No watermark, no data resale</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Your PDF comes out clean and client-ready — no &ldquo;Made with&rdquo; stamp. You can create without an account at all, and we don&rsquo;t sell or rent the details you enter. It&rsquo;s your invoice, your data.
+            </p>
+          </div>
+          <div className="card bg-white">
+            <div className="text-3xl mb-3" aria-hidden="true">⭐</div>
+            <h3 className="font-semibold text-lg mb-2">Independently reviewed</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Don&rsquo;t take our word for it — InvoiceQuick is rated 9/10 in the{" "}
+              <a href="https://toolsrated.vercel.app/reviews/best-invoicing-software" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 underline">ToolsRated invoicing roundup</a>, where the free tier is checked feature-by-feature against the paid alternatives.
+            </p>
+          </div>
+        </div>
+        <div className="text-center mt-10">
+          <Link href="/create" className="btn-primary text-base !px-6 !py-3">
+            Create a Free Invoice — No Card &rarr;
+          </Link>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section id="how-it-works" className="max-w-6xl mx-auto px-4 py-20">
         <h2 className="text-3xl font-bold text-center mb-4">How It Works</h2>
