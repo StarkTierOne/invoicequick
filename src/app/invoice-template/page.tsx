@@ -3,9 +3,44 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Free Invoice Template | Download & Customize — InvoiceQuick",
-  description: "Get a free, professional invoice template you can customize and download as PDF. Perfect for freelancers, contractors, and small businesses. No signup required.",
-  keywords: "invoice template, free invoice template, invoice template PDF, invoice template download, professional invoice template, freelance invoice template",
+  description: "Get a free, professional invoice template you can customize and download as PDF. No Word, Excel, or Google Docs file to fight with — fill it in and download. Perfect for freelancers, contractors, and small businesses. No signup required.",
+  keywords: "invoice template, free invoice template, invoice template PDF, invoice template download, professional invoice template, freelance invoice template, invoice template word, invoice template google docs, invoice template excel",
 };
+
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "Is this invoice template really free?",
+    a: "Yes, completely free with no watermarks. You can create and download as many invoices as you need without paying anything.",
+  },
+  {
+    q: "Can I use this template for my business?",
+    a: "Absolutely. The template works for freelancers, contractors, agencies, consultants, and any small business that needs to send invoices. Customize it with your logo and branding.",
+  },
+  {
+    q: "Can I get this template in Word, Google Docs, or Excel?",
+    a: "You don't need one. Static Word, Google Docs, and Excel templates force you to fix the layout, re-enter formulas, and reformat every time. InvoiceQuick fills in the same fields in your browser, calculates subtotals and tax automatically, and downloads a clean PDF — so you skip the spreadsheet entirely and never break a template again.",
+  },
+  {
+    q: "What file format is the invoice?",
+    a: "Invoices are downloaded as PDF files, which look professional and consistent on every device. PDF is the standard format business clients and accounts payable departments expect, and it can't be accidentally edited the way a Word or Excel file can.",
+  },
+  {
+    q: "Can I print a blank invoice template?",
+    a: "Yes. Generate an invoice with your business details and leave the line items empty, then download or print the PDF for a clean blank template. Most users find it faster to just fill it in on screen, since the math is done for you.",
+  },
+  {
+    q: "Do I need to install anything?",
+    a: "No. InvoiceQuick runs entirely in your browser. There is nothing to download, install, or update. Just open the page and start creating your invoice.",
+  },
+  {
+    q: "Can I add multiple line items?",
+    a: "Yes. You can add as many line items as your invoice requires. Each line includes a description, quantity, rate, and calculated amount. Totals and taxes are computed automatically.",
+  },
+  {
+    q: "Is my data safe?",
+    a: "Your invoice data is processed in your browser and stored locally on your device. We do not sell or share your information with third parties.",
+  },
+];
 
 export default function InvoiceTemplatePage() {
   return (
@@ -110,33 +145,34 @@ export default function InvoiceTemplatePage() {
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
-            <div className="card">
-              <h3 className="font-bold text-gray-900 mb-2">Is this invoice template really free?</h3>
-              <p className="text-gray-600 text-sm">Yes, completely free with no watermarks. You can create and download as many invoices as you need without paying anything.</p>
-            </div>
-            <div className="card">
-              <h3 className="font-bold text-gray-900 mb-2">Can I use this template for my business?</h3>
-              <p className="text-gray-600 text-sm">Absolutely. The template works for freelancers, contractors, agencies, consultants, and any small business that needs to send invoices. Customize it with your logo and branding.</p>
-            </div>
-            <div className="card">
-              <h3 className="font-bold text-gray-900 mb-2">What file format is the invoice?</h3>
-              <p className="text-gray-600 text-sm">Invoices are downloaded as PDF files, which look professional and consistent on every device. PDF is the standard format for business invoices.</p>
-            </div>
-            <div className="card">
-              <h3 className="font-bold text-gray-900 mb-2">Do I need to install anything?</h3>
-              <p className="text-gray-600 text-sm">No. InvoiceQuick runs entirely in your browser. There is nothing to download, install, or update. Just open the page and start creating your invoice.</p>
-            </div>
-            <div className="card">
-              <h3 className="font-bold text-gray-900 mb-2">Can I add multiple line items?</h3>
-              <p className="text-gray-600 text-sm">Yes. You can add as many line items as your invoice requires. Each line includes a description, quantity, rate, and calculated amount. Totals and taxes are computed automatically.</p>
-            </div>
-            <div className="card">
-              <h3 className="font-bold text-gray-900 mb-2">Is my data safe?</h3>
-              <p className="text-gray-600 text-sm">Your invoice data is processed in your browser and stored locally on your device. We do not sell or share your information with third parties.</p>
-            </div>
+            {faqs.map((faq) => (
+              <div key={faq.q} className="card">
+                <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm">{faq.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* FAQ JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          }),
+        }}
+      />
 
       {/* CTA */}
       <section className="bg-indigo-600 py-14">
