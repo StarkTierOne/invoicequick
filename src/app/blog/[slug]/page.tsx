@@ -5,6 +5,59 @@ import { Fragment, type ReactNode } from "react";
 import { publishedAt } from "@/lib/blog-published-at";
 
 const INLINE_LINK_RE = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+const BOLD_RE = /\*\*([^*]+)\*\*/g;
+// Italic content must start and end with a non-space, non-asterisk char, so a
+// stray or arithmetic asterisk never opens a span and bold markers (already
+// consumed upstream) can't be mis-parsed.
+const ITALIC_RE = /\*([^*\s](?:[^*]*[^*\s])?)\*/g;
+
+// Strip lightweight markdown (links → label, **bold**/*italic* → text) for use
+// in metadata and JSON-LD, where raw markers would otherwise leak as literal
+// characters into SERP snippets and FAQ rich results.
+function stripMarkdown(text: string): string {
+  return text.replace(INLINE_LINK_RE, "$1").replace(BOLD_RE, "$1").replace(ITALIC_RE, "$1");
+}
+
+// Render *italic* spans within a plain (link-free, bold-free) text run.
+function renderItalic(text: string, keyBase: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  ITALIC_RE.lastIndex = 0;
+  while ((match = ITALIC_RE.exec(text)) !== null) {
+    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
+    nodes.push(
+      <em key={`${keyBase}-i${match.index}`} className="italic">
+        {match[1]}
+      </em>,
+    );
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes;
+}
+
+// Render **bold** spans within a plain (link-free) text run, handing the
+// remaining plain runs to renderItalic. Bold is resolved before italic so the
+// shared `*` delimiter never causes the two to fight.
+function renderEmphasis(text: string, keyBase: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  BOLD_RE.lastIndex = 0;
+  while ((match = BOLD_RE.exec(text)) !== null) {
+    if (match.index > lastIndex)
+      nodes.push(...renderItalic(text.slice(lastIndex, match.index), `${keyBase}-${lastIndex}`));
+    nodes.push(
+      <strong key={`${keyBase}-b${match.index}`} className="font-semibold text-gray-900">
+        {match[1]}
+      </strong>,
+    );
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) nodes.push(...renderItalic(text.slice(lastIndex), `${keyBase}-${lastIndex}`));
+  return nodes;
+}
 
 function renderInline(text: string): ReactNode {
   const nodes: ReactNode[] = [];
@@ -13,23 +66,23 @@ function renderInline(text: string): ReactNode {
   INLINE_LINK_RE.lastIndex = 0;
   while ((match = INLINE_LINK_RE.exec(text)) !== null) {
     const [full, label, href] = match;
-    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
+    if (match.index > lastIndex) nodes.push(...renderEmphasis(text.slice(lastIndex, match.index), `t${lastIndex}`));
     if (href.startsWith("/")) {
       nodes.push(
         <Link key={`${match.index}-${href}`} href={href} className="text-indigo-600 hover:text-indigo-700 underline">
-          {label}
+          {renderEmphasis(label, `l${match.index}`)}
         </Link>,
       );
     } else {
       nodes.push(
         <a key={`${match.index}-${href}`} href={href} className="text-indigo-600 hover:text-indigo-700 underline" target="_blank" rel="noopener noreferrer">
-          {label}
+          {renderEmphasis(label, `l${match.index}`)}
         </a>,
       );
     }
     lastIndex = match.index + full.length;
   }
-  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  if (lastIndex < text.length) nodes.push(...renderEmphasis(text.slice(lastIndex), `t${lastIndex}`));
   return nodes.length ? nodes : text;
 }
 
@@ -2192,7 +2245,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return { title: "Not Found" };
   return {
     title: `${article.title} | InvoiceQuick Blog`,
-    description: article.description,
+    description: stripMarkdown(article.description),
     keywords: article.keywords,
     alternates: {
       canonical: `https://invoicequick-phi.vercel.app/blog/${slug}`,
@@ -2236,7 +2289,7 @@ export default async function BlogPostPage({ params }: Props) {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: article.title,
-            description: article.description,
+            description: stripMarkdown(article.description),
             keywords: article.keywords,
             mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
             url: canonical,
@@ -2281,7 +2334,7 @@ export default async function BlogPostPage({ params }: Props) {
               mainEntity: article.faqs.map((faq) => ({
                 "@type": "Question",
                 name: faq.q,
-                acceptedAnswer: { "@type": "Answer", text: faq.a },
+                acceptedAnswer: { "@type": "Answer", text: stripMarkdown(faq.a) },
               })),
             }),
           }}
@@ -2314,7 +2367,7 @@ export default async function BlogPostPage({ params }: Props) {
           {article.body.map((paragraph, i) => {
             const node = paragraph.startsWith("## ") ? (
               <h2 key={i} className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-                {paragraph.replace("## ", "")}
+                {renderEmphasis(paragraph.replace("## ", ""), `h${i}`)}
               </h2>
             ) : (
               <p key={i} className="text-gray-700 leading-relaxed mb-4">
