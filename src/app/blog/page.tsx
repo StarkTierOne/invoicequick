@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "home-address-on-invoice",
+    title: "Do You Have to Put Your Home Address on an Invoice? (Privacy Options for Freelancers, 2026)",
+    excerpt:
+      "If you freelance from home, every invoice you send is quietly broadcasting your residential address — to each client, their accounts payable team, and whatever inboxes and filing systems it lands in. You almost never have to. There's no U.S. law forcing a sole proprietor or independent contractor to print a home address on a service invoice; clients need a way to reach you and identify your business, not your front door. This guide covers what an invoice actually requires, why a business address still helps you get paid, and the real privacy options ranked by client type — PO box, virtual mailbox with a real street address, coworking or registered-agent address, or simply email and phone — including which ones corporate accounts payable will accept on file.",
+  },
+  {
     slug: "how-to-invoice-as-an-independent-contractor",
     title: "How to Invoice as an Independent Contractor (Free Template + 2026 Guide)",
     excerpt:

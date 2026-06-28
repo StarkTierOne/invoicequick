@@ -445,7 +445,7 @@ export default function Home() {
             <a href="#how-it-works" className="text-gray-600 hover:text-gray-900 hidden sm:block">How It Works</a>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900 hidden sm:block">Blog</Link>
             <Link href="/login" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Sign In</Link>
-            <Link href="/signup" className="btn-primary text-sm !py-2 !px-4">Sign Up Free</Link>
+            <Link href="/create" className="btn-primary text-sm !py-2 !px-4">Create Invoice Free &rarr;</Link>
           </div>
         </div>
       </nav>
