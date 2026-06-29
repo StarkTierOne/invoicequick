@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-for-cleaning-services",
+    title: "How to Invoice for Cleaning Services (Residential & Commercial, 2026)",
+    excerpt:
+      "Cleaning is a fresh-memory service — clients pay fastest when the work is still on their mind, so the invoice should go out same-day, not at month's end. This guide covers how to invoice for cleaning services the right way: what every cleaning invoice must include, the big residential-vs-commercial split (due-on-completion or Net 7 for homeowners vs Net 30 with a PO number for offices and property managers), when to take a deposit on deep cleans and move-outs, how to bill recurring weekly clients without drowning in paperwork, and the late-fee and reminder cadence that gets thin-margin cleaning invoices paid.",
+  },
+  {
     slug: "home-address-on-invoice",
     title: "Do You Have to Put Your Home Address on an Invoice? (Privacy Options for Freelancers, 2026)",
     excerpt:
