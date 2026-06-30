@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "invoice-when-paid-through-paypal-venmo-zelle",
+    title: "Do You Still Need an Invoice If You're Paid Through PayPal, Venmo, or Zelle? (2026)",
+    excerpt:
+      "Getting paid through an app feels like the invoice is optional — the money lands, the client's happy, why bother? Because the payment and the invoice do two different jobs: the app moves the money, the invoice is the record that proves what the money was for. Skip it and you're trusting a one-line app memo to survive a client dispute, a chargeback, or an IRS questions about your 1099-K. This guide covers why you still invoice when paid by app, the friends-and-family trap that quietly costs freelancers buyer protection and clean records, how the 2026 1099-K reversal means most app payments now generate no IRS form at all (making your invoices the only proof of income you still owe tax on), which app to use for which client, and the payment-instructions block that turns 'how do I pay you?' into a paid invoice on the first try.",
+  },
+  {
     slug: "how-to-invoice-for-cleaning-services",
     title: "How to Invoice for Cleaning Services (Residential & Commercial, 2026)",
     excerpt:
