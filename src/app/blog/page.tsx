@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-charge-a-rush-fee",
+    title: "How to Charge a Rush Fee: Billing for Rush & Expedite Jobs (2026)",
+    excerpt:
+      "\"Any chance you could get this to me by tomorrow?\" Speed has a price, and a rush fee is how you charge for it — the premium that pays for the evenings, weekends, and bumped-other-clients that fast turnaround actually costs. Most freelancers rearrange their whole week for a tight deadline and bill the exact same amount, giving the speed away for free. This guide covers what a rush fee actually pays for, the three ways to price it (a 25–100% surcharge, a 1.5×–2× hourly rush rate, or a flat expedite fee) with the numbers freelancers really use, how to raise it before you start so it's never an ambush, exactly how to show it as its own line on the invoice, when NOT to charge one, and how rush fees work across design, writing, dev, and the trades.",
+  },
+  {
     slug: "how-to-invoice-for-lawn-care-and-landscaping",
     title: "How to Invoice for Lawn Care & Landscaping Services (2026 Guide)",
     excerpt:
