@@ -17,6 +17,7 @@ export interface InvoiceData {
   toAddress: string;
   // Invoice details
   invoiceNumber: string;
+  poNumber: string;
   invoiceDate: string;
   dueDate: string;
   currency: string;
@@ -95,6 +96,7 @@ export function defaultInvoice(): InvoiceData {
     toEmail: "",
     toAddress: "",
     invoiceNumber: generateInvoiceNumber(),
+    poNumber: "",
     invoiceDate: today.toISOString().split("T")[0],
     dueDate: due.toISOString().split("T")[0],
     currency: "USD",

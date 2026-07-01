@@ -55,6 +55,10 @@ function InvoiceForm({ data, onChange }: { data: InvoiceData; onChange: (d: Invo
             <input className="input" value={data.invoiceNumber} onChange={(e) => set({ invoiceNumber: e.target.value })} />
           </div>
           <div>
+            <label className="label">PO Number <span className="text-gray-400 font-normal">(optional)</span></label>
+            <input className="input" placeholder="e.g. PO-4821" value={data.poNumber} onChange={(e) => set({ poNumber: e.target.value })} />
+          </div>
+          <div>
             <label className="label">Invoice Date</label>
             <input className="input" type="date" value={data.invoiceDate} onChange={(e) => {
               const newDate = e.target.value;
@@ -161,6 +165,9 @@ function InvoicePreview({ data }: { data: InvoiceData }) {
         <div className="text-right">
           <h1 className="text-3xl font-extrabold text-indigo-600">INVOICE</h1>
           <p className="text-sm text-gray-500 mt-1">{data.invoiceNumber}</p>
+          {data.poNumber && (
+            <p className="text-sm text-gray-500"><span className="text-gray-400">PO:</span> {data.poNumber}</p>
+          )}
         </div>
       </div>
 
