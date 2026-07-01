@@ -434,6 +434,66 @@ const pricing = [
   },
 ];
 
+// Above-the-fold product visual: a browser-framed mini invoice so visitors see
+// the deliverable in the first seconds instead of only reading about it. Static,
+// self-contained (no image asset), and honest to what /create actually produces.
+function HeroInvoiceMockup() {
+  return (
+    <div className="mt-14 max-w-2xl mx-auto animate-hero-float">
+      <div className="rounded-2xl shadow-2xl ring-1 ring-gray-900/5 border border-gray-200 bg-white overflow-hidden text-left">
+        {/* Browser chrome */}
+        <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-100 border-b border-gray-200">
+          <span className="w-3 h-3 rounded-full bg-red-400" />
+          <span className="w-3 h-3 rounded-full bg-amber-400" />
+          <span className="w-3 h-3 rounded-full bg-green-400" />
+          <span className="ml-3 flex-1 truncate rounded-md bg-white border border-gray-200 px-3 py-1 text-xs text-gray-400">
+            invoicequick-phi.vercel.app/create
+          </span>
+        </div>
+        {/* Invoice body */}
+        <div className="relative p-6 sm:p-8">
+          <span className="absolute top-5 right-5 -rotate-6 select-none rounded-md border-2 border-emerald-500 px-2.5 py-0.5 text-xs font-extrabold uppercase tracking-widest text-emerald-600">
+            Paid
+          </span>
+          <div className="flex items-start justify-between mb-6">
+            <div className="flex items-center gap-2">
+              <div className="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">IQ</div>
+              <div>
+                <div className="font-bold text-gray-900 leading-tight">Riverbend Studio</div>
+                <div className="text-[11px] text-gray-400">hello@riverbend.co</div>
+              </div>
+            </div>
+            <div className="text-right">
+              <div className="text-lg font-extrabold tracking-tight text-gray-900">INVOICE</div>
+              <div className="text-[11px] text-gray-400">#INV-0042</div>
+            </div>
+          </div>
+          <div className="space-y-2.5">
+            {[
+              ["Brand identity design", "$2,400.00"],
+              ["Landing page build", "$1,275.00"],
+              ["Revisions (2 rounds)", "$450.00"],
+            ].map(([label, amt]) => (
+              <div key={label} className="flex items-center justify-between text-sm">
+                <span className="text-gray-600">{label}</span>
+                <span className="font-medium text-gray-900 tabular-nums">{amt}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between">
+            <span className="text-sm font-semibold text-gray-500">Total due</span>
+            <span className="text-xl font-extrabold text-gray-900 tabular-nums">$4,125.00</span>
+          </div>
+          <div className="mt-4 flex items-center gap-2 text-[11px] text-gray-400">
+            <span className="text-green-500 font-bold">&#10003;</span>
+            Professional PDF &middot; itemized &middot; ready to send &mdash; built in about a minute.
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -501,6 +561,7 @@ export default function Home() {
           </span>
           <span><strong className="text-gray-700">47 freelancers</strong> are creating invoices right now</span>
         </div>
+        <HeroInvoiceMockup />
       </section>
 
       {/* Social Proof Bar */}
