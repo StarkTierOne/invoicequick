@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-for-handyman-services",
+    title: "How to Invoice for Handyman Services (Labor + Materials, 2026 Guide)",
+    excerpt:
+      "Handyman work is a hundred small jobs, not one big one — a leaky faucet, a mounted TV, a punch list of five fixes in a single visit — and that's what makes the billing awkward: the invoice overhead can eat the margin on an $80 job if you let it. This guide covers how to invoice for handyman services the right way: flat-rate vs time-and-materials and when each wins, the minimum service-call fee that makes small jobs worth doing, how to mark up materials without hiding it, the multi-task punch-list invoice that shows real value, when to take a deposit, the same-day 'invoice before you leave the driveway' habit that gets you paid fastest, and the thing most guides skip — the state licensing dollar cap that quietly turns a legal handyman job into an illegal unlicensed-contractor one the moment the total crosses a line.",
+  },
+  {
     slug: "how-to-charge-a-rush-fee",
     title: "How to Charge a Rush Fee: Billing for Rush & Expedite Jobs (2026)",
     excerpt:
