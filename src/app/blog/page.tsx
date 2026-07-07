@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-for-hvac-service",
+    title: "How to Invoice for HVAC Services (Service Calls, Installs & Maintenance, 2026)",
+    excerpt:
+      "HVAC billing is really three businesses on one invoice pad: the emergency no-cool repair, the planned system install, and the recurring maintenance agreement that quietly pays the bills all year. Each one bills differently, and a generic template misses the fields that actually matter in this trade. This guide covers how to invoice for HVAC services the right way: the service-call / diagnostic fee that pays for the truck roll, flat-rate pricebook vs time-and-materials and when each wins, the trade-specific lines most templates skip — refrigerant type and quantity (which the EPA expects you to track), equipment make/model/serial for warranty, and the disposal fee — why installs need a deposit and progress billing instead of one lump invoice, how maintenance agreements turn one-time customers into recurring revenue, and why collecting before the truck leaves the driveway is the cheapest cash-flow fix you'll ever make.",
+  },
+  {
     slug: "how-to-invoice-for-handyman-services",
     title: "How to Invoice for Handyman Services (Labor + Materials, 2026 Guide)",
     excerpt:
