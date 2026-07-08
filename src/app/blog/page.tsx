@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-for-electrical-work",
+    title: "How to Invoice for Electrical Work (Service Calls, Materials & Permits, 2026)",
+    excerpt:
+      "An electrician's invoice carries something most trades' don't have to: your license number — and in many states it's legally required to be on the bill. Beyond that, electrical work rewards a specific structure that a generic template misses. This guide covers how to invoice for electrical work the right way: the service-call/diagnostic fee (usually credited toward the repair), flat-rate pricebook vs time-and-materials and when each wins, why your license number and per-circuit code notes belong on every invoice, how to mark up materials without hiding it, passing permit fees through at cost, the 1.5–2× emergency and after-hours premium, why panel upgrades and rewires need a deposit and progress billing, and why collecting on-site — and invoicing net accounts within ten days — is the cheapest cash-flow fix an electrical shop will ever make.",
+  },
+  {
     slug: "how-to-invoice-for-hvac-service",
     title: "How to Invoice for HVAC Services (Service Calls, Installs & Maintenance, 2026)",
     excerpt:
