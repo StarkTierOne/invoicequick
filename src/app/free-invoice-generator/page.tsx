@@ -55,6 +55,14 @@ const pageFaqs = [
       text: "Read the full guide to handling a partial payment on an invoice →",
     },
   },
+  {
+    question: "Can I use this to invoice for a service business or trade?",
+    answer: "Yes. InvoiceQuick works for any service business, and it handles the lines trades actually need — a service-call or trip fee, labor billed flat-rate or hourly, materials with your markup, and permits or fees passed through separately. Save your common tasks and rates once and the next job's invoice is a few taps from the truck, each line itemized the way a professional bill should be. We publish trade-specific guides too: how to invoice for electrical work (with the license number and per-circuit code notes that belong on an electrician's bill), plus dedicated walkthroughs for HVAC, handyman, cleaning, and lawn-care and landscaping work.",
+    link: {
+      href: "/blog/how-to-invoice-for-electrical-work",
+      text: "Read the trade-billing guides, starting with electrical work →",
+    },
+  },
 ];
 
 export default function FreeInvoiceGeneratorPage() {
