@@ -706,6 +706,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Invoicing Guides By Trade — help the trades audience self-identify + spread internal link equity */}
+      <section className="max-w-6xl mx-auto px-4 py-20">
+        <h2 className="text-3xl font-bold text-center mb-4">Invoicing Guides for Your Trade</h2>
+        <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          Every trade bills a little differently — the service-call fee, the parts markup, the license
+          number, the deposit on a big job. These free guides cover exactly how to invoice for your
+          line of work, and every invoice you send is built with the same free tool.
+        </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { icon: "🔧", trade: "Plumbing", href: "/blog/how-to-invoice-for-plumbing-services" },
+            { icon: "⚡", trade: "Electrical", href: "/blog/how-to-invoice-for-electrical-work" },
+            { icon: "❄️", trade: "HVAC", href: "/blog/how-to-invoice-for-hvac-service" },
+            { icon: "🛠️", trade: "Handyman", href: "/blog/how-to-invoice-for-handyman-services" },
+            { icon: "🧹", trade: "Cleaning", href: "/blog/how-to-invoice-for-cleaning-services" },
+            { icon: "🌿", trade: "Lawn & Landscaping", href: "/blog/how-to-invoice-for-lawn-care-and-landscaping" },
+            { icon: "🏗️", trade: "Contractors", href: "/blog/how-to-invoice-as-an-independent-contractor" },
+            { icon: "⏱️", trade: "Hourly Work", href: "/blog/how-to-invoice-for-hourly-work" },
+          ].map((t) => (
+            <Link
+              key={t.trade}
+              href={t.href}
+              className="card bg-white hover:shadow-md hover:border-indigo-200 transition-all flex items-center gap-3 !py-4"
+            >
+              <span className="text-2xl" aria-hidden="true">{t.icon}</span>
+              <span className="font-semibold text-gray-800 text-sm leading-tight">
+                How to invoice for {t.trade}
+                <span className="block text-indigo-600 text-xs font-medium mt-0.5">Read the guide &rarr;</span>
+              </span>
+            </Link>
+          ))}
+        </div>
+        <div className="text-center mt-10">
+          <Link href="/create" className="btn-primary text-base !px-6 !py-3">
+            Create Your Free Invoice &rarr;
+          </Link>
+        </div>
+      </section>
+
       {/* Comparison Table */}
       <section className="max-w-6xl mx-auto px-4 py-20">
         <h2 className="text-3xl font-bold text-center mb-4">How InvoiceQuick Compares</h2>
