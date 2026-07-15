@@ -73,19 +73,22 @@ export default function Image() {
           </div>
         </div>
 
-        {/* Trust row */}
+        {/* Trust row — inline SVG icons (next/og's default font lacks ✓/★ glyphs) */}
         <div style={{ display: "flex", alignItems: "center", gap: 36, fontSize: 28, color: "#374151" }}>
+          {["No sign-up", "No credit card", "0% payment fees"].map((label) => (
+            <div key={label} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="11" fill="#dcfce7" />
+                <path d="M7 12.5l3 3 7-7" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span>{label}</span>
+            </div>
+          ))}
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ color: "#22c55e", fontWeight: 800 }}>✓</span> No sign-up
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ color: "#22c55e", fontWeight: 800 }}>✓</span> No credit card
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ color: "#f59e0b", fontWeight: 800 }}>★</span> 4.9/5 rated
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ color: "#22c55e", fontWeight: 800 }}>✓</span> 0% payment fees
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" />
+            </svg>
+            <span>4.9/5 rated</span>
           </div>
         </div>
       </div>
