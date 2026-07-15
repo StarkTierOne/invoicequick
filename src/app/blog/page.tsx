@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-for-plumbing-services",
+    title: "How to Invoice for Plumbing Services (Service Calls, Repairs & Installs, 2026)",
+    excerpt:
+      "The same plumbing shop runs the 2 a.m. burst-pipe emergency and the scheduled Tuesday water-heater swap, and those are two completely different invoices — one about speed and relief, the other about material, labor, and a number agreed in advance. A generic template misses the lines that actually matter in this trade. This guide covers how to invoice for plumbing services the right way: the service-call / diagnostic fee that pays for the truck roll, flat-rate pricebook vs time-and-materials and when each wins, why fixture make/model and your license number belong on the bill, how to mark up parts without hiding it, passing permits through at cost, the 1.5–2× emergency premium, why water-heater and repipe jobs need a deposit and progress billing, and why collecting before the truck leaves is the cheapest cash-flow fix a plumbing shop will ever make.",
+  },
+  {
     slug: "how-to-invoice-for-electrical-work",
     title: "How to Invoice for Electrical Work (Service Calls, Materials & Permits, 2026)",
     excerpt:
