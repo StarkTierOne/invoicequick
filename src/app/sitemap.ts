@@ -6,6 +6,7 @@ const blogSlugs = [
   "how-to-invoice-for-electrical-work",
   "how-to-invoice-for-hvac-service",
   "how-to-invoice-for-handyman-services",
+  "how-to-invoice-for-auto-repair",
   "how-to-charge-a-rush-fee",
   "how-to-invoice-for-lawn-care-and-landscaping",
   "invoice-when-paid-through-paypal-venmo-zelle",
