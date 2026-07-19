@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-for-painting-jobs",
+    title: "How to Invoice for Painting Jobs (Prep, Coats & Materials, 2026)",
+    excerpt:
+      "Painting is a by-the-job trade where the real money is in the work nobody photographs — the scraping, sanding, patching, caulking, masking, and priming that happens before a single wall gets color. A generic invoice buries all of it under \"painting — $2,400,\" and that lump sum is exactly what customers argue with. This guide covers how to invoice for painting jobs the right way: quoting the job before you buy a gallon and letting the invoice reconcile to that number, why prep gets its own lines so the customer sees what they paid for, pricing by the job (or by room, by square foot, by surface) instead of by the hour, naming the paint by brand, product line, sheen, and color so the invoice doubles as the touch-up record, how many coats you quoted and charging honestly for extra coats and dark-to-light color changes, marking up materials without hiding it, the deposit and 30/40/30 progress billing that keeps a multi-day exterior from floating on your cash, change orders for the wall rot you found behind the trim, stating your workmanship warranty on the bill, and why collecting on completion — and billing GCs and property managers on clean net terms — is the cheapest cash-flow fix a painting crew will ever make.",
+  },
+  {
     slug: "how-to-invoice-for-auto-repair",
     title: "How to Invoice for Auto Repair (Estimates, Parts & Labor, 2026)",
     excerpt:
