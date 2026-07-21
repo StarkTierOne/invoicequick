@@ -723,6 +723,7 @@ export default function Home() {
             { icon: "🚗", trade: "Auto Repair", href: "/blog/how-to-invoice-for-auto-repair" },
             { icon: "🧹", trade: "Cleaning", href: "/blog/how-to-invoice-for-cleaning-services" },
             { icon: "🌿", trade: "Lawn & Landscaping", href: "/blog/how-to-invoice-for-lawn-care-and-landscaping" },
+            { icon: "🔁", trade: "Recurring Services", href: "/blog/how-to-invoice-for-recurring-services" },
             { icon: "🏗️", trade: "Contractors", href: "/blog/how-to-invoice-as-an-independent-contractor" },
             { icon: "⏱️", trade: "Hourly Work", href: "/blog/how-to-invoice-for-hourly-work" },
           ].map((t) => (

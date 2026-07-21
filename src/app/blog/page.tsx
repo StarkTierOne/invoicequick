@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-for-recurring-services",
+    title: "How to Invoice for Recurring Services (Pest, Pool, Lawn & Route Billing, 2026)",
+    excerpt:
+      "Recurring-route trades — pest control, pool service, lawn care, and every subscription-billed service that visits the same address on a cadence — break the one-off invoicing rulebook. There's no quote to reconcile and no big deposit; there's the same amount, the same period, month after month, and the whole game is consistency, low-friction collection, and never giving a customer a reason to question a charge they've stopped thinking about. This guide covers how to invoice recurring services the right way: keeping the recurring amount identical every cycle, sending one invoice per visit that names the exact service period, splitting the base plan from add-ons and one-off extras, why the service address and the billing address are two different fields, putting your applicator or contractor license number on every bill, card-on-file autopay as the single biggest lever on getting paid, handling annual prepay and the service-agreement reference, dunning failed payments before they become churn, and billing the seasonal cadence without confusing the customer.",
+  },
+  {
     slug: "how-to-invoice-for-painting-jobs",
     title: "How to Invoice for Painting Jobs (Prep, Coats & Materials, 2026)",
     excerpt:
