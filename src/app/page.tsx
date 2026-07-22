@@ -721,6 +721,8 @@ export default function Home() {
             { icon: "❄️", trade: "HVAC", href: "/blog/how-to-invoice-for-hvac-service" },
             { icon: "🛠️", trade: "Handyman", href: "/blog/how-to-invoice-for-handyman-services" },
             { icon: "🚗", trade: "Auto Repair", href: "/blog/how-to-invoice-for-auto-repair" },
+            { icon: "🏠", trade: "Roofing", href: "/blog/how-to-invoice-for-roofing-jobs" },
+            { icon: "🎨", trade: "Painting", href: "/blog/how-to-invoice-for-painting-jobs" },
             { icon: "🧹", trade: "Cleaning", href: "/blog/how-to-invoice-for-cleaning-services" },
             { icon: "🌿", trade: "Lawn & Landscaping", href: "/blog/how-to-invoice-for-lawn-care-and-landscaping" },
             { icon: "🔁", trade: "Recurring Services", href: "/blog/how-to-invoice-for-recurring-services" },
