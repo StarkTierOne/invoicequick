@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-for-construction-work",
+    title: "How to Invoice for Construction Work (Draws, Retainage & Lien Waivers, 2026)",
+    excerpt:
+      "Construction is the trade where a single job is a five-figure invoice you almost never get paid for all at once. Instead of one bill for a finished thing, you're paid in draws across weeks or months against a schedule of values, the owner holds back a slice of every payment as retainage, and whether the check moves depends on paperwork — lien waivers, insurance certificates, signed change orders — as much as on the work. A generic \"construction — $48,000\" invoice ignores all of it and is exactly how a contractor ends up floating a job on their own cash. This guide covers how to invoice for construction work the right way: billing in progress draws against a schedule of values instead of one lump, understanding retainage and the release invoice that gets it back, why lien waivers are the industry's real receipt (and conditional vs unconditional), collecting the deposit or mobilization payment up front, never doing change-order work off the books, assembling the pay-application package an architect or AP department will actually certify, marking up materials and reconciling allowances honestly, the pay-when-paid trap for subcontractors, and the net terms, prompt-payment interest, and follow-up that keep a big build from aging in accounts receivable.",
+  },
+  {
     slug: "how-to-invoice-for-photography",
     title: "How to Invoice for Photography (Retainers, Licensing & Packages, 2026)",
     excerpt:
