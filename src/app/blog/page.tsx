@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-as-a-subcontractor",
+    title: "How to Invoice as a Subcontractor (Pay-When-Paid, Notices & Backcharges, 2026)",
+    excerpt:
+      "A subcontractor's invoice is the one with the least leverage and the longest wait. You don't bill the owner — you bill the general contractor, your application feeds theirs, and your money moves only after theirs does. That structure creates problems no other trade has: pay-when-paid and pay-if-paid clauses that push your check weeks out or shift the risk of the owner's nonpayment onto you, a preliminary-notice deadline in the first weeks of the job that permanently kills your lien rights if you miss it, a GC billing cutoff that costs you a full month if you're a day late, retainage flowing down to you, backcharges appearing as deductions you never agreed to, and lien waivers you have to both sign and collect from your own suppliers. This guide covers how to invoice as a subcontractor so you actually get paid: billing the GC on their cycle, reading the payment clause before you sign, serving the preliminary notice that preserves your lien and bond rights, signing conditional waivers only, tracking retainage and invoicing its release, disputing backcharges on the invoice instead of absorbing them, billing change orders and field directives in writing, and using your state's prompt-payment act, mechanics lien, or Miller Act bond claim as the backstop.",
+  },
+  {
     slug: "how-to-invoice-for-construction-work",
     title: "How to Invoice for Construction Work (Draws, Retainage & Lien Waivers, 2026)",
     excerpt:
