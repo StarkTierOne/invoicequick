@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-for-trucking-and-freight",
+    title: "How to Invoice for Trucking & Freight Hauling (BOLs, Detention & Quick Pay, 2026)",
+    excerpt:
+      "Trucking is the trade where the invoice is the easy part and the paperwork attached to it decides whether you get paid. You usually bill a broker rather than the company whose freight you moved, your rate was fixed on a rate confirmation before the wheels turned, and no broker's AP department releases a dollar without a signed bill of lading proving delivery. On top of that sits the money owner-operators lose most often: accessorials — detention, layover, TONU, lumper fees, stop-offs, driver assist — genuinely owed, documented on nobody's paperwork but yours, and quietly written off every week. This guide covers how to invoice for trucking and freight the right way: matching the invoice to the rate confirmation exactly, assembling the packet (rate con, signed BOL/POD, lumper and scale receipts) that AP will actually pay, billing detention with in-and-out times before the claim window closes, charging TONU, layover, stop-off, and driver assist instead of eating them, showing the fuel surcharge as its own line, the real math on quick pay vs factoring vs waiting net 30, invoicing a shipper direct when you're ready to carry the credit risk, and what to do when a broker doesn't pay — including the $75,000 BMC-84 surety bond claim that exists precisely for that.",
+  },
+  {
     slug: "how-to-invoice-as-a-subcontractor",
     title: "How to Invoice as a Subcontractor (Pay-When-Paid, Notices & Backcharges, 2026)",
     excerpt:

@@ -494,6 +494,126 @@ function HeroInvoiceMockup() {
   );
 }
 
+// Status-quo switch band. The comparison table below answers "why not FreshBooks/
+// Wave/PayPal", but a large share of arriving search traffic is not shopping for
+// SaaS at all — they came looking for an invoice TEMPLATE and their real
+// alternative is a Word/Excel file. This section argues against that status quo
+// on its own terms (and still hands them the template if that's what they want).
+function TemplateSwitchBand() {
+  const templateWay = [
+    "Download a .docx or .xlsx and hope the formatting survives your version of Word",
+    "Retype your business details and the client's address every single invoice",
+    "Do the math yourself — subtotal, discount, tax — or trust a formula you can't see",
+    "Dig through old files to remember which invoice number you used last",
+    "Export to PDF, then check nothing shifted or wrapped onto a second page",
+    "Repeat all of the above the next time, and the time after that",
+  ];
+  const quickWay = [
+    "Fill in the form — subtotal, discount, and tax calculate as you type",
+    "See the finished invoice before you send it, exactly as your client will",
+    "Download the clean PDF and send it — about 60 seconds, nothing to install",
+  ];
+
+  return (
+    <section className="bg-gray-50 py-20">
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="text-center mb-10">
+          <div className="inline-block bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">
+            Switch in 60 Seconds
+          </div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            Still Invoicing From a Word or Excel Template?
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Templates are free, so they feel like the cheap option &mdash; until you count the
+            twenty minutes they cost you every time you bill. Here is the same invoice, both ways.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 items-start">
+          {/* The template way */}
+          <div className="card bg-white border-gray-200">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-2xl" aria-hidden="true">📄</span>
+              <h3 className="font-bold text-lg text-gray-900">The template way</h3>
+              <span className="ml-auto text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded-md whitespace-nowrap">
+                ~20 min
+              </span>
+            </div>
+            <ol className="space-y-3">
+              {templateWay.map((step, i) => (
+                <li key={step} className="flex gap-3 text-sm text-gray-600 leading-relaxed">
+                  <span className="flex-none w-5 h-5 rounded-full bg-gray-200 text-gray-600 text-[11px] font-bold flex items-center justify-center mt-0.5">
+                    {i + 1}
+                  </span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-5 pt-4 border-t border-gray-100 text-xs text-gray-500 leading-relaxed">
+              And a template can&rsquo;t catch a math error, a duplicated invoice number, or a
+              missing due date &mdash; the three mistakes that quietly delay payment.
+            </p>
+          </div>
+
+          {/* The InvoiceQuick way */}
+          <div className="card bg-white ring-2 ring-indigo-600 relative">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
+              Same result, less work
+            </div>
+            <div className="flex items-center gap-2 mb-4 mt-1">
+              <span className="text-2xl" aria-hidden="true">⚡</span>
+              <h3 className="font-bold text-lg text-gray-900">The InvoiceQuick way</h3>
+              <span className="ml-auto text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md whitespace-nowrap">
+                ~60 sec
+              </span>
+            </div>
+            <ol className="space-y-3">
+              {quickWay.map((step, i) => (
+                <li key={step} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
+                  <span className="flex-none w-5 h-5 rounded-full bg-indigo-600 text-white text-[11px] font-bold flex items-center justify-center mt-0.5">
+                    {i + 1}
+                  </span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+            <div className="mt-5 pt-4 border-t border-gray-100 space-y-2 text-sm">
+              <div className="flex items-center gap-2 text-gray-600">
+                <span className="text-green-500 font-bold">&#10003;</span> Math, tax, and totals handled for you
+              </div>
+              <div className="flex items-center gap-2 text-gray-600">
+                <span className="text-green-500 font-bold">&#10003;</span> Clean PDF with no watermark
+              </div>
+              <div className="flex items-center gap-2 text-gray-600">
+                <span className="text-green-500 font-bold">&#10003;</span> Nothing to download, install, or sign up for
+              </div>
+            </div>
+            <Link href="/create" className="btn-primary mt-6 w-full text-center block !py-3">
+              Make This Invoice Instead &rarr;
+            </Link>
+            <p className="text-center text-xs text-gray-400 mt-3">
+              Free forever &middot; no card &middot; no account needed
+            </p>
+          </div>
+        </div>
+
+        <p className="text-center text-sm text-gray-500 mt-8 max-w-2xl mx-auto">
+          Prefer to keep a file on your computer? That&rsquo;s fair &mdash; grab a{" "}
+          <Link href="/invoice-template" className="text-indigo-600 hover:text-indigo-700 underline">
+            free invoice template
+          </Link>{" "}
+          instead, or read{" "}
+          <Link href="/blog/invoice-template-download" className="text-indigo-600 hover:text-indigo-700 underline">
+            which template format actually works best
+          </Link>
+          . No hard feelings either way.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -725,6 +845,7 @@ export default function Home() {
             { icon: "🎨", trade: "Painting", href: "/blog/how-to-invoice-for-painting-jobs" },
             { icon: "🧹", trade: "Cleaning", href: "/blog/how-to-invoice-for-cleaning-services" },
             { icon: "🌿", trade: "Lawn & Landscaping", href: "/blog/how-to-invoice-for-lawn-care-and-landscaping" },
+            { icon: "🚚", trade: "Trucking & Freight", href: "/blog/how-to-invoice-for-trucking-and-freight" },
             { icon: "🔁", trade: "Recurring Services", href: "/blog/how-to-invoice-for-recurring-services" },
             { icon: "🏗️", trade: "Contractors", href: "/blog/how-to-invoice-as-an-independent-contractor" },
             { icon: "⏱️", trade: "Hourly Work", href: "/blog/how-to-invoice-for-hourly-work" },
@@ -748,6 +869,9 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* Status-quo switch — the template-seeker segment's real alternative */}
+      <TemplateSwitchBand />
 
       {/* Comparison Table */}
       <section className="max-w-6xl mx-auto px-4 py-20">
