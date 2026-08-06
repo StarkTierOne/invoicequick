@@ -264,6 +264,34 @@ function InvoicePreview({ data }: { data: InvoiceData }) {
   );
 }
 
+// ── Draft persistence (signed-out only) ──
+// The no-account flow keeps the whole invoice in React state, so a refresh, a
+// tab eviction, or a trip out to one of the trade guides used to lose it all.
+// Signed-in users have "Save Invoice" and server-side history; signed-out users
+// get their in-progress invoice mirrored to this device instead.
+const DRAFT_KEY = "iq_invoice_draft_v1";
+const DRAFT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+
+function isDraftWorthKeeping(d: InvoiceData): boolean {
+  if (!d || !Array.isArray(d.items)) return false;
+  return Boolean(
+    d.fromName?.trim() ||
+    d.toName?.trim() ||
+    d.notes?.trim() ||
+    d.items.some((i) => i?.description?.trim() || Number(i?.rate) > 0)
+  );
+}
+
+function describeAge(savedAt: string): string {
+  const mins = Math.floor((Date.now() - new Date(savedAt).getTime()) / 60000);
+  if (mins < 1) return "a moment ago";
+  if (mins < 60) return `${mins} minute${mins === 1 ? "" : "s"} ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs} hour${hrs === 1 ? "" : "s"} ago`;
+  const days = Math.floor(hrs / 24);
+  return `${days} day${days === 1 ? "" : "s"} ago`;
+}
+
 // ── Main Page ──
 export default function CreateInvoice() {
   const [data, setData] = useState<InvoiceData>(defaultInvoice());
@@ -271,6 +299,10 @@ export default function CreateInvoice() {
   const [saving, setSaving] = useState(false);
   const [user, setUser] = useState<{ email: string; isAdmin: boolean; id: string } | null>(null);
   const [clients, setClients] = useState<{ id: string; name: string; email: string; address: string }[]>([]);
+  // Only ever true for the signed-out flow — gates autosave so the empty default
+  // can't overwrite a stored draft before the restore attempt has run.
+  const [draftEnabled, setDraftEnabled] = useState(false);
+  const [restoredAt, setRestoredAt] = useState<string | null>(null);
   const printRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -278,9 +310,50 @@ export default function CreateInvoice() {
     loadUserData();
   }, []);
 
+  // Mirror the in-progress invoice to this device, debounced.
+  useEffect(() => {
+    if (!draftEnabled) return;
+    const t = setTimeout(() => {
+      try {
+        if (isDraftWorthKeeping(data)) {
+          localStorage.setItem(DRAFT_KEY, JSON.stringify({ savedAt: new Date().toISOString(), data }));
+        } else {
+          localStorage.removeItem(DRAFT_KEY);
+        }
+      } catch {
+        // Private mode / quota — drafting is a convenience, never a hard failure.
+      }
+    }, 600);
+    return () => clearTimeout(t);
+  }, [data, draftEnabled]);
+
+  const startFresh = () => {
+    try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
+    setData(defaultInvoice());
+    setRestoredAt(null);
+  };
+
   async function loadUserData() {
     const { data: { user: authUser } } = await supabase.auth.getUser();
-    if (!authUser) return;
+    if (!authUser) {
+      try {
+        const raw = localStorage.getItem(DRAFT_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          const age = Date.now() - new Date(parsed?.savedAt).getTime();
+          if (parsed?.data && Number.isFinite(age) && age < DRAFT_MAX_AGE_MS && isDraftWorthKeeping(parsed.data)) {
+            setData({ ...defaultInvoice(), ...parsed.data });
+            setRestoredAt(parsed.savedAt);
+          } else {
+            localStorage.removeItem(DRAFT_KEY);
+          }
+        }
+      } catch {
+        try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
+      }
+      setDraftEnabled(true);
+      return;
+    }
     const { data: profile } = await supabase.from("profiles").select("*").eq("id", authUser.id).single();
     if (profile) {
       setUser({ email: authUser.email!, isAdmin: profile.is_admin || false, id: authUser.id });
@@ -364,10 +437,31 @@ export default function CreateInvoice() {
 
   const content = (
     <>
+      {/* Restored-draft notice — visible, with an obvious way out */}
+      {restoredAt && (
+        <div className="no-print mb-4 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+          <p className="text-sm text-indigo-900">
+            <span className="font-semibold">Picked up where you left off.</span>{" "}
+            We restored the invoice you were working on {describeAge(restoredAt)}, saved on this device.
+          </p>
+          <button
+            onClick={startFresh}
+            className="text-sm font-semibold text-indigo-700 hover:text-indigo-900 underline whitespace-nowrap"
+          >
+            Start a blank invoice
+          </button>
+        </div>
+      )}
+
       {/* Top actions */}
       <div className="no-print flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold">Create Invoice</h1>
+          {draftEnabled && !restoredAt && (
+            <p className="text-xs text-gray-500 mt-1">
+              Your progress is saved on this device as you type &mdash; you can close this tab and come back.
+            </p>
+          )}
           {clients.length > 0 && (
             <div className="flex items-center gap-2 mt-2">
               <span className="text-xs text-gray-500">Quick fill client:</span>

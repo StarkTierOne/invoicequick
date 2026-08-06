@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-for-catering-and-events",
+    title: "How to Invoice for Catering & Events (Guest Counts, Service Charge & Deposits, 2026)",
+    excerpt:
+      "Catering is the trade where you buy the food before you get paid for it, and where the number you bill was fixed by a guest count someone guessed at three days before the event. Real money spent up front, a headcount that moves, and a client who has no reason to take your call after the last guest leaves — that combination makes catering invoicing its own discipline. This guide covers how to invoice for catering and events properly: billing against the banquet event order line for line, the guaranteed guest count and why you bill the greater of the guarantee or the actual served, a deposit and payment schedule that means you never front the food cost yourself, the service charge vs gratuity distinction that causes more disputes and legal trouble than anything else on a catering bill, itemizing staffing and overtime, passing through rentals honestly, bar billing on consumption vs per person, the sales-tax traps on food and on the service charge itself, tax-exempt clients and exemption certificates, and the post-event reconciliation invoice that turns the estimate into the final number.",
+  },
+  {
     slug: "how-to-invoice-for-trucking-and-freight",
     title: "How to Invoice for Trucking & Freight Hauling (BOLs, Detention & Quick Pay, 2026)",
     excerpt:
