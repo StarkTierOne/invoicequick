@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase";
 import AppShell from "@/components/AppShell";
 import {
   InvoiceData, InvoiceItem, CURRENCIES, PAYMENT_TERMS,
-  defaultInvoice, createEmptyItem,
+  defaultInvoice, emptyInvoice, createEmptyItem,
   calcSubtotal, calcTax, calcDiscount, calcTotal, calcBalanceDue, formatCurrency, calcDueDate,
 } from "@/lib/types";
 
@@ -315,7 +315,9 @@ function describeAge(savedAt: string): string {
 
 // ── Main Page ──
 export default function CreateInvoice() {
-  const [data, setData] = useState<InvoiceData>(defaultInvoice());
+  // Seeded with the constant shape so the server render and the browser's first
+  // render match; the real invoice number and dates arrive on mount below.
+  const [data, setData] = useState<InvoiceData>(emptyInvoice);
   const [view, setView] = useState<"edit" | "preview">("edit");
   const [saving, setSaving] = useState(false);
   const [user, setUser] = useState<{ email: string; isAdmin: boolean; id: string } | null>(null);
@@ -326,6 +328,14 @@ export default function CreateInvoice() {
   const [restoredAt, setRestoredAt] = useState<string | null>(null);
   const printRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+
+  // Fill in the clock- and RNG-derived fields now that we're past hydration.
+  // Guarded on invoiceNumber so React's development double-invoke doesn't burn
+  // a second number. loadUserData resolves after this and still wins when it
+  // has a stored draft or a profile to apply.
+  useEffect(() => {
+    setData((prev) => (prev.invoiceNumber ? prev : defaultInvoice()));
+  }, []);
 
   useEffect(() => {
     loadUserData();

@@ -83,10 +83,12 @@ export function createEmptyItem(): InvoiceItem {
   return { id: crypto.randomUUID(), description: "", quantity: 1, rate: 0 };
 }
 
-export function defaultInvoice(): InvoiceData {
-  const today = new Date();
-  const due = new Date(today);
-  due.setDate(due.getDate() + 30);
+// The server-render seed. Every field here is a constant: no clock, no
+// Math.random, no crypto.randomUUID. The server HTML and the browser's first
+// render have to agree exactly, or React throws the server markup away and
+// re-renders the whole page on the client. The clock- and random-derived
+// fields are filled in on mount instead — see defaultInvoice.
+export function emptyInvoice(): InvoiceData {
   return {
     fromName: "",
     fromEmail: "",
@@ -95,17 +97,32 @@ export function defaultInvoice(): InvoiceData {
     toName: "",
     toEmail: "",
     toAddress: "",
-    invoiceNumber: generateInvoiceNumber(),
+    invoiceNumber: "",
     poNumber: "",
-    invoiceDate: today.toISOString().split("T")[0],
-    dueDate: due.toISOString().split("T")[0],
+    invoiceDate: "",
+    dueDate: "",
     currency: "USD",
-    items: [createEmptyItem()],
+    items: [{ id: "item-seed", description: "", quantity: 1, rate: 0 }],
     notes: "",
     taxRate: 0,
     discountRate: 0,
     paymentTerms: "Net 30",
     amountPaid: 0,
+  };
+}
+
+// A ready-to-fill invoice. Browser-only — it reads the clock and the RNG, so
+// calling it during a server render reintroduces the hydration mismatch.
+export function defaultInvoice(): InvoiceData {
+  const today = new Date();
+  const due = new Date(today);
+  due.setDate(due.getDate() + 30);
+  return {
+    ...emptyInvoice(),
+    invoiceNumber: generateInvoiceNumber(),
+    invoiceDate: toDateInput(today),
+    dueDate: toDateInput(due),
+    items: [createEmptyItem()],
   };
 }
 
@@ -119,8 +136,28 @@ export const PAYMENT_TERMS = [
   { label: "Custom", days: null },
 ] as const;
 
+// A calendar date the way the user's own calendar reads it, as YYYY-MM-DD.
+// Deliberately NOT toISOString(), which converts to UTC first: west of UTC that
+// stamps *tomorrow's* date on an invoice written in the evening, and east of UTC
+// it stamps yesterday's on one written after midnight.
+export function toDateInput(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+// The mirror of toDateInput. `new Date("2026-08-08")` parses date-only strings
+// as UTC midnight, which lands on the previous day west of UTC; parsing the
+// parts explicitly keeps a round trip on the user's own calendar.
+export function parseDateInput(value: string): Date {
+  const [y, m, d] = (value || "").split("-").map(Number);
+  if (!Number.isFinite(y) || !Number.isFinite(m) || !Number.isFinite(d) || !y) return new Date();
+  return new Date(y, m - 1, d);
+}
+
 export function calcDueDate(invoiceDate: string, termDays: number): string {
-  const d = new Date(invoiceDate);
+  const d = parseDateInput(invoiceDate);
   d.setDate(d.getDate() + termDays);
-  return d.toISOString().split("T")[0];
+  return toDateInput(d);
 }

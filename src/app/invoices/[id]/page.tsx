@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import AppShell from "@/components/AppShell";
 import { useRouter } from "next/navigation";
-import { formatCurrency } from "@/lib/types";
+import { formatCurrency, toDateInput } from "@/lib/types";
 
 interface InvoiceDetail {
   id: string;
@@ -60,7 +60,9 @@ export default function InvoiceDetailPage({ params }: { params: { id: string } }
   }
 
   async function updateStatus(status: string) {
-    await supabase.from("invoices").update({ status, ...(status === "paid" ? { paid_date: new Date().toISOString().split("T")[0] } : {}) }).eq("id", params.id);
+    // toDateInput, not toISOString: marking an invoice paid on a weekday evening
+    // west of UTC would otherwise record tomorrow's date as the payment date.
+    await supabase.from("invoices").update({ status, ...(status === "paid" ? { paid_date: toDateInput(new Date()) } : {}) }).eq("id", params.id);
     loadInvoice();
   }
 
