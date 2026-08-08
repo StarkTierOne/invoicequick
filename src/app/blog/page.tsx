@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-invoice-for-web-development",
+    title: "How to Invoice for Web Development & Software Work (Milestones, Pass-Throughs & Code Ownership, 2026)",
+    excerpt:
+      "Development is the trade where you hand over the deliverable before you get paid for it. The site is already on the client's server, the code is already in the client's repo, and the invoice goes out after all of that has happened — the exact opposite of how a plumber or a caterer gets paid. That inversion is why developer invoicing is less about the document than about the sequence of events it sits inside. This guide covers how to invoice for web development and software work properly: choosing between hourly, fixed-fee, milestone, and retainer billing and what each does to your cash flow, the deposit and milestone schedule that keeps you from financing a client's project, kill fees when a build gets cancelled, defining acceptance so \"done\" is a date and not an argument, change orders that bill scope creep before you build it, itemizing hosting, domains, API usage, and third-party licenses instead of quietly paying them yourself, the copyright-transfers-on-final-payment clause that is the only real leverage you have, the custom-versus-prewritten software sales-tax distinction that decides whether your work is taxable at all, getting through a corporate client's PO and vendor-onboarding process, and converting a finished build into a maintenance retainer.",
+  },
+  {
     slug: "how-to-invoice-for-catering-and-events",
     title: "How to Invoice for Catering & Events (Guest Counts, Service Charge & Deposits, 2026)",
     excerpt:

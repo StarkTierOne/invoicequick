@@ -852,6 +852,10 @@ export default function Home() {
             { icon: "🔁", trade: "Recurring Services", href: "/blog/how-to-invoice-for-recurring-services" },
             { icon: "🏗️", trade: "Contractors", href: "/blog/how-to-invoice-as-an-independent-contractor" },
             { icon: "⏱️", trade: "Hourly Work", href: "/blog/how-to-invoice-for-hourly-work" },
+            { icon: "💻", trade: "Web & Software Dev", href: "/blog/how-to-invoice-for-web-development" },
+            { icon: "🔨", trade: "Subcontracting", href: "/blog/how-to-invoice-as-a-subcontractor" },
+            { icon: "✏️", trade: "Graphic Design", href: "/blog/invoice-template-graphic-designers" },
+            { icon: "💼", trade: "Consulting", href: "/blog/invoice-template-consultants" },
           ].map((t) => (
             <Link
               key={t.trade}

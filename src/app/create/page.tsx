@@ -282,6 +282,27 @@ function isDraftWorthKeeping(d: InvoiceData): boolean {
   );
 }
 
+// Read (and validate) whatever draft this device is holding. Returns null and
+// clears the slot for anything missing, expired, or not worth keeping. Used by
+// both the signed-out restore and the post-signup handoff, so the two can't
+// disagree about what counts as a live draft.
+function readStoredDraft(): { data: InvoiceData; savedAt: string } | null {
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    const age = Date.now() - new Date(parsed?.savedAt).getTime();
+    if (parsed?.data && Number.isFinite(age) && age < DRAFT_MAX_AGE_MS && isDraftWorthKeeping(parsed.data)) {
+      return { data: parsed.data as InvoiceData, savedAt: parsed.savedAt as string };
+    }
+    localStorage.removeItem(DRAFT_KEY);
+    return null;
+  } catch {
+    try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
+    return null;
+  }
+}
+
 function describeAge(savedAt: string): string {
   const mins = Math.floor((Date.now() - new Date(savedAt).getTime()) / 60000);
   if (mins < 1) return "a moment ago";
@@ -336,23 +357,23 @@ export default function CreateInvoice() {
   async function loadUserData() {
     const { data: { user: authUser } } = await supabase.auth.getUser();
     if (!authUser) {
-      try {
-        const raw = localStorage.getItem(DRAFT_KEY);
-        if (raw) {
-          const parsed = JSON.parse(raw);
-          const age = Date.now() - new Date(parsed?.savedAt).getTime();
-          if (parsed?.data && Number.isFinite(age) && age < DRAFT_MAX_AGE_MS && isDraftWorthKeeping(parsed.data)) {
-            setData({ ...defaultInvoice(), ...parsed.data });
-            setRestoredAt(parsed.savedAt);
-          } else {
-            localStorage.removeItem(DRAFT_KEY);
-          }
-        }
-      } catch {
-        try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
+      const draft = readStoredDraft();
+      if (draft) {
+        setData({ ...defaultInvoice(), ...draft.data });
+        setRestoredAt(draft.savedAt);
       }
       setDraftEnabled(true);
       return;
+    }
+    // Signed in, but this device is still holding a signed-out draft: the user
+    // built an invoice, took the "Save & track" route, and made an account.
+    // Carry the work across the signup round-trip rather than dropping it, then
+    // release the slot — from here their invoice lives on the server.
+    const pending = readStoredDraft();
+    if (pending) {
+      setData({ ...defaultInvoice(), ...pending.data });
+      setRestoredAt(pending.savedAt);
+      try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
     }
     const { data: profile } = await supabase.from("profiles").select("*").eq("id", authUser.id).single();
     if (profile) {
@@ -477,12 +498,31 @@ export default function CreateInvoice() {
             <button onClick={() => setView("edit")} className={`px-4 py-1.5 rounded-md text-sm font-medium transition ${view === "edit" ? "bg-white shadow-sm text-gray-900" : "text-gray-500"}`}>Edit</button>
             <button onClick={() => setView("preview")} className={`px-4 py-1.5 rounded-md text-sm font-medium transition ${view === "preview" ? "bg-white shadow-sm text-gray-900" : "text-gray-500"}`}>Preview</button>
           </div>
-          <button onClick={handleSave} disabled={saving} className="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-lg disabled:opacity-50">
-            {saving ? "Saving..." : "Save Invoice"}
-          </button>
-          <button onClick={handlePrint} className="btn-secondary text-sm !py-2 !px-4">
-            PDF
-          </button>
+          {/* Signed out, the account-only "Save Invoice" was a silent no-op
+              (handleSave returns early without a user) sitting in the primary
+              slot, while the action that actually works — and that the
+              no-sign-up promise points at — was the small secondary button.
+              Downloading leads for the no-account flow; saving is offered
+              honestly as the reason to make an account. */}
+          {user ? (
+            <>
+              <button onClick={handleSave} disabled={saving} className="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-lg disabled:opacity-50">
+                {saving ? "Saving..." : "Save Invoice"}
+              </button>
+              <button onClick={handlePrint} className="btn-secondary text-sm !py-2 !px-4">
+                PDF
+              </button>
+            </>
+          ) : (
+            <>
+              <button onClick={handlePrint} className="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-lg whitespace-nowrap">
+                Download PDF
+              </button>
+              <Link href="/signup" className="btn-secondary text-sm !py-2 !px-4 whitespace-nowrap">
+                Save &amp; track
+              </Link>
+            </>
+          )}
         </div>
       </div>
 
