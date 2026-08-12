@@ -333,8 +333,23 @@ export default function CreateInvoice() {
   // Guarded on invoiceNumber so React's development double-invoke doesn't burn
   // a second number. loadUserData resolves after this and still wins when it
   // has a stored draft or a profile to apply.
+  // A name typed into the landing page's starter arrives as ?from=. It's read
+  // here rather than with useSearchParams so this page keeps rendering
+  // statically (useSearchParams would force a Suspense boundary), and it only
+  // ever seeds the *initial* default — the stored draft and the signed-in
+  // profile both resolve afterwards in loadUserData and still win.
   useEffect(() => {
-    setData((prev) => (prev.invoiceNumber ? prev : defaultInvoice()));
+    let seededName = "";
+    try {
+      seededName = (new URLSearchParams(window.location.search).get("from") || "").trim().slice(0, 100);
+    } catch {
+      // Malformed query string — the seed is a convenience, never a hard failure.
+    }
+    setData((prev) => {
+      if (prev.invoiceNumber) return prev;
+      const base = defaultInvoice();
+      return seededName ? { ...base, fromName: seededName } : base;
+    });
   }, []);
 
   useEffect(() => {

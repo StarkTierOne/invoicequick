@@ -1,8 +1,54 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import ExitIntentModal from "@/components/ExitIntentModal";
+
+// The hero's primary action. A plain button asks the visitor to *navigate*; an
+// input asks them to *start*, and the one field it collects is the first field
+// the builder would have asked for anyway — so the click lands them on a form
+// that is already partly theirs rather than blank. Empty input still goes to
+// /create, so this never becomes a gate in front of the free tool.
+function HeroStarter() {
+  const router = useRouter();
+  const [name, setName] = useState("");
+
+  const start = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = name.trim();
+    router.push(trimmed ? `/create?from=${encodeURIComponent(trimmed)}` : "/create");
+  };
+
+  return (
+    <div className="max-w-xl mx-auto">
+      <form onSubmit={start} className="flex flex-col sm:flex-row gap-3">
+        <label htmlFor="hero-from" className="sr-only">
+          Your business name or your name
+        </label>
+        <input
+          id="hero-from"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Your business or your name"
+          autoComplete="organization"
+          maxLength={100}
+          className="flex-1 px-5 py-4 text-lg rounded-lg border border-gray-300 bg-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none"
+        />
+        <button type="submit" className="btn-primary text-lg !px-8 !py-4 whitespace-nowrap">
+          Start My Invoice &rarr;
+        </button>
+      </form>
+      <p className="mt-3 text-sm text-gray-500">
+        No sign-up, no card &mdash; goes straight to the builder with your name filled in.{" "}
+        <a href="#how-it-works" className="text-indigo-600 hover:text-indigo-700 underline">
+          Or see how it works &darr;
+        </a>
+      </p>
+    </div>
+  );
+}
 
 function StickyCTA() {
   const [visible, setVisible] = useState(false);
@@ -648,14 +694,7 @@ export default function Home() {
           keep <strong className="text-gray-900">100% of what you bill</strong>, with zero
           payment-processing fees. Just professional invoices that get you paid.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/create" className="btn-primary text-lg !px-8 !py-4">
-            Create Your First Invoice Free &rarr;
-          </Link>
-          <a href="#how-it-works" className="btn-secondary text-lg !px-8 !py-4">
-            See How It Works &darr;
-          </a>
-        </div>
+        <HeroStarter />
         <p className="mt-4 text-sm text-gray-500">
           Fill in your details, add line items, download the PDF &mdash; <strong className="text-gray-700">about 60 seconds</strong>, nothing to install.
         </p>
@@ -845,6 +884,7 @@ export default function Home() {
             { icon: "🎨", trade: "Painting", href: "/blog/how-to-invoice-for-painting-jobs" },
             { icon: "🧹", trade: "Cleaning", href: "/blog/how-to-invoice-for-cleaning-services" },
             { icon: "🌿", trade: "Lawn & Landscaping", href: "/blog/how-to-invoice-for-lawn-care-and-landscaping" },
+            { icon: "🌨️", trade: "Snow Removal", href: "/blog/how-to-invoice-for-snow-removal" },
             { icon: "🚚", trade: "Trucking & Freight", href: "/blog/how-to-invoice-for-trucking-and-freight" },
             { icon: "🍽️", trade: "Catering & Events", href: "/blog/how-to-invoice-for-catering-and-events" },
             { icon: "📸", trade: "Photography", href: "/blog/how-to-invoice-for-photography" },
@@ -853,6 +893,7 @@ export default function Home() {
             { icon: "🏗️", trade: "Contractors", href: "/blog/how-to-invoice-as-an-independent-contractor" },
             { icon: "⏱️", trade: "Hourly Work", href: "/blog/how-to-invoice-for-hourly-work" },
             { icon: "💻", trade: "Web & Software Dev", href: "/blog/how-to-invoice-for-web-development" },
+            { icon: "📚", trade: "Tutoring & Test Prep", href: "/blog/how-to-invoice-for-tutoring" },
             { icon: "🔨", trade: "Subcontracting", href: "/blog/how-to-invoice-as-a-subcontractor" },
             { icon: "✏️", trade: "Graphic Design", href: "/blog/invoice-template-graphic-designers" },
             { icon: "💼", trade: "Consulting", href: "/blog/invoice-template-consultants" },
