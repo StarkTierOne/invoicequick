@@ -915,6 +915,13 @@ export default function Home() {
           <Link href="/create" className="btn-primary text-base !px-6 !py-3">
             Create Your Free Invoice &rarr;
           </Link>
+          <p className="text-sm text-gray-600 mt-4">
+            Want the invoice rather than the guide?{" "}
+            <Link href="/invoice-template" className="text-indigo-600 hover:text-indigo-700 font-medium underline">
+              Invoice templates by trade
+            </Link>{" "}
+            open with that trade&apos;s line items already listed.
+          </p>
         </div>
       </section>
 

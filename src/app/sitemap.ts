@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { articles } from "@/lib/blog-articles";
+import { tradeTemplateSlugs } from "@/lib/invoice-template-trades";
 
 // Derived from the article map rather than hand-listed: this list used to be a
 // second copy of the slugs with a "keep in sync" comment on it, and a post added
@@ -70,5 +71,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...blogPages];
+  // Same rule as the blog slugs above: derived from the trade map rather than
+  // hand-listed, so publishing a trade cannot leave it out of the sitemap.
+  const tradeTemplatePages: MetadataRoute.Sitemap = tradeTemplateSlugs.map((slug) => ({
+    url: `${baseUrl}/invoice-template/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...tradeTemplatePages, ...blogPages];
 }

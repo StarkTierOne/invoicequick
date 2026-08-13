@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import AppShell from "@/components/AppShell";
+import { getTradeSeed } from "@/lib/invoice-template-seeds";
 import {
   InvoiceData, InvoiceItem, CURRENCIES, PAYMENT_TERMS,
   defaultInvoice, emptyInvoice, createEmptyItem,
@@ -326,6 +327,11 @@ export default function CreateInvoice() {
   // can't overwrite a stored draft before the restore attempt has run.
   const [draftEnabled, setDraftEnabled] = useState(false);
   const [restoredAt, setRestoredAt] = useState<string | null>(null);
+  // Set when the user arrived from a trade template page, so the seeded line
+  // items are explained rather than mysterious. Cleared the moment a stored
+  // draft or a blank restart replaces them, since the notice would then be
+  // describing items that are no longer on screen.
+  const [seededTradeName, setSeededTradeName] = useState<string | null>(null);
   const printRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -333,23 +339,36 @@ export default function CreateInvoice() {
   // Guarded on invoiceNumber so React's development double-invoke doesn't burn
   // a second number. loadUserData resolves after this and still wins when it
   // has a stored draft or a profile to apply.
-  // A name typed into the landing page's starter arrives as ?from=. It's read
-  // here rather than with useSearchParams so this page keeps rendering
-  // statically (useSearchParams would force a Suspense boundary), and it only
-  // ever seeds the *initial* default — the stored draft and the signed-in
-  // profile both resolve afterwards in loadUserData and still win.
+  // A name typed into the landing page's starter arrives as ?from=, and a trade
+  // template page sends ?trade=<slug>. Both are read here rather than with
+  // useSearchParams so this page keeps rendering statically (useSearchParams
+  // would force a Suspense boundary), and both only ever seed the *initial*
+  // default — the stored draft and the signed-in profile resolve afterwards in
+  // loadUserData and still win.
   useEffect(() => {
     let seededName = "";
+    let seededTrade = "";
     try {
-      seededName = (new URLSearchParams(window.location.search).get("from") || "").trim().slice(0, 100);
+      const qs = new URLSearchParams(window.location.search);
+      seededName = (qs.get("from") || "").trim().slice(0, 100);
+      seededTrade = (qs.get("trade") || "").trim().slice(0, 60);
     } catch {
       // Malformed query string — the seed is a convenience, never a hard failure.
     }
+    // Unknown slug degrades to the ordinary blank invoice rather than erroring:
+    // this arrives from a URL anyone can type.
+    const seed = seededTrade ? getTradeSeed(seededTrade) : undefined;
     setData((prev) => {
       if (prev.invoiceNumber) return prev;
       const base = defaultInvoice();
-      return seededName ? { ...base, fromName: seededName } : base;
+      const next = seededName ? { ...base, fromName: seededName } : base;
+      if (!seed) return next;
+      return {
+        ...next,
+        items: seed.items.map((description) => ({ ...createEmptyItem(), description })),
+      };
     });
+    if (seed) setSeededTradeName(seed.trade);
   }, []);
 
   useEffect(() => {
@@ -377,6 +396,7 @@ export default function CreateInvoice() {
     try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
     setData(defaultInvoice());
     setRestoredAt(null);
+    setSeededTradeName(null);
   };
 
   async function loadUserData() {
@@ -386,6 +406,8 @@ export default function CreateInvoice() {
       if (draft) {
         setData({ ...defaultInvoice(), ...draft.data });
         setRestoredAt(draft.savedAt);
+        // The draft's own line items just replaced any trade seed.
+        setSeededTradeName(null);
       }
       setDraftEnabled(true);
       return;
@@ -398,6 +420,7 @@ export default function CreateInvoice() {
     if (pending) {
       setData({ ...defaultInvoice(), ...pending.data });
       setRestoredAt(pending.savedAt);
+      setSeededTradeName(null);
       try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
     }
     const { data: profile } = await supabase.from("profiles").select("*").eq("id", authUser.id).single();
@@ -495,6 +518,24 @@ export default function CreateInvoice() {
             className="text-sm font-semibold text-indigo-700 hover:text-indigo-900 underline whitespace-nowrap"
           >
             Start a blank invoice
+          </button>
+        </div>
+      )}
+
+      {/* Trade-template notice — the seeded lines are a checklist to edit, not
+          a quote. Saying so prevents anyone sending our wording verbatim. */}
+      {seededTradeName && !restoredAt && (
+        <div className="no-print mb-4 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+          <p className="text-sm text-emerald-900">
+            <span className="font-semibold">{seededTradeName} template loaded.</span>{" "}
+            The line items below are the ones this trade usually bills &mdash; edit the wording, delete
+            what doesn&apos;t apply, and add your own rates.
+          </p>
+          <button
+            onClick={startFresh}
+            className="text-sm font-semibold text-emerald-700 hover:text-emerald-900 underline whitespace-nowrap"
+          >
+            Start blank instead
           </button>
         </div>
       )}

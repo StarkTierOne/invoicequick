@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { tradeTemplates, tradeTemplateSlugs } from "@/lib/invoice-template-trades";
 
 export const metadata: Metadata = {
   title: "Free Invoice Template | Download & Customize — InvoiceQuick",
@@ -72,6 +73,33 @@ export default function InvoiceTemplatePage() {
         </Link>
       </section>
 
+      {/* Templates by trade — derived from the trade map, never hand-listed, so a
+          trade added to the map is published here, in the sitemap, and on every
+          sibling page at the same time. */}
+      <section className="max-w-5xl mx-auto px-4 pb-16">
+        <h2 className="text-2xl font-bold text-gray-900 mb-3 text-center">Invoice Templates by Trade</h2>
+        <p className="text-gray-600 text-center max-w-2xl mx-auto mb-8">
+          Every trade bills differently — the service call fee, the retainage, the guaranteed count, the
+          storm log. Each template below opens with that trade&apos;s real line items already listed.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          {tradeTemplateSlugs.map((slug) => {
+            const t = tradeTemplates[slug];
+            return (
+              <Link
+                key={slug}
+                href={`/invoice-template/${slug}`}
+                className="card hover:border-indigo-300 hover:shadow-md transition-all text-center py-5"
+              >
+                <div className="text-2xl mb-1" aria-hidden="true">{t.icon}</div>
+                <div className="text-sm font-semibold text-gray-900">{t.trade}</div>
+                <div className="text-xs text-gray-500 mt-1">Invoice template</div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
       {/* What's Included */}
       <section className="max-w-4xl mx-auto px-4 pb-16">
         <div className="prose prose-lg max-w-none">
@@ -128,6 +156,12 @@ export default function InvoiceTemplatePage() {
           </p>
           <p className="text-gray-700 mb-4">
             InvoiceQuick handles all of these scenarios because you control the line items, descriptions, and notes. The template adapts to your business rather than forcing you into a rigid format. Add as many or as few line items as you need, include custom notes and terms, and the PDF output always looks clean and professional.
+          </p>
+          <p className="text-gray-700 mb-4">
+            If your trade is one of the {tradeTemplateSlugs.length} above, start from its template instead of this
+            generic one. Each trade page covers how that work is actually priced, the line items that belong on
+            the invoice, and the specific ways invoices in that trade get short-paid — and the create screen opens
+            with those lines already listed.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-10">How to Customize Your Invoice Template</h2>
