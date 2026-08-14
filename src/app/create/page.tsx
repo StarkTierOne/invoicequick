@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { track } from "@vercel/analytics";
 import { supabase } from "@/lib/supabase";
 import AppShell from "@/components/AppShell";
 import { getTradeSeed } from "@/lib/invoice-template-seeds";
@@ -334,6 +335,12 @@ export default function CreateInvoice() {
   const [seededTradeName, setSeededTradeName] = useState<string | null>(null);
   const printRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  // How this session arrived, captured once at mount and held for the life of
+  // the page so the download event can be attributed back to it. Deliberately a
+  // ref rather than derived from seededTradeName at print time: that state is
+  // cleared when a stored draft replaces the seeded items, which is correct for
+  // the on-screen notice but would erase the attribution we're trying to record.
+  const arrival = useRef<{ trade: string; seeded_name: boolean } | null>(null);
 
   // Fill in the clock- and RNG-derived fields now that we're past hydration.
   // Guarded on invoiceNumber so React's development double-invoke doesn't burn
@@ -369,6 +376,31 @@ export default function CreateInvoice() {
       };
     });
     if (seed) setSeededTradeName(seed.trade);
+
+    // The top of the funnel. Guarded on the ref so React's development
+    // double-invoke doesn't report two starts for one visit.
+    if (!arrival.current) {
+      // Only a slug that resolved to a real seed is recorded, so a hand-typed
+      // ?trade=anything can't invent dimensions in the analytics breakdown.
+      arrival.current = { trade: seed ? seededTrade : "none", seeded_name: Boolean(seededName) };
+      const started = arrival.current;
+      // Deferred by one macrotask on purpose. Arriving here by client-side
+      // navigation, this effect runs before the analytics provider has
+      // re-rendered with the new pathname, so tracking synchronously stamps the
+      // event with the *previous* page — starts from a template page landed on
+      // /invoice-template/[trade] while the matching download landed on
+      // /create. Two events in one funnel filed under different pages is how a
+      // dashboard quietly becomes untrustworthy. Yielding first lets the route
+      // settle so every event on this page reports /create.
+      //
+      // Intentionally NOT cleared on unmount. React's development double-invoke
+      // mounts, unmounts, and remounts: a cleanup would cancel the pending
+      // timer, and the `arrival` guard would then suppress the remount's retry,
+      // so the start event silently never fired at all in development while
+      // appearing fine in production. The guard is what prevents duplicates; a
+      // stray 0ms timer resolving after unmount costs nothing.
+      setTimeout(() => track("invoice_started", started), 0);
+    }
   }, []);
 
   useEffect(() => {
@@ -495,7 +527,19 @@ export default function CreateInvoice() {
     setSaving(false);
   }
 
-  const handlePrint = () => { window.print(); };
+  // The conversion. For a no-sign-up generator this is the moment the tool
+  // actually delivered something — there is no checkout to measure instead, so
+  // "they took the PDF away" is the closest honest definition of success.
+  const handlePrint = () => {
+    track("invoice_downloaded", {
+      trade: arrival.current?.trade || "none",
+      // How much of the invoice they actually filled in. A download with one
+      // priced line is a very different signal from one with six.
+      priced_items: data.items.filter((i) => i.description.trim() || i.rate > 0).length,
+      signed_in: Boolean(user),
+    });
+    window.print();
+  };
 
   const fillClient = (clientId: string) => {
     const client = clients.find(c => c.id === clientId);

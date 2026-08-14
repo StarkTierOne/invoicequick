@@ -1367,3 +1367,21 @@ if (missingSeeds.length > 0) {
 export function getTradeTemplate(slug: string): TradeTemplate | undefined {
   return tradeTemplates[slug];
 }
+
+// Reverse index: blog guide slug -> the trade template that cites it.
+//
+// The template pages already link out to their matching long-form guide; this
+// is the return leg, so a reader who arrives on the guide from search can reach
+// the commercial page rather than dead-ending on an article. Derived from the
+// same guideSlug fields rather than hand-listed on each article, so a guide
+// added or renamed in the trade map links itself with no second list to update.
+const tradesByGuideSlug: Record<string, TradeTemplate> = {};
+for (const slug of tradeTemplateSlugs) {
+  const t = tradeTemplates[slug];
+  if (t.guideSlug) tradesByGuideSlug[t.guideSlug] = t;
+}
+
+/** The trade template whose long-form guide is this article, if any. */
+export function getTradeByGuideSlug(guideSlug: string): TradeTemplate | undefined {
+  return tradesByGuideSlug[guideSlug];
+}

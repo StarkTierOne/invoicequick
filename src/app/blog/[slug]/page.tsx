@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Fragment, type ReactNode } from "react";
 import { articles } from "@/lib/blog-articles";
 import { publishedAt } from "@/lib/blog-published-at";
+import { getTradeByGuideSlug } from "@/lib/invoice-template-trades";
 
 const INLINE_LINK_RE = /\[([^\]]+)\]\(([^)\s]+)\)/g;
 const BOLD_RE = /\*\*([^*]+)\*\*/g;
@@ -116,6 +117,13 @@ export default async function BlogPostPage({ params }: Props) {
 
   const canonical = `https://invoicequick-phi.vercel.app/blog/${slug}`;
   const published = publishedAt[slug];
+
+  // If this guide is the long-form article behind a trade template page, the
+  // end-of-post CTA becomes trade-specific: the reader gets the template built
+  // for the work they just read about, opened with that trade's line items,
+  // instead of a generic blank invoice. Undefined for the other ~60 posts,
+  // which keep the generic CTA below.
+  const trade = getTradeByGuideSlug(slug);
 
   // Place the mid-article CTA before the section heading nearest the body's
   // midpoint, excluding the opening heading. Skipped on short posts (<2 content
@@ -267,15 +275,40 @@ export default async function BlogPostPage({ params }: Props) {
           </section>
         )}
 
-        {/* Article CTA */}
-        <div className="mt-12 bg-indigo-50 border border-indigo-100 rounded-xl p-8 text-center">
-          <h3 className="text-xl font-bold text-gray-900 mb-2">Ready to create your invoice?</h3>
-          <p className="text-gray-600 mb-5">Build a professional invoice in under 60 seconds. Free forever, no sign-up required.</p>
-          <Link href="/create" className="btn-primary inline-block">
-            Create Free Invoice &rarr;
-          </Link>
-          <p className="mt-4 text-xs text-gray-500">No sign-up &middot; No credit card &middot; Free forever</p>
-        </div>
+        {/* Article CTA — trade-specific where this guide backs a template page */}
+        {trade ? (
+          <div className="mt-12 bg-indigo-50 border border-indigo-100 rounded-xl p-8 text-center">
+            <div className="text-4xl mb-3" aria-hidden="true">{trade.icon}</div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              Ready to send a {trade.trade.toLowerCase()} invoice?
+            </h3>
+            <p className="text-gray-600 mb-5 max-w-xl mx-auto">
+              Open the {trade.trade.toLowerCase()} template and the lines above are already listed &mdash;
+              edit the wording, add your rates, download the PDF.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <Link href={`/create?trade=${trade.slug}`} className="btn-primary inline-block">
+                Start a {trade.trade} Invoice &rarr;
+              </Link>
+              <Link
+                href={`/invoice-template/${trade.slug}`}
+                className="text-indigo-600 hover:text-indigo-700 font-medium text-sm underline underline-offset-4"
+              >
+                See the {trade.trade.toLowerCase()} invoice template
+              </Link>
+            </div>
+            <p className="mt-4 text-xs text-gray-500">No sign-up &middot; No credit card &middot; Free forever</p>
+          </div>
+        ) : (
+          <div className="mt-12 bg-indigo-50 border border-indigo-100 rounded-xl p-8 text-center">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Ready to create your invoice?</h3>
+            <p className="text-gray-600 mb-5">Build a professional invoice in under 60 seconds. Free forever, no sign-up required.</p>
+            <Link href="/create" className="btn-primary inline-block">
+              Create Free Invoice &rarr;
+            </Link>
+            <p className="mt-4 text-xs text-gray-500">No sign-up &middot; No credit card &middot; Free forever</p>
+          </div>
+        )}
       </article>
 
       {/* Footer */}
