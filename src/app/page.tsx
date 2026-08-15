@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import ExitIntentModal from "@/components/ExitIntentModal";
+import { tradeCards } from "@/lib/trade-cards";
 
 // The hero's primary action. A plain button asks the visitor to *navigate*; an
 // input asks them to *start*, and the one field it collects is the first field
@@ -865,62 +866,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Invoicing Guides By Trade — help the trades audience self-identify + spread internal link equity */}
+      {/* Invoicing By Trade — helps the trades audience self-identify and spreads
+          internal link equity. Derived from `tradeCards`, never hand-listed: the
+          list this replaced had silently dropped a published trade page.
+
+          Each card leads with the ARTIFACT where one exists — a searcher typing
+          "electrician invoice template" wants the invoice, not a 2,000-word
+          read, and the template opens /create pre-filled with that trade's line
+          items. The guide stays available as the secondary link for the
+          searcher who does want the explanation. */}
       <section className="max-w-6xl mx-auto px-4 py-20">
-        <h2 className="text-3xl font-bold text-center mb-4">Invoicing Guides for Your Trade</h2>
+        <h2 className="text-3xl font-bold text-center mb-4">Invoicing for Your Trade</h2>
         <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
           Every trade bills a little differently — the service-call fee, the parts markup, the license
-          number, the deposit on a big job. These free guides cover exactly how to invoice for your
-          line of work, and every invoice you send is built with the same free tool.
+          number, the deposit on a big job. Open a template that already lists your trade&apos;s line
+          items, or read the full guide to how your line of work gets billed.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            { icon: "🔧", trade: "Plumbing", href: "/blog/how-to-invoice-for-plumbing-services" },
-            { icon: "⚡", trade: "Electrical", href: "/blog/how-to-invoice-for-electrical-work" },
-            { icon: "❄️", trade: "HVAC", href: "/blog/how-to-invoice-for-hvac-service" },
-            { icon: "🛠️", trade: "Handyman", href: "/blog/how-to-invoice-for-handyman-services" },
-            { icon: "🚗", trade: "Auto Repair", href: "/blog/how-to-invoice-for-auto-repair" },
-            { icon: "🏠", trade: "Roofing", href: "/blog/how-to-invoice-for-roofing-jobs" },
-            { icon: "🎨", trade: "Painting", href: "/blog/how-to-invoice-for-painting-jobs" },
-            { icon: "🧹", trade: "Cleaning", href: "/blog/how-to-invoice-for-cleaning-services" },
-            { icon: "🌿", trade: "Lawn & Landscaping", href: "/blog/how-to-invoice-for-lawn-care-and-landscaping" },
-            { icon: "🌨️", trade: "Snow Removal", href: "/blog/how-to-invoice-for-snow-removal" },
-            { icon: "🚚", trade: "Trucking & Freight", href: "/blog/how-to-invoice-for-trucking-and-freight" },
-            { icon: "🍽️", trade: "Catering & Events", href: "/blog/how-to-invoice-for-catering-and-events" },
-            { icon: "📸", trade: "Photography", href: "/blog/how-to-invoice-for-photography" },
-            { icon: "🏢", trade: "Construction", href: "/blog/how-to-invoice-for-construction-work" },
-            { icon: "🔁", trade: "Recurring Services", href: "/blog/how-to-invoice-for-recurring-services" },
-            { icon: "🏗️", trade: "Contractors", href: "/blog/how-to-invoice-as-an-independent-contractor" },
-            { icon: "⏱️", trade: "Hourly Work", href: "/blog/how-to-invoice-for-hourly-work" },
-            { icon: "💻", trade: "Web & Software Dev", href: "/blog/how-to-invoice-for-web-development" },
-            { icon: "📚", trade: "Tutoring & Test Prep", href: "/blog/how-to-invoice-for-tutoring" },
-            { icon: "🔨", trade: "Subcontracting", href: "/blog/how-to-invoice-as-a-subcontractor" },
-            { icon: "✏️", trade: "Graphic Design", href: "/blog/invoice-template-graphic-designers" },
-            { icon: "💼", trade: "Consulting", href: "/blog/invoice-template-consultants" },
-          ].map((t) => (
-            <Link
-              key={t.trade}
-              href={t.href}
-              className="card bg-white hover:shadow-md hover:border-indigo-200 transition-all flex items-center gap-3 !py-4"
-            >
-              <span className="text-2xl" aria-hidden="true">{t.icon}</span>
-              <span className="font-semibold text-gray-800 text-sm leading-tight">
-                How to invoice for {t.trade}
-                <span className="block text-indigo-600 text-xs font-medium mt-0.5">Read the guide &rarr;</span>
-              </span>
-            </Link>
-          ))}
+          {tradeCards.map((t) => {
+            const primary = t.tmpl ? `/invoice-template/${t.tmpl}` : `/blog/${t.guide}`;
+            return (
+              <div
+                key={t.trade}
+                className="card bg-white hover:shadow-md hover:border-indigo-200 transition-all flex items-start gap-3 !py-4"
+              >
+                <span className="text-2xl leading-none mt-0.5" aria-hidden="true">{t.icon}</span>
+                <span className="text-sm leading-tight min-w-0">
+                  <Link href={primary} className="font-semibold text-gray-800 hover:text-indigo-700">
+                    {t.tmpl ? `${t.trade} invoice template` : `How to invoice for ${t.trade}`}
+                  </Link>
+                  <span className="block text-indigo-600 text-xs font-medium mt-0.5">
+                    {t.tmpl ? "Opens with these line items →" : "Read the guide →"}
+                  </span>
+                  {t.tmpl && t.guide && (
+                    <Link
+                      href={`/blog/${t.guide}`}
+                      className="block text-gray-500 hover:text-gray-700 text-xs mt-1 underline decoration-gray-300"
+                    >
+                      Read the guide
+                    </Link>
+                  )}
+                </span>
+              </div>
+            );
+          })}
         </div>
         <div className="text-center mt-10">
           <Link href="/create" className="btn-primary text-base !px-6 !py-3">
             Create Your Free Invoice &rarr;
           </Link>
           <p className="text-sm text-gray-600 mt-4">
-            Want the invoice rather than the guide?{" "}
+            Don&apos;t see your trade?{" "}
             <Link href="/invoice-template" className="text-indigo-600 hover:text-indigo-700 font-medium underline">
-              Invoice templates by trade
+              Browse all invoice templates
             </Link>{" "}
-            open with that trade&apos;s line items already listed.
+            or start from a blank invoice — it works for any line of work.
           </p>
         </div>
       </section>

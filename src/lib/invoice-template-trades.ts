@@ -19,6 +19,8 @@
 // swapped is a doorway page, and Google treats it accordingly.
 
 import { tradeSeeds } from "./invoice-template-seeds";
+import { tradeCards } from "./trade-cards";
+import { articles } from "./blog-articles";
 
 export interface TradeLineItem {
   /** Line-item description, written the way this trade would actually word it. */
@@ -1361,6 +1363,51 @@ if (missingSeeds.length > 0) {
   throw new Error(
     `invoice-template-trades: no create-screen seed items for ${missingSeeds.join(", ")}. ` +
       `Add them to lib/invoice-template-seeds.ts.`,
+  );
+}
+
+// The homepage trade grid lives in `trade-cards.ts` for the same bundle reason
+// as the seeds above — the homepage is a client component and must not pull
+// this catalogue's prose into the browser. Same split, so the same silent-drift
+// risk, so the same treatment: assert it here and let a mismatch fail the build.
+//
+// This guard exists because the grid it replaced was hand-curated, and it had
+// silently dropped `junk-removal` — a complete, published template page that
+// the homepage simply never linked to. A missing card looks exactly like a
+// deliberate omission, which is why it survived. Presence alone is not enough:
+// the icon and label are checked too, so a trade renamed in the catalogue can't
+// keep showing its old name on the homepage.
+const cardByTmpl = new Map(tradeCards.filter((c) => c.tmpl).map((c) => [c.tmpl as string, c]));
+
+const cardProblems: string[] = [];
+for (const slug of tradeTemplateSlugs) {
+  const t = tradeTemplates[slug];
+  const card = cardByTmpl.get(slug);
+  if (!card) {
+    cardProblems.push(`${slug}: published template page has no homepage card`);
+    continue;
+  }
+  if (card.icon !== t.icon) cardProblems.push(`${slug}: card icon ${card.icon} != catalogue ${t.icon}`);
+  if (card.trade !== t.trade) cardProblems.push(`${slug}: card label "${card.trade}" != catalogue "${t.trade}"`);
+  if (card.guide !== t.guideSlug) {
+    cardProblems.push(`${slug}: card guide "${card.guide ?? "none"}" != catalogue "${t.guideSlug ?? "none"}"`);
+  }
+}
+for (const card of tradeCards) {
+  if (card.tmpl && !tradeTemplates[card.tmpl]) {
+    cardProblems.push(`${card.trade}: card points at /invoice-template/${card.tmpl}, which does not exist`);
+  }
+  // A card whose guide 404s is worse than a missing card — it advertises a
+  // read and dead-ends the visitor. The article map is the authority.
+  if (card.guide && !articles[card.guide]) {
+    cardProblems.push(`${card.trade}: card links /blog/${card.guide}, which is not a published article`);
+  }
+}
+if (cardProblems.length > 0) {
+  throw new Error(
+    `invoice-template-trades: homepage trade cards are out of sync with the catalogue:\n` +
+      cardProblems.map((p) => `  - ${p}`).join("\n") +
+      `\nFix lib/trade-cards.ts.`,
   );
 }
 

@@ -274,6 +274,21 @@ function InvoicePreview({ data }: { data: InvoiceData }) {
 const DRAFT_KEY = "iq_invoice_draft_v1";
 const DRAFT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
+// The trade this visit asked for, if the slug resolves to a real seed.
+//
+// Read from the query string on demand rather than passed down from the seeding
+// effect: the draft restore lives in an async function whose ordering against
+// that effect is not guaranteed, and a conflict notice that depends on which
+// one happens to win the race is worse than none.
+function requestedTradeSeed(): { trade: string; items: string[] } | undefined {
+  try {
+    const slug = (new URLSearchParams(window.location.search).get("trade") || "").trim().slice(0, 60);
+    return slug ? getTradeSeed(slug) : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 function isDraftWorthKeeping(d: InvoiceData): boolean {
   if (!d || !Array.isArray(d.items)) return false;
   return Boolean(
@@ -333,6 +348,16 @@ export default function CreateInvoice() {
   // draft or a blank restart replaces them, since the notice would then be
   // describing items that are no longer on screen.
   const [seededTradeName, setSeededTradeName] = useState<string | null>(null);
+  // The trade this visit explicitly asked for that a stored draft then replaced.
+  //
+  // Restoring the draft is the right default — it is unfinished work and we must
+  // not silently bin it. But the visitor got here by clicking "<Trade> invoice
+  // template", on a card that promises it "opens with these line items", so
+  // quietly showing a different trade's lines breaks that promise and is
+  // genuinely confusing: nothing on screen explains why a roofing invoice
+  // appeared when they asked for junk removal. Keep the draft, name the
+  // conflict, and offer the requested trade in one click.
+  const [overriddenTrade, setOverriddenTrade] = useState<{ trade: string; items: string[] } | null>(null);
   const printRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   // How this session arrived, captured once at mount and held for the life of
@@ -429,6 +454,23 @@ export default function CreateInvoice() {
     setData(defaultInvoice());
     setRestoredAt(null);
     setSeededTradeName(null);
+    setOverriddenTrade(null);
+  };
+
+  // Take the trade the visitor actually clicked, discarding the restored draft.
+  // Deliberately an explicit choice rather than the default: this throws away
+  // unfinished work, so the visitor has to ask for it.
+  const loadRequestedTrade = () => {
+    const seed = overriddenTrade;
+    if (!seed) return;
+    try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
+    setData({
+      ...defaultInvoice(),
+      items: seed.items.map((description) => ({ ...createEmptyItem(), description })),
+    });
+    setRestoredAt(null);
+    setSeededTradeName(seed.trade);
+    setOverriddenTrade(null);
   };
 
   async function loadUserData() {
@@ -440,6 +482,7 @@ export default function CreateInvoice() {
         setRestoredAt(draft.savedAt);
         // The draft's own line items just replaced any trade seed.
         setSeededTradeName(null);
+        setOverriddenTrade(requestedTradeSeed() ?? null);
       }
       setDraftEnabled(true);
       return;
@@ -453,6 +496,7 @@ export default function CreateInvoice() {
       setData({ ...defaultInvoice(), ...pending.data });
       setRestoredAt(pending.savedAt);
       setSeededTradeName(null);
+      setOverriddenTrade(requestedTradeSeed() ?? null);
       try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
     }
     const { data: profile } = await supabase.from("profiles").select("*").eq("id", authUser.id).single();
@@ -556,13 +600,29 @@ export default function CreateInvoice() {
           <p className="text-sm text-indigo-900">
             <span className="font-semibold">Picked up where you left off.</span>{" "}
             We restored the invoice you were working on {describeAge(restoredAt)}, saved on this device.
+            {overriddenTrade && (
+              <>
+                {" "}That replaced the <span className="font-semibold">{overriddenTrade.trade}</span>{" "}
+                template you just opened.
+              </>
+            )}
           </p>
-          <button
-            onClick={startFresh}
-            className="text-sm font-semibold text-indigo-700 hover:text-indigo-900 underline whitespace-nowrap"
-          >
-            Start a blank invoice
-          </button>
+          <div className="flex flex-wrap items-center gap-4">
+            {overriddenTrade && (
+              <button
+                onClick={loadRequestedTrade}
+                className="text-sm font-semibold text-indigo-700 hover:text-indigo-900 underline whitespace-nowrap"
+              >
+                Load the {overriddenTrade.trade} template
+              </button>
+            )}
+            <button
+              onClick={startFresh}
+              className="text-sm font-semibold text-indigo-700 hover:text-indigo-900 underline whitespace-nowrap"
+            >
+              Start a blank invoice
+            </button>
+          </div>
         </div>
       )}
 
