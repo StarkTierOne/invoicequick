@@ -241,16 +241,43 @@ export default async function BlogPostPage({ params }: Props) {
               return (
                 <Fragment key={`cta-${i}`}>
                   <div className="not-prose my-10 flex flex-col gap-4 rounded-xl border border-indigo-100 bg-indigo-50/60 px-5 py-4 sm:flex-row sm:items-center">
-                    <p className="flex-1 text-sm text-gray-700">
-                      <strong className="text-gray-900">Stop reading, start billing.</strong>{" "}
-                      Create a clean, professional invoice in about 60 seconds &mdash; free, no sign-up.
-                    </p>
-                    <Link
-                      href="/create"
-                      className="btn-primary self-start whitespace-nowrap text-sm !px-5 !py-2.5 sm:self-auto"
-                    >
-                      Create Free Invoice &rarr;
-                    </Link>
+                    {trade ? (
+                      // The end-of-post CTA has been trade-specific since the
+                      // template pages shipped, but this one — the CTA that
+                      // exists precisely because most readers never reach the
+                      // end — stayed generic on the guides where the trade is
+                      // known, sending a reader halfway through a 4,000-word
+                      // hauling guide to a blank invoice. Same seeded
+                      // destination as the end CTA; the labels differ so the
+                      // two are separable in analytics (the delegated listener
+                      // records the anchor text and the ?trade= dimension).
+                      <>
+                        <p className="flex-1 text-sm text-gray-700">
+                          <strong className="text-gray-900">Stop reading, start billing.</strong>{" "}
+                          The {trade.trade.toLowerCase()} template opens with these lines already
+                          on it &mdash; free, no sign-up.
+                        </p>
+                        <Link
+                          href={`/create?trade=${trade.slug}`}
+                          className="btn-primary self-start whitespace-nowrap text-sm !px-5 !py-2.5 sm:self-auto"
+                        >
+                          Open the {trade.trade} Template &rarr;
+                        </Link>
+                      </>
+                    ) : (
+                      <>
+                        <p className="flex-1 text-sm text-gray-700">
+                          <strong className="text-gray-900">Stop reading, start billing.</strong>{" "}
+                          Create a clean, professional invoice in about 60 seconds &mdash; free, no sign-up.
+                        </p>
+                        <Link
+                          href="/create"
+                          className="btn-primary self-start whitespace-nowrap text-sm !px-5 !py-2.5 sm:self-auto"
+                        >
+                          Create Free Invoice &rarr;
+                        </Link>
+                      </>
+                    )}
                   </div>
                   {node}
                 </Fragment>

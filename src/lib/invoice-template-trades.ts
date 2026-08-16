@@ -1175,6 +1175,8 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
         a: "As explicit surcharges quoted at booking. A sofa from a ground-floor garage and the same sofa from a third-floor walk-up are different jobs with different crew time and different injury risk, and pricing them identically means the easy jobs subsidise the hard ones. Ask about floor level, elevator access, and carry distance when the job is booked, quote the surcharge then, and show it as its own line on the invoice. Specialty items — pianos, safes, hot tubs — warrant a flat per-item surcharge because they need extra crew and equipment.",
       },
     ],
+    guideSlug: "how-to-invoice-for-junk-removal",
+    guideLabel: "How to invoice for junk removal and hauling",
   },
 
   catering: {

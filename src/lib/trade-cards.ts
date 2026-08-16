@@ -43,7 +43,7 @@ export const tradeCards: TradeCard[] = [
   { icon: "🧹", trade: "Cleaning", tmpl: "cleaning", guide: "how-to-invoice-for-cleaning-services" },
   { icon: "🌿", trade: "Landscaping & Lawn Care", tmpl: "landscaping", guide: "how-to-invoice-for-lawn-care-and-landscaping" },
   { icon: "🌨️", trade: "Snow Removal", tmpl: "snow-removal", guide: "how-to-invoice-for-snow-removal" },
-  { icon: "🚛", trade: "Junk Removal & Hauling", tmpl: "junk-removal" },
+  { icon: "🚛", trade: "Junk Removal & Hauling", tmpl: "junk-removal", guide: "how-to-invoice-for-junk-removal" },
   { icon: "🏗️", trade: "Construction", tmpl: "construction", guide: "how-to-invoice-for-construction-work" },
   { icon: "🍽️", trade: "Catering & Events", tmpl: "catering", guide: "how-to-invoice-for-catering-and-events" },
   { icon: "📸", trade: "Photography", tmpl: "photography", guide: "how-to-invoice-for-photography" },

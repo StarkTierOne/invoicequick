@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-junk-removal",
+    title: "How to Invoice for Junk Removal & Hauling (Volume vs Weight, Dump Fees & Cleanouts, 2026)",
+    excerpt:
+      "Junk removal is the trade where the unit you sell and the unit you pay for come apart. You quote a fraction of a truck bed; the transfer station bills you by the ton. A quarter load of cardboard and a quarter load of tile backer board are the same sale and wildly different costs — and nothing on the customer's side of the transaction makes that visible. Add the second quirk, that you price the job sight-unseen over the phone and then discover it in someone's basement, and most of this trade's billing problems turn out to be estimating and documentation problems that arrive disguised as an argument. This guide covers how to invoice for junk removal and hauling properly: pricing by load fraction and why density decides whether the day made money; closing the estimate-to-invoice gap with an on-site written re-quote before anything is lifted; passing disposal through as its own line with the scale ticket behind it; the per-item surcharges you already paid — mattresses, tyres, refrigerant appliances, TVs, e-waste; how to bill a job you had to partially refuse, and say so on the invoice; access charges for stairs, long carries, disassembly, and parking; collecting at the truck on residential work while running POs and net 30 on property managers, realtors, and eviction cleanouts; deposits and progress billing on estate and hoarding jobs; documenting donation and recycling diversion without overclaiming it; and where sales tax on hauling actually lands.",
+  },
+  {
     slug: "how-to-invoice-for-snow-removal",
     title: "How to Invoice for Snow Removal & Plowing (Per-Push, Seasonal Contracts & Salt, 2026)",
     excerpt:
