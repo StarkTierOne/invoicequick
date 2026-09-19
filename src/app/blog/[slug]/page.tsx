@@ -61,13 +61,26 @@ function renderEmphasis(text: string, keyBase: string): ReactNode[] {
   return nodes;
 }
 
-function renderInline(text: string): ReactNode {
+// On a guide that backs a trade template page, a bare in-body `/create` link
+// opens the same seeded invoice as the CTAs around it. Without this, 11 of the
+// 13 trade guides sent a reader who clicked "Create your X invoice free" in the
+// prose to a BLANK invoice, while the mid-article and end-of-post CTAs two
+// paragraphs away offered the seeded one. Fixing the article strings by hand
+// would be a second list that drifts (two were hand-fixed; eleven were not) —
+// so the rewrite is derived here from the same guideSlug mapping instead. Links
+// that already carry a query string are left alone.
+function seededCreateHref(href: string, tradeSlug?: string): string {
+  return href === "/create" && tradeSlug ? `/create?trade=${tradeSlug}` : href;
+}
+
+function renderInline(text: string, tradeSlug?: string): ReactNode {
   const nodes: ReactNode[] = [];
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   INLINE_LINK_RE.lastIndex = 0;
   while ((match = INLINE_LINK_RE.exec(text)) !== null) {
-    const [full, label, href] = match;
+    const [full, label, rawHref] = match;
+    const href = seededCreateHref(rawHref, tradeSlug);
     if (match.index > lastIndex) nodes.push(...renderEmphasis(text.slice(lastIndex, match.index), `t${lastIndex}`));
     if (href.startsWith("/")) {
       nodes.push(
@@ -231,7 +244,7 @@ export default async function BlogPostPage({ params }: Props) {
               </h2>
             ) : (
               <p key={i} className="text-gray-700 leading-relaxed mb-4">
-                {renderInline(paragraph)}
+                {renderInline(paragraph, trade?.slug)}
               </p>
             );
             // Mid-article inline CTA: catch readers who get value but never reach
@@ -295,7 +308,7 @@ export default async function BlogPostPage({ params }: Props) {
               {article.faqs.map((faq, i) => (
                 <div key={i} className="py-5">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.q}</h3>
-                  <p className="text-gray-700 leading-relaxed">{renderInline(faq.a)}</p>
+                  <p className="text-gray-700 leading-relaxed">{renderInline(faq.a, trade?.slug)}</p>
                 </div>
               ))}
             </div>

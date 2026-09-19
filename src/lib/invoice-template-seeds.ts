@@ -152,6 +152,15 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Service charge — % (not a gratuity)",
     ],
   },
+  trucking: {
+    trade: "Trucking & Freight",
+    items: [
+      "Linehaul — Load # / Origin → Destination, miles",
+      "Fuel surcharge — miles × rate",
+      "Detention — hrs beyond free time (in / out times)",
+      "Lumper fee — receipt attached",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [

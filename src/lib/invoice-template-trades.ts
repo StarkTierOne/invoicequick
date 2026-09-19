@@ -1350,6 +1350,92 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "how-to-invoice-for-web-development",
     guideLabel: "How to invoice for web development",
   },
+
+  trucking: {
+    slug: "trucking",
+    trade: "Trucking & Freight",
+    icon: "🚚",
+    metaTitle: "Free Trucking Invoice Template — Rate Con, Detention & Fuel Surcharge | InvoiceQuick",
+    metaDescription:
+      "A free trucking and freight invoice template for owner-operators and small carriers. Bill the linehaul against the rate confirmation, itemize fuel surcharge, detention, lumper fees, and accessorials, then download a PDF. No sign-up.",
+    tagline:
+      "Built for owner-operators and small carriers billing brokers and shippers per load, with every accessorial on its own line.",
+    intro: [
+      "A trucking invoice is unusual among trade invoices in two ways. First, you are almost always billing a broker rather than the company whose freight you moved, and that broker's accounts-payable team pays by matching your invoice to a rate confirmation they issued before the wheels turned. An invoice whose total, load number, or lane differs from the rate con by a dollar or a digit does not get queried — it gets set aside. Second, the invoice is only one page of a packet: no broker releases payment without the signed bill of lading or proof of delivery behind it, and any accessorial you bill is paid against the receipt or the timestamp that proves it.",
+      "The money owner-operators lose is not on the linehaul — that number was fixed on the rate con. It is on the lines that were never written: detention at a shipper that held the truck four hours, the lumper paid out of pocket at the receiver, the layover when the appointment moved a day, the truck ordered and then cancelled at the dock. Each is genuinely owed and documented on nobody's paperwork but yours, and each is quietly written off when the invoice only carries the load rate. This template puts the linehaul, the fuel surcharge, and every accessorial on separate lines so a broker's AP can match and pay each against the rate con and the packet.",
+    ],
+    billingModel:
+      "Per load, at the flat rate on the rate confirmation, or per loaded mile plus a fuel surcharge indexed to the weekly DOE diesel price. Accessorials — detention, layover, TONU, lumper, stop-off, driver assist — are billed on top at the rates the rate con or the broker's carrier agreement states. Net 30 is the norm; quick pay is offered at a 2–5% discount; factoring advances the invoice for a fee.",
+    lineItems: [
+      {
+        description: "Linehaul — Load #48213, Dallas TX → Memphis TN, 452 mi",
+        unit: "per load (flat) or per mile",
+        note: "Must match the rate con exactly: load or PRO number, lane, and rate. The number AP matches against.",
+      },
+      {
+        description: "Fuel surcharge — 452 mi × $0.42/mi",
+        unit: "per loaded mile",
+        note: "Indexed to the weekly DOE diesel average. Its own line, never folded into the linehaul.",
+      },
+      {
+        description: "Detention — shipper, in 08:10 / out 13:40, 3.5 hrs beyond 2 free",
+        unit: "per hour after free time",
+        note: "Only payable with in-and-out times, usually within the broker's 24–48 hour claim window.",
+      },
+      {
+        description: "Lumper fee — receiver unload, receipt attached",
+        unit: "pass-through at cost",
+        note: "You paid it at the dock. Reimbursed at face value against the receipt, nothing else.",
+      },
+      {
+        description: "Layover — 1 night, appointment rescheduled by receiver",
+        unit: "per 24 hours",
+        note: "A day the truck earned nothing because of the shipper's or receiver's change. Bill it.",
+      },
+      {
+        description: "Stop-off — 1 additional stop",
+        unit: "per stop",
+        note: "Multi-stop loads price each extra pickup or delivery beyond the first.",
+      },
+      {
+        description: "Truck ordered not used (TONU) — cancelled at dock",
+        unit: "flat per occurrence",
+        note: "You dispatched, deadheaded, and were sent away. The rate con or carrier agreement sets the amount.",
+      },
+      {
+        description: "Driver assist — hand unload, 4 pallets",
+        unit: "flat or per hour",
+        note: "Driver labour at the dock is not part of the linehaul. Note what was handled and how long it took.",
+      },
+    ],
+    gotchas: [
+      "Total does not match the rate confirmation. Even a rounding difference gets the invoice set aside rather than queried — bill the rate con figure and put every extra on its own line.",
+      "No load, PRO, or BOL number on the invoice. A broker's AP matches on that reference; an invoice without it is unmatched and sits.",
+      "Signed POD not attached. The invoice is not payable until delivery is proven, and 'we'll send it later' resets the clock to the day it arrives.",
+      "Detention billed without in-and-out times, or after the claim window closed. Both are refused outright; the timestamps are the claim.",
+      "Lumper receipt missing, or the quick-pay discount taken silently. Reimbursements need the receipt behind them, and a discounted total needs the discount shown so the books reconcile.",
+    ],
+    faqs: [
+      {
+        q: "What should a trucking invoice include?",
+        a: "Your carrier name, MC and DOT numbers, and remit-to address (or the factoring company's, if you factor); the broker or shipper's billing details; the invoice number and date; the load, PRO, or rate-confirmation number; the lane as origin and destination with the pickup and delivery dates; the linehaul at the rate-con figure; fuel surcharge as its own line; each accessorial — detention with in-and-out times, lumper with receipt, layover, stop-offs, TONU, driver assist — as separate lines; subtotal and total; and payment terms including any quick-pay option. Attach the signed BOL or POD and every receipt, because the invoice is paid against the packet, not on its own.",
+      },
+      {
+        q: "How is a fuel surcharge calculated?",
+        a: "Most brokers and shippers index it to the weekly U.S. DOE national or regional average diesel price. The rate con or carrier agreement sets a base price and an escalator — commonly a cent-per-mile step for every 5 or 6 cents diesel rises above the base — and the surcharge is that per-mile figure multiplied by loaded miles. Some contracts express it as a percentage of the linehaul instead. Either way, put it on its own line with the miles and the rate shown; a surcharge folded into the linehaul cannot be checked and will be disputed the week diesel moves.",
+      },
+      {
+        q: "Should I bill per load or per mile?",
+        a: "Bill whatever the rate confirmation says, because that is what the broker's AP will match against. Spot freight through brokers is usually a flat all-in rate per load; contract and dedicated freight is more often a per-mile rate plus a separate fuel surcharge. On a per-mile rate, state the miles and the basis — practical miles from a named routing tool, or hub miles — so the arithmetic can be followed. If the rate con is all-in, do not add a fuel surcharge on top; it is already inside the number.",
+      },
+      {
+        q: "Which accessorials can I charge on a freight invoice?",
+        a: "The ones the rate con or the broker's carrier agreement provides for, at the rates it states — typically detention after two hours of free time at pickup and delivery, layover when an appointment moves you a day, truck ordered not used when a load is cancelled after dispatch, lumper fees paid at the dock, stop-offs on multi-stop loads, and driver assist for hand loading or unloading. Each needs its evidence: timestamps for detention, the receipt for a lumper, the cancellation notice for TONU. Accessorials billed without the paperwork, or outside the broker's claim window, are the ones that never get paid.",
+      },
+    ],
+    guideSlug: "how-to-invoice-for-trucking-and-freight",
+    guideLabel: "How to invoice for trucking and freight hauling",
+  },
 };
 
 /** Stable ordering for the hub grid and sitemap. */
