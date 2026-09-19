@@ -49,6 +49,7 @@ export const tradeCards: TradeCard[] = [
   { icon: "📸", trade: "Photography", tmpl: "photography", guide: "how-to-invoice-for-photography" },
   { icon: "💻", trade: "Web Development", tmpl: "web-development", guide: "how-to-invoice-for-web-development" },
   { icon: "🚚", trade: "Trucking & Freight", tmpl: "trucking", guide: "how-to-invoice-for-trucking-and-freight" },
+  { icon: "🔨", trade: "Subcontracting", tmpl: "subcontractor", guide: "how-to-invoice-as-a-subcontractor" },
 
   // Guide-only trades: strong articles with no template page yet. Each is a
   // candidate for the next wave of template pages.
@@ -56,7 +57,6 @@ export const tradeCards: TradeCard[] = [
   { icon: "🧾", trade: "Independent Contractors", guide: "how-to-invoice-as-an-independent-contractor" },
   { icon: "⏱️", trade: "Hourly Work", guide: "how-to-invoice-for-hourly-work" },
   { icon: "📚", trade: "Tutoring & Test Prep", guide: "how-to-invoice-for-tutoring" },
-  { icon: "🔨", trade: "Subcontracting", guide: "how-to-invoice-as-a-subcontractor" },
   { icon: "✏️", trade: "Graphic Design", guide: "invoice-template-graphic-designers" },
   { icon: "💼", trade: "Consulting", guide: "invoice-template-consultants" },
 ];

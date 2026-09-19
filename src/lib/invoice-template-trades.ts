@@ -1436,6 +1436,91 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "how-to-invoice-for-trucking-and-freight",
     guideLabel: "How to invoice for trucking and freight hauling",
   },
+  subcontractor: {
+    slug: "subcontractor",
+    trade: "Subcontracting",
+    icon: "🔨",
+    metaTitle: "Free Subcontractor Invoice Template — Retainage, Lien Waiver & Change Orders | InvoiceQuick",
+    metaDescription:
+      "A free subcontractor invoice template for billing a general contractor. Bill against your schedule of values, show retainage withheld and net due, add signed change orders, carry disputed backcharges as open items, then download a PDF. No sign-up.",
+    tagline:
+      "Built for trade subcontractors billing a general contractor on their cutoff, with retainage, change orders, and backcharges each on their own line.",
+    intro: [
+      "A subcontractor's invoice is different from every other trade invoice in one structural way: you are not billing the person with the money. You bill the general contractor, your invoice is folded into their pay application to the owner, and your check moves only after theirs does. That has two consequences for the document itself. It has to arrive before the GC's monthly billing cutoff — usually the 20th to the 25th — or it rolls into next month's application and pays thirty days late. And it has to be laid out the way the GC's own application is laid out: your scope broken into the line items on the schedule of values, a percentage complete against each, the amount earned this period, the retainage they withhold, and the net actually due now. An invoice that says 'framing labour — $18,400' cannot be dropped into that package, so it waits until someone re-keys it, or until next month.",
+      "The money subcontractors lose is rarely on the base contract. It is the retainage that is never invoiced for release when the job closes out, the change order done on a superintendent's verbal say-so that has no paper behind it, and the backcharge that appears for the first time as a deduction on the check. This template puts each of those on its own line: retainage shown as a running balance rather than silently netted out, change orders billed only with the approval reference, and any disputed backcharge carried as an open item rather than quietly accepted. It pairs with a conditional lien waiver for the amount billed — never an unconditional one before the money clears — because on a subcontract the waiver is the other half of the invoice.",
+    ],
+    billingModel:
+      "Monthly progress billing on a pay application: each schedule-of-values line at its percentage complete, less what was billed in prior periods, less the retainage the GC withholds (typically 5–10%), equals the net due this draw. Small scopes and repairs are billed lump-sum on completion. Time-and-material work is billed at the subcontract's labour and equipment rates against signed daily tickets. Retainage is invoiced separately for release at substantial completion or per the contract's reduction schedule.",
+    lineItems: [
+      {
+        description: "SOV line 09250 — Gypsum board, level 4 finish: 65% complete this period",
+        unit: "% of scheduled value",
+        note: "Use the GC's own line numbers and descriptions. Their AP drops your application into theirs; a scope they cannot match sits.",
+      },
+      {
+        description: "Less: previously billed to date",
+        unit: "cumulative to prior period",
+        note: "Progress billing is cumulative. Showing the prior total is what proves this period's amount is not a double bill.",
+      },
+      {
+        description: "Change order #7 — added fire-rated partition at corridor 2B, per RFI 23 (approved 8/14)",
+        unit: "lump sum or T&M per CO",
+        note: "Only with the approval reference. A verbal field directive with no signed CO or written confirmation is not billable and will not be paid.",
+      },
+      {
+        description: "Labour — T&M ticket #112, 3 crew × 8 hrs @ subcontract rate",
+        unit: "per hour at contract rate",
+        note: "For directed extra work outside the lump sum. The signed daily ticket is the evidence; attach it.",
+      },
+      {
+        description: "Materials stored on site — metal framing delivered 8/22, invoice attached",
+        unit: "at cost, per delivery",
+        note: "Most subcontracts allow billing stored materials. The supplier invoice and a bill of sale or photo are what the GC's lender needs to release it.",
+      },
+      {
+        description: "Retainage withheld — 10% of earned this period",
+        unit: "% of amount earned",
+        note: "Show it as a line, not a silent reduction. A running retainage balance is the only record of what you are owed at closeout.",
+      },
+      {
+        description: "Retainage release — 50% at substantial completion per §5.4",
+        unit: "% of retainage held",
+        note: "Retainage is never released unless invoiced. Bill it as its own application, citing the contract clause that triggers it.",
+      },
+      {
+        description: "Backcharge disputed — GC dumpster fee 8/9, no authorising clause (carried, not deducted)",
+        unit: "open item, $0 this period",
+        note: "Bill your full earned amount. Netting a backcharge yourself accepts it; carrying it as an open item keeps it a question.",
+      },
+    ],
+    gotchas: [
+      "Submitted after the GC's billing cutoff. A day late is not a few days late — the application rolls into next month's package and pays roughly thirty days later.",
+      "Line items that do not match the schedule of values. The GC's AP builds their application from yours; a scope they cannot map is re-keyed at their convenience or set aside.",
+      "Unconditional lien waiver signed to get the check. It surrenders your lien rights the moment it is signed, paid or not. Sign the conditional form; it converts on its own when the money clears.",
+      "Change order billed on a verbal directive. Without a signed CO, a written field-directive confirmation, or at minimum an email from the super, the work is unpaid extra work — however plainly it was asked for.",
+      "Retainage silently netted, then never invoiced. If it is not a line with a running balance, nobody — including you — knows what is held, and at closeout it is simply not released.",
+    ],
+    faqs: [
+      {
+        q: "What should a subcontractor invoice include?",
+        a: "Your business name, address, and remit-to details; the GC's name and the project name and number as they appear on the subcontract; the invoice or application number and the period it covers; each schedule-of-values line with its scheduled value, percentage complete, and amount earned to date; the amount previously billed; approved change orders on their own lines with the CO number and approval date; retainage withheld this period and the running balance held; the net amount due now; and payment terms. Attach the conditional lien waiver for the amount billed, signed daily tickets for any T&M work, supplier invoices for stored materials, and — on a public or bonded job — any certified payroll the contract requires. The invoice is paid as a package; the pieces missing from it are the ones that hold it.",
+      },
+      {
+        q: "How do I show retainage on a subcontractor invoice?",
+        a: "As its own line, every period, with three numbers visible: the amount earned this period, the retainage withheld from it at the contract percentage (typically 5–10%), and the net due after retainage. Keep a fourth figure below the total — retainage held to date — so the running balance is on every application. Retainage silently subtracted from the total is the version that gets lost: at closeout, neither you nor the GC's office has a clean record of what was held. When the contract's release trigger arrives (substantial completion, or a reduction to 5% at 50% complete on many jobs), invoice the release as a separate application citing the clause; retainage is not released automatically.",
+      },
+      {
+        q: "Should I sign a lien waiver with my invoice?",
+        a: "Yes — a conditional one. The GC will require a waiver with or before each payment, and the form matters more than the timing. A conditional waiver only takes effect once the payment actually clears, so you can submit it with the invoice without giving anything up. An unconditional waiver surrenders your lien rights for that amount the moment it is signed, whether or not you are ever paid; it belongs only on a payment you have already received and cleared. About a dozen states prescribe statutory waiver forms that must be used verbatim; elsewhere the GC's form is customary, so read it for the word 'unconditional' and for any 'through date' that would waive work not yet billed. If you have your own subs or suppliers, collect the same conditional waivers from them and pass them up.",
+      },
+      {
+        q: "Can a general contractor deduct backcharges from my invoice?",
+        a: "Only when the subcontract authorises the deduction and the cost is real and documented — and the practical answer is that many backcharges appear with neither. Cleanup the GC says they did for you, damage attributed to your crew, shared dumpster or temporary-power fees, and GC-supplied materials are the usual ones. Do not pre-deduct a backcharge you dispute: bill your full earned amount, and if the GC nets it from the payment, respond in writing asking for the clause that authorises it and the documentation behind it, and carry the amount as an open item on the next application. A backcharge quietly absorbed into a reduced invoice is one you have agreed to; one carried as a line is still a question.",
+      },
+    ],
+    guideSlug: "how-to-invoice-as-a-subcontractor",
+    guideLabel: "How to invoice as a subcontractor — pay-when-paid, notices, and backcharges",
+  },
 };
 
 /** Stable ordering for the hub grid and sitemap. */

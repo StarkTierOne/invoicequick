@@ -223,7 +223,13 @@ export default async function BlogPostPage({ params }: Props) {
           </Link>
           <div className="flex items-center gap-4">
             <Link href="/blog" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Blog</Link>
-            <Link href="/create" className="btn-primary text-sm !py-2 !px-4">Create Invoice</Link>
+            {/* On a guide that backs a template page, the sticky nav button is
+                the CTA a reader sees for the whole scroll — it should open the
+                same seeded invoice as every other CTA on the page, not a blank
+                one. Same `trade` the in-body and end CTAs derive from. */}
+            <Link href={trade ? `/create?trade=${trade.slug}` : "/create"} className="btn-primary text-sm !py-2 !px-4">
+              Create Invoice
+            </Link>
           </div>
         </div>
       </nav>

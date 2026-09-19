@@ -161,6 +161,15 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Lumper fee — receipt attached",
     ],
   },
+  subcontractor: {
+    trade: "Subcontracting",
+    items: [
+      "SOV line _ — scope, _% complete this period",
+      "Less: previously billed to date (enter as negative credit)",
+      "Change order #_ — description (approved _/_)",
+      "Retainage withheld — _% of earned this period (enter as negative credit)",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [
