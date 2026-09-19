@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "year-end-invoicing-checklist",
+    title: "Year-End Invoicing Checklist for Freelancers: Get Every Invoice Paid Before December 31 (2026)",
+    excerpt:
+      "December is the month clients stop paying and your tax year stops counting. The invoice that would have cleared in nine days in March sits for five weeks because the approver is on vacation, AP closed the books on the 15th, and the budget was spent by Thanksgiving — and for a cash-basis freelancer, the payment that lands January 4 instead of December 28 has just changed tax years. Year-end invoicing is a scheduling problem disguised as a paperwork problem. This checklist is the schedule: finding each client's AP cutoff and working backward from it; billing unbilled work in November instead of waiting for a project to wrap; the year-end reminder that actually moves an aging invoice; when deferring income to January is smart and when it's just starving December; reconciling what you invoiced against what clients will report on 1099-NEC and 1099-K forms; the unpaid list, numbering, and why bad debt isn't a deduction on the cash basis; and setting up January — rate increases, retainer renewals, recurring invoices, the Q4 estimate — so the new year starts on your terms. With a month-by-month checklist from October to January.",
+  },
+  {
     slug: "how-to-invoice-for-junk-removal",
     title: "How to Invoice for Junk Removal & Hauling (Volume vs Weight, Dump Fees & Cleanouts, 2026)",
     excerpt:

@@ -11,15 +11,32 @@ import { tradeCards } from "@/lib/trade-cards";
 // the builder would have asked for anyway — so the click lands them on a form
 // that is already partly theirs rather than blank. Empty input still goes to
 // /create, so this never becomes a gate in front of the free tool.
+//
+// Below the input: the trade chips. The site's strongest conversion asset is
+// that /create can open with a trade's real line items already listed
+// (`?trade=<slug>`), but until now the only way to reach that from the
+// homepage was the trade grid, five screens down. A visitor who knows they're
+// a plumber shouldn't have to scroll past the comparison table to say so. The
+// chips are derived from `tradeCards` (template-backed trades only), and they
+// carry the typed name along, so name + trade land together — /create reads
+// both. The delegated analytics listener records these as create_cta_click
+// with the trade dimension set, so "hero chip" vs "hero button" is answerable.
+const HERO_CHIP_COUNT = 8;
+
 function HeroStarter() {
   const router = useRouter();
   const [name, setName] = useState("");
+  const trimmed = name.trim();
 
   const start = (e: React.FormEvent) => {
     e.preventDefault();
-    const trimmed = name.trim();
     router.push(trimmed ? `/create?from=${encodeURIComponent(trimmed)}` : "/create");
   };
+
+  const chipHref = (tmpl: string) =>
+    trimmed ? `/create?trade=${tmpl}&from=${encodeURIComponent(trimmed)}` : `/create?trade=${tmpl}`;
+
+  const chips = tradeCards.filter((t) => t.tmpl).slice(0, HERO_CHIP_COUNT);
 
   return (
     <div className="max-w-xl mx-auto">
@@ -47,6 +64,32 @@ function HeroStarter() {
           Or see how it works &darr;
         </a>
       </p>
+      <div className="mt-5" aria-labelledby="hero-trade-label">
+        <p id="hero-trade-label" className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">
+          Or start with your trade&rsquo;s line items already listed
+        </p>
+        <ul className="flex flex-wrap justify-center gap-2">
+          {chips.map((t) => (
+            <li key={t.tmpl}>
+              <Link
+                href={chipHref(t.tmpl!)}
+                className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-700 hover:border-indigo-400 hover:text-indigo-700 hover:bg-indigo-50 transition-colors"
+              >
+                <span aria-hidden="true">{t.icon}</span>
+                {t.trade}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <Link
+              href="/invoice-template"
+              className="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium text-indigo-600 hover:text-indigo-700 underline decoration-indigo-300 underline-offset-2"
+            >
+              All trades &rarr;
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
