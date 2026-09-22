@@ -1521,6 +1521,91 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "how-to-invoice-as-a-subcontractor",
     guideLabel: "How to invoice as a subcontractor — pay-when-paid, notices, and backcharges",
   },
+  tutoring: {
+    slug: "tutoring",
+    trade: "Tutoring & Test Prep",
+    icon: "📚",
+    metaTitle: "Free Tutoring Invoice Template — Session Packages, No-Shows & Sibling Billing | InvoiceQuick",
+    metaDescription:
+      "A free tutoring invoice template for private tutors and test-prep coaches. Itemize each session by student, date and subject, draw down a prepaid package, charge a late cancellation under your policy, bill two siblings on one invoice, then download a PDF. No sign-up.",
+    tagline:
+      "Built for tutors billing a parent who was not in the room, with each session, package balance, and missed-session fee on its own line.",
+    intro: [
+      "A tutoring invoice is read by someone who was not there. The student sat in the session; the parent — or the school district — pays for it, and the only account of what happened that the payer will ever see is the line on your invoice. That one fact shapes the whole document. Every session needs the student's name, the date, the subject, and the duration, because the parent is checking it against a calendar and a child's report of the week, not against their own memory. A line that says 'tutoring — 4 hours' asks a parent to take four hours on faith; four lines that each say which child, which Tuesday, and which subject ask nothing.",
+      "The second thing that makes tutoring different is that the money often arrives before the work exists. A ten-session package paid in September is not September income; it is nine sessions you still owe, and the invoice is the ledger that proves how many are left. This template shows a package as a drawdown — sessions used, sessions remaining — rather than as a lump sum, bills a missed session only under a policy the family signed before it happened, puts a sibling discount on its own visible line instead of quietly lowering a rate, and carries the purchase-order number a district's accounts-payable desk needs before it will match the invoice to anything. Each of those is a line, not a footnote, because each is where a tutoring invoice gets questioned.",
+    ],
+    billingModel:
+      "Per-session at an hourly or flat session rate, invoiced weekly or monthly in arrears for a family you are still getting to know; prepaid packages of 5, 10, or 20 sessions at a small discount, sold up front and drawn down on each invoice; a monthly retainer for a standing weekly slot, billed in advance whether or not the student uses every session; and, for school-district or agency work, hours at a contracted rate against a purchase order, billed on the district's calendar at net 30 to net 60. Small-group sessions are priced per student per session. Cancellation and no-show fees are billed at the rate the signed policy states — full session, half session, or a flat fee — never at a rate improvised after the fact.",
+    lineItems: [
+      {
+        description: "1:1 session — Algebra II, Tue 9/15, 60 min — Maya",
+        unit: "per session, at the hourly or session rate",
+        note: "Student, date, subject, duration, on every line. The parent reading this was not in the room; the line is the only record they have.",
+      },
+      {
+        description: "Prepaid package — SAT prep, 10 sessions: 4 used this period, 6 of 10 remaining",
+        unit: "per package, drawn down per session",
+        note: "Show the balance, not just the charge. A package with a visible countdown does not produce a 'we already paid for this' dispute at session seven.",
+      },
+      {
+        description: "Late cancellation — Thu 9/17, cancelled 3 hrs before (24-hour policy, §2 of agreement)",
+        unit: "full or half session rate, per the signed policy",
+        note: "Billable only under a policy the family agreed to in writing before the session. Cite the clause; a fee with no clause behind it is a favour you are asking for.",
+      },
+      {
+        description: "Small-group session — Chemistry, 3 students, 90 min (per-student rate)",
+        unit: "per student, per session",
+        note: "State which rate applies. A group rate is lower per student and higher per hour for you, and the invoice should make clear which one the family is paying.",
+      },
+      {
+        description: "Sibling discount — 10% on second student (Liam)",
+        unit: "negative line, % of the second student's sessions",
+        note: "On its own line, so the parent sees the full rate held and the discount given. A quietly lowered rate is invisible and becomes the new rate.",
+      },
+      {
+        description: "Materials — official practice tests ×2, at cost, receipt attached",
+        unit: "at cost, per item",
+        note: "Tutoring is usually not taxable; goods can be. Billing materials at cost, on their own line, keeps the taxable thing separate from the service.",
+      },
+      {
+        description: "Travel — in-home sessions, 3 visits × flat fee",
+        unit: "flat fee per visit",
+        note: "A stated per-visit fee, listed. Folding travel into a higher hourly rate makes the rate look wrong against your own published one.",
+      },
+      {
+        description: "District PO #24-1187 — Tier 2 reading intervention, 12 hrs @ contract rate, 9/1–9/15",
+        unit: "per hour, at the contracted rate",
+        note: "The purchase-order number, the service period, and the hours are what accounts payable matches. Any of the three missing and the invoice comes back.",
+      },
+    ],
+    gotchas: [
+      "Sessions rolled into one line. 'Tutoring — 4 hrs' asks a parent to trust four hours they did not see. When the child says a session was shorter, or on a different day, the invoice has no answer.",
+      "A package billed as a lump sum and never drawn down. When the family stops at session six, nobody can show how many sessions were used, and the refund conversation becomes a negotiation.",
+      "A cancellation fee with no signed policy behind it. The parent refuses, is right to, and the next invoice is read with suspicion. The policy must be agreed before the first session, and cited when charged.",
+      "Sent to the wrong payer. Invoicing the student, or the parent who is not the one paying in a split household, means it sits until someone forwards it — and the due date runs the whole time.",
+      "District invoice without the PO number, the service dates, or a W-9 on file. It is not disputed; it is returned, and the net-45 clock restarts when you resubmit.",
+    ],
+    faqs: [
+      {
+        q: "What should a tutoring invoice include?",
+        a: "Your name or business name, address, and contact details; the payer's name — the parent, guardian, or district, not the student — and their billing address or email; a unique invoice number and the invoice and due dates; one line per session with the student's name, date, subject, and duration and the rate that applied; any prepaid package shown with sessions used this period and sessions remaining; cancellation or no-show fees on their own lines with the policy clause cited; group sessions with the per-student rate stated; any sibling or multi-session discount as a visible negative line; materials and travel listed separately at their stated cost; the subtotal, any tax on taxable items, and the total due; and your payment terms and accepted methods. For a district or agency, add the purchase-order number, the contract or program name, and the service period on every invoice, and keep a W-9 on file with their office before the first one goes out.",
+      },
+      {
+        q: "How do I invoice one family for two or more students?",
+        a: "One invoice, addressed to the paying parent, with each student's sessions grouped under a heading with the student's name — never interleaved by date, and never merged into a single 'tutoring' total. A parent allocating a budget between children, or splitting costs with a co-parent, needs to see each child's subtotal at a glance. If you offer a sibling discount, put it on its own negative line beneath the second student's sessions rather than lowering that student's rate; the full rate stays on record and the discount is visibly a courtesy. The one case for separate invoices is a household where different people pay for different children — a grandparent funding one child's test prep, say — in which case each payer gets their own invoice with only their student on it. Ask which situation applies at the start; it is an awkward question to discover at the first payment.",
+      },
+      {
+        q: "Should the invoice go to the parent or the student?",
+        a: "To whoever agreed to pay — and for a minor that is always a parent or guardian, named on the invoice as the bill-to, even when the student is the one you coordinate scheduling with. An invoice sent to a sixteen-year-old is an invoice that waits to be forwarded, and the due date does not wait with it. For an adult learner or a college student paying their own way, the student is the payer and the bill-to; if a parent is paying for an adult student, confirm that in writing and address the invoice to the parent. In a split household, ask at intake which parent is responsible for payment and whether the other should receive a copy, and address the invoice to the payer only. Get the payer's own email and billing details rather than routing through the student — the invoice should arrive where the money is.",
+      },
+      {
+        q: "How do I bill for group tutoring sessions?",
+        a: "Per student, per session, at a stated group rate — and the invoice to each family should say it is a group rate and, ideally, the group size, so nobody later compares it to your one-to-one rate and thinks they were overcharged. Each family receives its own invoice for its own student; do not send one invoice to the group and hope they divide it. Set the group rate so that the per-hour total to you is above your one-to-one rate — three students at roughly half your solo rate is typical — and decide in advance, in the written policy, what happens when one student in a fixed group misses: the usual answer is that the absent student's family still pays, because the session ran and the seat was held. If group size varies week to week, state the rate tiers up front rather than adjusting the price after each session.",
+      },
+    ],
+    guideSlug: "how-to-invoice-for-tutoring",
+    guideLabel: "How to invoice for tutoring and test prep — packages, no-shows, and school district POs",
+  },
 };
 
 /** Stable ordering for the hub grid and sitemap. */

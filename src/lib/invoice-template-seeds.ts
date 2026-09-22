@@ -170,6 +170,15 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Retainage withheld — _% of earned this period (enter as negative credit)",
     ],
   },
+  tutoring: {
+    trade: "Tutoring & Test Prep",
+    items: [
+      "1:1 session — subject, date, 60 min — student name",
+      "Prepaid package — _ sessions: _ used this period, _ remaining",
+      "Late cancellation — date (per 24-hour policy)",
+      "Materials — practice tests / workbook, at cost",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [
