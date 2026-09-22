@@ -1606,6 +1606,93 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "how-to-invoice-for-tutoring",
     guideLabel: "How to invoice for tutoring and test prep — packages, no-shows, and school district POs",
   },
+  consulting: {
+    slug: "consulting",
+    trade: "Consulting",
+    icon: "💼",
+    metaTitle: "Free Consulting Invoice Template — Retainers, Milestones & Expenses | InvoiceQuick",
+    metaDescription:
+      "A free consulting invoice template for independent and boutique consultants. Draw down a monthly retainer, bill a milestone against its acceptance date, separate out-of-scope hours, pass expenses through at cost, and carry the PO number AP needs. Download a PDF. No sign-up.",
+    tagline:
+      "Built for consultants billing a retainer, a project milestone, and an expense line on the same engagement — each shown so a procurement desk can approve it without asking.",
+    intro: [
+      "A consulting invoice is usually approved by someone who did not hire you. The client you advise reads it for thirty seconds and forwards it; the person who actually releases the money is in accounts payable, matching your document against a purchase order, a vendor record, and a budget line. They cannot judge whether the advice was good, so they check whether the invoice is answerable: does the amount match what was authorized, does the period match the contract, is there a number they can file it under. That is the whole reason a single line reading 'Consulting services — $12,000' sits unpaid for six weeks. It is not disputed. It is unanswerable, so it goes to the bottom of a pile until someone has time to ask.",
+      "The second thing that makes consulting billing its own problem is that one engagement usually runs on three clocks at once. A monthly retainer buys availability and a block of hours. A project milestone is earned when a deliverable is accepted, not when you finish writing it. Hours beyond the retainer are billable only if somebody agreed to them in writing before they were worked. Fold all three into one total and you have hidden the two facts a client checks hardest: how much of what they prepaid is left, and what they agreed to pay extra for. This template keeps them apart — the retainer shown as a drawdown with the balance and the rollover rule visible, the milestone tied to the date it was accepted, out-of-scope hours carrying the approval that authorized them, and expenses passed through at cost on their own lines so nobody has to wonder whether a margin is buried in them.",
+    ],
+    billingModel:
+      "Four structures, usually in combination. A monthly retainer billed in advance for a named period, either as pure availability or as a block of included hours that draws down. Project work billed at fixed price against milestones, each released on acceptance of a deliverable rather than on a calendar date. Time and materials at an hourly rate, or at a day rate for onsite work such as workshops and discovery sessions, where a day is a stated number of hours and travel days are priced separately. And, on larger engagements, a blended rate covering a team, or tiered rates quoted per seniority. Expenses are almost always separate from all of these and reimbursed at cost against receipts. Corporate clients pay net 30 to net 60 against a purchase order; the terms start when the invoice is accepted by AP, not when you send it.",
+    lineItems: [
+      {
+        description: "Strategic advisory retainer — September 2026 (per agreement dated 3/14)",
+        unit: "flat monthly fee, billed in advance",
+        note: "Name the month in the line. A retainer with no period on it is the single most common reason a client believes it covered more than it did.",
+      },
+      {
+        description: "Retainer hours — 20 included: 17 used this period, 3 remaining (expire 9/30, no rollover)",
+        unit: "drawdown against the included block",
+        note: "Show the balance and the rollover rule together. The client checks what they have left; stating that unused hours expire is far easier here than in an email next month.",
+      },
+      {
+        description: "Additional hours beyond retainer — 6 hrs @ standard rate (approved by email 9/12)",
+        unit: "per hour, at the contracted overage rate",
+        note: "Cite the approval on the line. Out-of-scope hours billed without a written yes are the hours that get struck off, and arguing about them costs more than they were worth.",
+      },
+      {
+        description: "Milestone 2 of 4 — Operating model recommendation, accepted 9/18",
+        unit: "fixed fee per milestone, on acceptance",
+        note: "Bill the acceptance, not the delivery. The date you name is the one the contract ties payment to; without it the invoice is early and AP will treat it that way.",
+      },
+      {
+        description: "Discovery workshop — 2 onsite days, 9/8–9/9 @ day rate (8 hrs/day)",
+        unit: "per day, hours per day stated",
+        note: "Define what a day is. A 'day' that means seven hours to you and twelve to the client is a dispute waiting for the second workshop.",
+      },
+      {
+        description: "Principal 12 hrs @ senior rate · Analyst 34 hrs @ associate rate",
+        unit: "per hour, per seniority tier",
+        note: "If you quoted tiered rates, invoice in tiers; if you quoted one blended rate, invoice the blend and do not itemize by person. Mixing the two makes the total look reverse-engineered.",
+      },
+      {
+        description: "Travel and expenses — airfare, lodging, ground: at cost, receipts attached, no markup",
+        unit: "pass-through at cost",
+        note: "State 'at cost' explicitly and attach the receipts. A markup the contract does not authorize is the finding that gets an engagement audited rather than paid.",
+      },
+      {
+        description: "PO #4500192837 — Cost center 7412, services 9/1–9/30, MSA ref C-2026-118",
+        unit: "reference block, on every invoice for this client",
+        note: "The PO number, the cost center, the service period, and the contracting entity are what AP matches. One of them wrong and the invoice is returned, not queried — and the net-45 clock starts again on resubmission.",
+      },
+    ],
+    gotchas: [
+      "One line for the whole engagement. 'Consulting services — $12,000' cannot be matched to a PO, a budget line, or a period, so it cannot be approved by anyone except the person who hired you — who is rarely the person who pays.",
+      "A retainer invoice that never names its month. The client reads a second retainer invoice as a duplicate of the first, or believes one retainer covered a quarter. Both conversations are avoided by four words in the description.",
+      "Unused retainer hours with no stated rule. If the invoice does not say whether unused hours roll forward or expire, the client assumes they roll forward — indefinitely — and you will be asked to honour a year of them at the moment you try to end the engagement.",
+      "Out-of-scope hours billed without written approval. Verbal agreement in a meeting is not something accounts payable can see. Get the yes in writing before the work, and reference it on the line.",
+      "A milestone billed on delivery rather than acceptance. Invoicing the day you send the deliverable puts you ahead of the contract; the invoice ages in AP while the client is still reviewing, and your terms quietly expire before the clock ever legitimately started.",
+      "Expenses marked up quietly, or lumped as 'expenses — $2,140'. Both invite the same question, and the answer takes longer to give than the itemization would have taken to write. At cost, listed, receipts attached.",
+      "Invoiced to the wrong legal entity. Large clients have many; the one on the contract is the one on the invoice. A mismatch fails the vendor match and the invoice comes back untouched.",
+    ],
+    faqs: [
+      {
+        q: "How do I show retainer hours on an invoice?",
+        a: "As a drawdown, not as a charge. The line should carry four numbers: hours included in the retainer, hours used in this period, hours remaining, and what happens to the remainder — 'expire 9/30, no rollover' or 'roll forward one period, maximum 10 hours.' Write the rollover rule on every invoice rather than once in the contract, because the contract is not what the client reads each month. Bill the retainer itself as a flat fee for the named period whether or not the hours were used; that is what a retainer is, and stating the usage alongside it is how you show the client the value without turning availability into a timesheet. When usage runs consistently under the block, raise it yourself before renewal — a client who discovers a pattern of unused hours in their own records negotiates from a stronger position than one you told first. When it runs over, the overage belongs on its own line with the approval cited, never silently absorbed into the retainer.",
+      },
+      {
+        q: "How do I bill for work outside the agreed scope?",
+        a: "Only with a written approval that predates the work, and always on a separate line that names it. The sequence that gets paid is: you notice the request is outside scope, you say so in writing with an estimate of hours and cost, the client replies yes in writing, you do the work, and the invoice line reads 'Additional hours beyond scope — 6 hrs @ rate (approved by email 9/12).' The sequence that does not get paid is doing the work first because it seemed small and the relationship seemed good. On fixed-price engagements the same rule applies with a change order instead of an email, numbered and referenced on the line the way a construction change order is. If the client's own process requires a PO amendment for anything beyond the original amount, find that out at kickoff — an approval from your client contact does not help if their AP system will reject any invoice exceeding the PO's value.",
+      },
+      {
+        q: "How do I invoice when several consultants at different rates worked on the project?",
+        a: "Invoice in whatever shape you quoted, and do not switch. If you quoted tiered rates — a principal rate, a senior rate, an associate rate — the invoice shows one line per tier with the hours and the rate for each, which lets the client see that junior work was billed junior. If you quoted a single blended rate for the team, the invoice shows total hours at the blended rate and does not break down who did what; itemizing by person under a blended quote invites the client to recalculate your blend and ask why the analyst's hours cost the same as the principal's. Either way, name people only when the contract requires named resources, and keep individual timesheets available on request rather than attached by default. For staff-augmentation-style engagements where the client approves timesheets weekly, reference the approved timesheet numbers on the invoice — that reference is usually what AP matches against, ahead of your own line items.",
+      },
+      {
+        q: "What does a corporate accounts payable department need on a consulting invoice?",
+        a: "A purchase order number, if one was issued — and most corporate engagements issue one, whether or not your client contact mentioned it. Beyond the PO: the exact legal entity being billed, matching the contract rather than the brand name; your registered vendor name and vendor number as they appear in their system; the service period the work covers; the cost center or department code if the client uses them; a reference to the master services agreement or statement of work; a unique invoice number; and the payment terms as contracted. A W-9, or the local equivalent, must be on file with their vendor desk before the first invoice, not sent with it. Ask for the whole set at kickoff in one message — the PO, the entity, the AP submission address, and whether they use an invoicing portal — because each item discovered later costs a full billing cycle. An invoice that fails the vendor or PO match is usually returned without comment rather than queried, and the payment terms restart from the resubmission date, which is how a net-30 client becomes a net-75 client without ever paying late.",
+      },
+    ],
+    guideSlug: "invoice-template-consultants",
+    guideLabel: "Invoice template for consultants — itemizing hours, retainers, and expense reimbursements",
+  },
 };
 
 /** Stable ordering for the hub grid and sitemap. */

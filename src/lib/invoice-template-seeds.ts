@@ -179,6 +179,17 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Materials — practice tests / workbook, at cost",
     ],
   },
+  consulting: {
+    trade: "Consulting",
+    items: [
+      "Advisory retainer — <month> (per agreement dated _/_)",
+      "Retainer hours — _ included: _ used this period, _ remaining (rollover rule)",
+      "Additional hours beyond retainer — _ hrs @ rate (approved _/_)",
+      "Milestone _ of _ — deliverable, accepted _/_",
+      "Travel and expenses — at cost, receipts attached",
+      "PO #_ — cost center _, services _/_–_/_",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [

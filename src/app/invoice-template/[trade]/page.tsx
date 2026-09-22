@@ -132,6 +132,25 @@ export default async function TradeInvoiceTemplatePage({ params }: Props) {
             </tbody>
           </table>
         </div>
+
+        {/* The table is the page's proof, and until now the next thing after it
+            was a list of ways invoices get disputed — several screens of
+            negative framing before any action. This is the highest-comprehension
+            moment on the page: the reader has just seen the exact lines they
+            bill. The label is deliberately distinct from the hero, mid-page and
+            footer CTAs so `create_cta_click` can tell them apart and show
+            whether reading the table converts better than landing on the hero. */}
+        <p className="mt-6 text-center">
+          <Link
+            href={`/create?trade=${t.slug}`}
+            className="text-indigo-600 font-semibold hover:text-indigo-700 text-sm inline-block"
+          >
+            Open these lines in the invoice builder &rarr;
+          </Link>
+          <span className="block text-xs text-gray-500 mt-1">
+            Editable on screen &middot; delete what does not apply &middot; free PDF, no sign-up
+          </span>
+        </p>
       </section>
 
       {/* Gotchas */}
