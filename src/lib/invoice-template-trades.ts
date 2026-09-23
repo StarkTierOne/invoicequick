@@ -1693,6 +1693,99 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "invoice-template-consultants",
     guideLabel: "Invoice template for consultants — itemizing hours, retainers, and expense reimbursements",
   },
+  "graphic-design": {
+    slug: "graphic-design",
+    trade: "Graphic Design",
+    icon: "✏️",
+    metaTitle: "Free Graphic Design Invoice Template — Revisions, Licensing & Source Files | InvoiceQuick",
+    metaDescription:
+      "A free graphic design invoice template for freelance designers and studios. Show the revision rounds included and the ones beyond them, price the usage license separately from the artwork, charge for source-file release, pass stock and font licenses through at cost, and bill a kill fee when a project stops. Download a PDF. No sign-up.",
+    tagline:
+      "Built for designers billing concepts, revision rounds, a usage license, and a source-file release on the same project — each priced on its own line so none of them turns into a free extra after delivery.",
+    intro: [
+      "Design work looks finished long before it is paid for. The client sees a logo on a screen and the project reads, to them, as complete — which is why almost every dispute on a design invoice is about something that happened after the artwork was good. Another round of changes, because the file is right there and the change seems small. The logo appearing on a billboard when the quote covered a website. A request for the layered file, framed as housekeeping rather than as the transfer it actually is. None of these feel like new work to the person asking, and that is precisely the problem: an invoice that priced the design and nothing else has no line to point at when they happen, so the answer becomes a negotiation you are having for free.",
+      "The second thing that makes design billing its own problem is that the client is not buying a file. They are buying a defined right to use it, for a term, in a territory, across named media — and separately, if they pay for it, the editable source that lets them change it without you. Ownership, usage, and source files are three different things, and a client who was never shown them as three different things reasonably assumes that paying once bought all three. This template keeps them apart: concepts and revision rounds priced against the count that was quoted, additional rounds carrying the written approval that authorized them, the usage license written with its term, territory and media on the line, the source-file release priced as the deliverable it is, and stock assets and fonts passed through at cost with the license issued in the client's name rather than yours.",
+    ],
+    billingModel:
+      "Most design work is quoted as a flat project fee covering a stated number of concepts and a stated number of revision rounds, with anything past those counts billed per round or at an hourly rate. Retainers are common for ongoing brand or marketing work, billed monthly for a block of hours or a defined output. Hourly is usual for production and adaptation work where the scope genuinely cannot be fixed in advance. Layered on top of whichever structure applies: a usage license priced by term, territory and media; a source-file release fee when the client wants the editable artwork, commonly quoted at a substantial share of the project fee because it is what makes them independent of you; a rush surcharge, typically a percentage, when a compressed deadline displaces other work; and stock photography, illustration and font licenses passed through at cost. The industry norm is 50% of the project fee up front and 50% on delivery of final files, with the deposit shown on the final invoice as a credit rather than quietly netted off the total.",
+    lineItems: [
+      {
+        description: "Brand identity — 3 initial concepts, per estimate dated 8/28",
+        unit: "flat project fee, concepts as quoted",
+        note: "Name the number of concepts the fee bought. A design fee with no count attached is read as an appetite rather than a deliverable, and the fourth concept is requested as though it were always included.",
+      },
+      {
+        description: "Revision rounds — 2 included: round 1 completed 9/8, round 2 completed 9/16",
+        unit: "included in the project fee",
+        note: "Show the included rounds being used up, even though they cost nothing. This line is what makes the next one obviously fair instead of obviously new.",
+      },
+      {
+        description: "Additional revision round — round 3 @ per-round rate (approved by email 9/18)",
+        unit: "per round, beyond the included count",
+        note: "Cite the approval and the round number. A change billed without a written yes is the charge clients strike off first, and it is hard to defend a round nobody agreed was a round.",
+      },
+      {
+        description: "Usage license — digital: website and social, 2 years, United States",
+        unit: "by term, territory and media",
+        note: "Write all three. A license with no boundary on it is a license with no boundary on it, and the second use is the one you will wish you had scoped.",
+      },
+      {
+        description: "Expanded license — print advertising, added 9/20 (outside original digital-only scope)",
+        unit: "incremental fee over the original grant",
+        note: "Price the expansion when the client outgrows the grant, not retroactively as a penalty. The line reads as an upgrade they chose, which is what it is.",
+      },
+      {
+        description: "Source-file release — layered AI and PSD, per agreement clause 4",
+        unit: "release fee, separate from the final artwork",
+        note: "The editable file is the thing that makes the client independent of you. Handed over unpriced, it was free — and the request almost always arrives as a small favour rather than as the deliverable it is.",
+      },
+      {
+        description: "Stock photography and licensed fonts — at cost, licensed in client's name",
+        unit: "pass-through at cost, receipts attached",
+        note: "State whose name the license is in. An asset licensed to you and used by the client is an exposure that surfaces years later, and it surfaces as your problem.",
+      },
+      {
+        description: "Rush surcharge — 48-hour turnaround, 25% (agreed 9/4 before work began)",
+        unit: "percentage of the project fee",
+        note: "Agree the surcharge before the compressed work, not when invoicing it. Nobody accepts a rush premium after the rush is over and the deadline was met.",
+      },
+      {
+        description: "Less: deposit received 8/30 — 50% of project fee (enter as a negative credit)",
+        unit: "credit against the total",
+        note: "Show the deposit as a credit rather than halving the fee. The client sees the full value of the project and what remains, and your records match theirs line for line.",
+      },
+    ],
+    gotchas: [
+      "One line reading 'Logo design — $2,500.' It prices the artwork and nothing else, so the revision count, the usage license and the source files were all, as far as the invoice is concerned, included. Every one of them becomes a conversation you are having after the money was agreed.",
+      "Revisions with no included count stated anywhere the client reads. If the invoice and the estimate are both silent, the honest assumption is that revisions continue until the client is happy, and that assumption is not unreasonable — it is just expensive.",
+      "No definition of what a round is. Consolidated feedback in one pass is a round; eleven separate requests trickling in over a week is eleven interruptions that the client experiences as one round, because to them it was one opinion arriving slowly.",
+      "Final files delivered with the license unnamed. A PNG in an email says nothing about whether the mark can go on packaging, in a national campaign, or on merchandise resold at a profit, and the client will not ask a question the invoice never raised.",
+      "Source files handed over as a courtesy. It is the single most valuable thing you deliver and the easiest to give away, because the request sounds administrative. Once sent unpriced, it cannot be re-priced later.",
+      "Stock assets and fonts licensed under your account and used by the client. Many licenses are non-transferable; the client's use is then unlicensed, and the paper trail leads to you rather than to them.",
+      "Rush work absorbed silently. Displacing other projects for a compressed deadline costs you real money, and a surcharge that was never agreed in advance cannot be added afterward without it reading as a penalty for their urgency.",
+      "A project cancelled mid-stream with no kill-fee term. Without one you are invoicing for 'work done' against nothing, and the client's counter-offer — that unused work has no value — is difficult to argue with once the contract failed to say otherwise.",
+    ],
+    faqs: [
+      {
+        q: "What do I invoice when a client cancels a design project halfway through?",
+        a: "A kill fee, if the agreement provided for one — and if it did not, this is the project that should teach you to add the clause. The widely cited benchmark comes from AIGA's pricing guidance, which ties the fee to how far the work progressed: roughly 75% of the contract once the first creative has been presented, around 90% once a second version is complete, and the full amount once the work is finished, whether or not the client ever uses it. The logic is that the expensive part of design is the thinking, which is delivered at the first presentation, and that the time was blocked out and cannot be resold after the fact. Invoice it as its own line that names the stage — 'Project cancellation fee — per agreement clause 7, cancelled after first creative presentation 9/11' — rather than as a discounted version of the original fee, because a discounted fee invites a negotiation about the discount. Note also what the cancellation does not transfer: unless the contract says otherwise, work that was cancelled and paid at a partial rate does not hand over a usage license or the source files, and that should be stated on the invoice so it is not assumed. If no kill-fee term exists, invoice for the stage actually completed against whatever the estimate did break out, get the number agreed in writing before you send it, and treat anything you recover as better than the clause you did not have.",
+      },
+      {
+        q: "Should I charge extra for source files?",
+        a: "Usually yes, and the reason is worth being clear about with yourself before you explain it to a client. The final artwork is what they commissioned; the layered, editable file is the means of production, and handing it over means every future change can be made by anyone, including the next designer. Designers who price it commonly quote a release fee somewhere between half and the whole of the original project fee, and there is nothing unusual about that — it is the difference between buying a finished thing and buying the ability to make more of them. What matters far more than the exact number is deciding before delivery rather than after, because the request almost always arrives framed as housekeeping — 'can you just send over the working files' — at a moment when saying no feels like being difficult about something small. Put the answer in the estimate, so the invoice line is simply the term being exercised: 'Source-file release — layered AI and PSD, per agreement clause 4.' Some designers include source files by default for retainer clients and in-house-style relationships where the client's own team does production work, and price the release only for one-off projects. That is a perfectly coherent policy. An absent policy is not, and it is the one that ends with the files already sent.",
+      },
+      {
+        q: "How do I bill a client whose usage has outgrown the license I quoted?",
+        a: "As an expanded license going forward, priced against what the new usage is worth, on its own line. A design license is defined by three things — how long it runs, where it applies, and which media it covers — and a client who bought a two-year digital license for a website and social media, and now wants the mark in print advertising or on product packaging, is asking for something the original fee did not include. Raise it as an upgrade rather than a violation, which is both easier to sell and usually accurate: the usual cause is a marketing plan that grew, not an attempt to take something. The invoice line names what changed — 'Expanded license — print advertising, added 9/20, outside original digital-only scope' — and the new grant should be restated in full somewhere the client will keep, so the boundary is fresh rather than dated. Where the expanded use has already happened, bill it forward from the current date rather than retroactively, unless the overreach was deliberate and substantial; a retroactive charge turns a routine upgrade into an accusation, and the amount is rarely worth the relationship. If you find yourself writing expansion invoices for the same client repeatedly, that client wants a buyout or an unlimited grant, and quoting one saves both sides the recurring negotiation.",
+      },
+      {
+        q: "Who pays for stock photos and fonts on a design project, and whose name should the license be in?",
+        a: "The client pays, at cost, and the license belongs in the client's name — those two answers are connected and the second is the one designers get wrong. Passing the cost through is uncontroversial: stock imagery, illustration and typefaces are materials bought for the job, itemized at what you paid with the receipts attached, no markup unless your agreement specifically provides for one. The licensing question is the one that matters later. Many stock and font licenses are issued to a named licensee and are not transferable, so an asset bought under your account and then used indefinitely by the client leaves the client using it without a license and leaves your name on the paperwork. Buy in the client's name where the vendor allows it, or have them buy directly and list the item on the invoice at zero with a note, and state the arrangement on the line: 'licensed in client's name.' Fonts deserve particular care because the licenses are unusually specific — desktop use, web embedding, application embedding and broadcast are frequently separate grants with separate prices, and a typeface licensed for your desktop does not cover the client's website. Note on the invoice which grant was purchased, and tell the client plainly that extending it later is a purchase from the foundry rather than something you can hand across.",
+      },
+    ],
+    guideSlug: "invoice-template-graphic-designers",
+    guideLabel: "Invoice template for graphic designers — itemizing concepts, revisions, and licensing fees",
+  },
 };
 
 /** Stable ordering for the hub grid and sitemap. */

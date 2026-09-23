@@ -190,6 +190,18 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "PO #_ — cost center _, services _/_–_/_",
     ],
   },
+  "graphic-design": {
+    trade: "Graphic Design",
+    items: [
+      "Brand identity — _ initial concepts, per estimate dated _/_",
+      "Revision rounds — _ included: round _ completed _/_",
+      "Additional revision round — round _ @ per-round rate (approved _/_)",
+      "Usage license — media, _ years, territory",
+      "Source-file release — layered AI / PSD (per agreement)",
+      "Stock photography and licensed fonts — at cost, licensed in client's name",
+      "Less: deposit received _/_ (enter as negative credit)",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [

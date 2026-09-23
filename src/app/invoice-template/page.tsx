@@ -71,12 +71,27 @@ export default function InvoiceTemplatePage() {
         <Link href="/create" className="btn-primary text-base !py-3 !px-8 inline-block">
           Use This Template Free &rarr;
         </Link>
+        {/* This page ranks for the generic head term, so its visitors are a mix:
+            some want exactly this blank template, and some are a plumber or a
+            designer who typed the generic phrase because they did not know a
+            trade-specific one existed. The hero previously spoke only to the
+            first group — the trade grid sits directly below, but nothing above
+            the fold said so, and the second group either converts into an empty
+            invoice or leaves. This line serves them without displacing the
+            primary CTA. The count is derived from the catalogue, never typed. */}
+        <p className="text-sm text-gray-500 mt-4">
+          Work in a trade?{" "}
+          <a href="#by-trade" className="text-indigo-600 font-medium hover:text-indigo-700">
+            {tradeTemplateSlugs.length} trade templates
+          </a>{" "}
+          open with that trade&apos;s real line items already listed.
+        </p>
       </section>
 
       {/* Templates by trade — derived from the trade map, never hand-listed, so a
           trade added to the map is published here, in the sitemap, and on every
           sibling page at the same time. */}
-      <section className="max-w-5xl mx-auto px-4 pb-16">
+      <section id="by-trade" className="max-w-5xl mx-auto px-4 pb-16 scroll-mt-24">
         <h2 className="text-2xl font-bold text-gray-900 mb-3 text-center">Invoice Templates by Trade</h2>
         <p className="text-gray-600 text-center max-w-2xl mx-auto mb-8">
           Every trade bills differently — the service call fee, the retainage, the guaranteed count, the

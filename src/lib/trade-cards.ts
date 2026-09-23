@@ -52,11 +52,11 @@ export const tradeCards: TradeCard[] = [
   { icon: "🔨", trade: "Subcontracting", tmpl: "subcontractor", guide: "how-to-invoice-as-a-subcontractor" },
   { icon: "📚", trade: "Tutoring & Test Prep", tmpl: "tutoring", guide: "how-to-invoice-for-tutoring" },
   { icon: "💼", trade: "Consulting", tmpl: "consulting", guide: "invoice-template-consultants" },
+  { icon: "✏️", trade: "Graphic Design", tmpl: "graphic-design", guide: "invoice-template-graphic-designers" },
 
   // Guide-only trades: strong articles with no template page yet. Each is a
   // candidate for the next wave of template pages.
   { icon: "🔁", trade: "Recurring Services", guide: "how-to-invoice-for-recurring-services" },
   { icon: "🧾", trade: "Independent Contractors", guide: "how-to-invoice-as-an-independent-contractor" },
   { icon: "⏱️", trade: "Hourly Work", guide: "how-to-invoice-for-hourly-work" },
-  { icon: "✏️", trade: "Graphic Design", guide: "invoice-template-graphic-designers" },
 ];
