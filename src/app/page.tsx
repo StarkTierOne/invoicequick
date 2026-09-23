@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import ExitIntentModal from "@/components/ExitIntentModal";
+import ResumeDraftBanner from "@/components/ResumeDraftBanner";
 import { tradeCards } from "@/lib/trade-cards";
 
 // The hero's primary action. A plain button asks the visitor to *navigate*; an
@@ -723,6 +724,10 @@ export default function Home() {
           </div>
         </div>
       </nav>
+
+      {/* Returning visitor with work in progress — offered before the pitch,
+          because for them the pitch is already over. Renders nothing otherwise. */}
+      <ResumeDraftBanner />
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 pt-20 pb-16 text-center">

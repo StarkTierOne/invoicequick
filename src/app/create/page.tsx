@@ -13,6 +13,7 @@ import {
   defaultInvoice, emptyInvoice, createEmptyItem,
   calcSubtotal, calcTax, calcDiscount, calcTotal, calcBalanceDue, formatCurrency, calcDueDate,
 } from "@/lib/types";
+import { DRAFT_KEY, isDraftWorthKeeping, readStoredDraft, clearStoredDraft, describeAge } from "@/lib/invoice-draft";
 
 // ── Invoice Form ──
 function InvoiceForm({ data, onChange }: { data: InvoiceData; onChange: (d: InvoiceData) => void }) {
@@ -267,13 +268,9 @@ function InvoicePreview({ data }: { data: InvoiceData }) {
 }
 
 // ── Draft persistence (signed-out only) ──
-// The no-account flow keeps the whole invoice in React state, so a refresh, a
-// tab eviction, or a trip out to one of the trade guides used to lose it all.
-// Signed-in users have "Save Invoice" and server-side history; signed-out users
-// get their in-progress invoice mirrored to this device instead.
-const DRAFT_KEY = "iq_invoice_draft_v1";
-const DRAFT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
-
+// The draft slot itself — key, expiry, validation, restore — lives in
+// `@/lib/invoice-draft`, because the homepage resume banner reads it too.
+//
 // The trade this visit asked for, if the slug resolves to a real seed.
 //
 // Read from the query string on demand rather than passed down from the seeding
@@ -287,47 +284,6 @@ function requestedTradeSeed(): { trade: string; items: string[] } | undefined {
   } catch {
     return undefined;
   }
-}
-
-function isDraftWorthKeeping(d: InvoiceData): boolean {
-  if (!d || !Array.isArray(d.items)) return false;
-  return Boolean(
-    d.fromName?.trim() ||
-    d.toName?.trim() ||
-    d.notes?.trim() ||
-    d.items.some((i) => i?.description?.trim() || Number(i?.rate) > 0)
-  );
-}
-
-// Read (and validate) whatever draft this device is holding. Returns null and
-// clears the slot for anything missing, expired, or not worth keeping. Used by
-// both the signed-out restore and the post-signup handoff, so the two can't
-// disagree about what counts as a live draft.
-function readStoredDraft(): { data: InvoiceData; savedAt: string } | null {
-  try {
-    const raw = localStorage.getItem(DRAFT_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    const age = Date.now() - new Date(parsed?.savedAt).getTime();
-    if (parsed?.data && Number.isFinite(age) && age < DRAFT_MAX_AGE_MS && isDraftWorthKeeping(parsed.data)) {
-      return { data: parsed.data as InvoiceData, savedAt: parsed.savedAt as string };
-    }
-    localStorage.removeItem(DRAFT_KEY);
-    return null;
-  } catch {
-    try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
-    return null;
-  }
-}
-
-function describeAge(savedAt: string): string {
-  const mins = Math.floor((Date.now() - new Date(savedAt).getTime()) / 60000);
-  if (mins < 1) return "a moment ago";
-  if (mins < 60) return `${mins} minute${mins === 1 ? "" : "s"} ago`;
-  const hrs = Math.floor(mins / 60);
-  if (hrs < 24) return `${hrs} hour${hrs === 1 ? "" : "s"} ago`;
-  const days = Math.floor(hrs / 24);
-  return `${days} day${days === 1 ? "" : "s"} ago`;
 }
 
 // ── Main Page ──
@@ -450,7 +406,7 @@ export default function CreateInvoice() {
   }, [data, draftEnabled]);
 
   const startFresh = () => {
-    try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
+    clearStoredDraft();
     setData(defaultInvoice());
     setRestoredAt(null);
     setSeededTradeName(null);
@@ -463,7 +419,7 @@ export default function CreateInvoice() {
   const loadRequestedTrade = () => {
     const seed = overriddenTrade;
     if (!seed) return;
-    try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
+    clearStoredDraft();
     setData({
       ...defaultInvoice(),
       items: seed.items.map((description) => ({ ...createEmptyItem(), description })),
@@ -497,7 +453,7 @@ export default function CreateInvoice() {
       setRestoredAt(pending.savedAt);
       setSeededTradeName(null);
       setOverriddenTrade(requestedTradeSeed() ?? null);
-      try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
+      clearStoredDraft();
     }
     const { data: profile } = await supabase.from("profiles").select("*").eq("id", authUser.id).single();
     if (profile) {

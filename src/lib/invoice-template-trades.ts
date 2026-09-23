@@ -1690,8 +1690,8 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
         a: "A purchase order number, if one was issued — and most corporate engagements issue one, whether or not your client contact mentioned it. Beyond the PO: the exact legal entity being billed, matching the contract rather than the brand name; your registered vendor name and vendor number as they appear in their system; the service period the work covers; the cost center or department code if the client uses them; a reference to the master services agreement or statement of work; a unique invoice number; and the payment terms as contracted. A W-9, or the local equivalent, must be on file with their vendor desk before the first invoice, not sent with it. Ask for the whole set at kickoff in one message — the PO, the entity, the AP submission address, and whether they use an invoicing portal — because each item discovered later costs a full billing cycle. An invoice that fails the vendor or PO match is usually returned without comment rather than queried, and the payment terms restart from the resubmission date, which is how a net-30 client becomes a net-75 client without ever paying late.",
       },
     ],
-    guideSlug: "invoice-template-consultants",
-    guideLabel: "Invoice template for consultants — itemizing hours, retainers, and expense reimbursements",
+    guideSlug: "how-to-invoice-for-consulting",
+    guideLabel: "How to invoice for consulting — retainers, milestones, day rates, and purchase orders",
   },
   "graphic-design": {
     slug: "graphic-design",
