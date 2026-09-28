@@ -53,6 +53,7 @@ export const tradeCards: TradeCard[] = [
   { icon: "📚", trade: "Tutoring & Test Prep", tmpl: "tutoring", guide: "how-to-invoice-for-tutoring" },
   { icon: "💼", trade: "Consulting", tmpl: "consulting", guide: "how-to-invoice-for-consulting" },
   { icon: "✏️", trade: "Graphic Design", tmpl: "graphic-design", guide: "invoice-template-graphic-designers" },
+  { icon: "🐜", trade: "Pest Control", tmpl: "pest-control", guide: "how-to-invoice-for-pest-control" },
 
   // Guide-only trades: strong articles with no template page yet. Each is a
   // candidate for the next wave of template pages.

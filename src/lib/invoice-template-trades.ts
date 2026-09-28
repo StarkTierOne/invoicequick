@@ -1786,6 +1786,98 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "invoice-template-graphic-designers",
     guideLabel: "Invoice template for graphic designers — itemizing concepts, revisions, and licensing fees",
   },
+  "pest-control": {
+    slug: "pest-control",
+    trade: "Pest Control",
+    icon: "🐜",
+    metaTitle: "Free Pest Control Invoice Template — Service Plans, Callbacks & Termite Bonds | InvoiceQuick",
+    metaDescription:
+      "A free pest control invoice template for exterminators and pest management companies. Bill the initial service and each plan visit, show free re-services at $0, record the product and EPA registration number applied, renew a termite bond, and invoice a WDI inspection to escrow. Download a PDF. No sign-up.",
+    tagline:
+      "Built for pest control operators billing a service plan, a free callback, a termite bond, and a treatment record on the same account — each on its own line so the customer can see what the plan is actually doing.",
+    intro: [
+      "Pest control is paid for by a customer who, when the work is done well, sees nothing. The ants stop. The mice never come in. A quarterly visit happens while they are at work, and the only sign of it is a door hanger and a charge on their card. That is the whole commercial problem of the trade: a successful plan looks, from the kitchen, exactly like a plan that is not doing anything, and the customer who cancels in month eight is usually the one whose treatment was working. The invoice is one of the few places the work becomes visible. A line that reads 'Pest control — $129' tells the customer what they paid. A visit that names the areas treated, the target pests, the product applied, and the free re-service that happened in between tells them what they bought.",
+      "The second thing that makes pest control billing its own problem is that the same account usually carries three kinds of charge that behave nothing alike. A recurring plan is a subscription with a front-loaded first visit and, often, a discount that was conditional on staying a year. A callback between visits is free under the plan's guarantee — and should still appear on the invoice, at zero, because it is the plan's best evidence of value and your best record of the account. And termite work runs on its own clock entirely: an inspection report paid at a real-estate closing, a treatment warrantied by a bond renewed once a year. This template keeps them apart, and it carries the treatment record — product, EPA registration number, amount, applicator — that many states require you to give the customer anyway, so one document does both jobs.",
+    ],
+    billingModel:
+      "Residential general pest work is overwhelmingly sold as a recurring plan: an initial service priced higher than the rest because it is a full clean-out treatment, then quarterly or bi-monthly visits at a fixed price, billed per visit or levelized monthly on a card on file. Plans usually carry a guarantee of free re-service between scheduled visits, and many offer a reduced or waived initial fee in exchange for a twelve-month agreement — which is why early cancellation terms matter. One-time services such as wasp nests, a single rodent clean-out, or a move-in treatment are billed as flat jobs, paid at completion. Termite work has its own structure: a wood-destroying-insect inspection for a real-estate transaction, often paid through escrow at closing; a treatment priced by linear foot of foundation or by structure; and an annual bond or warranty renewal that keeps the retreat or repair guarantee in force. Specialty work — bed bugs, rodent exclusion, wildlife — is quoted as a project, often across several visits. Commercial accounts, especially food handlers, are billed monthly on net 30 against a service agreement, with the service report number on every invoice for their audit file.",
+    lineItems: [
+      {
+        description: "Initial service — interior and exterior general pest treatment, 2,400 sq ft home, 9/14",
+        unit: "flat fee, first visit of the plan",
+        note: "Name it as the initial service. A first charge that is visibly larger than the plan price, with no label, reads as an overcharge on the next statement the customer compares it to.",
+      },
+      {
+        description: "Quarterly service — visit 2 of 4, 12/12 (annual plan, agreement dated 9/10)",
+        unit: "per visit, at the plan rate",
+        note: "Number the visit and cite the agreement. A customer who can see they are halfway through a year they signed for does not cancel on the assumption that the plan runs forever.",
+      },
+      {
+        description: "Re-service between visits — ants, kitchen and pantry, 10/21 — covered by plan guarantee",
+        unit: "$0, included in the plan",
+        note: "Bill it at zero, on its own line. The free callback is the plan working; left off the invoice, it is value the customer received and never saw.",
+      },
+      {
+        description: "Applied: bifenthrin 7.9% — EPA Reg. No. ____, 0.06% dilution, 1.5 gal — perimeter, entry points — applicator lic. #____",
+        unit: "treatment record, $0",
+        note: "Product, EPA registration number, amount, area, and the licensed applicator. Many states require you to give the customer this record after an application — putting it on the invoice means the paperwork cannot go missing.",
+      },
+      {
+        description: "WDI inspection — NPMA-33 report, 118 Oak St., buyer: Rivera — escrow file #26-4471",
+        unit: "flat fee per structure",
+        note: "Carry the escrow or title file number. Real-estate inspections are paid at closing by a title company that matches your invoice to a file, not to a person.",
+      },
+      {
+        description: "Termite bond renewal — retreat and repair, main structure, term 10/1/26–9/30/27",
+        unit: "annual renewal fee",
+        note: "State the coverage type and the term. A bond that lapses because nobody noticed the renewal is a warranty the homeowner believes they still have.",
+      },
+      {
+        description: "Rodent exclusion — 14 entry points sealed (hardware cloth, sealant), 1-year exclusion warranty",
+        unit: "project price, labor and materials",
+        note: "Count the entry points and name the warranty. Exclusion is a one-time project on a recurring account, and it needs its own line so it is not mistaken for a new monthly price.",
+      },
+      {
+        description: "Tamper-resistant bait stations ×6 — installed, exterior perimeter (equipment remains client property)",
+        unit: "per station, equipment",
+        note: "Separate the equipment from the service. In many states goods and services are taxed differently, and the invoice should also say who owns the stations if the plan ends.",
+      },
+      {
+        description: "Commercial monthly service — Store #214, service report SR-0918, trap counts logged",
+        unit: "flat monthly fee, per site",
+        note: "Put the service report number on the invoice. Food-facility auditors ask for the report; accounts payable asks for the site; one reference answers both.",
+      },
+    ],
+    gotchas: [
+      "One line reading 'Pest control — $129.' The customer sees a price and nothing the price bought, and a plan that is working looks exactly like one that is not. Visits, areas treated, and callbacks are what the customer is actually paying for.",
+      "Free re-services left off the invoice entirely. They are the strongest evidence the plan is worth keeping, and the only record of the account's history when a customer disputes coverage later.",
+      "A discounted or waived initial service with no stated condition. If the discount was in exchange for a twelve-month agreement, the invoice should say so on the line; otherwise the early-cancellation charge arrives as a surprise and is refused.",
+      "No treatment record. Where your state requires the customer to receive the product name, registration number and applicator details, a missing record is a compliance problem, not just a billing one — and it is the first thing asked for when a tenant, pet owner or inspector has a question.",
+      "A WDI inspection invoiced to the buyer's name with no escrow file number. The title company pays it at closing, matches it by file, and an unmatched invoice is left off the settlement statement.",
+      "Termite bond renewals sent late or not at all. Many bonds lapse if not renewed on time, and a lapsed bond is a coverage argument you will be having after the termites return.",
+      "Bed bug work billed as one visit. Treatment is usually a series, and a customer invoiced for the first visit alone believes the job was one visit — until the second one is billed.",
+    ],
+    faqs: [
+      {
+        q: "How do I invoice a pest control service plan?",
+        a: "As a numbered series of visits against a named agreement, not as an anonymous recurring charge. The first invoice carries the initial service, labeled as such and priced as the full treatment it is. Each later invoice names the visit — 'quarterly service, visit 2 of 4' — the date, the areas treated and the target pests, and cites the agreement date. If the plan is billed monthly rather than per visit, say so on the line and show the next scheduled visit, because a customer being charged in a month with no visit otherwise believes they are paying for nothing. Any re-service between scheduled visits goes on the next invoice at zero, with its date and what was treated. And if the initial fee was reduced in exchange for a twelve-month commitment, write the condition on that first line — 'initial service, $50 discount with 12-month agreement' — so the early-cancellation term is something the customer saw on day one rather than a clause they discover at cancellation.",
+      },
+      {
+        q: "Do I have to give the customer a record of the pesticides I applied?",
+        a: "In many states, yes — the details vary, so check with your state's pesticide regulatory agency, usually the department of agriculture. Where a record is required it commonly includes the product's brand name, its EPA registration number, the amount or concentration applied, the target pest, the areas treated, the date, and the name and license or certification number of the applicator; some states also require re-entry or precaution information. Commercial applicators are also generally required to keep their own application records for a set period, often two years or more. The practical answer for most operators is to put the treatment record on the invoice or the attached service ticket, every time, whether or not your state strictly requires it for that service. It costs nothing, it satisfies the requirement where one exists, and it is the first thing a customer with a pet, a baby, or a question asks for.",
+      },
+      {
+        q: "Who pays for a termite (WDI) inspection in a home sale, and how do I invoice it?",
+        a: "Whoever the purchase contract says pays — commonly the buyer, sometimes the seller, and in some loan programs the answer is set by lender requirements — and it is usually paid at closing through the title or escrow company rather than by the person who ordered it. So the invoice should be addressed to the party responsible, carry the property address, the buyer's and seller's names, and above all the escrow or title file number, and be sent to the closing agent before the settlement statement is prepared. The report itself is typically the standard NPMA-33 wood-destroying-insect inspection form, and it should reference the same invoice number. If the inspection finds activity and the sale requires treatment before closing, that treatment is a separate job with its own invoice, and it is worth confirming in writing who is paying for it before you do it — a treatment ordered by the buyer's agent and billed to the seller is a common way to go unpaid.",
+      },
+      {
+        q: "How should I bill for bed bug treatment?",
+        a: "As a treatment program with the visits numbered, priced per unit or per room, and with the preparation responsibilities written into the agreement the invoice cites. Chemical bed bug treatment usually requires a series of visits roughly two weeks apart; heat treatment is often a single longer visit priced per room or by square footage, sometimes with a chemical follow-up. Either way, the customer should see the whole program before the first visit and the invoice should say which visit it covers — 'visit 1 of 3' — so the second charge is expected. Put the guarantee terms on the invoice too: most warranties depend on the resident completing the preparation checklist, and a re-treatment requested after a preparation failure is billable only if the agreement said so before the work. In rental properties, invoice whoever the service agreement names — usually the property owner or manager, per unit — and do not assume a tenant is responsible because they made the call; landlord-tenant rules on who pays vary by state and city.",
+      },
+    ],
+    guideSlug: "how-to-invoice-for-pest-control",
+    guideLabel: "How to invoice for pest control — service plans, callbacks, treatment records, and termite bonds",
+  },
 };
 
 /** Stable ordering for the hub grid and sitemap. */

@@ -202,6 +202,16 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Less: deposit received _/_ (enter as negative credit)",
     ],
   },
+  "pest-control": {
+    trade: "Pest Control",
+    items: [
+      "Initial service — interior/exterior general pest treatment, _/_",
+      "Quarterly service — visit _ of 4 (annual plan, agreement dated _/_)",
+      "Re-service between visits — pest, area, _/_ — covered by plan guarantee",
+      "Applied: product — EPA Reg. No. _, amount, area — applicator lic. #_",
+      "Termite bond renewal — coverage type, term _/_–_/_",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [

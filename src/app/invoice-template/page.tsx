@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { tradeTemplates, tradeTemplateSlugs } from "@/lib/invoice-template-trades";
+import { tradeCards } from "@/lib/trade-cards";
+import { articles } from "@/lib/blog-articles";
+
+// The guide-only cards are billing *shapes* (hourly, recurring, independent
+// contractor) rather than trades — which is exactly what a visitor whose trade
+// is missing from the grid needs. Derived, so a shape promoted to a template
+// page drops out of this list on its own.
+const shapeGuides = tradeCards.filter((c) => !c.tmpl && c.guide);
 
 export const metadata: Metadata = {
   title: "Free Invoice Template | Download & Customize — InvoiceQuick",
@@ -112,6 +120,36 @@ export default function InvoiceTemplatePage() {
               </Link>
             );
           })}
+        </div>
+        {/* The grid used to be a dead end for anyone whose trade isn't on it:
+            the only way on was scrolling back up to the hero button. Most
+            missing trades still bill in one of a few shapes, so offer those,
+            plus a blank invoice. Anchor text is distinct from the hero CTA so
+            the delegated create_cta_click listener can tell them apart. */}
+        <div className="mt-8 rounded-xl border border-gray-200 bg-gray-50 px-5 py-5 sm:flex sm:items-center sm:gap-6">
+          <div className="flex-1">
+            <p className="text-sm font-semibold text-gray-900">Don&apos;t see your trade?</p>
+            <p className="text-sm text-gray-600 mt-1">
+              Most work bills in one of a few shapes. Read the guide that matches yours, or start from a
+              blank invoice.
+            </p>
+            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+              {shapeGuides.map((c) => (
+                <li key={c.guide}>
+                  <Link href={`/blog/${c.guide}`} className="text-indigo-600 font-medium hover:text-indigo-700">
+                    <span aria-hidden="true">{c.icon}</span> {c.trade}
+                    <span className="sr-only"> — {articles[c.guide as string]?.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Link
+            href="/create"
+            className="btn-primary mt-4 inline-block whitespace-nowrap text-sm !px-5 !py-2.5 sm:mt-0"
+          >
+            Start a Blank Invoice &rarr;
+          </Link>
         </div>
       </section>
 

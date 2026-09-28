@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-pest-control",
+    title: "How to Invoice for Pest Control (Service Plans, Callbacks, Treatment Records & Termite Bonds, 2026)",
+    excerpt:
+      "Pest control is the trade where the better you do the job, the less there is to see — and the customer who cancels in month eight is often the one whose treatment was working. This guide covers invoicing the initial service versus plan visits, showing free re-services at $0, putting the pesticide treatment record on the invoice, early-cancellation terms, termite bonds and WDI inspections paid through escrow, bed bug programs, exclusion work, and commercial service reports.",
+  },
+  {
     slug: "year-end-invoicing-checklist",
     title: "Year-End Invoicing Checklist for Freelancers: Get Every Invoice Paid Before December 31 (2026)",
     excerpt:
