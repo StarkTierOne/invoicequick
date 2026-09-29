@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-pressure-washing",
+    title: "How to Invoice for Pressure Washing (Square Footage, Soft Wash, Stains & Damage Records, 2026)",
+    excerpt:
+      "A pressure washing customer can see the clean driveway but not the price behind it. This guide covers invoicing one surface per line with its square footage, naming soft wash versus pressure, stain treatments without promising removal, water and wastewater charges, minimum job charges, recording pre-existing damage before you start, sealing add-ons, and recurring commercial and HOA work.",
+  },
+  {
     slug: "how-to-invoice-for-pest-control",
     title: "How to Invoice for Pest Control (Service Plans, Callbacks, Treatment Records & Termite Bonds, 2026)",
     excerpt:

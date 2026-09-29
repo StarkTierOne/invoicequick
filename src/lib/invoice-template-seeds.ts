@@ -212,6 +212,16 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Termite bond renewal — coverage type, term _/_–_/_",
     ],
   },
+  "pressure-washing": {
+    trade: "Pressure Washing",
+    items: [
+      "House wash — soft wash, siding, _ sq ft",
+      "Driveway / walkways — surface cleaner, concrete, _ sq ft",
+      "Stain treatment — rust / oil, _ areas (improvement, not guaranteed removal)",
+      "Pre-existing conditions noted before work: _ — photos on file",
+      "Minimum job charge / trip — if applicable",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [

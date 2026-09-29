@@ -4,7 +4,7 @@
 // `invoice-template-trades.ts` is the source of truth for trade pages, but it
 // carries the full prose catalogue (intros, gotchas, FAQs — ~1,400 lines). The
 // homepage is a client component, so importing that catalogue there would ship
-// every word of it to the browser to render 23 links. This is the same split
+// every word of it to the browser to render a grid of links. This is the same split
 // already made for `invoice-template-seeds.ts`, for the same reason.
 //
 // So this module is deliberately prose-free: an icon, a label, and the two
@@ -54,6 +54,7 @@ export const tradeCards: TradeCard[] = [
   { icon: "💼", trade: "Consulting", tmpl: "consulting", guide: "how-to-invoice-for-consulting" },
   { icon: "✏️", trade: "Graphic Design", tmpl: "graphic-design", guide: "invoice-template-graphic-designers" },
   { icon: "🐜", trade: "Pest Control", tmpl: "pest-control", guide: "how-to-invoice-for-pest-control" },
+  { icon: "💦", trade: "Pressure Washing", tmpl: "pressure-washing", guide: "how-to-invoice-for-pressure-washing" },
 
   // Guide-only trades: strong articles with no template page yet. Each is a
   // candidate for the next wave of template pages.
