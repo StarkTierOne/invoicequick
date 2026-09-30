@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-a-cancellation-fee",
+    title: "How to Invoice a Cancellation or No-Show Fee (Wording, Amounts & When It Holds Up, 2026)",
+    excerpt:
+      "A cancellation fee bills for work that didn't happen, which makes it the easiest line for a client to argue with. This guide covers writing the policy so the client agrees before booking, choosing a flat, percentage or sliding-scale fee, wording the invoice line so it cites the policy, applying deposits and cards on file, no-show and trip charges, project kill fees, waiving it without losing it, and what to do when a client won't pay.",
+  },
+  {
     slug: "how-to-invoice-for-window-cleaning",
     title: "How to Invoice for Window Cleaning (Per Pane Pricing, Screens, Access & Storefront Routes, 2026)",
     excerpt:
