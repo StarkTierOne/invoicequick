@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   keywords: "invoice generator, free invoice, invoice maker, invoice template, create invoice, professional invoice, PDF invoice, freelance invoice, online invoice generator, small business invoice, invoice creator, billing software, receipt maker, estimate generator, freelancer tools, contractor invoice, self-employed invoice, invoice app, send invoice online, free invoice template",
   openGraph: {
     title: "InvoiceQuick — Free Invoice Generator",
-    description: "Create professional invoices in seconds. Free forever. No sign-up required. Trusted by 10,000+ freelancers.",
+    description: "Create professional invoices in seconds. Free forever. No sign-up required. No watermark on the PDF.",
     type: "website",
     siteName: "InvoiceQuick",
     url: "https://invoicequick-phi.vercel.app",

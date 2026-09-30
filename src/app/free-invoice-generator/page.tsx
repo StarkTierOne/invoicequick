@@ -102,29 +102,24 @@ export default function FreeInvoiceGeneratorPage() {
         </div>
       </section>
 
-      {/* Social Proof Stats Bar */}
+      {/* Fact bar — checkable product facts, no usage counts or ratings */}
       <section className="border-y border-gray-200 bg-gray-50 py-8">
         <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 text-center">
           <div>
-            <div className="text-3xl font-extrabold text-gray-900">10,000+</div>
-            <div className="text-sm text-gray-500">Freelancers & Businesses</div>
+            <div className="text-3xl font-extrabold text-gray-900">$0</div>
+            <div className="text-sm text-gray-500">Free tier, no card</div>
           </div>
           <div>
-            <div className="text-3xl font-extrabold text-gray-900">50,000+</div>
-            <div className="text-sm text-gray-500">Invoices Created</div>
+            <div className="text-3xl font-extrabold text-gray-900">0%</div>
+            <div className="text-sm text-gray-500">Payment-processing fees</div>
           </div>
           <div>
-            <div className="text-3xl font-extrabold text-gray-900">4.9/5</div>
-            <div className="text-sm text-gray-500">Average Rating</div>
+            <div className="text-3xl font-extrabold text-gray-900">No</div>
+            <div className="text-sm text-gray-500">Watermark on the PDF</div>
           </div>
           <div>
-            <div className="text-3xl font-extrabold text-indigo-600">9/10</div>
-            <div className="text-sm text-gray-500">
-              Rated by{" "}
-              <a href="https://toolsrated.vercel.app/reviews/best-invoicing-software" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">
-                ToolsRated
-              </a>
-            </div>
+            <div className="text-3xl font-extrabold text-gray-900">~60 sec</div>
+            <div className="text-sm text-gray-500">To a finished PDF</div>
           </div>
         </div>
       </section>
@@ -169,7 +164,7 @@ export default function FreeInvoiceGeneratorPage() {
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-10">Who Uses InvoiceQuick?</h2>
           <p className="text-gray-700 mb-4">
-            InvoiceQuick is used by thousands of freelancers, consultants, contractors, and small business owners across every industry. <Link href="/blog/invoice-template-graphic-designers" className="text-indigo-600 hover:text-indigo-700 underline">Graphic designers</Link> use it to bill for branding projects. Web developers use it to invoice for website builds and maintenance. Writers and editors use it for content contracts. <Link href="/blog/invoice-template-photographers" className="text-indigo-600 hover:text-indigo-700 underline">Photographers</Link>, videographers, tutors, <Link href="/blog/invoice-template-consultants" className="text-indigo-600 hover:text-indigo-700 underline">consultants</Link>, and tradespeople all rely on InvoiceQuick to get paid professionally and on time.
+            InvoiceQuick is built for freelancers, consultants, contractors, and small business owners in every industry. <Link href="/blog/invoice-template-graphic-designers" className="text-indigo-600 hover:text-indigo-700 underline">Graphic designers</Link> use it to bill for branding projects. Web developers use it to invoice for website builds and maintenance. Writers and editors use it for content contracts. <Link href="/blog/invoice-template-photographers" className="text-indigo-600 hover:text-indigo-700 underline">Photographers</Link>, videographers, tutors, <Link href="/blog/invoice-template-consultants" className="text-indigo-600 hover:text-indigo-700 underline">consultants</Link>, and tradespeople all rely on InvoiceQuick to get paid professionally and on time.
           </p>
           <p className="text-gray-700 mb-4">
             The tool is designed to be simple enough for someone sending their very first invoice, yet flexible enough for experienced business owners who need customized line items, tax calculations, and detailed payment terms. If you have already sent invoices and a client is overdue, our guide on <Link href="/blog/client-wont-pay-invoice" className="text-indigo-600 hover:text-indigo-700 underline">what to do when a client won&apos;t pay</Link> walks through the full escalation process.
@@ -376,13 +371,6 @@ export default function FreeInvoiceGeneratorPage() {
               "Custom logo upload",
               "Email invoice to client",
             ],
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              ratingCount: "10000",
-              bestRating: "5",
-              worstRating: "1",
-            },
             publisher: {
               "@type": "Organization",
               name: "InvoiceQuick",

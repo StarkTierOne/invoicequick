@@ -482,13 +482,6 @@ export default function PricingPage() {
                 },
               },
             ],
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              ratingCount: "10000",
-              bestRating: "5",
-              worstRating: "1",
-            },
             publisher: {
               "@type": "Organization",
               name: "InvoiceQuick",

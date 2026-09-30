@@ -461,35 +461,13 @@ const features = [
   { icon: "\uD83D\uDD12", title: "No Sign-Up Required", desc: "Start creating invoices immediately. No email, no password, no friction." },
 ];
 
-const testimonials = [
-  {
-    name: "Sarah K.",
-    role: "Freelance Designer",
-    quote: "InvoiceQuick cut my invoicing time from 30 minutes to under 2. I send more invoices now and get paid faster.",
-    avatar: "SK",
-    stars: 5,
-  },
-  {
-    name: "Marcus T.",
-    role: "Web Developer",
-    quote: "I used to dread invoicing at the end of each project. Now I generate a professional PDF in seconds and move on to the next gig.",
-    avatar: "MT",
-    stars: 5,
-  },
-  {
-    name: "Lisa R.",
-    role: "Consultant",
-    quote: "The free tier is genuinely generous. I upgraded to Pro for recurring invoices and it paid for itself on day one.",
-    avatar: "LR",
-    stars: 5,
-  },
-  {
-    name: "Jordan M.",
-    role: "Freelance Photographer",
-    quote: "I used to spend 20 minutes cobbling invoices together in Word after every shoot. InvoiceQuick takes under a minute and looks far more professional.",
-    avatar: "JM",
-    stars: 5,
-  },
+// Product facts for the fact bar. Each one is checkable on /create; nothing here
+// is a usage count or a rating, because we don't have measured ones to show.
+const factBar = [
+  { value: "$0", label: "Free tier, no card" },
+  { value: "0%", label: "Payment-processing fees" },
+  { value: "No", label: "Watermark on the PDF" },
+  { value: "~60 sec", label: "To a finished PDF" },
 ];
 
 const howItWorks = [
@@ -747,59 +725,25 @@ export default function Home() {
         <p className="mt-4 text-sm text-gray-500">
           Fill in your details, add line items, download the PDF &mdash; <strong className="text-gray-700">about 60 seconds</strong>, nothing to install.
         </p>
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-sm">
-          <span className="flex items-center gap-0.5 text-amber-400 text-base leading-none" aria-hidden="true">
-            &#9733;&#9733;&#9733;&#9733;&#9733;
-          </span>
-          <span className="text-gray-600">
-            <strong className="text-gray-900">4.9/5</strong> from 10,000+ freelancers &amp; small businesses
-          </span>
-        </div>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-500">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-500">
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No sign-up required</span>
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No credit card</span>
           <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Free forever</span>
           <span className="flex items-center gap-1" title="InvoiceQuick generates the PDF — clients pay you directly however you arrange. No 2.9–3.5% processing cut like PayPal, Square, or Wave."><span className="text-green-500 font-bold">&#10003;</span> 0% payment fees</span>
-          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Trusted by 10,000+ users</span>
-        </div>
-        <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-          </span>
-          <span><strong className="text-gray-700">47 freelancers</strong> are creating invoices right now</span>
         </div>
         <HeroInvoiceMockup />
       </section>
 
-      {/* Social Proof Bar */}
+      {/* Fact bar — product facts a visitor can check on /create in a minute.
+          No usage counts or ratings: we don't have measured ones to show. */}
       <section className="border-y border-gray-200 bg-gray-50 py-8">
         <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 text-center">
-          <div>
-            <div className="text-3xl font-extrabold text-gray-900">10,000+</div>
-            <div className="text-sm text-gray-500">Freelancers & Businesses</div>
-          </div>
-          <div>
-            <div className="text-3xl font-extrabold text-gray-900">50,000+</div>
-            <div className="text-sm text-gray-500">Invoices Created</div>
-          </div>
-          <div>
-            <div className="text-3xl font-extrabold text-gray-900">4.9/5</div>
-            <div className="text-sm text-gray-500">Average Rating</div>
-          </div>
-          <div>
-            <div className="text-3xl font-extrabold text-gray-900">30 sec</div>
-            <div className="text-sm text-gray-500">Avg. Time to Invoice</div>
-          </div>
-          <div>
-            <div className="text-3xl font-extrabold text-indigo-600">9/10</div>
-            <div className="text-sm text-gray-500">
-              Rated by{" "}
-              <a href="https://toolsrated.vercel.app/reviews/best-invoicing-software" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">
-                ToolsRated
-              </a>
+          {factBar.map((f) => (
+            <div key={f.label}>
+              <div className="text-3xl font-extrabold text-gray-900">{f.value}</div>
+              <div className="text-sm text-gray-500">{f.label}</div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -831,10 +775,9 @@ export default function Home() {
           </div>
           <div className="card bg-white">
             <div className="text-3xl mb-3" aria-hidden="true">⭐</div>
-            <h3 className="font-semibold text-lg mb-2">Independently reviewed</h3>
+            <h3 className="font-semibold text-lg mb-2">Compared feature by feature</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Don&rsquo;t take our word for it — InvoiceQuick is rated 9/10 in the{" "}
-              <a href="https://toolsrated.vercel.app/reviews/best-invoicing-software" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 underline">ToolsRated invoicing roundup</a>, where the free tier is checked feature-by-feature against the paid alternatives.
+              The <a href="https://toolsrated.vercel.app/reviews/best-invoicing-software" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 underline">ToolsRated invoicing roundup</a> puts our free tier side by side with FreshBooks, Wave and the rest. Full disclosure: ToolsRated is our sister site, so read it as our case, then check the table below yourself.
             </p>
           </div>
         </div>
@@ -979,7 +922,7 @@ export default function Home() {
       {/* Comparison Table */}
       <section className="max-w-6xl mx-auto px-4 py-20">
         <h2 className="text-3xl font-bold text-center mb-4">How InvoiceQuick Compares</h2>
-        <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">See why thousands of freelancers choose InvoiceQuick over paid alternatives.</p>
+        <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">What the free tier includes, next to the paid alternatives.</p>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-sm">
             <thead>
@@ -1034,35 +977,6 @@ export default function Home() {
       {/* Savings Calculator */}
       <section className="max-w-6xl mx-auto px-4 pb-20">
         <SavingsCalculator />
-      </section>
-
-      {/* Testimonials */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">Loved by Freelancers Everywhere</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">See why thousands of professionals choose InvoiceQuick.</p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div key={t.name} className="card bg-white">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center font-bold text-sm">
-                    {t.avatar}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm">{t.name}</div>
-                    <div className="text-xs text-gray-500">{t.role}</div>
-                  </div>
-                </div>
-                <div className="flex gap-0.5 mb-3">
-                  {Array.from({ length: t.stars }).map((_, i) => (
-                    <span key={i} className="text-amber-400 text-base leading-none">★</span>
-                  ))}
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* Pricing */}
@@ -1234,14 +1148,7 @@ export default function Home() {
                 priceCurrency: "USD",
                 description: "Everything in Pro plus team access for 5 users, API access, Zapier integration, and advanced reporting."
               }
-            ],
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "10000",
-              bestRating: "5",
-              worstRating: "1"
-            }
+            ]
           }),
         }}
       />
@@ -1250,15 +1157,7 @@ export default function Home() {
       <section className="bg-indigo-600 py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Paid Faster?</h2>
-          <p className="text-indigo-100 mb-5 text-lg">Join thousands of freelancers who create professional invoices in seconds.</p>
-          <div className="mb-8 flex items-center justify-center gap-2 text-sm">
-            <span className="flex items-center gap-0.5 text-amber-300 text-base leading-none" aria-hidden="true">
-              &#9733;&#9733;&#9733;&#9733;&#9733;
-            </span>
-            <span className="text-indigo-100">
-              <strong className="text-white">4.9/5</strong> from 10,000+ freelancers &amp; small businesses
-            </span>
-          </div>
+          <p className="text-indigo-100 mb-8 text-lg">Your first invoice takes about a minute. No account, no card, no watermark.</p>
           <Link href="/create" className="bg-white text-indigo-600 font-semibold px-8 py-4 rounded-lg text-lg hover:bg-indigo-50 transition-colors inline-block">
             Create Your First Invoice Free &rarr;
           </Link>

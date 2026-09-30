@@ -91,14 +91,6 @@ export default function ExitIntentModal() {
           what you bill.
         </p>
 
-        <div className="mb-5 flex items-center justify-center gap-2 text-sm">
-          <span className="flex items-center gap-0.5 text-amber-400 text-base leading-none" aria-hidden="true">
-            &#9733;&#9733;&#9733;&#9733;&#9733;
-          </span>
-          <span className="text-gray-600">
-            <strong className="text-gray-900">4.9/5</strong> from 10,000+ freelancers
-          </span>
-        </div>
 
         <Link
           href="/create"
