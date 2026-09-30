@@ -222,6 +222,16 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Minimum job charge / trip — if applicable",
     ],
   },
+  "window-cleaning": {
+    trade: "Window Cleaning",
+    items: [
+      "Exterior windows — 1st floor, _ panes",
+      "Exterior windows — 2nd floor, _ panes, ladder / water-fed pole",
+      "Interior windows — _ panes",
+      "Screens — removed, washed, reinstalled, _ screens",
+      "Pre-existing conditions noted before work: _ (failed seals / scratches) — photos on file",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [

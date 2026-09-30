@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-window-cleaning",
+    title: "How to Invoice for Window Cleaning (Per Pane Pricing, Screens, Access & Storefront Routes, 2026)",
+    excerpt:
+      "A window cleaning customer counts windows; you clean panes. This guide covers invoicing by the pane or the window, splitting exterior from interior and ground floor from upper floors, screens and tracks, hard water and post-construction work, recording failed seals and scratches before you start, rain policies, minimum charges, and recurring storefront routes.",
+  },
+  {
     slug: "how-to-invoice-for-pressure-washing",
     title: "How to Invoice for Pressure Washing (Square Footage, Soft Wash, Stains & Damage Records, 2026)",
     excerpt:
