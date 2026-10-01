@@ -29,6 +29,7 @@ export function isDraftWorthKeeping(d: InvoiceData): boolean {
     d.fromName?.trim() ||
     d.toName?.trim() ||
     d.notes?.trim() ||
+    d.logoDataUrl ||
     d.items.some((i) => i?.description?.trim() || Number(i?.rate) > 0)
   );
 }

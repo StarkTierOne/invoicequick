@@ -11,6 +11,12 @@ export interface InvoiceData {
   fromEmail: string;
   fromAddress: string;
   fromPhone: string;
+  // Optional, added after the original schema — every reader must treat it as
+  // possibly absent so an old stored draft (signed-out localStorage, or a
+  // signed-in profile applied before this field existed) keeps loading. Never
+  // sent to Supabase: there's no column for it, so a logo lives for the
+  // current page/session only.
+  logoDataUrl?: string;
   // Client
   toName: string;
   toEmail: string;

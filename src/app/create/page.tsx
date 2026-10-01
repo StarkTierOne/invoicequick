@@ -8,6 +8,7 @@ import { track } from "@vercel/analytics";
 import { supabase } from "@/lib/supabase";
 import AppShell from "@/components/AppShell";
 import { getTradeSeed } from "@/lib/invoice-template-seeds";
+import { fileToLogoDataUrl } from "@/lib/image";
 import {
   InvoiceData, InvoiceItem, CURRENCIES, PAYMENT_TERMS,
   defaultInvoice, emptyInvoice, createEmptyItem,
@@ -27,12 +28,65 @@ function InvoiceForm({ data, onChange }: { data: InvoiceData; onChange: (d: Invo
     onChange({ ...data, items: data.items.filter((i) => i.id !== id) });
   };
 
+  const [logoError, setLogoError] = useState<string | null>(null);
+  const [logoBusy, setLogoBusy] = useState(false);
+  const logoInputRef = useRef<HTMLInputElement>(null);
+  const handleLogoPick = async (file: File | undefined) => {
+    if (!file) return;
+    setLogoError(null);
+    setLogoBusy(true);
+    try {
+      const dataUrl = await fileToLogoDataUrl(file);
+      set({ logoDataUrl: dataUrl });
+    } catch (err) {
+      setLogoError(err instanceof Error ? err.message : "Couldn't use that image.");
+    } finally {
+      setLogoBusy(false);
+      // Allow re-picking the same filename (e.g. after fixing and re-exporting).
+      if (logoInputRef.current) logoInputRef.current.value = "";
+    }
+  };
+
   return (
     <div className="space-y-6">
       {/* From / To */}
       <div className="grid md:grid-cols-2 gap-6">
         <div className="card">
           <h3 className="font-semibold text-sm text-gray-500 uppercase tracking-wide mb-3">From (Your Details)</h3>
+          <div className="flex items-center gap-3 mb-3">
+            {data.logoDataUrl ? (
+              // eslint-disable-next-line @next/next/no-img-element -- a user-picked data URL, not an optimizable remote/static asset
+              <img src={data.logoDataUrl} alt="Your logo" className="h-14 w-14 object-contain rounded-lg border border-gray-200 bg-white p-1" />
+            ) : (
+              <div className="h-14 w-14 rounded-lg border border-dashed border-gray-300 flex items-center justify-center text-[10px] text-gray-400 text-center leading-tight">No logo</div>
+            )}
+            <div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => logoInputRef.current?.click()}
+                  disabled={logoBusy}
+                  className="text-sm font-medium text-indigo-600 hover:text-indigo-800 disabled:opacity-50"
+                >
+                  {logoBusy ? "Processing…" : data.logoDataUrl ? "Change logo" : "Add logo"}
+                </button>
+                {data.logoDataUrl && (
+                  <button type="button" onClick={() => set({ logoDataUrl: undefined })} className="text-sm text-gray-400 hover:text-red-600">
+                    Remove
+                  </button>
+                )}
+              </div>
+              <input
+                ref={logoInputRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={(e) => handleLogoPick(e.target.files?.[0])}
+              />
+              <p className="text-xs text-gray-400 mt-0.5">PNG or JPG, shown on your invoice header.</p>
+              {logoError && <p className="text-xs text-red-500 mt-0.5">{logoError}</p>}
+            </div>
+          </div>
           <div className="space-y-3">
             <input className="input" placeholder="Your Name / Business" value={data.fromName} onChange={(e) => set({ fromName: e.target.value })} />
             <input className="input" placeholder="Email" value={data.fromEmail} onChange={(e) => set({ fromEmail: e.target.value })} />
@@ -160,10 +214,16 @@ function InvoicePreview({ data }: { data: InvoiceData }) {
     <div id="invoice-preview" className="bg-white rounded-xl shadow-lg p-8 md:p-12 max-w-3xl mx-auto border">
       {/* Header */}
       <div className="flex justify-between items-start mb-10">
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900">{data.fromName || "Your Business"}</h2>
-          <p className="text-sm text-gray-500 whitespace-pre-line mt-1">{data.fromEmail}{data.fromPhone ? `\n${data.fromPhone}` : ""}</p>
-          <p className="text-sm text-gray-500 whitespace-pre-line">{data.fromAddress}</p>
+        <div className="flex items-start gap-4">
+          {data.logoDataUrl && (
+            // eslint-disable-next-line @next/next/no-img-element -- a user-picked data URL, not an optimizable remote/static asset
+            <img src={data.logoDataUrl} alt={`${data.fromName || "Business"} logo`} className="h-16 w-16 object-contain shrink-0" />
+          )}
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">{data.fromName || "Your Business"}</h2>
+            <p className="text-sm text-gray-500 whitespace-pre-line mt-1">{data.fromEmail}{data.fromPhone ? `\n${data.fromPhone}` : ""}</p>
+            <p className="text-sm text-gray-500 whitespace-pre-line">{data.fromAddress}</p>
+          </div>
         </div>
         <div className="text-right">
           <h1 className="text-3xl font-extrabold text-indigo-600">INVOICE</h1>
