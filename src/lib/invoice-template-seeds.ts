@@ -232,6 +232,16 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Pre-existing conditions noted before work: _ (failed seals / scratches) — photos on file",
     ],
   },
+  "gutter-cleaning": {
+    trade: "Gutter Cleaning",
+    items: [
+      "Gutter cleaning — 1-story runs, _ linear ft, debris bagged and removed",
+      "Gutter cleaning — 2-story runs, _ linear ft, ladder / roof access",
+      "Downspouts — flushed and flow-tested, _ downspouts",
+      "Gutter guards — removed, cleaned under, reinstalled, _ linear ft",
+      "Pre-existing conditions noted before work: _ (sagging / loose hangers / leaking seams) — before & after photos on file",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [

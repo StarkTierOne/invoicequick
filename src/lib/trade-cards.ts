@@ -56,6 +56,7 @@ export const tradeCards: TradeCard[] = [
   { icon: "🐜", trade: "Pest Control", tmpl: "pest-control", guide: "how-to-invoice-for-pest-control" },
   { icon: "💦", trade: "Pressure Washing", tmpl: "pressure-washing", guide: "how-to-invoice-for-pressure-washing" },
   { icon: "🪟", trade: "Window Cleaning", tmpl: "window-cleaning", guide: "how-to-invoice-for-window-cleaning" },
+  { icon: "🍂", trade: "Gutter Cleaning", tmpl: "gutter-cleaning", guide: "how-to-invoice-for-gutter-cleaning" },
 
   // Guide-only trades: strong articles with no template page yet. Each is a
   // candidate for the next wave of template pages.

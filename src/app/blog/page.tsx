@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-gutter-cleaning",
+    title: "How to Invoice for Gutter Cleaning (Linear Feet, Downspouts, Guards & Before/After Photos, 2026)",
+    excerpt:
+      "A gutter customer can't see the work from the driveway, so the invoice has to show it. This guide covers pricing by the linear foot and the story, downspouts and underground drains, gutter guards, roof valleys and debris, recording damage before you start, before-and-after photos, approving repairs, and spring and fall plans.",
+  },
+  {
     slug: "how-to-invoice-a-cancellation-fee",
     title: "How to Invoice a Cancellation or No-Show Fee (Wording, Amounts & When It Holds Up, 2026)",
     excerpt:
