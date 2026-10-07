@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-carpet-cleaning",
+    title: "How to Invoice for Carpet Cleaning (Rooms, Stains, Pet Treatment & Warranty Receipts, 2026)",
+    excerpt:
+      "Your invoice is often the proof the carpet maker asks for before it honors a warranty, and it's the receipt a tenant uses to get a deposit back. This guide covers pricing per room or per square foot, naming the cleaning method, stain treatment that isn't guaranteed, pet urine, stairs, furniture, protector, recording wear before you start, and move-out jobs.",
+  },
+  {
     slug: "how-to-invoice-for-gutter-cleaning",
     title: "How to Invoice for Gutter Cleaning (Linear Feet, Downspouts, Guards & Before/After Photos, 2026)",
     excerpt:

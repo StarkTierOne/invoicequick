@@ -242,6 +242,16 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Pre-existing conditions noted before work: _ (sagging / loose hangers / leaking seams) — before & after photos on file",
     ],
   },
+  "carpet-cleaning": {
+    trade: "Carpet Cleaning",
+    items: [
+      "Carpet cleaning — hot water extraction, _ rooms (rooms up to _ sq ft; larger rooms count as _)",
+      "Stairs and landing — _ steps, extracted",
+      "Spot and stain treatment — _ (improvement, not guaranteed removal)",
+      "Pet urine treatment — enzyme treatment, _ areas located with UV light",
+      "Pre-existing conditions noted before work: _ (permanent stains / wear / seams / loose carpet) — photos on file",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [

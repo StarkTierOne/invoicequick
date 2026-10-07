@@ -2001,6 +2001,47 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "how-to-invoice-for-gutter-cleaning",
     guideLabel: "How to invoice for gutter cleaning — linear feet, downspouts, guards, and before/after photos",
   },
+  "carpet-cleaning": {
+    slug: "carpet-cleaning",
+    trade: "Carpet Cleaning",
+    icon: "🧽",
+    metaTitle: "Free Carpet Cleaning Invoice Template — Rooms, Stains, Pet Treatment & Warranty Receipts | InvoiceQuick",
+    metaDescription: "A free carpet cleaning invoice template for residential and commercial carpet cleaners. Bill per room or per square foot with the room size stated, name the cleaning method, list stairs, stain and pet treatments separately, record wear and permanent stains before you start, and give customers a receipt that works for carpet warranties and move-out deposits. Download a PDF. No sign-up.",
+    tagline: "Built for carpet cleaners billing a three-bedroom house, a pet-stained hallway and a move-out apartment — room sizes on the line, the cleaning method named, stain work promised honestly, and a receipt the customer can show a carpet maker or a landlord.",
+    intro: [
+      "Carpet cleaning invoices get argued over in two places: what counted as a 'room,' and the stain that is still there. A customer who booked '3 rooms for $150' and then sees $210 because the living room and dining room were one open space, or because the hallway and stairs were extra, feels tricked even when your price list was clear. And a customer who sees a faint coffee mark after the carpet dries assumes the job wasn't done.",
+      "Carpet invoices also do a job after they're paid. Many carpet manufacturers' warranties ask the owner to have the carpet professionally cleaned every so often and to keep the receipts, and tenants hand a carpet cleaning receipt to their landlord to get a deposit back. This template states the room size and the method, keeps stairs, stain treatment and pet treatment on their own lines, records wear and permanent stains before the wand touches the carpet, and reads like a receipt someone else can rely on.",
+    ],
+    billingModel: "Residential carpet cleaning is usually priced per room, with a stated maximum room size (larger rooms or open-plan areas count as more than one), or per square foot. Stairs are usually priced per step, and hallways, closets and landings are either included or priced as small areas — say which. The cleaning method matters to the price and the result: hot water extraction (often called steam cleaning) is the most common and is what many carpet warranties name; low-moisture methods dry faster but suit different carpet. Spot and stain treatment, pet urine treatment, deodorizing, carpet protector and furniture moving are commonly separate lines. Upholstery and area rugs are priced per piece or per square foot. Most operators set a minimum job charge. Payment is normally due on completion. Property managers and landlords often buy move-out cleans per unit, sometimes on net 30 with a work order number.",
+    lineItems: [
+      { description: "Carpet cleaning — hot water extraction, 3 rooms (rooms up to 200 sq ft; living/dining open area counted as 2)", unit: "per room or per sq ft", note: "State the room-size limit and how big or open spaces were counted. This is the single most common carpet cleaning dispute, and one line settles it." },
+      { description: "Hallway and closets — 1 hallway, 2 closets, included", unit: "included or per area", note: "Say whether small areas are included. Listing them at $0 shows they were cleaned and stops the 'you skipped the hall' call." },
+      { description: "Stairs and landing — 13 steps, extracted by hand tool", unit: "per step", note: "Stairs are slow, hand-tool work. A per-step line with the count is easy to check and explains why the staircase cost more than a bedroom." },
+      { description: "Spot and stain treatment — coffee (living room), red drink (bedroom 2); improvement, not guaranteed removal", unit: "per stain or per area", note: "Name the stains you treated and say plainly that removal isn't guaranteed. Some stains are dye damage, not dirt, and no cleaner can lift them." },
+      { description: "Pet urine treatment — 4 areas located with UV light, enzyme treatment applied", unit: "per area", note: "Count the areas and say how you found them. Deep urine can soak through to the pad, so be honest that odor may come back and the pad may need replacing." },
+      { description: "Furniture moved and replaced — sofa, 2 chairs, coffee table (beds and dressers not moved)", unit: "per piece or included", note: "Say what you moved and what you didn't. Customers assume everything gets moved unless the invoice says otherwise." },
+      { description: "Carpet protector applied — living room and hallway, approx. 420 sq ft", unit: "per sq ft", note: "Protector is an add-on many customers say yes to on site. Give it its own line with the area so it isn't hidden in the cleaning price." },
+      { description: "Pre-existing conditions noted before work: traffic-lane wear (hallway), bleach spot (bedroom 1, permanent), loose seam (doorway) — photos on file", unit: "record, $0", note: "The most useful $0 line on the ticket. Cleaning makes wear and old damage easier to see, and the customer may blame the cleaning unless it was written down first." },
+      { description: "Move-out clean — Unit 4B, 2 bedrooms + living room, work order #3317; dry time 6–12 hours", unit: "per unit or per room", note: "Landlords and tenants both use this receipt. Name the unit and rooms, carry the work order, and note the expected dry time so nobody walks a wet carpet into a dispute." },
+    ],
+    gotchas: [
+      "Not stating what a 'room' is. If your price is per room, write the size limit and how open spaces, L-shaped rooms and hallways were counted. Otherwise every job with an open floor plan becomes an argument.",
+      "Promising stains will come out. Many stains lift; some are dye damage, bleach, or set-in spills that no cleaner can remove. Write 'improvement, not guaranteed removal' on the stain line every time.",
+      "Leaving out the cleaning method. Many carpet warranties ask for professional cleaning, often hot water extraction, at set intervals. A receipt that just says 'carpet cleaning' may not be enough for the customer's warranty claim.",
+      "No record of wear before the clean. Clean carpet shows traffic lanes, fraying, seams and old bleach spots more clearly than dirty carpet. Record them before you start, with photos, or you may be blamed for them.",
+      "Pet urine treated as a stain. Urine soaks into the backing and pad and can smell again weeks later. Price it as its own treatment, say how many areas, and say that pad damage needs more than cleaning.",
+      "Furniture assumptions. If you don't move beds, dressers or pianos, say so on the estimate and the invoice. 'Cleaned around' is a fair answer if the customer knew it in advance.",
+      "Leaving off the dry time. A customer who walks on wet carpet or puts furniture back too soon can cause marks or rust stains. Note the expected dry time and furniture tabs or blocks used.",
+    ],
+    faqs: [
+      { q: "Should I charge for carpet cleaning per room or per square foot?", a: "Both are common. Per-room pricing is easy for customers to understand, but only if you state the room-size limit and how open areas count. Per-square-foot pricing is easier to check and fairer for big or odd-shaped spaces. Many carpet cleaners quote per room with a size cap and switch to square feet for large areas or commercial jobs. Either way, list stairs, stain treatment, pet treatment and protector separately, and set a minimum job charge. Rates vary by region, so build yours from your own time, travel, equipment and chemical costs." },
+      { q: "Can a carpet cleaning receipt be used for a carpet warranty?", a: "Often, yes — many carpet manufacturers' warranties ask owners to have carpet professionally cleaned at regular intervals and to keep the receipts. Requirements differ by manufacturer and warranty, so customers should check theirs. A receipt is most useful when it shows the date, the address, the rooms cleaned, the method (for example, hot water extraction) and your business name. A one-line 'carpet cleaning — $150' receipt may not be enough." },
+      { q: "How should I word stain treatment on an invoice?", a: "Name the stain and where it was, say what you did, and add 'improvement, not guaranteed removal.' For example: 'Spot treatment — coffee, living room; improvement, not guaranteed removal.' Some stains are permanent dye damage, and the invoice should say what you tried, not promise a result you can't control." },
+      { q: "What should a move-out carpet cleaning receipt include?", a: "Your business details, the date, the full address with the unit number, the rooms and stairs cleaned, the method, any stain or pet treatment, and the amount paid. If a landlord or property manager ordered the job, include their work order or purchase order number. Note any permanent stains or wear you found before cleaning — that protects both the tenant and you if the deposit is later disputed." },
+    ],
+    guideSlug: "how-to-invoice-for-carpet-cleaning",
+    guideLabel: "How to invoice for carpet cleaning — rooms, stains, pet treatment, and warranty receipts",
+  },
 };
 
 /** Stable ordering for the hub grid and sitemap. */
