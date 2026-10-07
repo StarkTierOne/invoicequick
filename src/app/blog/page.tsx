@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "google-sheets-invoice-template",
+    title: "Google Sheets Invoice Template: How to Build a Free One Step by Step (2026)",
+    excerpt:
+      "A Google Sheets invoice is free and shareable, but it will not number itself or remind a client to pay. This guide builds one step by step: the layout, the formulas for line totals, subtotal, tax and total, currency formatting, locked cells, a reusable template, safe numbering, PDF export and a Google Docs version, then compares it with Word, Excel and an online generator and says when to move off a spreadsheet.",
+  },
+  {
     slug: "how-to-invoice-for-carpet-cleaning",
     title: "How to Invoice for Carpet Cleaning (Rooms, Stains, Pet Treatment & Warranty Receipts, 2026)",
     excerpt:

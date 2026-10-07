@@ -37,7 +37,7 @@ const pricingFaqs = [
   {
     question: "Is the free plan really free? What's the catch?",
     answer:
-      "There is no catch. The free plan gives you unlimited invoices, PDF download, 50+ currencies, and zero watermarks — no credit card required, no trial timer, no invoice limit. We make money on Pro ($9/mo) and Business ($29/mo), not by crippling the free tier. If you can do your invoicing in 5 minutes a month on the free plan, stay on it forever.",
+      "There is no catch. The free plan gives you unlimited invoices, PDF download, 10 currencies, and zero watermarks — no credit card required, no trial timer, no invoice limit. We make money on Pro ($9/mo) and Business ($29/mo), not by crippling the free tier. If you can do your invoicing in 5 minutes a month on the free plan, stay on it forever.",
   },
   {
     question: "When should I upgrade from Free to Pro?",
@@ -177,7 +177,7 @@ export default function PricingPage() {
               <li>• You can track who paid in your inbox or a spreadsheet</li>
             </ul>
             <p className="mt-3 text-sm text-gray-600">
-              The free tier handles unlimited invoices, 50+ currencies, and clean PDF export. For most solo
+              The free tier handles unlimited invoices, 10 currencies, and clean PDF export. For most solo
               freelancers in their first 1–2 years, this is the right plan.
             </p>
           </div>
@@ -282,7 +282,7 @@ export default function PricingPage() {
               </tr>
               <tr className="border-b border-gray-100">
                 <td className="p-3 font-medium">Multi-currency invoices</td>
-                <td className="p-3">Free (50+ currencies)</td>
+                <td className="p-3">Free (10 currencies)</td>
                 <td className="p-3">Limited</td>
                 <td className="p-3">Free</td>
                 <td className="p-3">Included on paid</td>
@@ -443,7 +443,7 @@ export default function PricingPage() {
                 price: "0",
                 priceCurrency: "USD",
                 description:
-                  "Unlimited invoices, PDF download, 50+ currencies, no watermarks, basic templates. No credit card required.",
+                  "Unlimited invoices, PDF download, 10 currencies, no watermarks, basic templates. No credit card required.",
                 url: "https://invoicequick-phi.vercel.app/pricing",
                 availability: "https://schema.org/InStock",
               },

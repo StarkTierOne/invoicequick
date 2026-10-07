@@ -438,7 +438,7 @@ const faqs = [
   },
   {
     question: "What currencies does InvoiceQuick support?",
-    answer: "InvoiceQuick supports 50+ currencies including USD, EUR, GBP, CAD, AUD, JPY, CHF, and many more. You can select your preferred currency from the invoice creator and it will appear correctly on your PDF.",
+    answer: "InvoiceQuick supports 10 currencies: USD, EUR, GBP, CAD, AUD, JPY, MXN, BRL, INR, and CHF. Pick one in the invoice creator and the right symbol appears on your PDF.",
   },
   {
     question: "What payment terms should I put on my invoice?",
@@ -486,8 +486,8 @@ const features = [
   { icon: "\u26A1", title: "Instant Creation", desc: "Fill in your details and generate a professional invoice in under 60 seconds." },
   { icon: "\uD83D\uDCC4", title: "PDF Download", desc: "Download your invoice as a clean, print-ready PDF. No watermarks on free tier." },
   { icon: "\uD83D\uDD04", title: "Save & Reuse", desc: "Pro users can save templates, client details, and auto-number invoices." },
-  { icon: "\uD83D\uDCB0", title: "Track Payments", desc: "Mark invoices as paid, pending, or overdue. Know where your money is." },
-  { icon: "\uD83C\uDF0D", title: "Multi-Currency", desc: "Support for USD, EUR, GBP, CAD, AUD, and 50+ currencies worldwide." },
+  { icon: "\uD83D\uDCB0", title: "Track Payments", desc: "Save invoices to a free account and mark them paid, pending, or overdue. Know where your money is." },
+  { icon: "\uD83C\uDF0D", title: "Multi-Currency", desc: "Bill in USD, EUR, GBP, CAD, AUD, JPY, MXN, BRL, INR, or CHF, with the right symbol on the PDF." },
   { icon: "\uD83D\uDD12", title: "No Sign-Up Required", desc: "Start creating invoices immediately. No email, no password, no friction." },
 ];
 
@@ -502,8 +502,8 @@ const factBar = [
 
 const howItWorks = [
   { step: "1", title: "Fill In Details", desc: "Enter your business info, client details, and line items. Our smart form auto-calculates totals and tax." },
-  { step: "2", title: "Preview Your Invoice", desc: "See a real-time preview of your professional invoice. Pick a template, adjust colors, add your logo." },
-  { step: "3", title: "Download & Send", desc: "Download as a polished PDF or share a payment link. Track when your client views and pays." },
+  { step: "2", title: "Watch It Fill In", desc: "The preview updates as you type. Totals, tax, and discounts calculate themselves, and your logo shows up on the PDF." },
+  { step: "3", title: "Download & Send", desc: "Download a clean, watermark-free PDF and email it however you like. Your draft stays saved on this device, so you can come back and finish later." },
 ];
 
 const pricing = [
@@ -747,9 +747,9 @@ export default function Home() {
           <span className="text-indigo-600">In Seconds</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-          The fastest way to create, download, and send beautiful invoices &mdash; and
-          keep <strong className="text-gray-900">100% of what you bill</strong>, with zero
-          payment-processing fees. Just professional invoices that get you paid.
+          Free invoices for freelancers and trades. Start from your trade&rsquo;s line items,
+          add your logo, and download a clean PDF. Your client pays you directly, so you keep{" "}
+          <strong className="text-gray-900">100% of what you bill</strong>.
         </p>
         <HeroStarter />
         <p className="mt-4 text-sm text-gray-500">
@@ -981,7 +981,7 @@ export default function Home() {
                 ["Unlimited invoices", "✓", "✓", "✓", "✓"],
                 ["No watermarks", "✓", "✓", "✓", "✓"],
                 ["PDF download", "✓", "✓", "✓", "—"],
-                ["Multi-currency", "✓ (50+)", "✓", "✓", "Limited"],
+                ["Multi-currency", "✓ (10)", "✓", "✓", "Limited"],
                 ["Custom branding / logo", "Pro only", "✓", "✓", "—"],
                 ["Recurring invoices", "Pro only", "✓", "✓", "—"],
                 ["Time tracking", "—", "✓", "—", "—"],
@@ -1158,7 +1158,7 @@ export default function Home() {
             description: "Free invoice generator for freelancers and small businesses. Create professional PDF invoices in seconds. No sign-up required.",
             featureList: [
               "Unlimited PDF invoice generation",
-              "50+ currency support",
+              "10 currencies with the right symbol",
               "Custom payment terms",
               "Automatic tax calculation",
               "Client management",

@@ -237,7 +237,7 @@ export default function FreeInvoiceGeneratorPage() {
               </tr>
               <tr className="border-b border-gray-100">
                 <td className="p-3 font-medium">Multi-currency invoices</td>
-                <td className="p-3">Free (50+ currencies)</td>
+                <td className="p-3">Free (10 currencies)</td>
                 <td className="p-3">Limited</td>
                 <td className="p-3">Free</td>
                 <td className="p-3">Included on paid</td>
@@ -366,7 +366,7 @@ export default function FreeInvoiceGeneratorPage() {
               "PDF download",
               "No signup required",
               "No watermarks",
-              "50+ currencies",
+              "10 currencies",
               "Tax and discount calculations",
               "Custom logo upload",
               "Email invoice to client",

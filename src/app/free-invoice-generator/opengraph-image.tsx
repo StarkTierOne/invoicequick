@@ -76,7 +76,7 @@ export default function Image() {
 
         {/* Trust row — inline SVG icons (next/og's default font lacks ✓ glyphs) */}
         <div style={{ display: "flex", alignItems: "center", gap: 36, fontSize: 28, color: "#374151" }}>
-          {["Unlimited invoices", "No watermark", "50+ currencies", "Auto tax math"].map((label) => (
+          {["Unlimited invoices", "No watermark", "10 currencies", "Auto tax math"].map((label) => (
             <div key={label} style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="11" fill="#dcfce7" />
