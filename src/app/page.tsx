@@ -24,6 +24,36 @@ import { tradeCards } from "@/lib/trade-cards";
 // with the trade dimension set, so "hero chip" vs "hero button" is answerable.
 const HERO_CHIP_COUNT = 8;
 
+// The "who it's for" cards. Each persona that has a template page now leads
+// with the seeded builder — the reader has just been told their billing shape
+// in one sentence, and the next thing they want is the invoice, not a
+// 3,000-word guide. The guide stays as the small secondary link, same split as
+// the trade grid further down. `start` is a distinct label per card so the
+// delegated create_cta_click listener can tell these from the hero chips (which
+// also carry `?trade=`). The writers card has no template page yet, so it
+// keeps the guide as its only link.
+//
+// `tmpl` must be a template-backed trade in `tradeCards`; a slug that is not
+// would open /create with no seed and look like a working link. Checked at
+// module load so it fails the build rather than ships.
+const whoItsFor: { icon: string; title: string; desc: string; href: string; guide: string; tmpl?: string; start?: string }[] = [
+  { icon: "🎨", title: "Freelance Designers", desc: "Bill for logo design, branding, UI work, and revisions with clean itemized PDFs your clients will trust.", href: "/blog/invoice-template-graphic-designers", guide: "Designer invoicing guide", tmpl: "graphic-design", start: "Start a design invoice" },
+  { icon: "💻", title: "Web Developers", desc: "Invoice per project, per milestone, or hourly. Track which builds are paid and which need a follow-up.", href: "/blog/how-to-invoice-for-web-development", guide: "Web development invoicing guide", tmpl: "web-development", start: "Start a web development invoice" },
+  { icon: "📸", title: "Photographers & Videographers", desc: "Bill the retainer, the balance, and the usage license right — packages, second shooter, albums, and travel, itemized in under a minute.", href: "/blog/how-to-invoice-for-photography", guide: "How to invoice for photography", tmpl: "photography", start: "Start a photography invoice" },
+  { icon: "📝", title: "Writers & Editors", desc: "Bill per article, per word, or per hour. Add your byline, link to the published work, and get paid.", href: "/blog/how-to-invoice-as-a-freelancer", guide: "Freelancer invoicing guide" },
+  { icon: "🔧", title: "Contractors & Tradespeople", desc: "Create itemized invoices for labor and materials. Add your license number and payment terms in seconds.", href: "/blog/how-to-invoice-for-construction-work", guide: "Construction invoicing guide", tmpl: "construction", start: "Start a contractor invoice" },
+  { icon: "💼", title: "Consultants & Coaches", desc: "Invoice for sessions, retainers, or project-based work. Look professional from day one, no bookkeeper needed.", href: "/blog/invoice-template-consultants", guide: "Consultant invoicing guide", tmpl: "consulting", start: "Start a consulting invoice" },
+];
+{
+  const templateSlugs = new Set(tradeCards.filter((c) => c.tmpl).map((c) => c.tmpl));
+  const bad = whoItsFor.filter((w) => w.tmpl && (!templateSlugs.has(w.tmpl) || !w.start));
+  if (bad.length > 0) {
+    throw new Error(
+      `homepage whoItsFor: ${bad.map((w) => w.title).join(", ")} point at a trade with no template page (or lack a start label)`,
+    );
+  }
+}
+
 function HeroStarter() {
   const router = useRouter();
   const [name, setName] = useState("");
@@ -831,21 +861,31 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-4">Built for People Who Work for Themselves</h2>
           <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">No matter what you do, InvoiceQuick makes billing simple. No accountant required.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: "🎨", title: "Freelance Designers", desc: "Bill for logo design, branding, UI work, and revisions with clean itemized PDFs your clients will trust.", href: "/blog/invoice-template-graphic-designers", guide: "Designer invoicing guide" },
-              { icon: "💻", title: "Web Developers", desc: "Invoice per project, per milestone, or hourly. Track which builds are paid and which need a follow-up.", href: "/blog/how-to-invoice-for-hourly-work", guide: "How to invoice hourly work" },
-              { icon: "📸", title: "Photographers & Videographers", desc: "Bill the retainer, the balance, and the usage license right — packages, second shooter, albums, and travel, itemized in under a minute.", href: "/blog/how-to-invoice-for-photography", guide: "How to invoice for photography" },
-              { icon: "📝", title: "Writers & Editors", desc: "Bill per article, per word, or per hour. Add your byline, link to the published work, and get paid.", href: "/blog/how-to-invoice-as-a-freelancer", guide: "Freelancer invoicing guide" },
-              { icon: "🔧", title: "Contractors & Tradespeople", desc: "Create itemized invoices for labor and materials. Add your license number and payment terms in seconds.", href: "/blog/invoice-for-services-rendered", guide: "Invoicing for services rendered" },
-              { icon: "💼", title: "Consultants & Coaches", desc: "Invoice for sessions, retainers, or project-based work. Look professional from day one, no bookkeeper needed.", href: "/blog/invoice-template-consultants", guide: "Consultant invoicing guide" },
-            ].map((item) => (
+            {whoItsFor.map((item) => (
               <div key={item.title} className="card bg-white hover:shadow-md transition-shadow flex flex-col">
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                <Link href={item.href} className="mt-3 text-sm font-medium text-indigo-600 hover:text-indigo-700">
-                  {item.guide} &rarr;
-                </Link>
+                {item.tmpl ? (
+                  <>
+                    <Link
+                      href={`/create?trade=${item.tmpl}`}
+                      className="mt-3 text-sm font-semibold text-indigo-600 hover:text-indigo-700"
+                    >
+                      {item.start} &rarr;
+                    </Link>
+                    <Link
+                      href={item.href}
+                      className="mt-1 text-xs text-gray-500 hover:text-gray-700 underline decoration-gray-300"
+                    >
+                      {item.guide}
+                    </Link>
+                  </>
+                ) : (
+                  <Link href={item.href} className="mt-3 text-sm font-medium text-indigo-600 hover:text-indigo-700">
+                    {item.guide} &rarr;
+                  </Link>
+                )}
               </div>
             ))}
           </div>

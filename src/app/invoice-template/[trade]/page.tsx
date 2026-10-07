@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles } from "@/lib/blog-articles";
-import { tradeTemplates, tradeTemplateSlugs, getTradeTemplate } from "@/lib/invoice-template-trades";
+import {
+  tradeTemplates,
+  tradeTemplateSlugs,
+  tradeClusters,
+  getTradeTemplate,
+  getRelatedTrades,
+} from "@/lib/invoice-template-trades";
 
 const BASE_URL = "https://invoicequick-phi.vercel.app";
 
@@ -40,9 +46,16 @@ export default async function TradeInvoiceTemplatePage({ params }: Props) {
   // link rather than shipping a 404 into every one of these pages.
   const guideExists = Boolean(t.guideSlug && articles[t.guideSlug]);
 
-  // Sibling trades for the cross-link rail, in map order, excluding this one.
+  // The cross-link rail in two tiers. First the trades this one bills
+  // alongside (a carpet cleaner's window crew, a plumber's electrician) —
+  // derived from the catalogue's cluster field, so a trade added to the
+  // cluster appears here on every sibling page at once. Then every other
+  // trade, in map order, so no page loses a link it had before.
+  const related = getRelatedTrades(t.slug);
+  const cluster = t.cluster ? tradeClusters[t.cluster] : undefined;
+  const relatedSlugs = new Set(related.map((r) => r.slug));
   const others = tradeTemplateSlugs
-    .filter((s) => s !== t.slug)
+    .filter((s) => s !== t.slug && !relatedSlugs.has(s))
     .map((s) => tradeTemplates[s]);
 
   return (
@@ -220,6 +233,29 @@ export default async function TradeInvoiceTemplatePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Related trades — the ones that bill alongside this one */}
+      {cluster && related.length > 0 && (
+        <section className="max-w-5xl mx-auto px-4 pt-14 pb-4">
+          <h2 className="text-xl font-bold text-gray-900 mb-2 text-center">
+            {cluster.label}: templates that bill together
+          </h2>
+          <p className="text-gray-600 text-sm text-center max-w-2xl mx-auto mb-6">{cluster.blurb}</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            {related.map((r) => (
+              <Link
+                key={r.slug}
+                href={`/invoice-template/${r.slug}`}
+                className="card border-indigo-100 bg-indigo-50/40 hover:border-indigo-300 hover:shadow-md transition-all text-center py-4"
+              >
+                <div className="text-2xl mb-1" aria-hidden="true">{r.icon}</div>
+                <div className="text-sm font-medium text-gray-900">{r.trade}</div>
+                <div className="text-xs text-indigo-600 mt-1">Invoice template</div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Other trades */}
       <section className="max-w-5xl mx-auto px-4 py-14">

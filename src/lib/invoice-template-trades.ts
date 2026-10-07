@@ -42,6 +42,14 @@ export interface TradeTemplate {
   /** Display name, title case, as it appears mid-sentence. */
   trade: string;
   icon: string;
+  /**
+   * The group of trades this one bills alongside — a cleaning company runs
+   * carpet and window crews, a plumber refers the electrician. Must be a key of
+   * `tradeClusters`; the guard below fails the build otherwise. Optional,
+   * because a trade with no real siblings (trucking, catering) should not be
+   * forced into a fake group.
+   */
+  cluster?: string;
   metaTitle: string;
   metaDescription: string;
   /** One-sentence summary under the H1. */
@@ -65,6 +73,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "cleaning",
     trade: "Cleaning",
     icon: "🧹",
+    cluster: "cleaning",
     metaTitle: "Free Cleaning Invoice Template — Fill In & Download PDF | InvoiceQuick",
     metaDescription:
       "A free cleaning invoice template for residential and commercial cleaners. Bill per visit, per square foot, or on a recurring contract — itemize supplies, add-ons, and travel, then download a PDF. No sign-up.",
@@ -151,6 +160,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "landscaping",
     trade: "Landscaping & Lawn Care",
     icon: "🌿",
+    cluster: "property",
     metaTitle: "Free Landscaping & Lawn Care Invoice Template — Download PDF | InvoiceQuick",
     metaDescription:
       "A free lawn care and landscaping invoice template. Bill per cut, per season, or per install — itemize mowing, materials, disposal, and equipment, then download a professional PDF. No sign-up required.",
@@ -237,6 +247,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "construction",
     trade: "Construction",
     icon: "🏗️",
+    cluster: "building",
     metaTitle: "Free Construction Invoice Template — Progress Billing & Retainage | InvoiceQuick",
     metaDescription:
       "A free construction invoice template with progress billing, retainage, change orders, and materials vs labor separated. Fill it in and download a professional PDF. No sign-up required.",
@@ -323,6 +334,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "plumbing",
     trade: "Plumbing",
     icon: "🔧",
+    cluster: "home-repair",
     metaTitle: "Free Plumbing Invoice Template — Service Call, Parts & Labor | InvoiceQuick",
     metaDescription:
       "A free plumbing invoice template with the service call fee, labor, parts markup, and permit lines already structured. Fill it in and download a professional PDF. No sign-up required.",
@@ -409,6 +421,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "electrical",
     trade: "Electrical",
     icon: "⚡",
+    cluster: "home-repair",
     metaTitle: "Free Electrical Invoice Template — Labor, Materials & Permits | InvoiceQuick",
     metaDescription:
       "A free electrical contractor invoice template with labor, materials, permit and inspection fees, and license number. Fill it in and download a professional PDF. No sign-up required.",
@@ -495,6 +508,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "hvac",
     trade: "HVAC",
     icon: "❄️",
+    cluster: "home-repair",
     metaTitle: "Free HVAC Invoice Template — Service, Refrigerant & Equipment | InvoiceQuick",
     metaDescription:
       "A free HVAC invoice template covering diagnostic fees, refrigerant, equipment installs, maintenance agreements, and warranty parts. Fill in and download a PDF. No sign-up required.",
@@ -581,6 +595,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "handyman",
     trade: "Handyman",
     icon: "🛠️",
+    cluster: "home-repair",
     metaTitle: "Free Handyman Invoice Template — Hourly, Half-Day & Materials | InvoiceQuick",
     metaDescription:
       "A free handyman invoice template for hourly, half-day, and per-task billing, with materials, trip charge, and disposal lines. Fill in and download a professional PDF. No sign-up.",
@@ -667,6 +682,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "painting",
     trade: "Painting",
     icon: "🎨",
+    cluster: "property",
     metaTitle: "Free Painting Invoice Template — Per Room, Per Sq Ft & Materials | InvoiceQuick",
     metaDescription:
       "A free painting contractor invoice template with prep, coats, materials, and per-room or per-square-foot pricing. Fill it in and download a professional PDF. No sign-up required.",
@@ -753,6 +769,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "roofing",
     trade: "Roofing",
     icon: "🏠",
+    cluster: "building",
     metaTitle: "Free Roofing Invoice Template — Squares, Tear-Off & Insurance | InvoiceQuick",
     metaDescription:
       "A free roofing invoice template billing by the square, with tear-off, decking, underlayment, disposal, and insurance-claim lines. Fill in and download a PDF. No sign-up required.",
@@ -925,6 +942,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "photography",
     trade: "Photography",
     icon: "📸",
+    cluster: "creative",
     metaTitle: "Free Photography Invoice Template — Retainer, Balance & Licensing | InvoiceQuick",
     metaDescription:
       "A free photography invoice template covering the retainer, the balance, usage licensing, second shooter, and travel. Fill in and download a professional PDF. No sign-up required.",
@@ -1011,6 +1029,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "snow-removal",
     trade: "Snow Removal",
     icon: "🌨️",
+    cluster: "property",
     metaTitle: "Free Snow Removal Invoice Template — Per Push, Seasonal & Salt | InvoiceQuick",
     metaDescription:
       "A free snow removal invoice template for per-push, per-inch, seasonal contract, and salting work. Log the storm date and snowfall, then download a PDF. No sign-up required.",
@@ -1097,6 +1116,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "junk-removal",
     trade: "Junk Removal & Hauling",
     icon: "🚛",
+    cluster: "property",
     metaTitle: "Free Junk Removal Invoice Template — Truck Load, Dump Fees & Labor | InvoiceQuick",
     metaDescription:
       "A free junk removal and hauling invoice template. Bill by truck load or volume, itemize dump fees, heavy items, and labor, then download a professional PDF. No sign-up required.",
@@ -1269,6 +1289,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "web-development",
     trade: "Web Development",
     icon: "💻",
+    cluster: "creative",
     metaTitle: "Free Web Development Invoice Template — Milestones, Hourly & Retainer | InvoiceQuick",
     metaDescription:
       "A free web development invoice template for milestone, hourly, and retainer billing, with scope changes, third-party costs, and maintenance lines. Download a PDF free. No sign-up.",
@@ -1440,6 +1461,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "subcontractor",
     trade: "Subcontracting",
     icon: "🔨",
+    cluster: "building",
     metaTitle: "Free Subcontractor Invoice Template — Retainage, Lien Waiver & Change Orders | InvoiceQuick",
     metaDescription:
       "A free subcontractor invoice template for billing a general contractor. Bill against your schedule of values, show retainage withheld and net due, add signed change orders, carry disputed backcharges as open items, then download a PDF. No sign-up.",
@@ -1525,6 +1547,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "tutoring",
     trade: "Tutoring & Test Prep",
     icon: "📚",
+    cluster: "professional",
     metaTitle: "Free Tutoring Invoice Template — Session Packages, No-Shows & Sibling Billing | InvoiceQuick",
     metaDescription:
       "A free tutoring invoice template for private tutors and test-prep coaches. Itemize each session by student, date and subject, draw down a prepaid package, charge a late cancellation under your policy, bill two siblings on one invoice, then download a PDF. No sign-up.",
@@ -1610,6 +1633,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "consulting",
     trade: "Consulting",
     icon: "💼",
+    cluster: "professional",
     metaTitle: "Free Consulting Invoice Template — Retainers, Milestones & Expenses | InvoiceQuick",
     metaDescription:
       "A free consulting invoice template for independent and boutique consultants. Draw down a monthly retainer, bill a milestone against its acceptance date, separate out-of-scope hours, pass expenses through at cost, and carry the PO number AP needs. Download a PDF. No sign-up.",
@@ -1697,6 +1721,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "graphic-design",
     trade: "Graphic Design",
     icon: "✏️",
+    cluster: "creative",
     metaTitle: "Free Graphic Design Invoice Template — Revisions, Licensing & Source Files | InvoiceQuick",
     metaDescription:
       "A free graphic design invoice template for freelance designers and studios. Show the revision rounds included and the ones beyond them, price the usage license separately from the artwork, charge for source-file release, pass stock and font licenses through at cost, and bill a kill fee when a project stops. Download a PDF. No sign-up.",
@@ -1790,6 +1815,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "pest-control",
     trade: "Pest Control",
     icon: "🐜",
+    cluster: "home-repair",
     metaTitle: "Free Pest Control Invoice Template — Service Plans, Callbacks & Termite Bonds | InvoiceQuick",
     metaDescription:
       "A free pest control invoice template for exterminators and pest management companies. Bill the initial service and each plan visit, show free re-services at $0, record the product and EPA registration number applied, renew a termite bond, and invoice a WDI inspection to escrow. Download a PDF. No sign-up.",
@@ -1882,6 +1908,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "pressure-washing",
     trade: "Pressure Washing",
     icon: "💦",
+    cluster: "cleaning",
     metaTitle: "Free Pressure Washing Invoice Template — Square Footage, Soft Wash & Surfaces | InvoiceQuick",
     metaDescription: "A free pressure washing invoice template for power washing and soft wash companies. Bill each surface by square foot, separate soft wash from pressure work, show chemical and water charges, note pre-existing conditions, and invoice recurring HOA and commercial routes. Download a PDF. No sign-up.",
     tagline: "Built for pressure washing and soft wash operators billing a house, a driveway, a roof and a stain treatment on one ticket — each surface on its own line, with its square footage and its method.",
@@ -1923,6 +1950,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "window-cleaning",
     trade: "Window Cleaning",
     icon: "🪟",
+    cluster: "cleaning",
     metaTitle: "Free Window Cleaning Invoice Template — Per Pane, Screens, Tracks & Storefront Routes | InvoiceQuick",
     metaDescription: "A free window cleaning invoice template for residential and commercial window cleaners. Bill by the pane or the window, list interior and exterior separately, add screens, tracks and hard water treatment, note failed seals and scratches before you start, and invoice recurring storefront routes. Download a PDF. No sign-up.",
     tagline: "Built for window cleaners billing a two-story house, a storefront route and a post-construction clean — outside and inside on their own lines, counted by the pane, with screens, tracks and access shown separately.",
@@ -1964,6 +1992,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "gutter-cleaning",
     trade: "Gutter Cleaning",
     icon: "🍂",
+    cluster: "cleaning",
     metaTitle: "Free Gutter Cleaning Invoice Template — Linear Feet, Downspouts, Guards & Before/After Photos | InvoiceQuick",
     metaDescription: "A free gutter cleaning invoice template for residential and commercial gutter cleaners. Bill by the linear foot and the story, list downspouts and gutter guards separately, record sagging, leaks and loose hangers before you start, show debris removal and minor repairs on their own lines, and invoice spring and fall plans. Download a PDF. No sign-up.",
     tagline: "Built for gutter cleaners billing a two-story house, a guard-covered roofline and a fall service plan — feet and stories on every line, downspouts and guards shown separately, and photo proof of work the customer can't see from the ground.",
@@ -2005,6 +2034,7 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     slug: "carpet-cleaning",
     trade: "Carpet Cleaning",
     icon: "🧽",
+    cluster: "cleaning",
     metaTitle: "Free Carpet Cleaning Invoice Template — Rooms, Stains, Pet Treatment & Warranty Receipts | InvoiceQuick",
     metaDescription: "A free carpet cleaning invoice template for residential and commercial carpet cleaners. Bill per room or per square foot with the room size stated, name the cleaning method, list stairs, stain and pet treatments separately, record wear and permanent stains before you start, and give customers a receipt that works for carpet warranties and move-out deposits. Download a PDF. No sign-up.",
     tagline: "Built for carpet cleaners billing a three-bedroom house, a pet-stained hallway and a move-out apartment — room sizes on the line, the cleaning method named, stain work promised honestly, and a receipt the customer can show a carpet maker or a landlord.",
@@ -2107,6 +2137,97 @@ if (cardProblems.length > 0) {
 
 export function getTradeTemplate(slug: string): TradeTemplate | undefined {
   return tradeTemplates[slug];
+}
+
+// Trade clusters: the groups of trades that bill together.
+//
+// Why: the cleaning set (cleaning, pressure washing, window, gutter, carpet)
+// was built one page at a time, and each page's cross-link rail treated the
+// other 24 trades as equals — so a carpet cleaner who also runs a window crew
+// had to find the window page in an alphabet-free grid. The same is true of a
+// plumber looking for the electrical template. Membership is declared on each
+// trade entry (`cluster`), the groups themselves are described once here, and
+// every surface that shows "related trades" derives from the two — nothing is
+// hand-listed on the hub or on any trade page.
+export interface TradeCluster {
+  /** Heading, title case. */
+  label: string;
+  /** One sentence on why these trades share an invoice shape. */
+  blurb: string;
+}
+
+export const tradeClusters: Record<string, TradeCluster> = {
+  cleaning: {
+    label: "Cleaning & Exterior Care",
+    blurb:
+      "Interior and exterior cleaning crews bill the same way — a count (rooms, panes, feet, square feet) with a stated minimum, add-ons as separate lines, and a note of what was already worn or damaged before the work started.",
+  },
+  "home-repair": {
+    label: "Home Repair & Service Calls",
+    blurb:
+      "Service-call trades bill a diagnostic or trip fee, then parts and labor as separate lines — and the dispute is almost always whether the first fee was credited against the repair.",
+  },
+  property: {
+    label: "Property & Grounds",
+    blurb:
+      "Seasonal and per-visit property work: a service log with dates on every line, a per-visit or per-event unit, and the disposal, haul-away, or materials billed separately from the labor.",
+  },
+  building: {
+    label: "Building & Construction",
+    blurb:
+      "Progress billing, retainage, change orders, and lien-waiver language — the invoice is a payment application as much as a bill, and the general contractor's paperwork decides when it gets paid.",
+  },
+  creative: {
+    label: "Creative & Digital",
+    blurb:
+      "Deposits, milestones, revision rounds, and usage or licensing terms — the line items that stop a creative invoice from being argued down after delivery.",
+  },
+  professional: {
+    label: "Professional Services",
+    blurb:
+      "Retainers, hourly blocks, and session packages — billed in advance or against a drawdown, with the period covered written on every line.",
+  },
+};
+
+// A cluster name on a trade that is not described here would render a related
+// rail with no heading; a described cluster with one member would render a
+// heading with no siblings. Both are the kind of drift this file exists to
+// turn into a build failure.
+const clusterProblems: string[] = [];
+const clusterMembers = new Map<string, string[]>();
+for (const slug of tradeTemplateSlugs) {
+  const c = tradeTemplates[slug].cluster;
+  if (!c) continue;
+  if (!tradeClusters[c]) {
+    clusterProblems.push(`${slug}: cluster "${c}" is not described in tradeClusters`);
+    continue;
+  }
+  clusterMembers.set(c, [...(clusterMembers.get(c) ?? []), slug]);
+}
+for (const name of Object.keys(tradeClusters)) {
+  const n = clusterMembers.get(name)?.length ?? 0;
+  if (n < 2) clusterProblems.push(`cluster "${name}" has ${n} member trade(s); a cluster needs at least 2`);
+}
+if (clusterProblems.length > 0) {
+  throw new Error(
+    `invoice-template-trades: trade clusters are out of sync:\n` +
+      clusterProblems.map((p) => `  - ${p}`).join("\n"),
+  );
+}
+
+/** Cluster names in declaration order, each with its member trades in catalogue order. */
+export const tradeClusterGroups: { name: string; cluster: TradeCluster; trades: TradeTemplate[] }[] =
+  Object.keys(tradeClusters).map((name) => ({
+    name,
+    cluster: tradeClusters[name],
+    trades: (clusterMembers.get(name) ?? []).map((s) => tradeTemplates[s]),
+  }));
+
+/** The trades that bill alongside this one, in catalogue order, excluding itself. Empty when unclustered. */
+export function getRelatedTrades(slug: string): TradeTemplate[] {
+  const c = tradeTemplates[slug]?.cluster;
+  if (!c) return [];
+  return (clusterMembers.get(c) ?? []).filter((s) => s !== slug).map((s) => tradeTemplates[s]);
 }
 
 // Reverse index: blog guide slug -> the trade template that cites it.

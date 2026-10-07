@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { tradeTemplates, tradeTemplateSlugs } from "@/lib/invoice-template-trades";
+import { tradeTemplates, tradeTemplateSlugs, tradeClusterGroups } from "@/lib/invoice-template-trades";
 import { tradeCards } from "@/lib/trade-cards";
 import { articles } from "@/lib/blog-articles";
 
@@ -9,6 +9,13 @@ import { articles } from "@/lib/blog-articles";
 // is missing from the grid needs. Derived, so a shape promoted to a template
 // page drops out of this list on its own.
 const shapeGuides = tradeCards.filter((c) => !c.tmpl && c.guide);
+
+// The grid above treats all 25 trades as equals, but a visitor who runs a
+// cleaning company needs five of them, and the five were built one at a time
+// with no surface that says they belong together. A cluster earns a block here
+// once it has three members — two is a pair the trade page's own rail already
+// covers. Derived from the catalogue's cluster fields, never hand-listed.
+const clusterBlocks = tradeClusterGroups.filter((g) => g.trades.length >= 3);
 
 export const metadata: Metadata = {
   title: "Free Invoice Template | Download & Customize — InvoiceQuick",
@@ -152,6 +159,41 @@ export default function InvoiceTemplatePage() {
           </Link>
         </div>
       </section>
+
+      {/* Templates that bill together — one block per cluster, each a short
+          reason the trades share an invoice shape plus the member templates. A
+          cleaning company that also runs a carpet crew finds both here instead
+          of scanning the full grid twice. */}
+      {clusterBlocks.length > 0 && (
+        <section id="bill-together" className="max-w-5xl mx-auto px-4 pb-16 scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3 text-center">Templates That Bill Together</h2>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-8">
+            Most businesses run more than one of these trades. Each group below shares an invoice shape, so
+            the lines you learn on one template carry over to the next.
+          </p>
+          <div className="space-y-6">
+            {clusterBlocks.map((g) => (
+              <div key={g.name} className="rounded-xl border border-gray-200 bg-white px-5 py-5">
+                <h3 className="font-bold text-gray-900">{g.cluster.label}</h3>
+                <p className="text-sm text-gray-600 mt-1 mb-4">{g.cluster.blurb}</p>
+                <ul className="flex flex-wrap gap-2">
+                  {g.trades.map((t) => (
+                    <li key={t.slug}>
+                      <Link
+                        href={`/invoice-template/${t.slug}`}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-sm font-medium text-gray-800 hover:border-indigo-300 hover:text-indigo-700 transition-colors"
+                      >
+                        <span aria-hidden="true">{t.icon}</span>
+                        {t.trade}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* What's Included */}
       <section className="max-w-4xl mx-auto px-4 pb-16">
