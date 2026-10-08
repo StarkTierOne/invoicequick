@@ -30,8 +30,7 @@ const HERO_CHIP_COUNT = 8;
 // 3,000-word guide. The guide stays as the small secondary link, same split as
 // the trade grid further down. `start` is a distinct label per card so the
 // delegated create_cta_click listener can tell these from the hero chips (which
-// also carry `?trade=`). The writers card has no template page yet, so it
-// keeps the guide as its only link.
+// also carry `?trade=`). Every card now has a template page behind it.
 //
 // `tmpl` must be a template-backed trade in `tradeCards`; a slug that is not
 // would open /create with no seed and look like a working link. Checked at
@@ -40,7 +39,7 @@ const whoItsFor: { icon: string; title: string; desc: string; href: string; guid
   { icon: "🎨", title: "Freelance Designers", desc: "Bill for logo design, branding, UI work, and revisions with clean itemized PDFs your clients will trust.", href: "/blog/invoice-template-graphic-designers", guide: "Designer invoicing guide", tmpl: "graphic-design", start: "Start a design invoice" },
   { icon: "💻", title: "Web Developers", desc: "Invoice per project, per milestone, or hourly. Track which builds are paid and which need a follow-up.", href: "/blog/how-to-invoice-for-web-development", guide: "Web development invoicing guide", tmpl: "web-development", start: "Start a web development invoice" },
   { icon: "📸", title: "Photographers & Videographers", desc: "Bill the retainer, the balance, and the usage license right — packages, second shooter, albums, and travel, itemized in under a minute.", href: "/blog/how-to-invoice-for-photography", guide: "How to invoice for photography", tmpl: "photography", start: "Start a photography invoice" },
-  { icon: "📝", title: "Writers & Editors", desc: "Bill per article, per word, or per hour. Add your byline, link to the published work, and get paid.", href: "/blog/how-to-invoice-as-a-freelancer", guide: "Freelancer invoicing guide" },
+  { icon: "📝", title: "Writers & Editors", desc: "Bill per word, per piece, or on retainer. Name the assignment, put rights and the kill fee on their own lines, and get paid.", href: "/blog/how-to-invoice-for-freelance-writing", guide: "Freelance writing invoicing guide", tmpl: "freelance-writing", start: "Start a writing invoice" },
   { icon: "🔧", title: "Contractors & Tradespeople", desc: "Create itemized invoices for labor and materials. Add your license number and payment terms in seconds.", href: "/blog/how-to-invoice-for-construction-work", guide: "Construction invoicing guide", tmpl: "construction", start: "Start a contractor invoice" },
   { icon: "💼", title: "Consultants & Coaches", desc: "Invoice for sessions, retainers, or project-based work. Look professional from day one, no bookkeeper needed.", href: "/blog/invoice-template-consultants", guide: "Consultant invoicing guide", tmpl: "consulting", start: "Start a consulting invoice" },
 ];

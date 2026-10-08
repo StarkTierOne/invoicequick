@@ -252,6 +252,17 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Pre-existing conditions noted before work: _ (permanent stains / wear / seams / loose carpet) — photos on file",
     ],
   },
+  "freelance-writing": {
+    trade: "Freelance Writing",
+    items: [
+      "Article — _ (title), assignment #_, _ words commissioned (_ published after edit)",
+      "Blog post — _ (title), _ words, includes _ revision rounds, delivered _/_",
+      "Additional revision round — round _ (approved by email _/_)",
+      "Rights — first serial rights, _ days exclusivity from publication, byline retained",
+      "Kill fee — _ (title), assignment #_, accepted _/_, not run (_% of agreed fee, per assignment letter)",
+      "Less: deposit received _/_ (enter as negative credit)",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [

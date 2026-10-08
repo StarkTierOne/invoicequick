@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-freelance-writing",
+    title: "How to Invoice for Freelance Writing (Per Word, Per Piece, Rights & Kill Fees, 2026)",
+    excerpt:
+      "Writing invoices get argued over word count, revisions, rights, and the piece that was accepted and never ran. Here is how to bill per word, per piece, per hour or on retainer, put rights on their own line, invoice a kill fee, and write something an accounts payable department can match.",
+  },
+  {
     slug: "google-sheets-invoice-template",
     title: "Google Sheets Invoice Template: How to Build a Free One Step by Step (2026)",
     excerpt:

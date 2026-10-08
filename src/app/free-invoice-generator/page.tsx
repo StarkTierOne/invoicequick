@@ -13,7 +13,11 @@ export const metadata: Metadata = {
 const pageFaqs = [
   {
     question: "Is InvoiceQuick really free?",
-    answer: "Yes. You can create and download unlimited invoices without paying anything. There are no watermarks, no trial periods, and no hidden fees. We offer optional paid features for businesses that need client portals and payment tracking.",
+    answer: "Yes. You can create and download unlimited invoices without paying anything. There are no watermarks, no trial periods, and no hidden fees. We offer optional paid features for businesses that want saved clients, recurring invoices, and payment tracking.",
+  },
+  {
+    question: "Where does my invoice data go? Is it stored on your servers?",
+    answer: "Without an account, nowhere. The invoice is built in your browser, the PDF is produced by your browser's own print-to-PDF, and nothing you type is uploaded to InvoiceQuick. The only copy is the draft your browser keeps on your device so you can come back to it, and you can clear that from the builder. Your client's name, address, and the amounts never reach our servers unless you choose to create a free account and save the invoice to it.",
   },
   {
     question: "Do I need to create an account?",
@@ -369,7 +373,7 @@ export default function FreeInvoiceGeneratorPage() {
               "10 currencies",
               "Tax and discount calculations",
               "Custom logo upload",
-              "Email invoice to client",
+              "Nothing uploaded without an account — the PDF is made in your browser",
             ],
             publisher: {
               "@type": "Organization",

@@ -2072,6 +2072,100 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "how-to-invoice-for-carpet-cleaning",
     guideLabel: "How to invoice for carpet cleaning — rooms, stains, pet treatment, and warranty receipts",
   },
+  "freelance-writing": {
+    slug: "freelance-writing",
+    trade: "Freelance Writing",
+    icon: "📝",
+    cluster: "creative",
+    metaTitle: "Free Freelance Writer Invoice Template — Per Word, Kill Fees & Rights | InvoiceQuick",
+    metaDescription:
+      "A free freelance writer invoice template for article writers, copywriters and content writers. Bill per word, per piece, per hour or on a monthly retainer, state the commissioned word count, name each piece with its assignment number, price rights as their own line, and add a kill fee when a piece is not run. Download a PDF. No sign-up.",
+    tagline:
+      "Built for writers billing an article, a white paper and a monthly content batch in the same week — the commissioned word count stated, every piece named with its assignment number, the rights priced on their own line, and a kill fee ready for the piece that never runs.",
+    intro: [
+      "A writing invoice gets argued over because the product is invisible until someone reads it, and everyone who reads it has an opinion about how much of it they paid for. The editor cut the piece from 1,500 words to 1,200, so is the invoice for 1,500 or 1,200? The client asked for 'just one more section,' which was a new brief, not a revision. The article was accepted, scheduled, and then dropped when the editorial calendar changed, so what is owed for a piece that was finished and never ran? The piece was paid for once and now appears on a sister site and in a print newsletter. An invoice that says 'Article — one line, one number' has nothing to point at in any of these conversations, and each of them becomes a negotiation you are holding after the work was delivered.",
+      "The second thing that makes writing billing its own problem is that the client is buying two different things and usually only noticing one. The writing is the work. The rights are the permission to use it: first serial rights, an exclusivity window, all rights or work-for-hire, reprint and syndication, a byline or a ghostwritten credit. They are priced differently and they last for different lengths of time. On top of that, the people paying are rarely the people who commissioned the piece. A publication's accounts payable department, a content agency's finance team, and a small-business owner all want different things on the page. This template keeps those apart: the deliverable named by title and assignment number, the word count stated as commissioned or as published, revision rounds counted, rights written as a line with their term, a kill fee for a piece that was accepted and not run, and research, rush and expenses billed as what they are.",
+    ],
+    billingModel:
+      "Freelance writing is billed four ways. Per word is common for news, features and publication work, and it needs a rule about which count is billed: the commissioned count, the delivered count, or the published count after an editor has cut it. Per piece is the usual structure for blog posts, white papers, landing pages and email sequences, with the deliverable named and the number of revision rounds included. Per hour suits editing, research-heavy assignments and content strategy, where the scope really cannot be fixed in advance. Monthly retainers cover an agreed number of pieces or hours per month, billed in advance. Layered on top of any of these: rights beyond the first grant, billed as their own line; a rush surcharge agreed before the work began; SEO briefs, image sourcing, CMS uploading and meta descriptions where they are not part of the piece; interviews and research time; and expenses at cost, such as transcription, stock images, paid sources and travel. A kill fee, commonly 25 to 50% of the agreed fee, covers a piece that was commissioned and delivered but not run. Publications generally pay on acceptance or on publication, content agencies on net 30 to 45, and small direct clients on receipt, with a 50% deposit on larger projects such as white papers, ebooks and website copy.",
+    lineItems: [
+      {
+        description: "Feature article — 'How Cold Storage Is Changing Regional Grocery,' assignment #2291, 1,500 words commissioned (1,380 published after edit)",
+        unit: "per word at the agreed rate, on the commissioned count",
+        note: "Name the piece, the assignment number and which word count you are billing. Editors cut for space, not for quality, and a per-word line that does not say 'commissioned' gets re-priced downward the moment the published version is shorter.",
+      },
+      {
+        description: "Blog post — 'Five Signs Your Warehouse Software Is Holding You Back,' 900 words, includes 2 revision rounds, delivered 9/12",
+        unit: "flat fee per piece",
+        note: "Put the title and the revision count on the line. A flat fee with no round count reads as 'revisions until the client is happy,' and a fee with no title cannot be matched against what you actually delivered.",
+      },
+      {
+        description: "Additional revision round — round 3 on the blog post above, new section requested 9/20 (approved by email 9/20)",
+        unit: "per round, or hourly, beyond the included count",
+        note: "Cite the approval and the round number. 'Can you just add a section' is a new brief wearing a revision's clothes, and a line that shows the request and the yes is the one that gets paid.",
+      },
+      {
+        description: "Rights — first serial rights, 90-day exclusivity from publication, then non-exclusive; byline retained by writer",
+        unit: "included in the fee, or a separate rights fee",
+        note: "Write the grant with its term on its own line. The sentence the client remembers is 'you bought the article,' and the line that says what they actually bought is the one you will be pointing at when the piece shows up somewhere else.",
+      },
+      {
+        description: "Expanded rights — reprint on the client's sister site, 12 months (outside original grant, added 10/3)",
+        unit: "incremental fee over the original grant",
+        note: "Price the extension when the client outgrows the first grant, billed forward from the date it began. It reads as an upgrade the client chose, which is more accurate than an accusation about a repost.",
+      },
+      {
+        description: "Interviews and research — 3 source interviews and 4 hours of document research for the feature above",
+        unit: "per hour, or a flat research fee",
+        note: "Research is the part of a piece the reader never sees and the client forgets. Keep it on its own line, with the count of interviews, so a rate that looks high for 1,500 words is explained by the work behind them.",
+      },
+      {
+        description: "SEO brief, meta description, and upload to client's CMS with formatting — blog post of 9/12",
+        unit: "per piece, or per hour",
+        note: "These are tasks, not part of 'writing the post.' Listing them stops the quiet addition of formatting work to a fee that was quoted for words.",
+      },
+      {
+        description: "Expedited turnaround — 48 hours, 25% surcharge (agreed by email 9/14 before work began); transcription and stock image license at cost, receipts attached",
+        unit: "percentage of the fee; expenses at cost",
+        note: "Agree the rush premium before the compressed work, and put receipts behind pass-through costs. A rush charge added after the deadline was met reads as a penalty, and an expense with no receipt gets questioned line by line.",
+      },
+      {
+        description: "Kill fee — 'The Last Mile Problem,' assignment #2304, accepted 9/18 and not run, per assignment letter (40% of agreed fee)",
+        unit: "percentage of the agreed fee",
+        note: "Name the piece, the date it was accepted and the percentage in the letter. A kill fee is a fee for finished work that was not used, so it belongs on its own line and not as a discounted version of the original fee.",
+      },
+    ],
+    gotchas: [
+      "A per-word invoice that does not say which count it bills. The commissioned count, the delivered count and the published count are three different numbers once an editor has been at it, and the client will choose the smallest one unless the invoice says which was agreed.",
+      "An invoice with no assignment number or PO number. Accounts payable at a publication or agency matches your invoice against the assignment letter or purchase order. A bill that does not carry the reference cannot be matched, and an unmatched invoice goes to the bottom of the pile, not to a payment run.",
+      "A monthly batch invoice with a single total and no per-piece lines. Content agencies usually bill their own clients piece by piece and need each title, date and fee to pass through. 'Content services — October' gives them nothing to reconcile and gives you a request to resend it.",
+      "A piece accepted and then killed, with no kill-fee term anywhere. Without one you are invoicing finished work against nothing, and the editor's position that an unpublished piece is not owed is difficult to argue with once the agreement was silent.",
+      "Pay-on-publication with no trigger and no backstop date. If the invoice is payable 'on publication' and the publication date slips for six months, the payment slips with it. Name the trigger, and add a date after which the invoice is due whether or not the piece has run.",
+      "Revisions that are really a new brief. A change of angle, a new audience or an added section is new work. If the invoice and the assignment letter never defined a revision round, every request is a revision and the piece is never finished.",
+      "Rights used beyond the grant. An article sold for first serial rights that appears on a sister site, in a print edition or in a syndication feed has been used outside what was paid for. With no rights line on the invoice, you have no sentence to point at.",
+      "Ghostwritten work credited to someone else and then resold under another name. The fee for a ghostwritten piece should reflect that the writer will never use it as a clip, and the invoice should say the work was ghostwritten and what use of it the writer retains.",
+    ],
+    faqs: [
+      {
+        q: "How much should I invoice for a kill fee when a client kills my article?",
+        a: "The amount in your assignment letter or contract, and if there is none, a percentage you can defend. Kill fees are commonly set between 25% and 50% of the agreed fee, and some writers negotiate the full fee once the piece has been accepted, on the grounds that acceptance means the work is finished and what the publication does with it afterward is its own decision. The distinction that matters is when the piece was killed. Killed before you start or early in the research, a smaller fee is reasonable because you have not yet written a draft. Killed after you have delivered and the editor has accepted it, you have done the entire job, and a higher fee, up to the whole fee, is easier to argue. Invoice it as its own line that names the piece, the assignment number, the date of acceptance and the term it comes from: 'Kill fee — The Last Mile Problem, assignment #2304, accepted 9/18, not run, per assignment letter.' Do not send it as a discounted version of the original fee, because a discount invites a negotiation about the discount. State on the invoice what rights come back to you, which is normally all of them. A killed piece that has been paid a partial kill fee is one you are usually free to place elsewhere, and the invoice should say so, so it is clear to both sides that the piece is yours to sell.",
+      },
+      {
+        q: "Should I charge per word on the commissioned count or the published count?",
+        a: "The commissioned count, or a fixed figure you both wrote down, is the safest answer, and it should be on the invoice. The reasoning is that you are paid for the work you were asked to do and delivered, not for editorial decisions made afterward. An editor who trims a 1,500-word feature to 1,200 for space has changed the product after you finished it, and a per-word rate applied to the published count means the fee shrinks because of a decision you did not make. The same applies in the other direction: if you were commissioned for 1,000 words and delivered 1,400 without being asked, billing for the extra 400 is a conversation you should have had before writing them. State the rule in the assignment letter, and then put it on the line: 'Feature article, 1,500 words commissioned (1,380 published after edit).' Showing both numbers tells the reader that you know about the cut and are billing the agreed count on purpose. Some publications pay on the published count as a matter of policy, in which case the rate you accepted already reflects it, and the right move is to confirm that in writing before you start, not to dispute it afterward. Where you charge by the piece rather than by the word, a word-count range in the description does the same job.",
+      },
+      {
+        q: "When should I invoice if the publication pays on publication, not on acceptance?",
+        a: "Invoice on acceptance and make the due date conditional on a stated trigger with a backstop. This is the cleanest approach because it fixes the point at which the work is finished and cannot slide. If the piece is accepted on 9/18 and the contract says payment is due on publication, the invoice carries the acceptance date and reads 'Due on publication, and in any case no later than 12/18.' The backstop date matters more than any other word on the invoice. Pay-on-publication terms put the schedule in the publication's hands, and pieces get held, rescheduled, run late or run never. Without a backstop, the money waits for a date that nobody owns. Many writers decline pay-on-publication for exactly this reason and prefer pay-on-acceptance, which is the more usual term for commissioned work and the one worth asking for when you are negotiating the assignment. If you do accept pay-on-publication, ask for a fixed number of days after acceptance by which the payment is due regardless, and a kill fee that applies if the piece is not run. Then keep the dates visible: put the acceptance date and the backstop date on every invoice and follow up on the backstop, not on the publication date, which you may never hear about.",
+      },
+      {
+        q: "Do I have to list rights on an invoice, and what should the line say?",
+        a: "You do not have to, but a line costs you nothing and saves you the argument later. Rights are what the client is permitted to do with your writing, and they are a separate thing from the writing itself. A fee for an article does not, on its own, say whether the client can publish it in print and online, republish it on another site, syndicate it, let another outlet reuse it, or sell it to someone else, and the client who paid once will assume the answer is yes to all of them. Name the grant on the invoice with its term: 'First serial rights, 90-day exclusivity from publication, then non-exclusive; byline retained by writer.' If the client is buying all rights or the work is for hire, say so on the line and price it accordingly, because all rights is a larger sale than first serial rights and removes your ability to reuse the piece. When a client uses the piece beyond the grant, for instance a reprint on a sister site, raise it as an expanded license, priced going forward, and put it on its own line: 'Expanded rights, reprint on sister site, 12 months, added 10/3.' Expect it to be received better as an upgrade than as a complaint. For ghostwritten work, say on the invoice that the piece is unbylined and what portfolio use, if any, you retain.",
+      },
+    ],
+    guideSlug: "how-to-invoice-for-freelance-writing",
+    guideLabel: "How to invoice for freelance writing — per word, per piece, rights, and kill fees",
+  },
 };
 
 /** Stable ordering for the hub grid and sitemap. */

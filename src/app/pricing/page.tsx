@@ -12,7 +12,7 @@ const plans = [
     name: "Free",
     price: "$0",
     period: "forever",
-    features: ["Unlimited invoices", "PDF download", "Multi-currency", "No watermarks", "Basic templates"],
+    features: ["Unlimited invoices", "PDF download", "Multi-currency", "No watermarks", "Your logo on every PDF", "Trade-specific templates"],
     highlighted: false,
   },
   {
@@ -20,7 +20,7 @@ const plans = [
     name: "Pro",
     price: "$9",
     period: "/month",
-    features: ["Everything in Free", "Save & reuse templates", "Auto-numbering", "Payment tracking", "Custom branding/logo", "Client database", "Recurring invoices", "Priority support"],
+    features: ["Everything in Free", "Save & reuse templates", "Auto-numbering", "Payment tracking", "Client database", "Recurring invoices", "Priority support"],
     highlighted: true,
   },
   {
@@ -42,7 +42,7 @@ const pricingFaqs = [
   {
     question: "When should I upgrade from Free to Pro?",
     answer:
-      "Upgrade when manual work starts leaking revenue. Concrete triggers: (1) you're billing 5 or more retainer or recurring clients each month — duplicating invoices manually starts to cost more than the $9; (2) you've missed an invoice or sent a duplicate number — auto-numbering and a client database prevent both; (3) you want your logo and brand colors on every invoice. Below those thresholds, the free tier is usually the right answer.",
+      "Upgrade when manual work starts leaking revenue. Concrete triggers: (1) you're billing 5 or more retainer or recurring clients each month — duplicating invoices manually starts to cost more than the $9; (2) you've missed an invoice or sent a duplicate number — auto-numbering and a client database prevent both; (3) you want your business details and clients saved so every new invoice starts filled in. Your logo is not a trigger — logo upload is free in the builder. Below those thresholds, the free tier is usually the right answer.",
   },
   {
     question: "Can I handle retainer or recurring clients on the free plan?",
@@ -62,7 +62,7 @@ const pricingFaqs = [
   {
     question: "What happens to my invoices if I downgrade or cancel?",
     answer:
-      "Your invoice history stays accessible. If you downgrade from Pro to Free, you keep all the PDFs you've already generated — you simply lose access to Pro-only features (recurring invoices, client database, custom branding) for new invoices. Cancel a paid plan and you drop to the free tier, not zero. We never lock you out of your own invoice records.",
+      "Your invoice history stays accessible. If you downgrade from Pro to Free, you keep all the PDFs you've already generated — you simply lose access to Pro-only features (recurring invoices, client database) for new invoices. Cancel a paid plan and you drop to the free tier, not zero. We never lock you out of your own invoice records.",
   },
 ];
 
@@ -173,7 +173,7 @@ export default function PricingPage() {
             <ul className="space-y-2 text-gray-700 text-sm leading-relaxed">
               <li>• You bill fewer than 5 clients per month, or your invoicing is one-off project work</li>
               <li>• You&apos;re fine entering your business details fresh each time (or using your browser&apos;s autofill)</li>
-              <li>• You don&apos;t need a logo or brand colors on your invoices yet</li>
+              <li>• You want your logo on the PDF — that&apos;s free in the builder, no plan needed</li>
               <li>• You can track who paid in your inbox or a spreadsheet</li>
             </ul>
             <p className="mt-3 text-sm text-gray-600">
@@ -190,7 +190,7 @@ export default function PricingPage() {
                 more than $9 of your time
               </li>
               <li>• You&apos;ve sent a duplicate invoice number or missed a follow-up — auto-numbering and payment tracking prevent both</li>
-              <li>• You want your logo, brand colors, and a saved client database on every invoice</li>
+              <li>• You want your business details and a saved client database filled in on every invoice</li>
               <li>• Your accountant or tax filing is starting to need a clean, queryable invoice history</li>
             </ul>
             <p className="mt-3 text-sm text-gray-600">
@@ -267,8 +267,8 @@ export default function PricingPage() {
                 <td className="p-3">—</td>
               </tr>
               <tr className="border-b border-gray-100">
-                <td className="p-3 font-medium">Logo / custom branding</td>
-                <td className="p-3">Pro ($9/mo)</td>
+                <td className="p-3 font-medium">Logo on the invoice</td>
+                <td className="p-3">Free</td>
                 <td className="p-3">Free</td>
                 <td className="p-3">Free</td>
                 <td className="p-3">Included on paid</td>
@@ -315,7 +315,7 @@ export default function PricingPage() {
           <p>
             <strong>Pick InvoiceQuick Free</strong> if you want a clean, fast invoice generator with no friction —
             unlimited invoices, no watermarks, no credit card, no setup wizard, and a clear $9/mo upgrade only when
-            you actually need recurring billing, branding, or a client database.
+            you actually need recurring billing or a client database.
           </p>
           <p>
             <strong>Pick Wave Starter</strong> if you want bookkeeping bundled in and you&apos;re fine with the
@@ -435,7 +435,7 @@ export default function PricingPage() {
             operatingSystem: "Web",
             url: "https://invoicequick-phi.vercel.app/",
             description:
-              "Free online invoice generator with unlimited invoices, PDF download, multi-currency, and zero watermarks. Pro and Business tiers add recurring invoices, client database, custom branding, team access, and API.",
+              "Free online invoice generator with unlimited invoices, PDF download, multi-currency, and zero watermarks. Pro and Business tiers add recurring invoices, client database, team access, and API.",
             offers: [
               {
                 "@type": "Offer",
@@ -443,7 +443,7 @@ export default function PricingPage() {
                 price: "0",
                 priceCurrency: "USD",
                 description:
-                  "Unlimited invoices, PDF download, 10 currencies, no watermarks, basic templates. No credit card required.",
+                  "Unlimited invoices, PDF download, 10 currencies, no watermarks, your logo on the PDF, trade-specific templates. No credit card required.",
                 url: "https://invoicequick-phi.vercel.app/pricing",
                 availability: "https://schema.org/InStock",
               },
@@ -453,7 +453,7 @@ export default function PricingPage() {
                 price: "9",
                 priceCurrency: "USD",
                 description:
-                  "Everything in Free, plus save & reuse templates, auto-numbering, payment tracking, custom branding/logo, client database, recurring invoices, and priority support.",
+                  "Everything in Free, plus save & reuse templates, auto-numbering, payment tracking, client database, recurring invoices, and priority support.",
                 url: "https://invoicequick-phi.vercel.app/pricing",
                 availability: "https://schema.org/InStock",
                 priceSpecification: {
