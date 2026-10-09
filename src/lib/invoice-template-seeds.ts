@@ -263,6 +263,17 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Less: deposit received _/_ (enter as negative credit)",
     ],
   },
+  "appliance-repair": {
+    trade: "Appliance Repair",
+    items: [
+      "Diagnostic — _ (brand / appliance), _ (complaint); model _, serial _",
+      "Diagnostic fee credited to approved repair (enter as negative credit)",
+      "Part — _, OEM part #_",
+      "Labor — replace _, test _ cycles",
+      "Special-order part deposit received _/_ (enter as negative credit)",
+      "Labor warranty — _ days on labor; parts per manufacturer's warranty",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [

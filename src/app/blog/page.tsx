@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-appliance-repair",
+    title: "How to Invoice for Appliance Repair (Diagnostic Fees, Special-Order Parts & Home Warranty Jobs, 2026)",
+    excerpt:
+      "Most appliance repair disputes start with the diagnostic fee. This guide covers how to show it and its credit, record model and serial numbers, bill special-order parts with a deposit and a return trip, price sealed-system work, write up a repair that isn't worth doing, and bill home warranty companies and landlords.",
+  },
+  {
     slug: "how-to-invoice-for-freelance-writing",
     title: "How to Invoice for Freelance Writing (Per Word, Per Piece, Rights & Kill Fees, 2026)",
     excerpt:
