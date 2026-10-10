@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-locksmith-work",
+    title: "How to Invoice for Locksmith Work (Service Calls, After-Hours Fees, Rekeys & Customer Verification, 2026)",
+    excerpt:
+      "Locksmith invoices get questioned because customers have heard the stories. This guide covers how to separate the service call, the after-hours fee and the labor, bill rekeys per cylinder, list hardware by model, record who you verified, price automotive keys, and handle estimates and cancellations after dispatch.",
+  },
+  {
     slug: "how-to-invoice-for-appliance-repair",
     title: "How to Invoice for Appliance Repair (Diagnostic Fees, Special-Order Parts & Home Warranty Jobs, 2026)",
     excerpt:

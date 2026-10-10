@@ -274,6 +274,17 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Labor warranty — _ days on labor; parts per manufacturer's warranty",
     ],
   },
+  locksmith: {
+    trade: "Locksmith",
+    items: [
+      "Service call — _ (lockout / rekey / lock change), arrived _:_ (after-hours: _)",
+      "Customer ID and authority to request the work verified (ID checked, name _)",
+      "Labor — rekey _ cylinders to one key, _ keys cut",
+      "Hardware — _ (brand, model, grade), _ deadbolt / knob / lever, qty _",
+      "Key cut — _ copies; transponder / fob programmed to VIN _ (vehicles)",
+      "Deposit received _/_ (enter as negative credit)",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [
