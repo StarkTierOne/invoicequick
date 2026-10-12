@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-garage-door-repair",
+    title: "How to Invoice for Garage Door Repair (Springs, Service Calls, Openers & the Safety Test, 2026)",
+    excerpt:
+      "Garage door customers have been warned about the cheap service call that becomes a large bill. This guide covers how to show the service call apart from the repair, list every spring by its full spec, offer the second spring instead of adding it, count parts, record the safety reversal test, and write down what the customer declined.",
+  },
+  {
     slug: "how-to-invoice-for-locksmith-work",
     title: "How to Invoice for Locksmith Work (Service Calls, After-Hours Fees, Rekeys & Customer Verification, 2026)",
     excerpt:

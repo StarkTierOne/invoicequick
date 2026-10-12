@@ -285,6 +285,17 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Deposit received _/_ (enter as negative credit)",
     ],
   },
+  "garage-door-repair": {
+    trade: "Garage Door Repair",
+    items: [
+      "Service call — _ (door won't open / broken spring / off track), door: _ (size, brand, single / double)",
+      "Torsion / extension spring — wire _, inside diameter _, length _, wind _, cycle rating _, qty _",
+      "Labor — replace springs, adjust tension and balance door",
+      "Parts — _ (cables / rollers / hinges / bearing), qty _",
+      "Safety reversal and photo-eye test after repair — passed / failed (customer told: _)",
+      "Labor warranty — _ days on labor; parts per manufacturer's warranty",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [
