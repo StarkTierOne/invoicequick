@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import ExitIntentModal from "@/components/ExitIntentModal";
 import ResumeDraftBanner from "@/components/ResumeDraftBanner";
 import { tradeCards } from "@/lib/trade-cards";
+// Prose-free seed strings only — never import invoice-template-trades.ts here.
+import { getTradeSeed } from "@/lib/invoice-template-seeds";
 
 // The hero's primary action. A plain button asks the visitor to *navigate*; an
 // input asks them to *start*, and the one field it collects is the first field
@@ -53,9 +55,20 @@ const whoItsFor: { icon: string; title: string; desc: string; href: string; guid
   }
 }
 
-function HeroStarter() {
+// The chips that appear in the hero. Shared by HeroStarter (the links) and the
+// live preview (its default trade), so both always agree on the same list.
+const heroChips = tradeCards.filter((t) => t.tmpl).slice(0, HERO_CHIP_COUNT);
+
+function HeroStarter({
+  name,
+  setName,
+  onPreviewTrade,
+}: {
+  name: string;
+  setName: (v: string) => void;
+  onPreviewTrade: (tmpl: string) => void;
+}) {
   const router = useRouter();
-  const [name, setName] = useState("");
   const trimmed = name.trim();
 
   const start = (e: React.FormEvent) => {
@@ -65,8 +78,6 @@ function HeroStarter() {
 
   const chipHref = (tmpl: string) =>
     trimmed ? `/create?trade=${tmpl}&from=${encodeURIComponent(trimmed)}` : `/create?trade=${tmpl}`;
-
-  const chips = tradeCards.filter((t) => t.tmpl).slice(0, HERO_CHIP_COUNT);
 
   return (
     <div className="max-w-xl mx-auto">
@@ -99,10 +110,14 @@ function HeroStarter() {
           Or start with your trade&rsquo;s line items already listed
         </p>
         <ul className="flex flex-wrap justify-center gap-2">
-          {chips.map((t) => (
+          {heroChips.map((t) => (
             <li key={t.tmpl}>
+              {/* Hover / keyboard focus previews the trade in the mockup below;
+                  the click itself still goes straight to the seeded builder. */}
               <Link
                 href={chipHref(t.tmpl!)}
+                onMouseEnter={() => onPreviewTrade(t.tmpl!)}
+                onFocus={() => onPreviewTrade(t.tmpl!)}
                 className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-700 hover:border-indigo-400 hover:text-indigo-700 hover:bg-indigo-50 transition-colors"
               >
                 <span aria-hidden="true">{t.icon}</span>
@@ -532,63 +547,109 @@ const pricing = [
   },
 ];
 
-// Above-the-fold product visual: a browser-framed mini invoice so visitors see
-// the deliverable in the first seconds instead of only reading about it. Static,
-// self-contained (no image asset), and honest to what /create actually produces.
-function HeroInvoiceMockup() {
+// Above-the-fold product visual, now a LIVE preview: it mirrors the layout of
+// /create's InvoicePreview (the thing the PDF is printed from) and reacts to the
+// hero — the typed name becomes the From line, and hovering/focusing a trade
+// chip swaps in that trade's real seed line items (the same strings /create
+// seeds from `?trade=`). The visitor sees the invoice they'll get before they
+// click.
+//
+// Rates and amounts are deliberately shown as "—": seeds carry descriptions
+// only, and a made-up dollar figure here would read as pricing advice. Qty is 1
+// because that is what /create seeds each line with.
+function HeroInvoiceMockup({ fromName, tmpl }: { fromName: string; tmpl: string | undefined }) {
+  const seed = tmpl ? getTradeSeed(tmpl) : undefined;
+  const items = seed?.items.slice(0, 4) ?? [];
   return (
-    <div className="mt-14 max-w-2xl mx-auto animate-hero-float">
+    <figure className="mt-14 max-w-2xl mx-auto animate-hero-float" aria-label="Preview of the invoice you'll build">
       <div className="rounded-2xl shadow-2xl ring-1 ring-gray-900/5 border border-gray-200 bg-white overflow-hidden text-left">
-        {/* Browser chrome */}
-        <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-100 border-b border-gray-200">
-          <span className="w-3 h-3 rounded-full bg-red-400" />
-          <span className="w-3 h-3 rounded-full bg-amber-400" />
-          <span className="w-3 h-3 rounded-full bg-green-400" />
-          <span className="ml-3 flex-1 truncate rounded-md bg-white border border-gray-200 px-3 py-1 text-xs text-gray-400">
-            invoicequick-phi.vercel.app/create
-          </span>
-        </div>
-        {/* Invoice body */}
-        <div className="relative p-6 sm:p-8">
-          <span className="absolute top-5 right-5 -rotate-6 select-none rounded-md border-2 border-emerald-500 px-2.5 py-0.5 text-xs font-extrabold uppercase tracking-widest text-emerald-600">
-            Paid
-          </span>
-          <div className="flex items-start justify-between mb-6">
-            <div className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">IQ</div>
-              <div>
-                <div className="font-bold text-gray-900 leading-tight">Riverbend Studio</div>
-                <div className="text-[11px] text-gray-400">hello@riverbend.co</div>
+        {/* Invoice body — laid out like the downloaded PDF */}
+        <div className="p-6 sm:p-8">
+          <div className="flex items-start justify-between gap-4 mb-6">
+            <div className="min-w-0">
+              <p className="text-[10px] text-gray-400 uppercase font-semibold">From</p>
+              <div className="font-bold text-lg text-gray-900 leading-tight truncate">
+                {fromName.trim() || "Your Business"}
               </div>
             </div>
-            <div className="text-right">
-              <div className="text-lg font-extrabold tracking-tight text-gray-900">INVOICE</div>
-              <div className="text-[11px] text-gray-400">#INV-0042</div>
+            <div className="text-right shrink-0">
+              <div className="text-2xl font-extrabold tracking-tight text-indigo-600">INVOICE</div>
+              <div className="text-[11px] text-gray-400">INV-0001</div>
             </div>
           </div>
-          <div className="space-y-2.5">
-            {[
-              ["Brand identity design", "$2,400.00"],
-              ["Landing page build", "$1,275.00"],
-              ["Revisions (2 rounds)", "$450.00"],
-            ].map(([label, amt]) => (
-              <div key={label} className="flex items-center justify-between text-sm">
-                <span className="text-gray-600">{label}</span>
-                <span className="font-medium text-gray-900 tabular-nums">{amt}</span>
+          <div className="mb-5">
+            <p className="text-[10px] text-gray-400 uppercase font-semibold">Bill To</p>
+            <p className="text-sm font-semibold text-gray-700">Client Name</p>
+          </div>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b-2 border-gray-200">
+                <th className="text-left py-2 text-[10px] text-gray-400 uppercase font-semibold">Description</th>
+                <th className="text-center py-2 text-[10px] text-gray-400 uppercase font-semibold w-12">Qty</th>
+                <th className="text-right py-2 text-[10px] text-gray-400 uppercase font-semibold w-16">Rate</th>
+                <th className="text-right py-2 text-[10px] text-gray-400 uppercase font-semibold w-16">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {items.map((desc) => (
+                <tr key={desc} className="border-b border-gray-100">
+                  <td className="py-2 text-gray-700">{desc}</td>
+                  <td className="py-2 text-center text-gray-500">1</td>
+                  <td className="py-2 text-right text-gray-300">&mdash;</td>
+                  <td className="py-2 text-right text-gray-300">&mdash;</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="mt-4 flex justify-end">
+            <div className="w-48 space-y-1 text-sm">
+              <div className="flex justify-between">
+                <span className="text-gray-500">Subtotal</span>
+                <span className="text-gray-300">&mdash;</span>
               </div>
-            ))}
-          </div>
-          <div className="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between">
-            <span className="text-sm font-semibold text-gray-500">Total due</span>
-            <span className="text-xl font-extrabold text-gray-900 tabular-nums">$4,125.00</span>
-          </div>
-          <div className="mt-4 flex items-center gap-2 text-[11px] text-gray-400">
-            <span className="text-green-500 font-bold">&#10003;</span>
-            Professional PDF &middot; itemized &middot; ready to send &mdash; built in about a minute.
+              <div className="flex justify-between">
+                <span className="text-gray-500">Tax</span>
+                <span className="text-gray-300">&mdash;</span>
+              </div>
+              <div className="flex justify-between font-bold border-t-2 border-gray-900 pt-1.5 mt-1.5">
+                <span>Total</span>
+                <span className="text-gray-300">&mdash;</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <figcaption className="mt-4 text-sm text-gray-500">
+        This is the PDF you&rsquo;ll download &mdash; no watermark. You add your own rates; the math is done for you.
+        {seed && (
+          <span className="hidden sm:block mt-1 text-xs text-gray-400">
+            Line items shown: {seed.trade}. Hover or tab to a trade above to preview its list.
+          </span>
+        )}
+      </figcaption>
+    </figure>
+  );
+}
+
+// The hero's interactive half: the starter (name input + trade chips) and the
+// live mockup share state here so typing and chip hover update the preview.
+function HeroInteractive() {
+  const [name, setName] = useState("");
+  const [previewTrade, setPreviewTrade] = useState<string | undefined>(heroChips[0]?.tmpl);
+  return (
+    <>
+      <HeroStarter name={name} setName={setName} onPreviewTrade={setPreviewTrade} />
+      <p className="mt-4 text-sm text-gray-500">
+        Fill in your details, add line items, download the PDF &mdash; <strong className="text-gray-700">about 60 seconds</strong>, nothing to install.
+      </p>
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-500">
+        <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No sign-up required</span>
+        <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No credit card</span>
+        <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Free forever</span>
+        <span className="flex items-center gap-1" title="InvoiceQuick generates the PDF — clients pay you directly however you arrange. No 2.9–3.5% processing cut like PayPal, Square, or Wave."><span className="text-green-500 font-bold">&#10003;</span> 0% payment fees</span>
+      </div>
+      <HeroInvoiceMockup fromName={name} tmpl={previewTrade} />
+    </>
   );
 }
 
@@ -726,7 +787,7 @@ export default function Home() {
             <a href="#pricing" className="text-gray-600 hover:text-gray-900 hidden sm:block">Pricing</a>
             <a href="#how-it-works" className="text-gray-600 hover:text-gray-900 hidden sm:block">How It Works</a>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900 hidden sm:block">Blog</Link>
-            <Link href="/login" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Sign In</Link>
+            <Link href="/login" className="text-gray-600 hover:text-gray-900 text-sm font-medium whitespace-nowrap">Sign In</Link>
             <Link href="/create" className="btn-primary text-sm !py-2 !px-4">Create Invoice Free &rarr;</Link>
           </div>
         </div>
@@ -750,17 +811,7 @@ export default function Home() {
           add your logo, and download a clean PDF. Your client pays you directly, so you keep{" "}
           <strong className="text-gray-900">100% of what you bill</strong>.
         </p>
-        <HeroStarter />
-        <p className="mt-4 text-sm text-gray-500">
-          Fill in your details, add line items, download the PDF &mdash; <strong className="text-gray-700">about 60 seconds</strong>, nothing to install.
-        </p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-500">
-          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No sign-up required</span>
-          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> No credit card</span>
-          <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Free forever</span>
-          <span className="flex items-center gap-1" title="InvoiceQuick generates the PDF — clients pay you directly however you arrange. No 2.9–3.5% processing cut like PayPal, Square, or Wave."><span className="text-green-500 font-bold">&#10003;</span> 0% payment fees</span>
-        </div>
-        <HeroInvoiceMockup />
+        <HeroInteractive />
       </section>
 
       {/* Fact bar — product facts a visitor can check on /create in a minute.

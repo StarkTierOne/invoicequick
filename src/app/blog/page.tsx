@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "excel-invoice-template",
+    title: "Excel Invoice Template: How to Build a Free One Step by Step (2026)",
+    excerpt:
+      "Excel is good at invoices once the formulas are right. This guide builds one from a blank workbook: a table for line items that never drops a row from the total, an absolute reference for the tax rate, number and date formats, sheet protection, a real .xltx template, numbering without macros, and a clean print area for the PDF.",
+  },
+  {
     slug: "how-to-invoice-for-garage-door-repair",
     title: "How to Invoice for Garage Door Repair (Springs, Service Calls, Openers & the Safety Test, 2026)",
     excerpt:
