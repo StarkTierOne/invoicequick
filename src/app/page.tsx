@@ -1050,7 +1050,7 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-        <p className="text-center text-sm text-gray-500 mt-4">Pricing as of April 2026. Free features verified by ToolsRated.</p>
+        <p className="text-center text-sm text-gray-500 mt-4">Pricing as of October 2026. Free features verified by ToolsRated.</p>
         <div className="text-center mt-10">
           <Link href="/create" className="btn-primary text-lg !px-8 !py-4">
             Start Free — No Sign-Up &rarr;
