@@ -2296,6 +2296,83 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "how-to-invoice-for-garage-door-repair",
     guideLabel: "How to invoice for garage door repair — springs, service calls, parts, openers and the safety test",
   },
+
+  "tree-service": {
+    slug: "tree-service",
+    trade: "Tree Service",
+    icon: "🌳",
+    cluster: "property",
+    metaTitle: "Free Tree Service Invoice Template — Removal, Trimming, Stump Grinding & Storm Work | InvoiceQuick",
+    metaDescription:
+      "A free tree service invoice template for arborists and tree care companies. Itemize removal, trimming, stump grinding, crane time, debris hauling, and permits. Download a PDF. No sign-up.",
+    tagline:
+      "Built for arborists and tree crews billing removal, trimming, stump grinding, crane work and storm cleanup — every tree described by species, size and location so the price can be checked.",
+    intro: [
+      "Tree service invoices carry large numbers — a single mature oak removal with crane access can run several thousand dollars — and the customer usually has nothing to compare them to. They called because a limb fell, an insurance adjuster told them to, or a neighbor's arborist said the tree was a hazard. They do not know what a 30-inch DBH red oak costs to fell, section, and haul, so the invoice is the only thing they can read. If it says 'tree removal — $3,800' with no further detail, it looks like a number someone made up.",
+      "The fix is specificity. A tree has a species, a trunk diameter, an approximate height, and a location on the lot that decides whether a crane is needed or the sections can be dropped. Stumps have a diameter and a grinding depth. Debris has a volume. Crane and aerial-lift hours are billable. And many municipalities require a permit before a tree over a certain caliper can come down — that permit fee is a real cost and belongs on the invoice. This template puts each of those on its own line, so the price is something the customer can follow rather than something they have to take on faith.",
+    ],
+    billingModel:
+      "Per tree for removal, priced by species, diameter at breast height (DBH) and complexity (lean, proximity to structures, crane required). Trimming and pruning priced per tree or per hour depending on scope. Stump grinding by diameter. Crane and aerial-lift time by the hour. Debris removal by load or included in the per-tree price with that stated. Permits passed through at cost. Storm and emergency work often carries an after-hours surcharge. Large jobs may take a deposit.",
+    lineItems: [
+      {
+        description: "Tree removal — red oak, ~28 in. DBH, ~55 ft, backyard, lean toward house, crane required",
+        unit: "per tree",
+        note: "Species, trunk diameter, height, location, and the complication that sets the price. A tree leaning over a roof is a different job from the same tree in an open field.",
+      },
+      {
+        description: "Trimming / pruning — 3 maples, front yard, crown reduction and deadwood removal",
+        unit: "per tree or per hour",
+        note: "Name the trees, say where they are, and describe the scope. 'Trimming — 3 trees' is unverifiable; 'crown reduction on 3 front-yard maples' is not.",
+      },
+      {
+        description: "Stump grinding — 2 stumps, 28 in. and 18 in., ground to 6 in. below grade",
+        unit: "per stump by diameter",
+        note: "Diameter and depth. A 30-inch stump is a materially different job from a 12-inch one.",
+      },
+      {
+        description: "Crane — 4 hrs on site (required for backyard oak removal over house)",
+        unit: "per hour",
+        note: "Crane rental is often the single largest cost on a removal. Show the hours and why it was needed.",
+      },
+      {
+        description: "Debris removal — chipped on site, 2 loads hauled to yard-waste facility",
+        unit: "per load or included",
+        note: "Whether debris is chipped and left, chipped and hauled, or hauled as logs. State the arrangement.",
+      },
+      {
+        description: "Firewood — cut to length, stacked on site at customer request",
+        unit: "per cord or included",
+        note: "Some customers want the wood. Note it so there is no question about whose wood it is.",
+      },
+      {
+        description: "City tree removal permit — permit #, fee",
+        unit: "pass-through",
+        note: "Many municipalities require a permit for trees above a caliper threshold. The fee is a real cost.",
+      },
+      {
+        description: "Emergency / storm surcharge — after-hours call, arrived within 2 hrs",
+        unit: "per call",
+        note: "Storm work at night or on a weekend is a different mobilisation. Quote it when called.",
+      },
+    ],
+    gotchas: [
+      "No tree description. 'Tree removal — $3,800' cannot be checked. Species, diameter, height, and location let the customer see what they paid for and let you defend the price.",
+      "Crane time buried in the removal price. The crane is often the biggest single cost. Showing it separately explains the total and makes smaller jobs without a crane look correctly cheaper.",
+      "Stump grinding priced without a diameter. A 30-inch stump takes three times longer than a 12-inch one. Price by diameter.",
+      "Debris arrangement unstated. Whether chips stay on site, are hauled, or go to a facility changes the cost and what the yard looks like afterward.",
+      "Permit fee absorbed. Tree removal permits are the customer's obligation in most ordinances. Passing the fee through as its own line is cleaner than absorbing it and simpler than explaining it verbally.",
+      "Storm work at the same rate as scheduled work. Emergency mobilisation at midnight in a storm is a different job. An after-hours surcharge, quoted on the phone and shown on the invoice, prevents the argument.",
+    ],
+    faqs: [
+      { q: "What should a tree service invoice include?", a: "Business name, contact details, insurance certificate number or policy, and any arborist credential or license number; the customer and property address; invoice number and service date; each tree described by species, diameter, height, and location; the work performed (removal, trimming, stump grinding) with specifics; crane or aerial-lift hours and why they were needed; debris disposal method and loads; permit numbers and fees; subtotal, tax, total, and payment terms. For storm or insurance work, add the claim number and the adjuster's name if you have them." },
+      { q: "How is tree removal priced?", a: "Primarily by the tree's size (trunk diameter and height), species (hardwood is denser and heavier than softwood), location (proximity to structures, power lines, fences), lean and condition (dead wood, decay, hanging limbs), and access (whether a crane or aerial lift is needed). A small ornamental in an open yard is a fraction of the cost of a large hardwood leaning over a house that requires a crane. Stump grinding, debris hauling, and permits are usually priced separately." },
+      { q: "Should I list crane time separately on a tree service invoice?", a: "Yes. Crane rental is often the single largest line item on a removal job, and showing it separately does two things: it explains why a crane job costs more than a climb-and-rig job, and it makes non-crane jobs look correctly less expensive. If the crane cost is buried inside a single removal line, the customer has no way to understand the price difference." },
+      { q: "How do I invoice for storm or emergency tree work?", a: "With an emergency or after-hours surcharge as its own line, quoted on the phone when the customer calls. Storm mobilisation at night or on a weekend involves pulling a crew off rest, sometimes staging equipment in advance, and working in conditions that are slower and more dangerous. The surcharge belongs on the invoice with the date, time, and reason. If the work is an insurance claim, add the claim number and adjuster name." },
+      { q: "Do I need to show my insurance on a tree service invoice?", a: "Tree work is among the most dangerous trades, and property damage from a felled tree or dropped limb is a real and common risk. Listing your general liability policy number or certificate number on the invoice, or attaching a certificate of insurance, reassures the customer and satisfies property managers and HOAs that often require proof of insurance before approving the work." },
+    ],
+    guideSlug: "how-to-invoice-for-tree-service",
+    guideLabel: "How to invoice for tree service — removal, trimming, stump grinding, crane work and storm cleanup",
+  },
 };
 
 /** Stable ordering for the hub grid and sitemap. */
