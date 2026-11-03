@@ -296,6 +296,17 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Labor warranty — _ days on labor; parts per manufacturer's warranty",
     ],
   },
+  "tree-service": {
+    trade: "Tree Service",
+    items: [
+      "Tree removal — species, diameter at breast height (DBH), height, access",
+      "Trimming / pruning — species, area (front / back / side), canopy spread",
+      "Stump grinding — diameter _, depth _, below grade",
+      "Crane rental — hours on site (operator and truck)",
+      "Debris removal — chipper truck loads, dump fee",
+      "Emergency / storm damage — date, hazard description, photos on file",
+    ],
+  },
   "web-development": {
     trade: "Web Development",
     items: [
