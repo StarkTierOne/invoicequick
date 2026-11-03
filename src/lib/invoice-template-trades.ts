@@ -2296,6 +2296,47 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "how-to-invoice-for-garage-door-repair",
     guideLabel: "How to invoice for garage door repair — springs, service calls, parts, openers and the safety test",
   },
+  "tree-service": {
+    slug: "tree-service",
+    trade: "Tree Service",
+    icon: "🌳",
+    cluster: "property",
+    metaTitle: "Free Tree Service Invoice Template — Removal, Trimming, Stump Grinding & Storm Work | InvoiceQuick",
+    metaDescription: "A free tree service invoice template for arborists and tree care companies. List each tree by species, diameter and height, separate removal from trimming and stump grinding, show crane and equipment costs, and document storm-damage calls. Download a PDF. No sign-up.",
+    tagline: "Built for tree care companies billing a removal, a trimming job and a stump grind — each tree identified by species and size, equipment and debris handled as separate lines, and storm calls documented with photos.",
+    intro: [
+      "Tree work is dangerous, expensive, and hard for a homeowner to price-check. A single removal can run from a few hundred dollars for a small ornamental to five figures for a large hardwood near a house, and the customer has no comparable they can point to. That makes the invoice the only place they can see what they paid for.",
+      "The common disputes in tree work almost all come from the same gap: the customer remembers a price for 'tree removal' and has no way to tell what that included. Did the stump grind come with it? Was the crane extra? Were the logs left or hauled? This template puts each piece on its own line — the tree by species and size, the cut, the stump, the equipment, and the debris — so nothing is blended and nothing is left to memory.",
+    ],
+    billingModel: "Most tree service companies price by the job after an on-site estimate, with the price driven by the tree's species, diameter, height, lean, proximity to structures, and access for equipment. Trimming is usually quoted per tree or per hour for a crew. Stump grinding is often a separate line, priced by diameter. Crane work, when needed, is billed by the hour or half-day with the operator and setup as distinct costs. Debris removal — chipping, hauling, and dump fees — is usually included in the quoted price but should appear as its own line so the customer sees it. Emergency and storm-damage calls carry a premium and are often billed time-and-materials. Residential jobs are usually paid on completion or 50% deposit / 50% on completion; commercial and municipal contracts are billed on net 30.",
+    lineItems: [
+      { description: "Tree removal — red oak, 28\" DBH, ~65 ft, leans toward garage, backyard access via driveway gate", unit: "per tree", note: "Identify the tree: species (or best description), diameter at breast height (DBH, measured 4.5 ft from grade), estimated height, lean, and access. The customer can verify the species and measure the trunk." },
+      { description: "Trimming / crown reduction — silver maple, front yard, ~40 ft spread, deadwood and clearance over driveway", unit: "per tree or per crew-hour", note: "Name the tree, describe what is being trimmed and why. 'Trim trees' is the line that gets disputed; a species, a location, and a reason is the one that doesn't." },
+      { description: "Stump grinding — oak stump, 28\" diameter, ground to 6\" below grade, grindings left on site", unit: "per stump, by diameter", note: "Stump grinding is often sold separately from the removal. State the diameter, the depth, and whether grindings are left or hauled. Root grinding beyond the stump is extra and should be quoted apart." },
+      { description: "Crane — 40-ton, on site 4 hrs, operator included, setup and staging on driveway", unit: "per hour or half-day", note: "Crane work is the biggest variable cost on a large removal. Show the crane size, time on site, and where it staged. If the crane company invoiced you, pass through at cost or mark up and say so." },
+      { description: "Debris removal — 2 chipper loads, brush and limbs; log sections cut to 16\" left at curb per customer request", unit: "per load or included", note: "Say what happened to the wood. Chipped and hauled, logs left, or logs removed. A customer who expected firewood rounds and got a clean yard, or vice versa, will call." },
+      { description: "Permit — city tree removal permit #_, fee", unit: "pass-through", note: "Many cities require a permit to remove trees above a certain size, and some protect specific species. Pass the fee through at cost and note the permit number." },
+      { description: "Emergency call — storm damage, date, pine on power lines, made safe for utility crew, photos on file", unit: "time and materials", note: "Storm and emergency calls are usually billed T&M with a premium. Document the date, the hazard, what you did, and that photos are on file. The customer's insurer will want this." },
+      { description: "Pre-existing property conditions noted before work: _ — photos on file", unit: "record, $0", note: "Walk the work area before the crew starts. Note cracked pavement, leaning fences, thin lawn where equipment will track. A $0 line and dated photos keep old damage from becoming your claim." },
+    ],
+    gotchas: [
+      "No tree identification. 'Remove tree — $_' is the line nobody can check. Species, DBH, and height are what make the price make sense, and they let the customer verify you removed the right tree on a multi-tree property.",
+      "Stump grinding assumed included. Many customers hear 'remove the tree' and expect the stump to go with it. If the stump is separate, it needs its own line on the estimate, or the call after the job will be about why there is still a stump.",
+      "Crane cost buried in the removal price. A crane can be a third of the job cost. Showing it as its own line explains why this removal costs more than the neighbor's tree that the crew could climb.",
+      "Debris disposal not described. Whether wood is chipped, left as logs, or hauled entirely changes what the property looks like when the crew leaves. Say it on the invoice.",
+      "No record of property condition before work. Heavy equipment on a lawn, a driveway, or near a fence will leave marks. If the damage was already there, a $0 pre-existing-condition line and photos prove it.",
+      "Emergency work with no documentation. Storm calls are often filed with insurance. Date, hazard description, what was done, and photos on file are what the adjuster needs and what keeps the bill from being questioned.",
+    ],
+    faqs: [
+      { q: "What should a tree service invoice include?", a: "Your business name, contact info, insurance certificate number, and any arborist credentials or license number your state requires. The customer's name, address, and the service address if different. An invoice number and date. Then each tree by species, DBH, and height, the work done (removal, trimming, stump grinding), equipment used (crane, bucket truck), debris disposal, any permits, taxes, the total, and payment terms." },
+      { q: "How do I describe a tree on an invoice?", a: "By species (or your best identification), diameter at breast height (DBH — measured 4.5 feet from the ground), estimated height, the lean if it matters, and where on the property it is. 'Red oak, 28\" DBH, ~65 ft, backyard near garage' is checkable. 'Large tree' is not." },
+      { q: "Should stump grinding be a separate line?", a: "Yes, unless your estimate explicitly included it in the removal price and said so. Many customers assume the stump goes with the tree. A separate line on the estimate, accepted or declined, prevents the most common tree service complaint." },
+      { q: "How do I invoice for crane work?", a: "As its own line: crane size or capacity, hours on site, whether the operator is included, and where it staged. If you rented the crane from a third party, you can pass the cost through at your rate and note it. A crane can be a large fraction of a removal cost, and showing it apart explains the price." },
+      { q: "Do I need to document storm or emergency work?", a: "Yes, and thoroughly. Storm calls are often filed with the customer's homeowner's insurance. The insurer wants the date, what the hazard was, what you did, and photos. An invoice that reads 'emergency tree removal — $_' with no detail will delay or lose the claim, which delays your payment." },
+    ],
+    guideSlug: "how-to-invoice-for-tree-service",
+    guideLabel: "How to invoice for tree service — removals, trimming, stump grinding, crane work and storm calls",
+  },
 };
 
 /** Stable ordering for the hub grid and sitemap. */

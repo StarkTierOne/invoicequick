@@ -63,6 +63,8 @@ export const tradeCards: TradeCard[] = [
   { icon: "🔑", trade: "Locksmith", tmpl: "locksmith", guide: "how-to-invoice-for-locksmith-work" },
   { icon: "🚪", trade: "Garage Door Repair", tmpl: "garage-door-repair", guide: "how-to-invoice-for-garage-door-repair" },
 
+  { icon: "🌳", trade: "Tree Service", tmpl: "tree-service", guide: "how-to-invoice-for-tree-service" },
+
   // Guide-only trades: strong articles with no template page yet. Each is a
   // candidate for the next wave of template pages.
   { icon: "🔁", trade: "Recurring Services", guide: "how-to-invoice-for-recurring-services" },
