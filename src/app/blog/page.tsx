@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "word-invoice-template",
+    title: "Word Invoice Template: How to Make a Free One Step by Step (2026)",
+    excerpt:
+      "Word makes a good-looking invoice, but its math only updates when you press F9. This guide builds one from a blank document: business details and logo in the header, a table for line items, the Formula dialog for line totals, subtotal and tax, content controls and Quick Parts for reusable fields, a real .dotx template, manual numbering, and a clean PDF.",
+  },
+  {
     slug: "excel-invoice-template",
     title: "Excel Invoice Template: How to Build a Free One Step by Step (2026)",
     excerpt:

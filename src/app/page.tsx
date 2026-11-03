@@ -59,6 +59,13 @@ const whoItsFor: { icon: string; title: string; desc: string; href: string; guid
 // live preview (its default trade), so both always agree on the same list.
 const heroChips = tradeCards.filter((t) => t.tmpl).slice(0, HERO_CHIP_COUNT);
 
+// The seeded-builder link for a trade, carrying the typed name along. Shared by
+// the hero chips and the phone preview's start link so the two never diverge.
+const seededHref = (tmpl: string, name: string) => {
+  const trimmed = name.trim();
+  return trimmed ? `/create?trade=${tmpl}&from=${encodeURIComponent(trimmed)}` : `/create?trade=${tmpl}`;
+};
+
 function HeroStarter({
   name,
   setName,
@@ -75,9 +82,6 @@ function HeroStarter({
     e.preventDefault();
     router.push(trimmed ? `/create?from=${encodeURIComponent(trimmed)}` : "/create");
   };
-
-  const chipHref = (tmpl: string) =>
-    trimmed ? `/create?trade=${tmpl}&from=${encodeURIComponent(trimmed)}` : `/create?trade=${tmpl}`;
 
   return (
     <div className="max-w-xl mx-auto">
@@ -115,7 +119,7 @@ function HeroStarter({
               {/* Hover / keyboard focus previews the trade in the mockup below;
                   the click itself still goes straight to the seeded builder. */}
               <Link
-                href={chipHref(t.tmpl!)}
+                href={seededHref(t.tmpl!, name)}
                 onMouseEnter={() => onPreviewTrade(t.tmpl!)}
                 onFocus={() => onPreviewTrade(t.tmpl!)}
                 className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-700 hover:border-indigo-400 hover:text-indigo-700 hover:bg-indigo-50 transition-colors"
@@ -557,11 +561,52 @@ const pricing = [
 // Rates and amounts are deliberately shown as "—": seeds carry descriptions
 // only, and a made-up dollar figure here would read as pricing advice. Qty is 1
 // because that is what /create seeds each line with.
-function HeroInvoiceMockup({ fromName, tmpl }: { fromName: string; tmpl: string | undefined }) {
+//
+// Phones have no hover, so the chips above can't preview there — a tap
+// navigates. Below `sm` the mockup gets its own trade switcher: buttons that
+// only swap the preview, plus one start link for the trade shown. The chips
+// keep doing one thing (go), and the start link's distinct label lets
+// create_cta_click tell it apart from them.
+function HeroInvoiceMockup({
+  fromName,
+  tmpl,
+  onPreviewTrade,
+}: {
+  fromName: string;
+  tmpl: string | undefined;
+  onPreviewTrade: (tmpl: string) => void;
+}) {
   const seed = tmpl ? getTradeSeed(tmpl) : undefined;
   const items = seed?.items.slice(0, 4) ?? [];
   return (
     <figure className="mt-14 max-w-2xl mx-auto animate-hero-float" aria-label="Preview of the invoice you'll build">
+      <div className="sm:hidden mb-3">
+        <p id="hero-preview-label" className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">
+          Preview a trade&rsquo;s line items
+        </p>
+        <div
+          role="group"
+          aria-labelledby="hero-preview-label"
+          className="flex gap-2 overflow-x-auto pb-1 -mx-4 px-4 snap-x"
+        >
+          {heroChips.map((t) => (
+            <button
+              key={t.tmpl}
+              type="button"
+              aria-pressed={t.tmpl === tmpl}
+              onClick={() => onPreviewTrade(t.tmpl!)}
+              className={`shrink-0 snap-start inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                t.tmpl === tmpl
+                  ? "border-indigo-500 bg-indigo-50 text-indigo-700 font-medium"
+                  : "border-gray-300 bg-white text-gray-700"
+              }`}
+            >
+              <span aria-hidden="true">{t.icon}</span>
+              {t.trade}
+            </button>
+          ))}
+        </div>
+      </div>
       <div className="rounded-2xl shadow-2xl ring-1 ring-gray-900/5 border border-gray-200 bg-white overflow-hidden text-left">
         {/* Invoice body — laid out like the downloaded PDF */}
         <div className="p-6 sm:p-8">
@@ -621,6 +666,14 @@ function HeroInvoiceMockup({ fromName, tmpl }: { fromName: string; tmpl: string 
       </div>
       <figcaption className="mt-4 text-sm text-gray-500">
         This is the PDF you&rsquo;ll download &mdash; no watermark. You add your own rates; the math is done for you.
+        {seed && tmpl && (
+          <Link
+            href={seededHref(tmpl, fromName)}
+            className="sm:hidden mt-3 flex justify-center btn-primary !py-3"
+          >
+            Start with these {seed.trade} items &rarr;
+          </Link>
+        )}
         {seed && (
           <span className="hidden sm:block mt-1 text-xs text-gray-400">
             Line items shown: {seed.trade}. Hover or tab to a trade above to preview its list.
@@ -648,7 +701,7 @@ function HeroInteractive() {
         <span className="flex items-center gap-1"><span className="text-green-500 font-bold">&#10003;</span> Free forever</span>
         <span className="flex items-center gap-1" title="InvoiceQuick generates the PDF — clients pay you directly however you arrange. No 2.9–3.5% processing cut like PayPal, Square, or Wave."><span className="text-green-500 font-bold">&#10003;</span> 0% payment fees</span>
       </div>
-      <HeroInvoiceMockup fromName={name} tmpl={previewTrade} />
+      <HeroInvoiceMockup fromName={name} tmpl={previewTrade} onPreviewTrade={setPreviewTrade} />
     </>
   );
 }
