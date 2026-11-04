@@ -439,6 +439,10 @@ function SavingsCalculator() {
 
 const faqs = [
   {
+    question: "What should an invoice include?",
+    answer: "Every invoice should have your business name, address, and contact details; your client's name and address; a unique invoice number and the date issued; a description of the work as itemized line items with quantities and rates; the subtotal, any tax, and the total due; payment terms and a due date; and instructions for how to pay (bank transfer, PayPal, check, etc.). InvoiceQuick fills in the structure for you — just enter your details and the line items, and the math, formatting, and PDF are handled automatically. See the full checklist for a deeper walkthrough.",
+  },
+  {
     question: "Is InvoiceQuick really free?",
     answer: "Yes. InvoiceQuick's free tier is genuinely free — no credit card required, no watermarks, no invoice limits. You can create and download unlimited professional PDF invoices at no cost, forever. We also offer Pro ($9/mo) and Business ($29/mo) plans with advanced features like recurring invoices, client database, and custom branding.",
   },
@@ -1103,7 +1107,7 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-        <p className="text-center text-sm text-gray-500 mt-4">Pricing as of April 2026. Free features verified by ToolsRated.</p>
+        <p className="text-center text-sm text-gray-500 mt-4">Pricing as of November 2026. Free features verified by ToolsRated.</p>
         <div className="text-center mt-10">
           <Link href="/create" className="btn-primary text-lg !px-8 !py-4">
             Start Free — No Sign-Up &rarr;
