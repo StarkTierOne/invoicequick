@@ -340,12 +340,37 @@ function InvoicePreview() {
   );
 }
 
+// Competitor prices quoted on this page. ONE source for the comparison table,
+// the savings calculator and the footnote, so the three can't drift apart the
+// way they did between April and November 2026 (the table said $17–$55 while
+// FreshBooks had moved to $23–$70). Regular prices, not the launch promos the
+// vendors show by default. Re-check on each vendor's own pricing page and bump
+// `verifiedOn` when any of these change:
+//   https://www.freshbooks.com/pricing
+//   https://www.waveapps.com/pricing
+//   https://www.paypal.com/us/business/paypal-business-fees
+const COMPETITOR_PRICING = {
+  verifiedOn: "November 2026",
+  // FreshBooks Lite / Plus / Premium regular monthly prices (the page shows an
+  // 80%-off first-four-months promo with these struck through).
+  freshBooksLiteMonthly: 23,
+  freshBooksRange: "$23–$70/mo",
+  // Wave: Starter is $0 with 2.9% + $0.60 per card payment; Pro is $19/mo.
+  waveSummary: "Free (Starter) or $19/mo; 2.9% + $0.60 per card payment",
+  // PayPal invoicing: 2.99% + $0.49 per card payment; 3.49% + $0.49 when the
+  // client pays with a PayPal balance, Venmo or guest checkout.
+  paypalRate: 0.0299,
+  paypalFixedFee: 0.49,
+  paypalSummary: "Free to send; 2.99%–3.49% + $0.49 per payment",
+} as const;
+
 function SavingsCalculator() {
   const [invoicesPerMonth, setInvoicesPerMonth] = useState(15);
   const [avgInvoiceValue, setAvgInvoiceValue] = useState(750);
 
-  const freshBooksAnnual = 17 * 12;
-  const paypalAnnualFee = invoicesPerMonth * 12 * avgInvoiceValue * 0.0299;
+  const freshBooksAnnual = COMPETITOR_PRICING.freshBooksLiteMonthly * 12;
+  const paypalAnnualFee =
+    invoicesPerMonth * 12 * (avgInvoiceValue * COMPETITOR_PRICING.paypalRate + COMPETITOR_PRICING.paypalFixedFee);
   const invoiceQuickAnnual = 0;
   const annualSavingsVsFreshBooks = freshBooksAnnual - invoiceQuickAnnual;
   const annualSavingsVsPaypal = paypalAnnualFee - invoiceQuickAnnual;
@@ -410,11 +435,11 @@ function SavingsCalculator() {
           </div>
           <div className="space-y-3 pt-5 text-sm">
             <div className="flex justify-between items-baseline">
-              <span className="text-gray-600">FreshBooks subscription</span>
+              <span className="text-gray-600">FreshBooks Lite (${COMPETITOR_PRICING.freshBooksLiteMonthly}/mo)</span>
               <span className="font-semibold text-gray-900">{fmt(freshBooksAnnual)}/yr</span>
             </div>
             <div className="flex justify-between items-baseline">
-              <span className="text-gray-600">PayPal invoice fees (2.99%)</span>
+              <span className="text-gray-600">PayPal invoice fees (2.99% + $0.49 each)</span>
               <span className="font-semibold text-gray-900">{fmt(paypalAnnualFee)}/yr</span>
             </div>
             <div className="flex justify-between items-baseline pt-3 border-t border-gray-100">
@@ -1079,7 +1104,7 @@ export default function Home() {
             </thead>
             <tbody>
               {[
-                ["Price", "Free forever", "$17–$55/mo", "Free (fees on payments)", "Free + 2.99%/invoice"],
+                ["Price", "Free forever", COMPETITOR_PRICING.freshBooksRange, COMPETITOR_PRICING.waveSummary, COMPETITOR_PRICING.paypalSummary],
                 ["Sign-up required", "No", "Yes", "Yes", "Yes"],
                 ["Unlimited invoices", "✓", "✓", "✓", "✓"],
                 ["No watermarks", "✓", "✓", "✓", "✓"],
@@ -1103,7 +1128,9 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-        <p className="text-center text-sm text-gray-500 mt-4">Pricing as of April 2026. Free features verified by ToolsRated.</p>
+        <p className="text-center text-sm text-gray-500 mt-4">
+          Competitor prices checked on each vendor&rsquo;s own pricing page, {COMPETITOR_PRICING.verifiedOn}. Regular prices are shown; FreshBooks and Wave advertise introductory discounts for the first few months.
+        </p>
         <div className="text-center mt-10">
           <Link href="/create" className="btn-primary text-lg !px-8 !py-4">
             Start Free — No Sign-Up &rarr;

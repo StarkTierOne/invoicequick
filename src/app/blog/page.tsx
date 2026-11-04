@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "pdf-invoice-template",
+    title: "PDF Invoice Template: Free, Fillable & How to Make One (2026)",
+    excerpt:
+      "PDF is what clients and accounts teams want, but it is a poor place to keep your master copy. This guide covers exporting a clean PDF from Word, Excel and Google Sheets, building a fillable PDF with calculated totals (and why they only work in some readers), flattening before you send, file names, fonts and size, PDF/A, signatures, and the mistakes that get invoices sent back.",
+  },
+  {
     slug: "word-invoice-template",
     title: "Word Invoice Template: How to Make a Free One Step by Step (2026)",
     excerpt:

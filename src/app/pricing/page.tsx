@@ -303,7 +303,7 @@ export default function PricingPage() {
               </tr>
               <tr className="border-b border-gray-100 bg-gray-50/50">
                 <td className="p-3 font-medium">Sign-up friction</td>
-                <td className="p-3">Email only</td>
+                <td className="p-3">None to generate; email only to save</td>
                 <td className="p-3">Email + business setup</td>
                 <td className="p-3">Zoho account</td>
                 <td className="p-3">CC + trial gate</td>
