@@ -276,7 +276,7 @@ export default function PricingPage() {
               <tr className="border-b border-gray-100 bg-gray-50/50">
                 <td className="p-3 font-medium">Recurring / retainer invoices</td>
                 <td className="p-3">Pro ($9/mo)</td>
-                <td className="p-3">Pro ($16/mo)</td>
+                <td className="p-3">Pro ($19/mo)</td>
                 <td className="p-3">Free</td>
                 <td className="p-3">Included on paid</td>
               </tr>
@@ -320,7 +320,7 @@ export default function PricingPage() {
           <p>
             <strong>Pick Wave Starter</strong> if you want bookkeeping bundled in and you&apos;re fine with the
             broader accounting-software setup. Logo and client database are free on Starter, but recurring invoices
-            and ACH/auto-reminders move to Wave Pro at $16/mo — almost 2× InvoiceQuick&apos;s equivalent tier.
+            and ACH/auto-reminders move to Wave Pro at $19/mo — about 2× InvoiceQuick&apos;s equivalent tier.
           </p>
           <p>
             <strong>Pick Zoho Invoice</strong> if you&apos;re already inside the Zoho ecosystem (Books, CRM, Mail).
