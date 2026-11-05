@@ -484,6 +484,10 @@ const faqs = [
     answer: "InvoiceQuick supports 10 currencies: USD, EUR, GBP, CAD, AUD, JPY, MXN, BRL, INR, and CHF. Pick one in the invoice creator and the right symbol appears on your PDF.",
   },
   {
+    question: "How do I create my first invoice?",
+    answer: "Open the invoice creator and fill in four things: your name or business name at the top, your client's name and address, a line item for each service or product with a quantity and rate, and a due date. InvoiceQuick calculates the subtotal, tax, and total for you. Click download, and the clean PDF is ready to email. The whole process takes about 60 seconds, no account needed.",
+  },
+  {
     question: "What payment terms should I put on my invoice?",
     answer: "The most common payment terms for freelancers are Net 15 (payment due within 15 days) and Net 30 (payment due within 30 days). For new clients or large projects, consider requiring 50% upfront. You can also add a late fee policy, such as 1.5% per month on overdue balances. InvoiceQuick lets you add custom payment terms to every invoice.",
   },
