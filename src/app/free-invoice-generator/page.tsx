@@ -384,6 +384,48 @@ export default function FreeInvoiceGeneratorPage() {
         }}
       />
 
+      {/* HowTo JSON-LD — earns rich-snippet steps in SERP for "free invoice generator" */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Generate a Free Invoice Online",
+            description:
+              "Create a professional PDF invoice in under 60 seconds using InvoiceQuick's free invoice generator. No signup, no watermarks.",
+            totalTime: "PT1M",
+            tool: {
+              "@type": "HowToTool",
+              name: "InvoiceQuick Free Invoice Generator",
+            },
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Enter Your Details",
+                text: "Add your business name, address, and contact information. Enter your client's name and billing address. Optionally upload your logo for a branded look.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Add Line Items",
+                text: "List your services or products with descriptions, quantities, and rates. InvoiceQuick automatically calculates subtotals, tax, discounts, and the total due as you type.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Download Your PDF Invoice",
+                text: "Click the download button to get a polished, watermark-free PDF invoice ready to email to your client. The PDF is generated in your browser — nothing is uploaded.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* BreadcrumbList JSON-LD */}
       <script
         type="application/ld+json"
