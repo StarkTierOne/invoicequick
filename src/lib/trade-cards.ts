@@ -65,6 +65,7 @@ export const tradeCards: TradeCard[] = [
 
   // Guide-only trades: strong articles with no template page yet. Each is a
   // candidate for the next wave of template pages.
+  { icon: "🌲", trade: "Tree Service", guide: "how-to-invoice-for-tree-service" },
   { icon: "🔁", trade: "Recurring Services", guide: "how-to-invoice-for-recurring-services" },
   { icon: "🧾", trade: "Independent Contractors", guide: "how-to-invoice-as-an-independent-contractor" },
   { icon: "⏱️", trade: "Hourly Work", guide: "how-to-invoice-for-hourly-work" },
