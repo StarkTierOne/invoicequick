@@ -1323,6 +1323,44 @@ export default function Home() {
         }}
       />
 
+      {/* HowTo Schema — targets "how to create an invoice" rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Create a Professional Invoice for Free",
+            description: "Create a professional PDF invoice in under 60 seconds using InvoiceQuick's free invoice generator. No sign-up, no credit card, no watermark.",
+            totalTime: "PT1M",
+            tool: {
+              "@type": "HowToTool",
+              name: "InvoiceQuick free invoice generator"
+            },
+            step: [
+              {
+                "@type": "HowToStep",
+                name: "Fill In Your Details",
+                text: "Enter your business name, address, and contact information. Add your client's details, then list each service or product as a line item with quantity and rate. The form auto-calculates subtotals, tax, and the total as you type.",
+                url: "https://invoicequick-phi.vercel.app/create"
+              },
+              {
+                "@type": "HowToStep",
+                name: "Preview Your Invoice",
+                text: "Watch the invoice preview update live as you type. Totals, tax, and discounts calculate themselves. Upload your logo and it appears on the PDF. Check that everything looks right before downloading.",
+                url: "https://invoicequick-phi.vercel.app/create"
+              },
+              {
+                "@type": "HowToStep",
+                name: "Download and Send",
+                text: "Download a clean, watermark-free PDF and email it to your client. Your draft stays saved on your device so you can come back and finish later. The entire process takes about 60 seconds.",
+                url: "https://invoicequick-phi.vercel.app/create"
+              }
+            ]
+          }),
+        }}
+      />
+
       {/* CTA */}
       <section className="bg-indigo-600 py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
