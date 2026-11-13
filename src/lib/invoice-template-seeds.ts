@@ -190,6 +190,15 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "PO #_ — cost center _, services _/_–_/_",
     ],
   },
+  "personal-training": {
+    trade: "Personal Training & Fitness",
+    items: [
+      "1:1 session — focus, date, time slot, 60 min",
+      "Prepaid package — _ sessions: _ used this period, _ remaining (expires _/_)",
+      "Late cancellation — date (per 24-hour policy, §_ of agreement)",
+      "Fitness assessment — body composition, movement screen, program design",
+    ],
+  },
   "graphic-design": {
     trade: "Graphic Design",
     items: [

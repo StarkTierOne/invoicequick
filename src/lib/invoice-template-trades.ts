@@ -1629,6 +1629,92 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "how-to-invoice-for-tutoring",
     guideLabel: "How to invoice for tutoring and test prep — packages, no-shows, and school district POs",
   },
+  "personal-training": {
+    slug: "personal-training",
+    trade: "Personal Training & Fitness",
+    icon: "🏋️",
+    cluster: "professional",
+    metaTitle: "Free Personal Training Invoice Template — Sessions, Packages & No-Shows | InvoiceQuick",
+    metaDescription:
+      "A free personal training invoice template for trainers and fitness coaches. Bill per session, draw down a prepaid package, charge a late cancellation under your policy, and add supplement or meal-plan fees — then download a PDF. No sign-up.",
+    tagline:
+      "Built for personal trainers and fitness coaches billing per session, by package, or on a monthly retainer.",
+    intro: [
+      "A personal training invoice gets questioned on three lines more than any others: a session the client does not remember attending, a cancellation fee the client did not know about, and a package balance the client thought was higher. All three have the same fix — put the date, the policy clause, and the running count on the invoice itself, not in a text message the client has already scrolled past. A session line that says 'Personal training — 4 sessions' asks the client to trust four workouts they may not distinctly recall a month later; four lines that each name the date, the time slot, and the session focus do not ask anything.",
+      "The second thing that shapes a training invoice is the package. Most trainers sell sessions in blocks of 5, 10, or 20 at a per-session discount, collected up front. That money is not income until the session happens — it is a liability, and the invoice is the only document that tracks how much of it has been delivered. Show the package as a drawdown: sessions used this billing period, sessions remaining, expiration date. A package with no visible countdown is the one that produces a refund argument at session twelve when the client thought they had fifteen left.",
+    ],
+    billingModel:
+      "Per session at an hourly or half-hour rate, invoiced weekly or monthly in arrears; prepaid packages of 5, 10, or 20 sessions at a volume discount, sold up front and drawn down on each invoice; a monthly retainer for a fixed weekly schedule, billed in advance; or, for gym and corporate clients, hours at a contracted rate against a purchase order, billed at the agreed interval. Small-group and semi-private sessions are priced per participant per session. Cancellation and no-show fees are billed at the rate stated in the signed agreement — full session, half session, or a flat fee — never at a rate decided after the missed session.",
+    lineItems: [
+      {
+        description: "1:1 session — strength training, Mon 9/14, 6:00 AM, 60 min",
+        unit: "per session, at the hourly or session rate",
+        note: "Date, time slot, session focus, and duration on every line. A month later the client remembers Tuesday mornings but not which Tuesday — the date is what settles it.",
+      },
+      {
+        description: "Prepaid package — 10 sessions: 3 used this period, 5 of 10 remaining (expires 12/31)",
+        unit: "per package, drawn down per session",
+        note: "Show the drawdown and expiration. A package balance dispute at session eight is a record-keeping failure, not a client problem.",
+      },
+      {
+        description: "Late cancellation — Wed 9/16, cancelled 2 hrs before (24-hour policy, §3 of agreement)",
+        unit: "full or half session rate, per the signed policy",
+        note: "Billable only under a policy the client signed before the first session. Cite the clause and the cancellation time — a fee with no paper behind it is a request, not a charge.",
+      },
+      {
+        description: "No-show — Fri 9/18, 7:00 AM slot (§3 of agreement)",
+        unit: "full session rate, per the signed policy",
+        note: "Distinct from a late cancel. The slot was held and could not be filled. Same rule: policy must exist in writing.",
+      },
+      {
+        description: "Semi-private session — HIIT, 3 participants, Thu 9/17, 45 min (per-person rate)",
+        unit: "per participant, per session",
+        note: "State the per-person rate. A group rate is lower per person and higher per hour for you — make clear which the client is paying.",
+      },
+      {
+        description: "Nutrition / meal-plan add-on — initial plan + 2 weekly check-ins",
+        unit: "flat fee or per check-in",
+        note: "Separate from session fees. Nutrition coaching may fall under a different scope-of-practice rule in your state.",
+      },
+      {
+        description: "Fitness assessment — body composition, movement screen, program design",
+        unit: "per assessment",
+        note: "Often done at onboarding and quarterly. Bill it as its own line so it is not folded into the session rate.",
+      },
+      {
+        description: "Travel — in-home sessions, 4 visits × flat travel fee",
+        unit: "flat fee per visit",
+        note: "A per-visit fee, listed. Folding travel into a higher session rate makes the rate look wrong against your published one.",
+      },
+    ],
+    gotchas: [
+      "Sessions rolled into one line. 'Personal training — 8 sessions' asks a client to trust eight workouts they cannot individually recall. Each session needs its own date and time.",
+      "A package billed as a lump sum with no drawdown. When the client thinks they have three sessions left and you say one, nobody can prove either number.",
+      "A cancellation fee with no signed policy. The client refuses, correctly, and the next invoice arrives under suspicion. The policy must be agreed at onboarding.",
+      "No expiration date on a prepaid package. A client who bought ten sessions eighteen months ago and used three will expect a refund or the remaining seven — and your state's unused-gift-card or prepaid-service law may require one.",
+      "Nutrition coaching billed without a scope-of-practice note. In many states, 'nutrition counseling' requires a credential that 'meal-plan guidance' does not. Keep the invoice language inside your certification's scope.",
+    ],
+    faqs: [
+      {
+        q: "What should a personal training invoice include?",
+        a: "Your name or business name, certification credentials (e.g. NASM-CPT, ACE, ISSA), and contact details; the client's name and billing address or email; a unique invoice number and the invoice and due dates; one line per session with the date, time slot, session focus, and duration at the agreed rate; any prepaid package shown with sessions used this period, sessions remaining, and expiration date; cancellation or no-show fees on their own lines with the policy clause cited; group or semi-private sessions with the per-person rate stated; nutrition or assessment fees listed separately; travel fees per visit; the subtotal, any applicable sales tax, and the total due; and your payment terms and accepted methods.",
+      },
+      {
+        q: "How do I bill a prepaid training package?",
+        a: "Sell the package at a stated per-session discount, collect payment up front, and draw it down on each invoice. Every invoice that uses package sessions should show three numbers: sessions used this billing period, total sessions used to date, and sessions remaining. Include the package expiration date on every invoice — not just the first one. This running ledger is what prevents the 'I thought I had more sessions' conversation. If a client asks for a refund on unused sessions, your refund policy and your state's prepaid-service rules determine whether you owe one.",
+      },
+      {
+        q: "Can I charge for a missed personal training session?",
+        a: "Only if you have a written cancellation and no-show policy that the client signed before the first session, and only at the rate that policy states. Most trainers require 24 hours' notice and charge the full session rate for a late cancel or no-show. Put the policy in the agreement, cite the clause number on the invoice line, and note the time the cancellation was received or that the client did not appear. A fee with no signed policy behind it is unenforceable and damages the relationship.",
+      },
+      {
+        q: "Is personal training subject to sales tax?",
+        a: "It depends on your state. Most states exempt personal instruction services from sales tax, treating them the same as tutoring or coaching. However, some states tax fitness services, and the rules can differ between one-on-one training, group classes, and gym memberships. Supplements, merchandise, and meal plans sold as physical goods are almost always taxable. Check your state's department of revenue for the current rule, and if you charge tax, show the rate and amount as a separate line on the invoice.",
+      },
+    ],
+    guideSlug: "how-to-invoice-for-personal-training",
+    guideLabel: "How to invoice for personal training — packages, cancellations, and scope",
+  },
   consulting: {
     slug: "consulting",
     trade: "Consulting",
