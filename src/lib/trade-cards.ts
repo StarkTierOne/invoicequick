@@ -51,6 +51,7 @@ export const tradeCards: TradeCard[] = [
   { icon: "🚚", trade: "Trucking & Freight", tmpl: "trucking", guide: "how-to-invoice-for-trucking-and-freight" },
   { icon: "🔨", trade: "Subcontracting", tmpl: "subcontractor", guide: "how-to-invoice-as-a-subcontractor" },
   { icon: "📚", trade: "Tutoring & Test Prep", tmpl: "tutoring", guide: "how-to-invoice-for-tutoring" },
+  { icon: "🏋️", trade: "Personal Training & Fitness", tmpl: "personal-training", guide: "how-to-invoice-for-personal-training" },
   { icon: "💼", trade: "Consulting", tmpl: "consulting", guide: "how-to-invoice-for-consulting" },
   { icon: "✏️", trade: "Graphic Design", tmpl: "graphic-design", guide: "invoice-template-graphic-designers" },
   { icon: "🐜", trade: "Pest Control", tmpl: "pest-control", guide: "how-to-invoice-for-pest-control" },
