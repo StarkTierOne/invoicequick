@@ -1344,7 +1344,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-12">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid sm:grid-cols-3 gap-8 mb-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-6 h-6 bg-indigo-600 rounded flex items-center justify-center text-white font-bold text-xs">IQ</div>
@@ -1356,15 +1356,27 @@ export default function Home() {
               <h4 className="text-white font-semibold text-sm mb-3">Product</h4>
               <ul className="space-y-2 text-sm">
                 <li><Link href="/create" className="hover:text-white transition-colors">Create Invoice</Link></li>
+                <li><Link href="/free-invoice-generator" className="hover:text-white transition-colors">Free Invoice Generator</Link></li>
+                <li><Link href="/invoice-template" className="hover:text-white transition-colors">Invoice Templates</Link></li>
                 <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold text-sm mb-3">Guides</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/blog/what-to-include-on-invoice" className="hover:text-white transition-colors">What to Include on an Invoice</Link></li>
+                <li><Link href="/blog/how-to-create-professional-invoice" className="hover:text-white transition-colors">How to Create an Invoice</Link></li>
+                <li><Link href="/blog/net-30-payment-terms" className="hover:text-white transition-colors">Net 30 Payment Terms</Link></li>
+                <li><Link href="/blog/invoice-payment-reminder-email-templates" className="hover:text-white transition-colors">Payment Reminder Templates</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition-colors">All Guides &rarr;</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold text-sm mb-3">Resources</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="https://toolsrated.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Tool Reviews &amp; Comparisons</a></li>
-                <li><Link href="/invoice-template" className="hover:text-white transition-colors">Free Invoice Templates</Link></li>
+                <li><Link href="/blog/best-free-invoicing-software-small-business" className="hover:text-white transition-colors">Best Free Invoicing Software</Link></li>
+                <li><Link href="/blog/free-invoice-template-freelancers" className="hover:text-white transition-colors">Free Templates for Freelancers</Link></li>
               </ul>
             </div>
           </div>

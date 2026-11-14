@@ -58,6 +58,7 @@ export const tradeCards: TradeCard[] = [
   { icon: "🪟", trade: "Window Cleaning", tmpl: "window-cleaning", guide: "how-to-invoice-for-window-cleaning" },
   { icon: "🍂", trade: "Gutter Cleaning", tmpl: "gutter-cleaning", guide: "how-to-invoice-for-gutter-cleaning" },
   { icon: "🧽", trade: "Carpet Cleaning", tmpl: "carpet-cleaning", guide: "how-to-invoice-for-carpet-cleaning" },
+  { icon: "🏊", trade: "Pool Cleaning", tmpl: "pool-cleaning", guide: "how-to-invoice-for-pool-cleaning" },
   { icon: "📝", trade: "Freelance Writing", tmpl: "freelance-writing", guide: "how-to-invoice-for-freelance-writing" },
   { icon: "🔌", trade: "Appliance Repair", tmpl: "appliance-repair", guide: "how-to-invoice-for-appliance-repair" },
   { icon: "🔑", trade: "Locksmith", tmpl: "locksmith", guide: "how-to-invoice-for-locksmith-work" },
