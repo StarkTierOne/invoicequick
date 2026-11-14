@@ -252,6 +252,17 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Pre-existing conditions noted before work: _ (permanent stains / wear / seams / loose carpet) — photos on file",
     ],
   },
+  "pool-cleaning": {
+    trade: "Pool Cleaning",
+    items: [
+      "Weekly pool maintenance — visit _/_, chemicals tested and adjusted",
+      "Chemical application log — pH _, FC _, TA _, CYA _, added: _",
+      "Filter clean — cartridge / DE / sand, _ (date)",
+      "Green pool recovery — drain level, acid wash / chlorine shock, _ visits",
+      "Seasonal opening — remove cover, start equipment, balance water, _/_",
+      "Equipment repair — _ (pump / filter / heater / salt cell), model #_",
+    ],
+  },
   "freelance-writing": {
     trade: "Freelance Writing",
     items: [

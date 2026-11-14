@@ -2072,6 +2072,99 @@ export const tradeTemplates: Record<string, TradeTemplate> = {
     guideSlug: "how-to-invoice-for-carpet-cleaning",
     guideLabel: "How to invoice for carpet cleaning — rooms, stains, pet treatment, and warranty receipts",
   },
+  "pool-cleaning": {
+    slug: "pool-cleaning",
+    trade: "Pool Cleaning",
+    icon: "🏊",
+    cluster: "cleaning",
+    metaTitle: "Free Pool Cleaning Invoice Template — Chemical Logs, Service Routes & Green Pool Recovery | InvoiceQuick",
+    metaDescription:
+      "A free pool cleaning invoice template for pool service companies and solo technicians. Bill weekly maintenance per visit or monthly, log every chemical reading and adjustment, invoice a green pool recovery, seasonal opening and closing, equipment repair, filter cleaning, and multi-pool HOA routes. Download a PDF. No sign-up.",
+    tagline:
+      "Built for pool service operators billing a weekly route, a green pool recovery and an equipment repair on the same account — each visit with its chemical log, so the customer and the health department can both see what was done.",
+    intro: [
+      "Pool service invoices get questioned for one reason more than any other: the customer was not home when the technician was there, and the only evidence the visit happened is a line on a bill. A pool does not look dramatically different after a routine maintenance visit — the water was clear before and it is clear after — so the value of the work is invisible unless the invoice shows it. That means chemical readings, what was adjusted, what was cleaned, and the date, on every visit line. The customer who can see that their pH was 7.8 and their free chlorine was 1.2 and you brought both into range does not wonder whether you actually came.",
+      "The second issue is chemicals. Some operators bundle chemicals into the monthly rate; others bill them separately. Either model works, but mixing them — bundling on routine visits and then billing chemicals separately on a green pool or a startup — creates the invoice that gets argued over. Pick one model, state it in the service agreement, and keep it consistent on every invoice. This template puts each visit on its own line with its chemical log, keeps equipment and project work separate from the route, and carries a pre-existing conditions note for new accounts, so the invoice explains the price and records what the pool looked like when you took it over.",
+    ],
+    billingModel:
+      "Weekly pool maintenance is billed either per visit or on a flat monthly rate that covers four or five visits. Chemicals are either included in the monthly rate (the operator buys them) or billed separately at cost plus a markup. Filter cleaning is usually a separate charge, billed per cleaning one to four times a year depending on the filter type. Seasonal opening and closing are flat-fee services quoted per pool. Green pool recovery — shocking, vacuuming, filtering and rebalancing an algae-filled pool — is a one-time project priced by the severity (a mild green is one visit; a swamp is three to five) and billed on completion or with a deposit up front. Equipment repair and replacement (pumps, filters, heaters, salt chlorine generators, automatic cleaners, control systems) are quoted per job with parts itemized. Acid washing a drained pool is priced per job or by pool surface area. Multi-pool commercial accounts such as HOAs, apartments and hotels are billed per pool per month with a service agreement and a purchase order, usually on net 30. Most residential accounts pay monthly by card on file or within a few days of the invoice.",
+    lineItems: [
+      {
+        description: "Weekly pool maintenance — visit 10/7, chemicals tested and adjusted (see log below)",
+        unit: "per visit or included in monthly rate",
+        note: "Date every visit. A maintenance visit with no date on the invoice is a visit the customer has no way to verify, and it is the first line that gets challenged when the bill feels high.",
+      },
+      {
+        description: "Chemical log — pH 7.8→7.4, FC 1.2→3.0 ppm, TA 90, CYA 45 — added: 1 lb granular chlorine, 12 oz muriatic acid",
+        unit: "record per visit, $0 if chemicals are bundled",
+        note: "Log the readings and the dosage. Many states and counties require a chemical application record for commercial pools, and residential customers who can see what was done stop wondering whether you skipped the visit.",
+      },
+      {
+        description: "Filter clean — DE filter, full breakdown and recharge, 48 sq ft, 10/15",
+        unit: "per cleaning, flat fee",
+        note: "Name the filter type and the date. Cartridge, DE and sand filters have different cleaning intervals and costs, and a customer who sees the filter type knows this is not a made-up line.",
+      },
+      {
+        description: "Green pool recovery — heavy algae, 3 visits (shock, vacuum to waste, filter, rebalance), completed 10/21",
+        unit: "project price or per visit, plus chemicals if billed separately",
+        note: "State the severity and the number of visits. A mild green that clears in one shock is a different job from a black-green swamp that takes a week, and the invoice should show which one this was.",
+      },
+      {
+        description: "Seasonal pool opening — remove and store cover, inspect equipment, start pump/filter/heater, fill to operating level, balance chemistry, 4/12",
+        unit: "flat fee per opening",
+        note: "List what the opening includes. Customers compare opening prices, and a line that just says 'pool opening' loses to a competitor who lists the steps — even at a higher price.",
+      },
+      {
+        description: "Seasonal pool closing — lower water level, blow lines, add winterizing chemicals, install plugs and cover, 10/28",
+        unit: "flat fee per closing",
+        note: "Same as opening: list the steps. A closing done wrong causes freeze damage, and the customer should be able to see what was done if a pipe cracks in January.",
+      },
+      {
+        description: "Equipment repair — variable-speed pump replacement, Pentair IntelliFlo VSF, model #___",
+        unit: "labor + parts, itemized",
+        note: "Name the equipment, the brand and the model number. Parts and labor on separate lines let the customer verify the part price and check the warranty terms independently.",
+      },
+      {
+        description: "Salt cell replacement — Hayward TurboCell T-15, 40,000 gal rated, installed and calibrated, 10/20",
+        unit: "part + labor",
+        note: "Salt cells wear out every three to seven years and cost hundreds of dollars. The model, the rating and the install date on the invoice start the replacement clock the customer can track.",
+      },
+      {
+        description: "Acid wash — pool drained, surface acid-washed, neutralized and refilled, plaster, approx. 15,000 gal, 11/4",
+        unit: "project price by pool size or surface area",
+        note: "Acid washing is an infrequent, labor-intensive job. State the surface type and the approximate volume so the price is traceable to a size, not to a guess.",
+      },
+      {
+        description: "Pre-existing conditions noted at account start: calcium scaling on tile line, plaster staining (deep end), heater rust (noted inoperable), CYA over 100 ppm — photos on file, 9/1",
+        unit: "record, $0",
+        note: "The most important line on a new account. A pool you inherit has problems you did not cause, and a customer who switches service companies and then notices staining will connect the two. Record what was there.",
+      },
+      {
+        description: "HOA — Oakwood community pool, weekly service per agreement, PO #2026-088, October (4 visits: 10/7, 10/14, 10/21, 10/28)",
+        unit: "per pool per month, billed to the management company",
+        note: "Bill by the pool and carry the PO. Property managers match invoices to properties, not to people, and an invoice without the site name sits in a queue.",
+      },
+    ],
+    gotchas: [
+      "One line reading 'Monthly pool service — $180.' The customer cannot see what was done on any visit, how many visits occurred, or what chemicals were used. That line is the first to be questioned when a neighbor mentions a lower price.",
+      "No chemical log. In many jurisdictions, commercial pools require a written chemical application record. Residential customers benefit from one too — it is the proof that the visit happened and the water was treated, and it is what stops the 'did you actually come this week' conversation.",
+      "Chemicals bundled on the route but billed separately on a green pool or a startup. The customer's mental model is 'chemicals are included', and a surprise chemical bill on a recovery job feels like double-charging. Pick one model and be consistent, or explain the exception clearly on the invoice.",
+      "Equipment parts and labor on one line. The customer cannot check the part price, compare it to retail, or see what the labor was worth. Two lines, with the part's brand and model, end the conversation before it starts.",
+      "Filter cleaning not tracked by date. Cartridge filters need cleaning every few months; DE filters need a teardown once or twice a year. Without a date on the invoice, neither you nor the customer knows when it was last done, and the next tech on the route has to guess.",
+      "Seasonal opening or closing billed as a single number with no detail. A customer who can see the steps — cover removal, equipment inspection, line blowing, chemistry — trusts the price. A customer who sees only '$350 — pool opening' shops around.",
+      "No pre-existing conditions on a new account. Calcium scale, plaster stains, cracked tile, worn equipment and high CYA from years of stabilized chlorine are all inherited problems. Without a record, the new service company gets blamed for them within a season.",
+    ],
+    faqs: [
+      { q: "Should I bill pool cleaning per visit or on a flat monthly rate?", a: "Either works. Per-visit billing is transparent — the customer sees exactly how many visits they paid for — and it handles months with five weeks, skipped visits and vacations cleanly. A flat monthly rate simplifies the invoice and makes cash flow more predictable, but you need a policy for skipped or weather-cancelled visits (credit the next month, or state that the rate covers a set number of visits per month). Whatever you choose, list the visit dates on the invoice so the customer can count them, and state the model in your service agreement so neither side has to remember what was promised." },
+      { q: "Should I include chemicals in my pool service rate or bill them separately?", a: "Both models are standard. Bundling chemicals into the rate is simpler for the customer and easier to invoice — one line per visit, nothing to itemize. It works well when chemical costs are predictable, which they are on a healthy, well-maintained pool. Billing chemicals separately gives the customer more visibility and protects your margin when chemical prices rise, but it creates a longer invoice and more questions. The key is to pick one model and state it in the agreement. If you bundle on the route, say so. If you bill separately on project work (green pool recovery, startups), say that too, because a customer whose route is 'chemicals included' will assume everything is." },
+      { q: "What chemical readings should I log on a pool service invoice?", a: "At minimum: pH, free chlorine (FC), and the date. Ideally also total alkalinity (TA), cyanuric acid (CYA, also called stabilizer), calcium hardness (CH), and salt level if the pool has a salt chlorine generator. Record the before and after readings when you adjust, and note what you added and how much. This log is required by law for commercial and public pools in most states and counties. For residential pools it is not legally required in most places, but it is the strongest proof that the visit happened, that the water was treated correctly, and that a problem (a green pool, a stain, equipment corrosion) was not caused by your service." },
+      { q: "How do I invoice a green pool recovery?", a: "As a one-time project, not as part of the regular route. State the severity (light green, dark green, black), the number of visits it took, what was done on each visit (shock, vacuum to waste, brush, filter and backwash, rebalance), and the total chemical used if you bill chemicals separately. If you asked for a deposit, show it as a credit line. Green pool recovery is substantially more work than routine maintenance and uses far more chemical, so it should never be buried inside a monthly maintenance line — the customer needs to see why this bill is different from the usual one." },
+      { q: "How should I invoice pool equipment repair or replacement?", a: "Parts and labor on separate lines, with the brand, model number and serial number of the equipment. For a replacement, note the old equipment that was removed. Include the manufacturer's warranty period if there is one. If the repair required a follow-up visit to verify (for example, a heater that needs to run a full cycle before you can confirm the fix), note that visit too. Equipment work is often the largest single charge on a pool service account, and a well-documented invoice builds trust and gives the customer a record they will need if the part fails under warranty." },
+      { q: "How do I invoice HOAs and property managers for multiple pools?", a: "One invoice per billing period (usually monthly), with each pool on its own section or set of lines, the visit dates for each, and the management company's purchase order number. Name the property and the pool (for a community with more than one). Include a summary of any chemical or health department readings if required. Bill to the management company, not to individual homeowners, and match the terms in your service agreement — usually net 30. If equipment work or a recovery was done on one pool, keep it on the same invoice but clearly separated from the routine service, so the manager can approve the extra charge without holding up the whole payment." },
+    ],
+    guideSlug: "how-to-invoice-for-pool-cleaning",
+    guideLabel: "How to invoice for pool cleaning — chemical logs, route billing, green pool recovery, and equipment",
+  },
   "freelance-writing": {
     slug: "freelance-writing",
     trade: "Freelance Writing",
