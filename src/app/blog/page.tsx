@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-personal-training",
+    title: "How to Invoice for Personal Training (Sessions, Packages & Cancellations, 2026)",
+    excerpt:
+      "Personal training money usually arrives before the sessions do, and that changes the invoicing game entirely. This guide covers per-session vs prepaid package billing, why a paid-for block of sessions is a liability until each one is delivered, the cancellation and no-show policy that decides whether your calendar converts to income, in-home vs gym vs online billing, group and semi-private pricing, add-ons like nutrition plans and assessments, sales tax traps, and why your CPT credential belongs on every bill.",
+  },
+  {
     slug: "pdf-invoice-template",
     title: "PDF Invoice Template: Free, Fillable & How to Make One (2026)",
     excerpt:
