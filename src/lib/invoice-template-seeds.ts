@@ -305,6 +305,16 @@ export const tradeSeeds: Record<string, TradeSeed> = {
       "Third-party costs — hosting / licences (at cost)",
     ],
   },
+  "tree-service": {
+    trade: "Tree Service",
+    items: [
+      "Tree removal — species, _ DBH, location (near structure / over fence / open yard)",
+      "Trimming / pruning — species, scope (crown reduction / deadwood / clearance)",
+      "Stump grinding — _ in. diameter, ground _ in. below grade",
+      "Crane / bucket truck mobilization",
+      "Debris removal and haul-away — loads",
+    ],
+  },
 };
 
 export function getTradeSeed(slug: string): TradeSeed | undefined {
