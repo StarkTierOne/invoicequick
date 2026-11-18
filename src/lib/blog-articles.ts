@@ -4484,6 +4484,60 @@ export const articles: Record<
       },
     ],
   },
+  "deposit-invoice-template": {
+    title: "Deposit Invoice: How to Request Upfront Payment (With Template)",
+    description:
+      "Learn how to write a deposit invoice that gets you paid before work begins. Covers deposit amounts, wording, refund terms, and a free template for freelancers and contractors.",
+    keywords:
+      "deposit invoice, deposit invoice template, how to ask for deposit on invoice, upfront payment invoice, advance payment invoice, freelancer deposit request, retainer invoice",
+    body: [
+      "A deposit invoice is the document you send a client to collect partial payment before work begins. It is not a full invoice for completed work — it is a formal request for an agreed-upon advance that secures the project, covers your upfront costs, and proves the client is committed. If you have ever started a large project only to get ghosted after delivery, a deposit invoice is how you stop that from happening again.",
+      "## Why You Need a Deposit Invoice",
+      "Deposits protect both sides. For you, the deposit covers materials, blocks time on your calendar, and proves the client has actual budget — not just interest. For the client, paying a deposit locks in your availability and your quoted price. Without a deposit, you are betting hours or weeks of work on the assumption that a client who has not paid you yet will pay you later. The larger the project, the worse that bet gets. Standard practice across freelancing, contracting, and professional services is to collect a deposit before starting — and clients who push back on a deposit are often the ones who cause payment problems later.",
+      "## Standard Deposit Amounts by Industry",
+      "There is no universal rule, but these ranges are standard and expected by most clients. **Freelance design, development, and creative work**: 50% upfront is the norm, with the balance due on delivery. For projects under $1,000, some freelancers collect 100% upfront. **Construction and trades**: 25–50% of the contract total, depending on the job size and your material costs. Many states regulate deposit limits for home improvement work — California caps contractor deposits at $1,000 or 10% of the contract, whichever is less. Check your state's rules. **Consulting and coaching**: one session's fee or a full month's retainer, paid before the first session. **Photography and events**: 25–50% as a booking retainer to hold the date, with the balance due before or on the day of the event. The key is that the deposit should be large enough to cover your sunk costs if the project falls through, but small enough that it does not scare away a legitimate client.",
+      "## How to Word the Deposit Request on the Invoice",
+      "Clarity is everything. The client should know exactly what they are paying for, that it is a deposit and not the full project fee, and what happens next. Here are specific wording examples you can use on the invoice line item:",
+      "For a flat-rate project: **Deposit — Website Redesign (50% of $4,000 project total)** with a line amount of $2,000. For hourly or phased work: **Deposit — Phase 1, Brand Identity (per signed proposal dated Nov 1, 2026)** with the agreed amount. For a booking retainer: **Booking retainer — Wedding Photography, June 14, 2027 (non-refundable; applied to final balance)** with the retainer amount. In every case, reference the contract, proposal, or agreement that the deposit is tied to. This protects you if there is ever a dispute about scope or refund terms. See [how to write payment terms on an invoice](/blog/how-to-write-payment-terms-on-invoice) for more on the payment-terms section itself.",
+      "## What to Include on a Deposit Invoice",
+      "A deposit invoice includes everything a normal invoice does, plus a few additions that make it unmistakably a deposit — not a final bill. Include: your business name and contact details, the client's name and billing address, a unique invoice number (use your normal sequence — do not create a separate numbering system for deposits), the invoice date and payment due date, the word **DEPOSIT** or **DEPOSIT INVOICE** prominently in the title or the line-item description, a line item describing the deposit with the amount and what it is for, the total project value or contract reference so the client can see this is a portion of the full fee, your [payment terms](/blog/how-to-write-payment-terms-on-invoice) including the due date for the balance, your payment instructions (bank details, PayPal, etc.), and your refund or cancellation terms. The deposit label matters. If the invoice just says the project name and $2,000 with no context, the client's bookkeeper may treat it as a completed payment and close the PO — then you have to fight to collect the balance.",
+      "## When to Send the Deposit Invoice",
+      "Send the deposit invoice after the client has agreed to the project scope and price — ideally the same day the contract or proposal is signed. Do not start work until the deposit clears. This is not rude or mistrustful; it is standard business practice. If a client balks at paying a deposit before work begins, that is information about how they handle money — and it rarely improves after delivery. For [milestone billing](/blog/progress-invoicing-milestone-billing) on larger projects, the deposit invoice is the first in a series: deposit before work starts, progress payments at defined milestones, and a final invoice on completion.",
+      "## How to Handle the Final Invoice After a Deposit",
+      "When the work is done, send a final invoice that references the deposit. The final invoice should show the full project total, subtract the deposit already paid, and show the remaining balance due. Here is how to structure it:",
+      "Line 1: **Website Redesign — full project (per contract dated Nov 1, 2026)** — $4,000. Line 2: **Less: Deposit received Nov 5, 2026 (Invoice #INV-042)** — −$2,000. **Balance due: $2,000**. Always reference the original deposit invoice number so the client's accounting team can match the two. This paper trail is what keeps payments clean and disputes rare. If the project scope changed between the deposit and final delivery, itemize the changes and reference any signed change orders.",
+      "## Deposit Refund Terms",
+      "Decide your refund policy before you send the first deposit invoice, and state it on the invoice itself — not just in the contract. Common approaches: **Fully refundable** if the client cancels before work begins. This is the safest for the client and appropriate when no costs have been incurred. **Non-refundable** once work has started or a date has been booked. Event vendors (photographers, caterers, DJs) almost universally use non-refundable retainers because a cancelled booking means lost income that cannot be recovered. **Partially refundable** — a middle ground where the deposit minus any costs already incurred is returned. Whatever your policy, write it on the invoice: \"This deposit is non-refundable once work begins, per Section 4 of the signed agreement dated [date].\" Ambiguity about refunds is the #1 source of deposit disputes.",
+      "## Deposits vs. Retainers: Know the Difference",
+      "A deposit is a partial payment toward a specific project or deliverable — it gets applied to the final invoice. A retainer is a recurring fee to reserve ongoing access to your time or services, often on a monthly basis. If a consulting client pays $3,000 per month to have you on call, that is a retainer. If a client pays $3,000 to start a website project, that is a deposit. The distinction matters for accounting: deposits are deferred revenue until the work is delivered, while retainers are typically recognized as income in the period they cover. It also matters for refunds — retainers for time already reserved are almost never refunded, while deposits for work not yet started often are.",
+      "## Legal Considerations",
+      "In most jurisdictions, a deposit backed by a signed contract is legally enforceable. If a client pays a non-refundable deposit and then cancels, you are generally entitled to keep it — provided your cancellation terms were stated clearly in writing before the payment was made. Some states and industries regulate deposits specifically. As noted, California limits contractor deposits to $1,000 or 10% of the contract, and similar rules exist in other states for home improvement work. If you work in a regulated trade, check your state's contractor licensing board for deposit limits. For freelancers and consultants, there is typically no statutory cap — the deposit amount is whatever the two parties agree to.",
+      "## Create Your Deposit Invoice With InvoiceQuick",
+      "InvoiceQuick makes deposit invoicing straightforward. [Create your deposit invoice free](/create) — add \"DEPOSIT\" to your line-item description, enter the amount, reference the project, and download a clean PDF in under a minute. When the work is done, create a final invoice that shows the full total minus the deposit. No sign-up required, no watermark, free forever.",
+    ],
+    faqs: [
+      {
+        q: "What percentage should I charge as a deposit?",
+        a: "It depends on your industry and the project size. Freelance designers and developers typically charge 50% upfront. Contractors charge 25–50%, though some states cap contractor deposits (California limits them to $1,000 or 10% of the contract). Photographers and event vendors charge 25–50% as a booking retainer. The deposit should cover your sunk costs if the project falls through — materials, blocked calendar time, and opportunity cost.",
+      },
+      {
+        q: "Is a deposit invoice the same as a proforma invoice?",
+        a: "No. A deposit invoice is a real invoice requesting actual payment — it carries an invoice number, records in your accounts receivable, and the client pays against it. A proforma invoice is a preliminary estimate that previews what a final invoice will look like — it is not a payment demand and does not enter anyone's books. You might send a proforma first so the client can see the full breakdown, and then follow it with a deposit invoice for the upfront portion. See [proforma invoice vs invoice](/blog/proforma-invoice-vs-invoice) for the full comparison.",
+      },
+      {
+        q: "What happens if the client cancels after paying the deposit?",
+        a: "It depends on your stated refund terms. If the deposit is non-refundable (common for event bookings and projects where work has started), you keep it. If it is refundable before work begins, you return it. If it is partially refundable, you deduct costs already incurred and return the rest. The key is that your cancellation and refund terms must be in writing — on the invoice and in the contract — before the deposit is paid. Verbal agreements about refunds are nearly impossible to enforce.",
+      },
+      {
+        q: "Do I need to refund a deposit?",
+        a: "Only if your terms say so. A deposit labeled \"non-refundable\" on both the invoice and the signed agreement is yours to keep if the client cancels — courts consistently uphold clearly stated non-refundable deposit terms. If you never stated a refund policy, the law in most jurisdictions defaults to the deposit being refundable for work not yet performed, which is why putting your policy in writing matters.",
+      },
+      {
+        q: "Should I charge tax on a deposit?",
+        a: "In most US states, sales tax is due when the full payment is received, not on the deposit itself — the deposit is treated as a partial payment toward a future taxable transaction. However, rules vary by state and by whether you sell goods, services, or both. Some states require collecting tax proportionally on each payment. Check your state's sales tax rules or ask your accountant. For a detailed breakdown, see [sales tax on invoices](/blog/sales-tax-on-invoices).",
+      },
+    ],
+  },
 };
 
 // Slug → headline for the per-post Open Graph card

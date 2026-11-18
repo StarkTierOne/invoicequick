@@ -69,6 +69,10 @@ function renderEmphasis(text: string, keyBase: string): ReactNode[] {
 // would be a second list that drifts (two were hand-fixed; eleven were not) —
 // so the rewrite is derived here from the same guideSlug mapping instead. Links
 // that already carry a query string are left alone.
+function slugify(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 function seededCreateHref(href: string, tradeSlug?: string): string {
   return href === "/create" && tradeSlug ? `/create?trade=${tradeSlug}` : href;
 }
@@ -242,11 +246,39 @@ export default async function BlogPostPage({ params }: Props) {
           </Link>
         </div>
         <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 mb-8">{article.title}</h1>
+
+        {/* Table of Contents — shown on longer articles (3+ headings) for
+            better UX and jump-link eligibility in Google SERPs. */}
+        {headingPositions.length >= 3 && (
+          <nav aria-label="Table of contents" className="mb-10 rounded-xl border border-gray-200 bg-gray-50 px-5 py-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3">In this article</p>
+            <ol className="space-y-1.5 pl-1">
+              {article.body
+                .filter((p) => p.startsWith("## "))
+                .map((p) => {
+                  const text = p.replace("## ", "");
+                  const plain = stripMarkdown(text);
+                  return (
+                    <li key={slugify(plain)}>
+                      <a
+                        href={`#${slugify(plain)}`}
+                        className="text-sm text-indigo-600 hover:text-indigo-700 hover:underline"
+                      >
+                        {plain}
+                      </a>
+                    </li>
+                  );
+                })}
+            </ol>
+          </nav>
+        )}
+
         <div className="prose prose-lg max-w-none">
           {article.body.map((paragraph, i) => {
+            const headingText = paragraph.replace("## ", "");
             const node = paragraph.startsWith("## ") ? (
-              <h2 key={i} className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-                {renderEmphasis(paragraph.replace("## ", ""), `h${i}`)}
+              <h2 key={i} id={slugify(stripMarkdown(headingText))} className="text-2xl font-bold text-gray-900 mt-10 mb-4 scroll-mt-20">
+                {renderEmphasis(headingText, `h${i}`)}
               </h2>
             ) : (
               <p key={i} className="text-gray-700 leading-relaxed mb-4">
