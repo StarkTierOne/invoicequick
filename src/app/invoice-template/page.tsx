@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   title: "Free Invoice Template | Download & Customize — InvoiceQuick",
   description: "Get a free, professional invoice template you can customize and download as PDF. No Word, Excel, or Google Docs file to fight with — fill it in and download. Perfect for freelancers, contractors, and small businesses. No signup required.",
   keywords: "invoice template, free invoice template, invoice template PDF, invoice template download, professional invoice template, freelance invoice template, invoice template word, invoice template google docs, invoice template excel",
+  alternates: { canonical: "https://invoicequick-phi.vercel.app/invoice-template" },
 };
 
 const faqs: { q: string; a: string }[] = [
@@ -75,8 +76,17 @@ export default function InvoiceTemplatePage() {
         </div>
       </nav>
 
+      {/* Breadcrumb */}
+      <div className="max-w-4xl mx-auto px-4 pt-6">
+        <nav className="text-sm text-gray-500" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-gray-700">Home</Link>
+          <span className="mx-2">/</span>
+          <span className="text-gray-900">Invoice Templates</span>
+        </nav>
+      </div>
+
       {/* Hero */}
-      <section className="max-w-4xl mx-auto px-4 pt-16 pb-12 text-center">
+      <section className="max-w-4xl mx-auto px-4 pt-8 pb-12 text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 text-gray-900">
           Free Invoice Template
         </h1>
@@ -299,6 +309,21 @@ export default function InvoiceTemplatePage() {
                 text: faq.a,
               },
             })),
+          }),
+        }}
+      />
+
+      {/* Breadcrumb JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://invoicequick-phi.vercel.app" },
+              { "@type": "ListItem", position: 2, name: "Invoice Templates", item: "https://invoicequick-phi.vercel.app/invoice-template" },
+            ],
           }),
         }}
       />
