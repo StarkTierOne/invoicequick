@@ -1273,6 +1273,47 @@ export default function Home() {
         }}
       />
 
+      {/* HowTo Schema — earns rich results for "how to create an invoice" queries */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Create a Professional Invoice in Seconds",
+            description: "Create a free, professional PDF invoice in under 60 seconds with InvoiceQuick. No sign-up, no credit card, no watermark.",
+            totalTime: "PT1M",
+            tool: {
+              "@type": "HowToTool",
+              name: "InvoiceQuick free invoice generator",
+            },
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Fill In Details",
+                text: "Enter your business info, client details, and line items. The smart form auto-calculates subtotals, discounts, and tax as you type.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Watch It Fill In",
+                text: "The live preview updates as you type. Totals, tax, and discounts calculate themselves, and your logo shows up on the PDF exactly as your client will see it.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Download and Send",
+                text: "Download a clean, watermark-free PDF and email it however you like. Your draft stays saved on this device, so you can come back and finish later.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* SoftwareApplication Schema */}
       <script
         type="application/ld+json"
