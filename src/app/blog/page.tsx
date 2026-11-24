@@ -557,6 +557,12 @@ const curated = [
     excerpt:
       "Billing by the hour is the model most likely to trigger an awkward client conversation, because they are paying for time they did not watch you spend. A vague \"40 hours — $4,000\" line invites the question you never want: \"40 hours doing what?\" This guide makes the number defensible — tracking time against specific tasks, choosing and disclosing a rounding increment, itemizing each line as hours × rate, handling blended rates and partial hours, and the right move when actual hours blow past your estimate (flag it before the invoice, never in it).",
   },
+  {
+    slug: "how-to-invoice-for-personal-training",
+    title: "How to Invoice for Personal Training & Fitness Coaching (Sessions, Packages & No-Shows, 2026)",
+    excerpt:
+      "Personal training is the trade where you sell a calendar slot that ceases to exist the moment it passes. This guide covers per-session vs package billing, the cancellation and no-show policy that protects your calendar, in-home and travel surcharges, group and semi-private pricing, online coaching fees, collecting payment before the session, and the sales-tax question that catches trainers in more states than most expect.",
+  },
 ];
 
 // Any article the curated list above forgets still gets a card, newest first,
