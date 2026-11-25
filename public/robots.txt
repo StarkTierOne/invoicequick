@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://invoicequick.com/sitemap.xml
+Sitemap: https://invoicequick-phi.vercel.app/sitemap.xml
 
 # Block internal app routes from indexing
 Disallow: /api/
