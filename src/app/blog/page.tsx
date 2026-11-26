@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 // now costs a slightly less-tuned excerpt instead of an invisible post.
 const curated = [
   {
+    slug: "how-to-invoice-for-personal-training",
+    title: "How to Invoice for Personal Training & Fitness Coaching (Sessions, Packages & No-Shows, 2026)",
+    excerpt:
+      "Personal training is the trade where the client usually pays before the session and your biggest invoicing problem is a package of twenty sessions with no expiration date. This guide covers billing per session versus selling prepaid packages, showing sessions used and remaining, the 24-hour cancellation policy that decides whether your calendar is worth anything, no-show fees and how to deduct them from a package, gym-employed versus independent trainer billing, card-on-file collection, sales tax on fitness services, and what to do when a client disappears mid-package.",
+  },
+  {
     slug: "pdf-invoice-template",
     title: "PDF Invoice Template: Free, Fillable & How to Make One (2026)",
     excerpt:
