@@ -1207,6 +1207,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* HowTo JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Create a Free Professional Invoice",
+            description: "Create a professional PDF invoice in under 60 seconds using InvoiceQuick. No sign-up required.",
+            totalTime: "PT1M",
+            tool: {
+              "@type": "HowToTool",
+              name: "InvoiceQuick free invoice generator",
+            },
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Fill In Details",
+                text: "Enter your business info, client details, and line items. The smart form auto-calculates totals and tax.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Watch It Fill In",
+                text: "The preview updates as you type. Totals, tax, and discounts calculate themselves, and your logo shows up on the PDF.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Download and Send",
+                text: "Download a clean, watermark-free PDF and email it however you like. Your draft stays saved on this device.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* FAQ JSON-LD Schema */}
       <script
         type="application/ld+json"
