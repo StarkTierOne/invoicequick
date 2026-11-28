@@ -1273,6 +1273,44 @@ export default function Home() {
         }}
       />
 
+      {/* HowTo Schema — earns rich snippets for "how to create an invoice" queries */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Create a Professional Invoice in Seconds",
+            description: "Create a professional PDF invoice for free in under 60 seconds using InvoiceQuick. No sign-up, no watermark, no payment fees.",
+            totalTime: "PT1M",
+            tool: { "@type": "HowToTool", name: "InvoiceQuick Free Invoice Generator" },
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Fill In Details",
+                text: "Enter your business info, client details, and line items. The smart form auto-calculates subtotals, tax, and the total as you type.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Preview Your Invoice",
+                text: "Watch the invoice preview update live as you type. Totals, tax, and discounts calculate themselves, and your logo appears on the PDF.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Download and Send",
+                text: "Download a clean, watermark-free PDF and email it to your client. The whole process takes about 60 seconds.",
+                url: "https://invoicequick-phi.vercel.app/create",
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* SoftwareApplication Schema */}
       <script
         type="application/ld+json"
